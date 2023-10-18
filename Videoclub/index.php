@@ -21,7 +21,7 @@ if (isset($_GET['controller'])){
 
         $controller->action();
     }else{
-        echo $nombre_controller. ' NO EXISTE';
+        echo $nombre_controller. ' NO EXISTE'; 
     }
 }
 ?>
