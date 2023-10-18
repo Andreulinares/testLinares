@@ -1,6 +1,6 @@
 <?php
 
-include_once 'config/db.php';
+include_once 'config/database.php';
 
 class ProductoDAO{
     public static function getAllProducts(){
