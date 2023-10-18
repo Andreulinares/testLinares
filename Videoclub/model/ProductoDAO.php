@@ -1,6 +1,10 @@
 <?php
 
-include_once 'config/database.php';
+if(is_file("config/database.php")){
+    include('config/database.php');
+}else{
+    include('../config/database.php');
+}
 
 class ProductoDAO{
     public static function getAllProducts(){
