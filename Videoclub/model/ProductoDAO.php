@@ -12,7 +12,7 @@ class ProductoDAO{
         if ($result = $con->query("SELECT * FROM productos")){
 
             while($producto = $result->fetch_array()){
-                echo $producto['name'];
+                echo $producto['nombre_producto'];
                 echo '<br>';
             }
         }
