@@ -2,7 +2,7 @@
 //Creamos el controlador de pedidos
 include('../model/ProductoDAO.php');
 
-class pedidoController{
+class productoController{
     
     public function index(){
         
