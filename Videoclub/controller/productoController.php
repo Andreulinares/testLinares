@@ -1,6 +1,6 @@
 <?php
 //Creamos el controlador de pedidos
-include('../model/ProductoDAO.php');
+include('../Videoclub/model/ProductoDAO.php');
 
 class productoController{
     

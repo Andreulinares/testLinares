@@ -6,10 +6,12 @@ if(is_file("config/database.php")){
     include('../config/database.php');
 }
 
+include('../model/Producto.php');
+
 class ProductoDAO{
     public static function getAllProducts(){
         $con = DataBase::connect();
-        if ($result = $con->query("SELECT * FROM productos")){
+        if ($result = $con->query("SELECT * FROM productos WHERE categoria = 'pizza' ")){
 
             while($producto = $result->fetch_array()){
                 echo $producto['nombre_producto'];

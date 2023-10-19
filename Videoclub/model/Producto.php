@@ -5,19 +5,64 @@ abstract class Producto{
     const precioPizza = 0;
     const precioBebida = 0;
 
-    protected $id;
-    protected $name;
+    protected $producto_id;
+    protected $nombre_producto;
     protected $descripcion;
+    protected $categoria;
 
-    public function __construct($id, $name, $descripcion)
+    public function __construct($producto_id, $nombre_producto, $descripcion, $categoria)
     {
-        $this->id = $id;
-        $this->name = $name;
+        $this->producto_id = $producto_id;
+        $this->nombre_producto = $nombre_producto;
         $this->descripcion = $descripcion;
+        $this->categoria = $categoria;
+    }
+
+    public abstract function calculaPrecioTotal($numProducto);
+    public abstract function devuelvePrecioProducto();
+
+    /**
+     * Get the value of producto_id
+     */ 
+    public function getProducto_id()
+    {
+        return $this->producto_id;
     }
 
     /**
-     * Get the value of tipo
+     * Set the value of producto_id
+     *
+     * @return  self
+     */ 
+    public function setProducto_id($producto_id)
+    {
+        $this->producto_id = $producto_id;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of nombre_producto
+     */ 
+    public function getNombre_producto()
+    {
+        return $this->nombre_producto;
+    }
+
+    /**
+     * Set the value of nombre_producto
+     *
+     * @return  self
+     */ 
+    public function setNombre_producto($nombre_producto)
+    {
+        $this->nombre_producto = $nombre_producto;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of descripcion
      */ 
     public function getDescripcion()
     {
@@ -25,7 +70,7 @@ abstract class Producto{
     }
 
     /**
-     * Set the value of tipo
+     * Set the value of descripcion
      *
      * @return  self
      */ 
@@ -37,47 +82,24 @@ abstract class Producto{
     }
 
     /**
-     * Get the value of name
+     * Get the value of categoria
      */ 
-    public function getName()
+    public function getCategoria()
     {
-        return $this->name;
+        return $this->categoria;
     }
 
     /**
-     * Set the value of name
+     * Set the value of categoria
      *
      * @return  self
      */ 
-    public function setName($name)
+    public function setCategoria($categoria)
     {
-        $this->name = $name;
+        $this->categoria = $categoria;
 
         return $this;
     }
-
-    /**
-     * Get the value of id
-     */ 
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set the value of id
-     *
-     * @return  self
-     */ 
-    public function setId($id)
-    {
-        $this->id = $id;
-
-        return $this;
-    }
-
-    public abstract function calculaPrecioTotal($numProducto);
-    public abstract function devuelvePrecioProducto();
 }
 
 ?>

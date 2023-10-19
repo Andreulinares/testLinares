@@ -4,7 +4,7 @@ include('../Videoclub/config/parameters.php');
 
 if (isset($_GET['controller'])){
     //Si no se pasa nada, se mostrara pagina principal de pedidos
-    header("Location: " . url);
+    header("Location: " . url . '?controller=productoController');
 }else{
     $nombre_controller = $_GET['controller'].'Controller';
 
