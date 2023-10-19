@@ -1,10 +1,6 @@
 <?php
 
-if(is_file("config/database.php")){
-    include('config/database.php');
-}else{
-    include('../Videoclub/config/database.php');
-}
+include('../Videoclub/config/database.php');
 
 include('../Videoclub/model/Producto.php');
 
