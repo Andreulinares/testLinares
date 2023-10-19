@@ -3,10 +3,10 @@
 if(is_file("config/database.php")){
     include('config/database.php');
 }else{
-    include('../config/database.php');
+    include('../Videoclub/config/database.php');
 }
 
-include('../model/Producto.php');
+include('../Videoclub/model/Producto.php');
 
 class ProductoDAO{
     public static function getAllProducts(){
