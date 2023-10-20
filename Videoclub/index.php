@@ -19,7 +19,7 @@ if (isset($_GET['controller'])){
             $action = action_default;
         }
 
-        $controller->action();
+        $controller->$action();
     }else{
         echo $nombre_controller. ' NO EXISTE'; 
     }

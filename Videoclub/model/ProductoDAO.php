@@ -1,19 +1,22 @@
 <?php
 
-include('../Videoclub/config/database.php');
+include_once '../config/database.php';
 
-include('../Videoclub/model/Producto.php');
+include_once 'Producto.php';
 
 class ProductoDAO{
-    public static function getAllProducts(){
-        $con = DataBase::connect();
-        if ($result = $con->query("SELECT * FROM productos WHERE categoria = 'pizza' ")){
+    public static function getAllProducts($categoria){
+        $con = database::connect();
+        $productos = array();
 
-            while($producto = $result->fetch_array()){
-                echo $producto['nombre_producto'];
-                echo '<br>';
+        if ($result = $con->query("SELECT * FROM productos WHERE categoria = '$categoria' ")){
+
+            while($producto = $result->fetch_object('Producto')){
+                $productos[] = $producto;
             }
         }
+
+        return $productos;
     }
 }
 
