@@ -14,7 +14,7 @@ class Pizza extends Producto{
         return $precioTotal;
     }
     public function devuelvePrecioProducto(){
-
+        return self::precioPizza;
     }
 }
 

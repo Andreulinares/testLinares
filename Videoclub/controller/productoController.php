@@ -1,6 +1,6 @@
 <?php
 //Creamos el controlador de pedidos
-include_once '../model/ProductoDAO.php';
+require __DIR__ . '/../model/ProductoDAO.php';
 
 class productoController{
     
@@ -20,4 +20,3 @@ class productoController{
         echo 'Pagina principal compras';
     }
 }
-?>

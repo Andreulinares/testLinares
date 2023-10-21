@@ -1,12 +1,12 @@
 <?php
-include('../Videoclub/controller/productoController.php');
-include('../Videoclub/config/parameters.php');
+require __DIR__ . '/../Videoclub/config/parameters.php';
+require __DIR__ . '/../Videoclub/controller/productoController.php';
 
 if (isset($_GET['controller'])){
     //Si no se pasa nada, se mostrara pagina principal de pedidos
-    header("Location: " . url . '?controller=productoController');
-}else{
     $nombre_controller = $_GET['controller'].'Controller';
+}else{
+    $nombre_controller = 'productoController';
 
     if(class_exists($nombre_controller)){
         //Miramos si nos pasa una accion
