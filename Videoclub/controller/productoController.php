@@ -6,14 +6,10 @@ class productoController{
     
     public function index(){
         $categoria = 'pizza';
-        $productos = ProductoDAO::getAllProducts($categoria);
 
-        echo "<h1>Pizzas</h1>";
-        echo "<ul>";
-        foreach ($productos as $producto){
-            echo "<li>" . $producto->nombre_producto . "</li>";
-        }
-        echo "</ul>";
+        $productos = ProductoDAO::getAllProducts($categoria);
+        include('../views/productos.php');
+
     }
 
     public function compra(){

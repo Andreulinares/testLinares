@@ -2,20 +2,19 @@
 
 abstract class Producto{
 
-    const precioPizza = 0;
-    const precioBebida = 0;
-
     protected $producto_id;
     protected $nombre_producto;
     protected $descripcion;
     protected $categoria;
+    protected $precio;
 
-    public function __construct($producto_id, $nombre_producto, $descripcion, $categoria)
+    public function __construct($producto_id, $nombre_producto, $descripcion, $categoria, $precio)
     {
         $this->producto_id = $producto_id;
         $this->nombre_producto = $nombre_producto;
         $this->descripcion = $descripcion;
         $this->categoria = $categoria;
+        $this->precio = $precio;
     }
 
     public abstract function calculaPrecioTotal($numProducto);
@@ -97,6 +96,26 @@ abstract class Producto{
     public function setCategoria($categoria)
     {
         $this->categoria = $categoria;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of precio
+     */ 
+    public function getPrecio()
+    {
+        return $this->precio;
+    }
+
+    /**
+     * Set the value of precio
+     *
+     * @return  self
+     */ 
+    public function setPrecio($precio)
+    {
+        $this->precio = $precio;
 
         return $this;
     }

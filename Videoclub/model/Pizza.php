@@ -4,17 +4,17 @@ include_once 'Producto.php';
 
 class Pizza extends Producto{
 
-    public function __construct($producto_id, $nombre_producto, $descripcion, $categoria)
+    public function __construct($producto_id, $nombre_producto, $descripcion, $categoria, $precio)
     {
-        parent::__construct($producto_id, $nombre_producto, $descripcion, $categoria);
+        parent::__construct($producto_id, $nombre_producto, $descripcion, $categoria, $precio);
     }
 
     public function calculaPrecioTotal($numProducto){
-        $precioTotal = $numProducto*self::precioPizza;
+        $precioTotal = $numProducto*$this->precio;
         return $precioTotal;
     }
     public function devuelvePrecioProducto(){
-        return self::precioPizza;
+        return $this->precio;
     }
 }
 
