@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/../model/Pizza.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +13,7 @@
     <h1>Pizzas</h1>
     <ul>
         <?php foreach ($productos as $producto): ?>
-            <li><?= $producto->nombre_producto ?></li>
+            <li><?= $producto->getNombreProducto() ?></li>
             <?php endforeach; ?>
     </ul>
 

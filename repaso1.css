@@ -1,0 +1,40 @@
+body{
+    width: 1440px;
+    background-color:bisque;
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header{
+    background-color: darkkhaki;
+    text-align: center;
+}
+
+.section1{
+    display: inline-block;
+    width: 50%; 
+    padding: 20px;
+    justify-content: left;
+    background-color: aquamarine;
+}
+
+.section2{
+    display: inline-block;
+    width: 50%;
+    padding: 20px;
+    justify-content: right;
+    background-color:lightblue;
+}
+
+footer{
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: green;
+    color:white;
+    text-align: center;
+}
+footer p{
+    line-height: 70px; 
+}

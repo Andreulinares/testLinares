@@ -8,7 +8,7 @@ class productoController{
         $categoria = 'pizza';
 
         $productos = ProductoDAO::getAllProducts($categoria);
-        include('../views/productos.php');
+        require __DIR__ . '/../views/productos.php';
 
     }
 

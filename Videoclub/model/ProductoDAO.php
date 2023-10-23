@@ -2,7 +2,7 @@
 
 require __DIR__ . '/../config/database.php';
 
-require 'Pizza.php';
+require_once 'Pizza.php';
 require 'Bebida.php';
 
 class ProductoDAO{
@@ -12,7 +12,12 @@ class ProductoDAO{
 
         if ($result = $con->query("SELECT * FROM productos WHERE categoria = '$categoria' ")){
 
-            while($producto = $result->fetch_object('Pizza')){
+            while ($row = $result->fetch_object()){
+                if ($categoria === 'pizza'){
+                    $producto = new Pizza($row->producto_id, $row->nombre_producto, $row->descripcion, $row->categoria, $row->precio);
+                }else if($categoria === 'bebida'){
+                    $producto = new Bebida($row->producto_id, $row->nombre_producto, $row->descripcion, $row->categoria, $row->precio);
+                }
                 $productos[] = $producto;
             }
         }
