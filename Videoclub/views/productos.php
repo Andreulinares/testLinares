@@ -13,7 +13,7 @@ require_once __DIR__ . '/../model/Pizza.php';
     <h1>Pizzas</h1>
     <ul>
         <?php foreach ($productos as $producto): ?>
-            <li><?= $producto->getNombreProducto() ?></li>
+            <li><?= $producto->getNombre_producto() ?></li>
             <?php endforeach; ?>
     </ul>
 
