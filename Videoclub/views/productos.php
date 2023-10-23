@@ -10,12 +10,18 @@ require_once __DIR__ . '/../model/Pizza.php';
     <title>Pizzas</title>
 </head>
 <body>
-    <h1>Pizzas</h1>
+    <h2>Pizzas</h2>
     <ul>
-        <?php foreach ($productos as $producto): ?>
-            <li><?= $producto->getNombre_producto() ?></li>
+        <?php foreach ($pizzas as $pizza): ?>
+            <li><?= $pizza->getNombre_producto() ?></li>
             <?php endforeach; ?>
     </ul>
 
+    <h2>Bebidas</h2>
+    <ul>
+        <?php foreach ($bebidas as $bebida): ?>
+            <li><?= $bebida->getNombre_producto() ?></li>
+            <?php endforeach; ?>
+    </ul>        
 </body>
 </html>
