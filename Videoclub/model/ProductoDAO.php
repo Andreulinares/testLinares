@@ -24,6 +24,21 @@ class ProductoDAO{
 
         return $productos;
     }
+
+    public static function agregarProducto($producto){
+        $con = database::connect();
+
+        $stmt = $con->prepare("INSERT INTO productos (nombre_producto, descripcion, categoria, precio) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssds", $producto->getNombre_producto(), $producto->getDescripcion(), $producto->getCategoria(), $producto->getPrecio());
+
+        if ($stmt->execute()){
+            return true;
+        }else{
+            return false;
+        }
+
+        $stmt->close();
+    }
 }
 
 ?>
