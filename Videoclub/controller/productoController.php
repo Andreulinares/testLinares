@@ -10,30 +10,32 @@ class productoController{
         $bebidas = ProductoDAO::getAllProducts('bebida');
         
         require __DIR__ . '/../views/productos.php';
+            
+    }
 
-        
+    public function compra(){
+        echo 'Pagina principal compras';
+    }
+
+    public function añadir(){
         if (isset($_POST['agregarProducto'])){
+            $almacen = $_POST['almacen'];
             $nombre = $_POST['nombre'];
             $precio = $_POST['precio'];
             $descripcion = $_POST['descripcion'];
             $categoria = $_POST['categoria'];
 
             if ($categoria === 'pizza') {
-                $nuevoProducto = new Pizza(0, $nombre, $descripcion, $precio, $categoria);
+                $nuevoProducto = new Pizza(0, $nombre, $almacen, $descripcion, $precio, $categoria);
                 ProductoDAO::agregarProducto($nuevoProducto);
             } elseif ($categoria === 'bebida') {
-                $nuevoProducto = new Bebida(0, $nombre, $descripcion, $precio, $categoria);
+                $nuevoProducto = new Bebida(0, $nombre, $almacen, $descripcion, $precio, $categoria);
                 ProductoDAO::agregarProducto($nuevoProducto);
             } else {
                 echo "Categoría de producto desconocida";
                 return;
             }
         }
-            
-    }
-
-    public function compra(){
-        echo 'Pagina principal compras';
     }
 
     public function eliminar(){
@@ -45,5 +47,16 @@ class productoController{
                 echo "Error, no se ha podido eliminar el producto";
             }
         }
+    }
+
+    public function actualizar(){
+
+    }
+
+    public function editar(){
+    
+        $producto =  ProductoDAO::getProductById($_POST['id']);
+
+        require __DIR__ . '/../views/editarProducto.php';
     }
 }

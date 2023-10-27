@@ -32,6 +32,16 @@ require_once __DIR__ . '/../model/Bebida.php';
                     <button type="submit">Eliminar</button>
                 </form>
                 </td>
+                <td>
+                <form action="index.php?action=editar" method="post">
+                    <input type="hidden" name="id" value="<?= $pizza->getProducto_id()?>">
+                    <input type="hidden" name="nombre" value="<?= $pizza->getNombre_producto()?>">
+                    <input type="hidden" name="precio" value="<?= $pizza->getPrecio()?>">
+                    <input type="hidden" name="descripcion" value="<?= $pizza->getDescripcion()?>">
+                    <input type="hidden" name="categoria" value="<?= $pizza->getCategoria()?>">
+                    <button>Modificar</button>
+                </form>
+                </td>
             </tr>
         <?php endforeach; ?>
 
@@ -47,6 +57,16 @@ require_once __DIR__ . '/../model/Bebida.php';
                     <button type="submit">Eliminar</button>
                 </form>
                 </td>
+                <td>
+                <form action="index.php?action=editar" method="post">
+                    <input type="hidden" name="id" value="<?= $bebida->getProducto_id()?>">
+                    <input type="hidden" name="nombre" value="<?= $bebida->getNombre_producto()?>">
+                    <input type="hidden" name="precio" value="<?= $bebida->getPrecio()?>">
+                    <input type="hidden" name="descripcion" value="<?= $bebida->getDescripcion()?>">
+                    <input type="hidden" name="categoria" value="<?= $bebida->getCategoria()?>">
+                    <button>Modificar</button>
+                </form> 
+                </td>
             </tr>
         <?php endforeach; ?>
     </table>
@@ -54,8 +74,10 @@ require_once __DIR__ . '/../model/Bebida.php';
     <button id="mostrarFormulario">Añadir producto</button>
 
     <div id="formulario" style="display: none;">
-            <form action="controller/productoController.php" method="POST">
+            <form action="index.php?action=añadir" method="POST">
                 <h3>Añadir producto nuevo</h3>
+                <label for="almacen">Almacen:</label>
+                <input type="number" name="almacen" required>
                 <label for="nombre">Nombre:</label>
                 <input type="text" name="nombre" required>
                 <label for="precio">Precio:</label>
