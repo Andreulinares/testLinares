@@ -39,6 +39,21 @@ class ProductoDAO{
 
         $stmt->close();
     }
+
+    public static function deleteProduct($id){
+        $con = database::connect();
+
+        $stmt = $con->prepare("DELETE FROM productos WHERE producto_id = ?");
+        $stmt->bind_param("i", $id); 
+
+        if ($stmt->execute()){
+            $stmt->close();
+            return true;
+        }else{
+            $stmt->close();
+            return false;
+        }
+    }
 }
 
 ?>
