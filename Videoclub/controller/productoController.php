@@ -50,12 +50,16 @@ class productoController{
     }
 
     public function actualizar(){
-
+        
     }
 
     public function editar(){
     
-        $producto =  ProductoDAO::getProductById($_POST['id']);
+        if ($_POST['categoria'] === 'pizza') {
+            $producto = ProductoDAO::getPizzaById($_POST['id']);
+        } elseif ($_POST['categoria'] === 'bebida') {
+            $producto = ProductoDAO::getBebidaById($_POST['id']);
+        }
 
         require __DIR__ . '/../views/editarProducto.php';
     }

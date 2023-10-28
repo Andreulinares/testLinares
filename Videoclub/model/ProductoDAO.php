@@ -14,9 +14,9 @@ class ProductoDAO{
 
             while ($row = $result->fetch_object()){
                 if ($categoria === 'pizza'){
-                    $producto = new Pizza($row->producto_id, $row->nombre_producto, $row->descripcion, $row->categoria, $row->precio);
+                    $producto = new Pizza($row->producto_id, $row->nombre_producto, $row->descripcion, $row->categoria, $row->precio, $row->almacen_id);
                 }else if($categoria === 'bebida'){
-                    $producto = new Bebida($row->producto_id, $row->nombre_producto, $row->descripcion, $row->categoria, $row->precio);
+                    $producto = new Bebida($row->producto_id, $row->nombre_producto, $row->descripcion, $row->categoria, $row->precio, $row->almacen_id);
                 }
                 $productos[] = $producto;
             }
@@ -28,8 +28,8 @@ class ProductoDAO{
     public static function agregarProducto($producto){
         $con = database::connect();
 
-        $stmt = $con->prepare("INSERT INTO productos (almacen_id, nombre_producto, descripcion, categoria, precio) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("ssds", $producto->getAlmacen_id(), $producto->getNombre_producto(), $producto->getDescripcion(), $producto->getCategoria(), $producto->getPrecio());
+        $stmt = $con->prepare("INSERT INTO productos (almacen_id, nombre_producto, descripcion, categoria, precio) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssdsd", $producto->getAlmacen(), $producto->getNombre_producto(), $producto->getDescripcion(), $producto->getCategoria(), $producto->getPrecio());
 
         if ($stmt->execute()){
             return true;
@@ -55,11 +55,11 @@ class ProductoDAO{
         }
     }
 
-    public static function updateProduct($id, $nombre, $descripcion, $categoria, $precio){
+    public static function updateProduct($id, $almacen, $nombre, $descripcion, $categoria, $precio){
         $con = database::connect();
 
-        $stmt = $con->prepare("UPDATE FROM productos SET nombre_producto = ?, descripcion = ?, categoria = ?, precio = ? WHERE producto_id = ?");
-        $stmt->bind_param("ssssi", $nombre, $descripcion, $categoria, $precio, $id);
+        $stmt = $con->prepare("UPDATE FROM productos SET almacen = ?, nombre_producto = ?, descripcion = ?, categoria = ?, precio = ? WHERE producto_id = ?");
+        $stmt->bind_param("ssssi", $almacen, $nombre, $descripcion, $categoria, $precio, $id);
 
         $stmt->execute();
         $con->close();
@@ -83,13 +83,54 @@ class ProductoDAO{
         $con->close();
 
         if ($categoria === 'pizza') {
-            $producto = $result->fetch_object('Pizza', [$id, '', '', '', '']);
+            $producto = $result->fetch_object('Pizza', [6, '', '', '', '', '', '']);
         } elseif ($categoria === 'bebida') {
-            $producto = $result->fetch_object('Bebida', [$id, '', '', '', '']);
+            $producto = $result->fetch_object('Bebida', [6, '', '', '', '', '', '']);
         }
 
         return $producto;
     }
+
+    public static function getPizzaById($id){
+        $con = database::connect();
+    
+        $stmt = $con->prepare("SELECT * FROM productos WHERE producto_id = ? AND categoria = 'pizza'");
+        $stmt->bind_param("i", $id);
+    
+        if ($stmt->execute()){
+            $result = $stmt->get_result();
+            $con->close();
+    
+            if ($result->num_rows == 1) {
+                $row = $result->fetch_object();
+                return new Pizza($row->producto_id, $row->almacen_id, $row->nombre_producto, $row->descripcion, $row->categoria, $row->precio);
+            } else {
+                
+                return null;
+            }
+        }
+    }
+    
+    public static function getBebidaById($id){
+        $con = database::connect();
+    
+        $stmt = $con->prepare("SELECT * FROM productos WHERE producto_id = ? AND categoria = 'bebida'");
+        $stmt->bind_param("i", $id);
+    
+        if ($stmt->execute()){
+            $result = $stmt->get_result();
+            $con->close();
+    
+            if ($result->num_rows == 1) {
+                $row = $result->fetch_object();
+                return new Bebida($row->producto_id, $row->almacen_id, $row->nombre_producto, $row->descripcion, $row->categoria, $row->precio);
+            } else {
+                
+                return null;
+            }
+        }
+    }
+    
 }
 
 ?>

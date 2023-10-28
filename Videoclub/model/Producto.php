@@ -7,14 +7,16 @@ abstract class Producto{
     protected $descripcion;
     protected $categoria;
     protected $precio;
+    protected $almacen;
 
-    public function __construct($producto_id, $nombre_producto, $descripcion, $categoria, $precio)
+    public function __construct($producto_id, $nombre_producto, $descripcion, $categoria, $precio, $almacen)
     {
         $this->producto_id = $producto_id;
         $this->nombre_producto = $nombre_producto;
         $this->descripcion = $descripcion;
         $this->categoria = $categoria;
         $this->precio = $precio;
+        $this->almacen = $almacen;
     }
 
     public abstract function calculaPrecioTotal($numProducto);
@@ -116,6 +118,26 @@ abstract class Producto{
     public function setPrecio($precio)
     {
         $this->precio = $precio;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of almacen
+     */ 
+    public function getAlmacen()
+    {
+        return $this->almacen;
+    }
+
+    /**
+     * Set the value of almacen
+     *
+     * @return  self
+     */ 
+    public function setAlmacen($almacen)
+    {
+        $this->almacen = $almacen;
 
         return $this;
     }
