@@ -35,6 +35,7 @@ require_once __DIR__ . '/../model/Bebida.php';
                 <td>
                 <form action="index.php?action=editar" method="post">
                     <input type="hidden" name="id" value="<?= $pizza->getProducto_id()?>">
+                    <input type="hidden" name="almacen" value="<?= $pizza->getAlmacen()?>">
                     <input type="hidden" name="nombre" value="<?= $pizza->getNombre_producto()?>">
                     <input type="hidden" name="precio" value="<?= $pizza->getPrecio()?>">
                     <input type="hidden" name="descripcion" value="<?= $pizza->getDescripcion()?>">
@@ -60,6 +61,7 @@ require_once __DIR__ . '/../model/Bebida.php';
                 <td>
                 <form action="index.php?action=editar" method="post">
                     <input type="hidden" name="id" value="<?= $bebida->getProducto_id()?>">
+                    <input type="hidden" name="almacen" value="<?= $bebida->getAlmacen()?>">
                     <input type="hidden" name="nombre" value="<?= $bebida->getNombre_producto()?>">
                     <input type="hidden" name="precio" value="<?= $bebida->getPrecio()?>">
                     <input type="hidden" name="descripcion" value="<?= $bebida->getDescripcion()?>">
