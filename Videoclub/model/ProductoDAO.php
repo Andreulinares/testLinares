@@ -58,8 +58,8 @@ class ProductoDAO{
     public static function updateProduct($id, $almacen, $nombre, $descripcion, $categoria, $precio){
         $con = database::connect();
 
-        $stmt = $con->prepare("UPDATE FROM productos SET almacen = ?, nombre_producto = ?, descripcion = ?, categoria = ?, precio = ? WHERE producto_id = ?");
-        $stmt->bind_param("ssssi", $almacen, $nombre, $descripcion, $categoria, $precio, $id);
+        $stmt = $con->prepare("UPDATE productos SET almacen_id = ?, nombre_producto = ?, descripcion = ?, precio = ?, categoria = ? WHERE producto_id = ?");
+        $stmt->bind_param("issdsi", $almacen, $nombre, $descripcion, $precio, $categoria, $id);
 
         $stmt->execute();
         $con->close();

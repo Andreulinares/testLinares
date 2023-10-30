@@ -9,7 +9,7 @@ abstract class Producto{
     protected $precio;
     protected $almacen;
 
-    public function __construct($producto_id, $nombre_producto, $descripcion, $categoria, $precio, $almacen)
+    public function __construct($almacen, $producto_id, $nombre_producto, $descripcion, $categoria, $precio)
     {
         $this->producto_id = $producto_id;
         $this->nombre_producto = $nombre_producto;

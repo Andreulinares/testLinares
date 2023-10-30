@@ -51,7 +51,7 @@ class productoController{
 
     public function actualizar(){
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Recoge los datos del formulario
+            
             $id = $_POST['id'];
             $almacen = $_POST['almacen'];
             $nombre = $_POST['nombre'];
@@ -59,17 +59,16 @@ class productoController{
             $categoria = $_POST['categoria'];
             $precio = $_POST['precio'];
     
-            // Puedes realizar validaciones aquí si es necesario
     
-            // Actualiza el producto en la base de datos
+            
             $result = ProductoDAO::updateProduct($id, $almacen, $nombre, $descripcion, $categoria, $precio);
     
             if ($result) {
-                // Redirige a la página de éxito o a la lista de productos
+                
                 header("Location: index.php?action=index");
                 exit;
             } else {
-                // Maneja el caso en que la actualización falle
+                
                 echo "Error al actualizar el producto.";
             }
         }
