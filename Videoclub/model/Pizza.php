@@ -4,9 +4,9 @@ include_once 'Producto.php';
 
 class Pizza extends Producto{
 
-    public function __construct($almacen, $producto_id, $nombre_producto, $descripcion, $categoria, $precio)
+    public function __construct($producto_id, $almacen_id, $nombre_producto, $descripcion, $precio, $categoria)
     {
-        parent::__construct($almacen, $producto_id, $nombre_producto, $descripcion, $categoria, $precio);
+        parent::__construct($producto_id, $almacen_id, $nombre_producto, $descripcion, $precio, $categoria);
     }
 
     public function calculaPrecioTotal($numProducto){

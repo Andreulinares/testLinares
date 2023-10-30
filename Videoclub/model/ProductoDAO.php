@@ -14,9 +14,9 @@ class ProductoDAO{
 
             while ($row = $result->fetch_object()){
                 if ($categoria === 'pizza'){
-                    $producto = new Pizza($row->producto_id, $row->nombre_producto, $row->descripcion, $row->categoria, $row->precio, $row->almacen_id);
+                    $producto = new Pizza($row->producto_id, $row->almacen_id, $row->nombre_producto, $row->descripcion, $row->precio, $row->categoria);
                 }else if($categoria === 'bebida'){
-                    $producto = new Bebida($row->producto_id, $row->nombre_producto, $row->descripcion, $row->categoria, $row->precio, $row->almacen_id);
+                    $producto = new Bebida($row->producto_id, $row->almacen_id, $row->nombre_producto, $row->descripcion, $row->precio, $row->categoria);
                 }
                 $productos[] = $producto;
             }
@@ -55,11 +55,11 @@ class ProductoDAO{
         }
     }
 
-    public static function updateProduct($id, $almacen, $nombre, $descripcion, $categoria, $precio){
+    public static function updateProduct($id, $nombre, $descripcion, $categoria, $precio){
         $con = database::connect();
 
-        $stmt = $con->prepare("UPDATE productos SET almacen_id = ?, nombre_producto = ?, descripcion = ?, precio = ?, categoria = ? WHERE producto_id = ?");
-        $stmt->bind_param("issdsi", $almacen, $nombre, $descripcion, $precio, $categoria, $id);
+        $stmt = $con->prepare("UPDATE productos SET nombre_producto = ?, descripcion = ?, precio = ?, categoria = ? WHERE producto_id = ?");
+        $stmt->bind_param("ssdsi", $nombre, $descripcion, $precio, $categoria, $id);
 
         $stmt->execute();
         $con->close();
@@ -103,7 +103,7 @@ class ProductoDAO{
     
             if ($result->num_rows == 1) {
                 $row = $result->fetch_object();
-                return new Pizza($row->producto_id, $row->almacen_id, $row->nombre_producto, $row->descripcion, $row->categoria, $row->precio);
+                return new Pizza($row->producto_id, $row->almacen_id, $row->nombre_producto, $row->descripcion, $row->precio, $row->categoria);
             } else {
                 
                 return null;
@@ -123,7 +123,7 @@ class ProductoDAO{
     
             if ($result->num_rows == 1) {
                 $row = $result->fetch_object();
-                return new Bebida($row->producto_id, $row->almacen_id, $row->nombre_producto, $row->descripcion, $row->categoria, $row->precio);
+                return new Bebida($row->producto_id, $row->almacen_id, $row->nombre_producto, $row->descripcion, $row->precio, $row->categoria);
             } else {
                 
                 return null;

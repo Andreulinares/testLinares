@@ -3,20 +3,20 @@
 abstract class Producto{
 
     protected $producto_id;
+    protected $almacen_id;
     protected $nombre_producto;
     protected $descripcion;
     protected $categoria;
     protected $precio;
-    protected $almacen;
 
-    public function __construct($almacen, $producto_id, $nombre_producto, $descripcion, $categoria, $precio)
+    public function __construct($producto_id, $almacen_id, $nombre_producto, $descripcion, $precio, $categoria)
     {
         $this->producto_id = $producto_id;
+        $this->almacen_id = $almacen_id;
         $this->nombre_producto = $nombre_producto;
         $this->descripcion = $descripcion;
         $this->categoria = $categoria;
         $this->precio = $precio;
-        $this->almacen = $almacen;
     }
 
     public abstract function calculaPrecioTotal($numProducto);
@@ -127,7 +127,7 @@ abstract class Producto{
      */ 
     public function getAlmacen()
     {
-        return $this->almacen;
+        return $this->almacen_id;
     }
 
     /**
@@ -135,9 +135,9 @@ abstract class Producto{
      *
      * @return  self
      */ 
-    public function setAlmacen($almacen)
+    public function setAlmacen($almacen_id)
     {
-        $this->almacen = $almacen;
+        $this->almacen_id = $almacen_id;
 
         return $this;
     }

@@ -53,7 +53,6 @@ class productoController{
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             $id = $_POST['id'];
-            $almacen = $_POST['almacen'];
             $nombre = $_POST['nombre'];
             $descripcion = $_POST['descripcion'];
             $categoria = $_POST['categoria'];
@@ -61,7 +60,7 @@ class productoController{
     
     
             
-            $result = ProductoDAO::updateProduct($id, $almacen, $nombre, $descripcion, $categoria, $precio);
+            $result = ProductoDAO::updateProduct($id, $nombre, $descripcion, $categoria, $precio);
     
             if ($result) {
                 
