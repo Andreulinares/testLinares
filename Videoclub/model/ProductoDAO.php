@@ -28,8 +28,14 @@ class ProductoDAO{
     public static function agregarProducto($producto){
         $con = database::connect();
 
-        $stmt = $con->prepare("INSERT INTO productos (almacen_id, nombre_producto, descripcion, categoria, precio) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssdsd", $producto->getAlmacen(), $producto->getNombre_producto(), $producto->getDescripcion(), $producto->getCategoria(), $producto->getPrecio());
+        $producto_id = $producto->getProducto_id();
+        $nombre_producto = $producto->getNombre_producto();
+        $descripcion = $producto->getDescripcion();
+        $categoria = $producto->getCategoria();
+        $precio = $producto->getPrecio();
+
+        $stmt = $con->prepare("INSERT INTO productos (producto_id, nombre_producto, descripcion, precio, categoria) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("issds", $producto_id, $nombre_producto, $descripcion, $precio, $categoria);
 
         if ($stmt->execute()){
             return true;

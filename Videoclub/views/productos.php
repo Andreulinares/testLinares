@@ -12,7 +12,7 @@ require_once __DIR__ . '/../model/Bebida.php';
 </head>
 <body>
 <h2>Productos FoodRus</h2>
-    <table>
+    <table border="1">
         <tr>
             <th>Nombre</th>
             <th>Precio</th>
@@ -78,8 +78,8 @@ require_once __DIR__ . '/../model/Bebida.php';
     <div id="formulario" style="display: none;">
             <form action="index.php?action=añadir" method="POST">
                 <h3>Añadir producto nuevo</h3>
-                <label for="almacen">Almacen:</label>
-                <input type="number" name="almacen" required>
+                <label for="id">ID:</label>
+                <input type="number" name="id" required>
                 <label for="nombre">Nombre:</label>
                 <input type="text" name="nombre" required>
                 <label for="precio">Precio:</label>

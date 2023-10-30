@@ -19,17 +19,17 @@ class productoController{
 
     public function añadir(){
         if (isset($_POST['agregarProducto'])){
-            $almacen = $_POST['almacen'];
+            $producto_id = $_POST['id'];
             $nombre = $_POST['nombre'];
             $precio = $_POST['precio'];
             $descripcion = $_POST['descripcion'];
             $categoria = $_POST['categoria'];
 
             if ($categoria === 'pizza') {
-                $nuevoProducto = new Pizza(0, $nombre, $almacen, $descripcion, $precio, $categoria);
+                $nuevoProducto = new Pizza($producto_id, 0, $nombre, $descripcion, $precio, $categoria);
                 ProductoDAO::agregarProducto($nuevoProducto);
             } elseif ($categoria === 'bebida') {
-                $nuevoProducto = new Bebida(0, $nombre, $almacen, $descripcion, $precio, $categoria);
+                $nuevoProducto = new Bebida($producto_id, 0, $nombre, $descripcion, $precio, $categoria);
                 ProductoDAO::agregarProducto($nuevoProducto);
             } else {
                 echo "Categoría de producto desconocida";
@@ -61,15 +61,8 @@ class productoController{
     
             
             $result = ProductoDAO::updateProduct($id, $nombre, $descripcion, $categoria, $precio);
-    
-            if ($result) {
                 
-                header("Location: index.php?action=index");
-                exit;
-            } else {
-                
-                echo "Error al actualizar el producto.";
-            }
+            header("Location: index.php?action=index");
         }
     }
 
