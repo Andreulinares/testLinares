@@ -9,11 +9,11 @@ require_once __DIR__ . '/../model/Bebida.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
-    <link rel="stylesheet" href="../bootstrap/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="">
 </head>
 <body>
 <h2>Productos FoodRus</h2>
-    <table border="1">
+    <table class="table table-bordered table-striped">
         <tr>
             <th>Nombre</th>
             <th>Precio</th>
@@ -96,7 +96,7 @@ require_once __DIR__ . '/../model/Bebida.php';
             </form>
     </div>
 
-    <script src="../bootstrap/assets/js/bootstrap.bundle.min.js">
+    <script>
         document.getElementById("mostrarFormulario").addEventListener("click", function() {
             let formulario = document.getElementById("formulario");
             if (formulario.style.display === "none") {
