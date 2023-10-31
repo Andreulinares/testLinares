@@ -9,17 +9,17 @@ require_once __DIR__ . '/../model/Bebida.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 </head>
 <body>
 <h2>Productos FoodRus</h2>
-    <table border="1">
+    <table class="table table-bordered table-striped">
         <tr>
-            <th>Nombre</th>
-            <th>Precio</th>
-            <th>Descripcion</th>
-            <th>Categoria</th>
-            <th>Acciones</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Categoria</th>
+            <th scope="col"></th>
         </tr>
         <?php foreach ($pizzas as $pizza): ?>
             <tr>
@@ -28,21 +28,25 @@ require_once __DIR__ . '/../model/Bebida.php';
                 <td><?= $pizza->getDescripcion(); ?></td>
                 <td><?= $pizza->getCategoria(); ?></td>
                 <td>
-                <form action="index.php?action=eliminar" method="post">
-                    <input type="hidden" name="producto_id" value="<?= $pizza->getProducto_id(); ?>">
-                    <button type="submit">Eliminar</button>
-                </form>
-                </td>
-                <td>
-                <form action="index.php?action=editar" method="post">
-                    <input type="hidden" name="id" value="<?= $pizza->getProducto_id()?>">
-                    <input type="hidden" name="almacen" value="<?= $pizza->getAlmacen()?>">
-                    <input type="hidden" name="nombre" value="<?= $pizza->getNombre_producto()?>">
-                    <input type="hidden" name="descripcion" value="<?= $pizza->getDescripcion()?>">
-                    <input type="hidden" name="precio" value="<?= $pizza->getPrecio()?>">
-                    <input type="hidden" name="categoria" value="<?= $pizza->getCategoria()?>">
-                    <button>Modificar</button>
-                </form>
+                    <div class="row">
+                        <div class="col">
+                            <form action="index.php?action=eliminar" method="post">
+                                <input type="hidden" name="producto_id" value="<?= $pizza->getProducto_id(); ?>">
+                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                            </form>
+                        </div>
+                        <div class="col">
+                            <form action="index.php?action=editar" method="post">
+                                <input type="hidden" name="id" value="<?= $pizza->getProducto_id()?>">
+                                <input type="hidden" name="almacen" value="<?= $pizza->getAlmacen()?>">
+                                <input type="hidden" name="nombre" value="<?= $pizza->getNombre_producto()?>">
+                                <input type="hidden" name="descripcion" value="<?= $pizza->getDescripcion()?>">
+                                <input type="hidden" name="precio" value="<?= $pizza->getPrecio()?>">
+                                <input type="hidden" name="categoria" value="<?= $pizza->getCategoria()?>">
+                                <button type="submit" class="btn btn-warning">Modificar</button>
+                            </form>
+                        </div>
+                    </div>
                 </td>
             </tr>
         <?php endforeach; ?>
@@ -54,27 +58,31 @@ require_once __DIR__ . '/../model/Bebida.php';
                 <td><?= $bebida->getDescripcion(); ?></td>
                 <td><?= $bebida->getCategoria(); ?></td>
                 <td>
-                <form action="index.php?action=eliminar" method="post">
-                    <input type="hidden" name="producto_id" value="<?= $bebida->getProducto_id(); ?>">
-                    <button type="submit">Eliminar</button>
-                </form>
-                </td>
-                <td>
-                <form action="index.php?action=editar" method="post">
-                    <input type="hidden" name="id" value="<?= $bebida->getProducto_id()?>">
-                    <input type="hidden" name="almacen" value="<?= $bebida->getAlmacen()?>">
-                    <input type="hidden" name="nombre" value="<?= $bebida->getNombre_producto()?>">
-                    <input type="hidden" name="descripcion" value="<?= $bebida->getDescripcion()?>">
-                    <input type="hidden" name="precio" value="<?= $bebida->getPrecio()?>">
-                    <input type="hidden" name="categoria" value="<?= $bebida->getCategoria()?>">
-                    <button>Modificar</button>
-                </form> 
+                    <div class="row">
+                        <div class="col">
+                            <form action="index.php?action=eliminar" method="post">
+                                <input type="hidden" name="producto_id" value="<?= $bebida->getProducto_id(); ?>">
+                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                            </form>
+                        </div>
+                        <div class="col">
+                            <form action="index.php?action=editar" method="post">
+                                <input type="hidden" name="id" value="<?= $bebida->getProducto_id()?>">
+                                <input type="hidden" name="almacen" value="<?= $bebida->getAlmacen()?>">
+                                <input type="hidden" name="nombre" value="<?= $bebida->getNombre_producto()?>">
+                                <input type="hidden" name="descripcion" value="<?= $bebida->getDescripcion()?>">
+                                <input type="hidden" name="precio" value="<?= $bebida->getPrecio()?>">
+                                <input type="hidden" name="categoria" value="<?= $bebida->getCategoria()?>">
+                                <button type="submit" class="btn btn-warning">Modificar</button>
+                            </form>
+                        </div>
+                    </div>
                 </td>
             </tr>
         <?php endforeach; ?>
     </table>
     
-    <button id="mostrarFormulario">Añadir producto</button>
+    <button id="mostrarFormulario" class="btn btn-primary">Añadir producto</button>
 
     <div id="formulario" style="display: none;">
             <form action="index.php?action=añadir" method="POST">
@@ -92,7 +100,7 @@ require_once __DIR__ . '/../model/Bebida.php';
                     <option value="pizza">Pizza</option>
                     <option value="bebida">Bebida</option>
                 </select>
-                <button type="submit" name="agregarProducto">Añadir Producto</button>
+                <button type="submit" name="agregarProducto" class="btn btn-success">Añadir Producto</button>
             </form>
     </div>
 
