@@ -79,15 +79,15 @@ require_once __DIR__ . '/../model/Bebida.php';
             <form action="index.php?action=añadir" method="POST">
                 <h3>Añadir producto nuevo</h3>
                 <label for="id">ID:</label>
-                <input type="number" name="id" required>
+                <input type="number" name="id" required><br><br>
                 <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" required>
+                <input type="text" name="nombre" required><br><br>
                 <label for="precio">Precio:</label>
-                <input type="number" name="precio" required>
+                <input type="number" name="precio" required><br><br>
                 <label for="descripcion">Descripción:</label>
-                <input type="text" name="descripcion" required>
+                <input type="text" name="descripcion" required><br><br>
                 <label for="categoria">Categoría:</label>
-                <select name="categoria" required>
+                <select name="categoria" required><br><br>
                     <option value="pizza">Pizza</option>
                     <option value="bebida">Bebida</option>
                 </select>
