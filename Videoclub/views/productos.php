@@ -96,7 +96,7 @@ require_once __DIR__ . '/../model/Bebida.php';
             </form>
     </div>
 
-    <script>
+    <script src="../bootstrap/assets/js/bootstrap.bundle.min.js">
         document.getElementById("mostrarFormulario").addEventListener("click", function() {
             let formulario = document.getElementById("formulario");
             if (formulario.style.display === "none") {
