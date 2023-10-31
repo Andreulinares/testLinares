@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC>
+<html>
+<head>
+    <title>Platilla de bootstrapp</title>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Descripció web">
+    <meta name="keywords" content="Paraules clau">
+    <meta name="author" content="Autor">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/full_estil.css" rel="stylesheet" type="text/css" media="screen">
+
+</head>
+
+<body>
+
+   <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Carta</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+   </header>
+
+<main>
+    <section>
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="assets/images/carrusel1.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="assets/images/carrusel2.png" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </section>
+
+    <section>
+        <!-- <div class="row">
+            <div class="col-12 col-lg-6 bg-secondary px-5 pt-5">
+                <p>Bloque 1</p>
+            </div>
+            <div class="col-12 col-lg-6 bg-primary px-5 pt-5">
+                <p>Bloque 2</p>
+            </div>
+            <div class="col-12 col-lg-6 bg-secondary px-5 pt-5">
+                <p>Bloque 3</p>
+            </div>
+        </div> -->
+
+        <h2>MENÚS</h2>
+
+        <div class="btn-group">
+            <div class="button-container">
+                <button type="button" class="btn btn-primary">Primary</button>
+            </div>
+            <div class="button-container">
+                <button type="button" class="btn btn-primary">Primary</button>
+            </div>
+            <div class="button-container">
+                <button type="button" class="btn btn-primary">Primary</button>
+            </div>
+        </div>
+
+    </section>
+</main>
+
+<footer>
+
+</footer>
+
+</body>
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+
+</html>

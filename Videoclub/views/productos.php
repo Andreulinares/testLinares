@@ -9,6 +9,7 @@ require_once __DIR__ . '/../model/Bebida.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
+    <link rel="stylesheet" href="../bootstrap/assets/css/bootstrap.min.css">
 </head>
 <body>
 <h2>Productos FoodRus</h2>
