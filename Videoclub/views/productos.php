@@ -13,7 +13,7 @@ require_once __DIR__ . '/../model/Bebida.php';
 </head>
 <body>
 <h2>Productos FoodRus</h2>
-    <table class="table table-bordered table-striped">
+    <table border="1">
         <tr>
             <th>Nombre</th>
             <th>Precio</th>
