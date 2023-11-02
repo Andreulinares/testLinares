@@ -44,10 +44,6 @@ h1{
     object-fit: cover;
 }
 
-.button-container{
-    
-}
-
 .btn-group{
     display: flex;
     justify-content: center;
@@ -58,4 +54,24 @@ h2{
     color: var(--bg-color3);
     text-align: center;
     margin-top: 50px;
+    margin-bottom: 50px;
+    font-family: "Arvo", sans-serif;
+}
+
+.btn-primary{
+    background-color: #004BBE;
+    height: 50px;
+    width: 110px;
+}
+.btn-primary:hover{
+    background-color: #FF973B;
+}
+
+.mx-6 {
+    margin-right: 8.25rem; 
+    margin-left: 8.25rem;  
+}
+
+.container-sec{
+    margin-top: 70px;
 }
