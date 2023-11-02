@@ -73,7 +73,7 @@ h2{
 }
 
 .container-sec{
-    margin-top: 80px;
+    margin-top: 100px;
 }
 
 .parraf{
@@ -85,4 +85,15 @@ h2{
 .parraf2{
     font-size: 14px;
     font-family: "Nunito Sans", sans-serif;
+}
+
+.ultProductos{
+    background-color: #F5F5F5;
+    padding: 30px;
+    margin-top: 65px;
+}
+
+h3{
+    text-align: center;
+    margin-bottom: 30px;
 }
