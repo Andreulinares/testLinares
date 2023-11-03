@@ -1,6 +1,6 @@
 <?php
-require __DIR__ . '/../Videoclub/config/parameters.php';
-require __DIR__ . '/../Videoclub/controller/productoController.php';
+require __DIR__ . '/../Foodrus/config/parameters.php';
+require __DIR__ . '/../Foodrus/controller/productoController.php';
 
 if (isset($_GET['controller'])){
     //Si no se pasa nada, se mostrara pagina principal de pedidos
