@@ -92,6 +92,8 @@ h2{
     background-color: #F5F5F5;
     padding: 15px;
     margin-top: 65px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 h3{
@@ -100,4 +102,38 @@ h3{
     color: var(--bg-color3);
     font-family: "Arvo", sans-serif;
     font-size: 30px;
+}
+
+.p-foot{
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 20px;
+}
+
+.margin {
+    margin-top: 20px;
+}
+
+.copyright{
+    background-color: #4373B3;
+    font-size: 14px;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.bg-custom{
+    background-color: #1450A0;
+}
+.f-a{
+    font-size: 14px;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.card-title{
+    font-size: 16px;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.card-text{
+    font-size: 19px;
+    font-family: "Arvo", sans-serif;
+    color: #1450A0;
 }
