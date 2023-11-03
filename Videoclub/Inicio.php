@@ -94,7 +94,7 @@
             </div>
         </div> -->
 
-        <h2>MENÚS</h2>
+        <h2>Menús</h2>
 
         <div class="btn-group d-flex justify-content-center">
             <div class="button-container mx-6">
@@ -111,7 +111,7 @@
     </section>
 
     <section>
-        <h2>CATEGORIAS</h2>
+        <h2>Categorias</h2>
 
         <div class="btn-group d-flex justify-content-center">
             <div class="button-container mx-6">
