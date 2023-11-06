@@ -205,8 +205,35 @@
 <footer>
 
     <div class="container-fluid margin">
-      <div class="row p-5 pb-2 bg-custom text-white">
 
+      <div class="row p-5 pb-2 bg-custom text-white">
+          <div class="col-md-2">
+              <p class="p-foot">MEDIOS DE PAGO</p>
+          </div>
+
+          <div class="col-md-2 offset-md-4">
+              <p class="p-foot">Newsletter:</p>
+              <div class="mb-2">
+                <form>
+                  <div class="input-group">
+                    <input type="text" class="custom-input" id="gmail" placeholder="Escribe tu correo">
+                  </div> 
+                </form>
+              </div>
+          </div>
+      </div>
+
+      <div class="row p-5 pb-2 bg-custom text-white">
+        <div class="col-md-3">
+            <p class="p-foot">DESCARGA NUESTRA APP</p>
+            <div class="mb-2">
+              <img src="">
+              <img src="">
+            </div>
+        </div>
+      </div>
+
+      <div class="row p-5 pb-2 bg-custom text-white">
           <div class="col-md-2">
               <p class="p-foot">AYUDA</p>
               <div class="mb-2 f-a">

@@ -137,3 +137,11 @@ h3{
     font-family: "Arvo", sans-serif;
     color: #1450A0;
 }
+
+.custom-input {
+    background-color: #FFA500; /* Cambia #FFA500 al color de fondo que desees */
+    font-size: 16px; /* Cambia 16px al tamaño de fuente deseado */
+    /* Otros estilos personalizados, como el borde, se pueden agregar aquí */
+    border: 1px solid #000; /* Ejemplo de estilo de borde */
+    border-radius: 10px; /* Ejemplo de borde redondeado */
+}
