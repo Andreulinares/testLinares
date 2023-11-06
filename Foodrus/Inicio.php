@@ -17,7 +17,7 @@
 <body>
 
    <header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg" style="background-color: #1450A0;">
         <div class="container">
           <a class="navbar-brand" href="#">Navbar</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -131,22 +131,22 @@
 
         <div class="container text-center container-sec">
           <div class="row">
-            <div class="col">
+            <div class="col-md-3">
               <img src="assets/images/punto_recogida.png" width="60" height="50">
               <p class="parraf">Punto de recogida</p>
               <p class="parraf2">Enviamos tu pedido al punto de recogida que elijas</p>
             </div>
-            <div class="col">
+            <div class="col-md-3">
               <img src="assets/images/click_and_collect.png" width="60" height="50">
               <p class="parraf">Click & Collect</p>
               <p class="parraf2">Compra online y recoge en tu tienda mas cercana</p>
             </div>
-            <div class="col">
+            <div class="col-md-3">
               <img src="assets/images/entregas3horas.png" width="60" height="50">
               <p class="parraf">Envio en 3 horas</p>
               <p class="parraf2">Creemos que lo unico por lo que tendriamos que tener prisa es por jugar</p>
             </div>
-            <div class="col">
+            <div class="col-md-3">
               <img src="assets/images/devoluciones.png" width="60" height="50">
               <p class="parraf">Devolucion gratis</p>
               <p class="parraf2">¿No te gusto lo que compraste? Sin problema</p>
@@ -209,6 +209,19 @@
       <div class="row p-5 pb-2 bg-custom text-white">
           <div class="col-md-2">
               <p class="p-foot">MEDIOS DE PAGO</p>
+              <div class="mb-2">
+                <div class="d-flex align-items-center">
+                  <div class="p-2">
+                    <img src="assets/images/visaIcon.png" class="align-middle">
+                  </div>
+                  <div class="p-2">
+                    <img src="assets/images/MastercardIcon.png" class="align-middle">
+                  </div>
+                  <div class="p-2">
+                    <img src="assets/images/paypalIcon.png" class="align-middle">
+                  </div>
+                </div>
+              </div>
           </div>
 
           <div class="col-md-2 offset-md-4">
@@ -226,9 +239,13 @@
       <div class="row p-5 pb-2 bg-custom text-white">
         <div class="col-md-3">
             <p class="p-foot">DESCARGA NUESTRA APP</p>
-            <div class="mb-2">
-              <img src="">
-              <img src="">
+            <div class="mb-2 d-flex align-items-center">
+                <div class="p-2">
+                    <img src="assets/images/google-play-es.svg" class="align-middle">
+                </div>
+                <div class="p-2">
+                    <img src="assets/images/app-store-es.svg" class="align-middle">
+                </div>
             </div>
         </div>
       </div>
