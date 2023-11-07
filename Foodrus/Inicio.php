@@ -57,29 +57,32 @@
 
 <main>
     <section>
-        <div id="carouselExampleIndicators" class="carousel slide">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="sliderbg" style="background-image: url('assets/images/carrusel1.png');">
+                </div>
             </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="assets/images/carrusel1.png" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="assets/images/carrusel2.png" class="d-block w-100" alt="...">
-              </div>
+            <div class="carousel-item">
+                <div class="sliderbg" style="background-image: url('assets/images/carrusel2.png');">
+                </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-    </section>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" ariahidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+
 
     <section>
         <!-- <div class="row">
@@ -111,19 +114,34 @@
     </section>
 
     <section>
-        <h2>Categorias</h2>
+    <h2>Categorías</h2>
 
-        <div class="btn-group d-flex justify-content-center">
-            <div class="button-container mx-6">
-                <button type="button" class="btn btn-primary"><img src="assets/images/categoria1.png" width="85", height="40"></button>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="button-container text-center">
+                    <button type="button" class="btn btn-primary btn-custom">
+                        <img src="assets/images/categoria1.png" alt="Categoría 1" width="120", height="65">
+                    </button>
+                </div>
             </div>
-            <div class="button-container mx-6">
-                <button type="button" class="btn btn-primary"><img src="assets/images/categoria2.png" width="85", height="40"></button>
+            <div class="col-4">
+                <div class="button-container text-center">
+                    <button type="button" class="btn btn-primary btn-custom">
+                        <img src="assets/images/categoria2.png" alt="Categoría 2" width="120", height="65">
+                    </button>
+                </div>
             </div>
-            <div class="button-container mx-6">
-                <button type="button" class="btn btn-primary"><img src="assets/images/categoria3.png" width="85", height="40"></button>
+            <div class="col-4">
+                <div class="button-container text-center">
+                    <button type="button" class="btn btn-primary btn-custom">
+                        <img src="assets/images/categoria3.png" alt="Categoría 3" width="120", height="65">
+                    </button>
+                </div>
             </div>
         </div>
+    </div>
+
 
     </section>
 
@@ -132,22 +150,22 @@
         <div class="container text-center container-sec">
           <div class="row">
             <div class="col-md-3 col-sm-6">
-              <img src="assets/images/punto_recogida.png" width="60" height="50">
+              <img src="assets/images/punto_recogida.png">
               <p class="parraf">Punto de recogida</p>
               <p class="parraf2">Enviamos tu pedido al punto de recogida que elijas</p>
             </div>
             <div class="col-md-3 col-sm-6">
-              <img src="assets/images/click_and_collect.png" width="60" height="50">
+              <img src="assets/images/click_and_collect.png">
               <p class="parraf">Click & Collect</p>
               <p class="parraf2">Compra online y recoge en tu tienda mas cercana</p>
             </div>
             <div class="col-md-3 col-sm-6">
-              <img src="assets/images/entregas3horas.png" width="60" height="50">
+              <img src="assets/images/entregas3horas.png">
               <p class="parraf">Envio en 3 horas</p>
               <p class="parraf2">Creemos que lo unico por lo que tendriamos que tener prisa es por jugar</p>
             </div>
             <div class="col-md-3 col-sm-6">
-              <img src="assets/images/devoluciones.png" width="60" height="50">
+              <img src="assets/images/devoluciones.png">
               <p class="parraf">Devolucion gratis</p>
               <p class="parraf2">¿No te gusto lo que compraste? Sin problema</p>
             </div>
@@ -161,7 +179,7 @@
       <div class="container">
         <div class="row">
             <div class="col">
-                <div class="card" style="width: 200px; height: 200px;">
+                <div class="card" style="width: 18 rem; height: 250px;">
                     <img src="" class="card-img-top" alt="">
                     <div class="card-body">
                         <h5 class="card-title">Pepperoni</h5>
@@ -170,7 +188,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card" style="width: 200px; height: 200px;">
+                <div class="card" style="width: 18 rem; height: 250px;">
                     <img src="" class="card-img-top" alt="">
                     <div class="card-body">
                         <h5 class="card-title">Margarita</h5>
@@ -179,7 +197,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card" style="width: 200px; height: 200px;">
+                <div class="card" style="width: 18 rem; height: 250px;">
                     <img src="" class="card-img-top" alt="">
                     <div class="card-body">
                         <h5 class="card-title">Batido platano</h5>
@@ -188,7 +206,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card" style="width: 200px; height: 200px;">
+                <div class="card" style="width: 18 rem; height: 250px;">
                     <img src="" class="card-img-top" alt="">
                     <div class="card-body">
                         <h5 class="card-title">Tropical</h5>
