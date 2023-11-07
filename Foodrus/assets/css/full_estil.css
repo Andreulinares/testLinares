@@ -39,10 +39,9 @@ h1{
 }
 
 .sliderbg{
-    min-height: 300px;
+    max-height: 300px;
     background-repeat: no-repeat;
     background-position: center;
-    min-width: 100%;
 }
 
 .btn-group{
@@ -140,4 +139,16 @@ h3{
 .btn-custom {
     width: 200px; 
     height: 85px; 
+}
+
+.b1{
+    margin-right: 70px;
+}
+.b2{
+    margin-left: 70px;
+}
+
+.b-text{
+    font-size: 16px;
+    font-family: "Nunito Sans", sans-serif;
 }

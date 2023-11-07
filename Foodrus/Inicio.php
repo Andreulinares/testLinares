@@ -63,13 +63,11 @@
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
         </div>
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="sliderbg" style="background-image: url('assets/images/carrusel1.png');">
-                </div>
+            <div class="carousel-item active sliderbg">
+              <img src="assets/images/carrusel1.png" class="d-block w-100" alt="Imagen1"/>
             </div>
-            <div class="carousel-item">
-                <div class="sliderbg" style="background-image: url('assets/images/carrusel2.png');">
-                </div>
+            <div class="carousel-item sliderbg">
+                <img src="assets/images/carrusel2.png" class="d-block w-100" alt="Imagen2"/>
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -85,30 +83,26 @@
 
 
     <section>
-        <!-- <div class="row">
-            <div class="col-12 col-lg-6 bg-secondary px-5 pt-5">
-                <p>Bloque 1</p>
-            </div>
-            <div class="col-12 col-lg-6 bg-primary px-5 pt-5">
-                <p>Bloque 2</p>
-            </div>
-            <div class="col-12 col-lg-6 bg-secondary px-5 pt-5">
-                <p>Bloque 3</p>
-            </div>
-        </div> -->
-
         <h2>Menús</h2>
 
-        <div class="btn-group d-flex justify-content-center">
-            <div class="button-container mx-6">
-                <button type="button" class="btn btn-primary">INFANTIL</button>
+        <div class="container">
+          <div class="row">
+            <div class="col-4">
+              <div class="button-container text-center">
+                <button type="button" class="btn btn-primary btn-custom b1 b-text">INFANTIL</button>
+              </div>
             </div>
-            <div class="button-container mx-6">
-                <button type="button" class="btn btn-primary">ESTANDAR</button>
+            <div class="col-4">
+              <div class="button-container text-center">
+                <button type="button" class="btn btn-primary btn-custom b-text">ESTANDAR</button>
+              </div>
             </div>
-            <div class="button-container mx-6">
-                <button type="button" class="btn btn-primary">TEMPORAL</button>
+            <div class="col-4">
+              <div class="button-container text-center">
+                <button type="button" class="btn btn-primary btn-custom b2 b-text">TEMPORAL</button>
+              </div>
             </div>
+          </div>
         </div>
 
     </section>
@@ -120,7 +114,7 @@
         <div class="row">
             <div class="col-4">
                 <div class="button-container text-center">
-                    <button type="button" class="btn btn-primary btn-custom">
+                    <button type="button" class="btn btn-primary btn-custom b1">
                         <img src="assets/images/categoria1.png" alt="Categoría 1" width="120", height="65">
                     </button>
                 </div>
@@ -134,7 +128,7 @@
             </div>
             <div class="col-4">
                 <div class="button-container text-center">
-                    <button type="button" class="btn btn-primary btn-custom">
+                    <button type="button" class="btn btn-primary btn-custom b2">
                         <img src="assets/images/categoria3.png" alt="Categoría 3" width="120", height="65">
                     </button>
                 </div>
