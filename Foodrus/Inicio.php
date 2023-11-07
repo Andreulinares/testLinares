@@ -131,22 +131,22 @@
 
         <div class="container text-center container-sec">
           <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-3 col-sm-6">
               <img src="assets/images/punto_recogida.png" width="60" height="50">
               <p class="parraf">Punto de recogida</p>
               <p class="parraf2">Enviamos tu pedido al punto de recogida que elijas</p>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 col-sm-6">
               <img src="assets/images/click_and_collect.png" width="60" height="50">
               <p class="parraf">Click & Collect</p>
               <p class="parraf2">Compra online y recoge en tu tienda mas cercana</p>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 col-sm-6">
               <img src="assets/images/entregas3horas.png" width="60" height="50">
               <p class="parraf">Envio en 3 horas</p>
               <p class="parraf2">Creemos que lo unico por lo que tendriamos que tener prisa es por jugar</p>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 col-sm-6">
               <img src="assets/images/devoluciones.png" width="60" height="50">
               <p class="parraf">Devolucion gratis</p>
               <p class="parraf2">¿No te gusto lo que compraste? Sin problema</p>
