@@ -28,7 +28,7 @@ require_once __DIR__ . '/../model/Bebida.php';
                 <td>$<?= $pizza->getPrecio(); ?></td>
                 <td><?= $pizza->getDescripcion(); ?></td>
                 <td><?= $pizza->getCategoria(); ?></td>
-                <td><img src="<?= $pizza->getImagen(); ?>" width="40" height="50"></td>
+                <td><img src="<?= $pizza->getImagen(); ?>" width="50" height="50"></td>
                 <td>
                     <div class="row">
                         <div class="col">
@@ -60,7 +60,7 @@ require_once __DIR__ . '/../model/Bebida.php';
                 <td>$<?= $bebida->getPrecio(); ?></td>
                 <td><?= $bebida->getDescripcion(); ?></td>
                 <td><?= $bebida->getCategoria(); ?></td>
-                <td><img src="<?= $bebida->getImagen(); ?>" width="40" height="50"></td>
+                <td><img src="<?= $bebida->getImagen(); ?>" width="50" height="50"></td>
                 <td>
                     <div class="row">
                         <div class="col">
@@ -97,7 +97,7 @@ require_once __DIR__ . '/../model/Bebida.php';
                 <label for="nombre">Nombre:</label>
                 <input type="text" name="nombre" required><br><br>
                 <label for="imagen">Imagen:</label>
-                <input type="file" name="imagen" accept="image/*">
+                <input type="file" name="imagen" accept="image/*"><br><br>
                 <label for="precio">Precio:</label>
                 <input type="number" name="precio" required><br><br>
                 <label for="descripcion">Descripción:</label>

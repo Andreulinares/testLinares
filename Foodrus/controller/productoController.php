@@ -25,7 +25,7 @@ class productoController{
             $descripcion = $_POST['descripcion'];
             $categoria = $_POST['categoria'];
             if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
-                $directorioDestino = '../uploads/'; 
+                $directorioDestino = __DIR__ . '/../uploads/'; 
                 $imagen = $directorioDestino . uniqid() . '_' . $_FILES['imagen']['name'];
                 
                 if(move_uploaded_file($_FILES['imagen']['tmp_name'], $imagen)){

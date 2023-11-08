@@ -84,7 +84,7 @@ class ProductoDAO{
         if (!empty($imagen['name'])) {
             $nombre_imagen = $imagen['name'];
             $ruta_temporal = $imagen['tmp_name'];
-            $directorioDestino = '../uploads/';
+            $directorioDestino = __DIR__ . '/../uploads/';
     
             $nombreUnico = uniqid() . '_' . $nombre_imagen;
             $rutaDestino = $directorioDestino . $nombreUnico;

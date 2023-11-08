@@ -149,7 +149,8 @@ abstract class Producto{
      */ 
     public function getImagen()
     {
-        return $this->imagen;
+        $rutaCompleta = '../uploads/' . $this->imagen;
+        return $rutaCompleta;
     }
 
     /**
