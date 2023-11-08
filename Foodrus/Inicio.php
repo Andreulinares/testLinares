@@ -65,6 +65,9 @@
         <div class="carousel-inner">
             <div class="carousel-item active sliderbg">
               <img src="assets/images/carrusel1.png" class="d-block w-100" alt="Imagen1"/>
+              <div class="carousel-caption">
+                <h4>Food R Us</h4>
+              </div>
             </div>
             <div class="carousel-item sliderbg">
                 <img src="assets/images/carrusel2.png" class="d-block w-100" alt="Imagen2"/>
@@ -169,7 +172,7 @@
     </section>
 
     <section class="ultProductos">
-      <h3>Ultimos productos visitados</h3>
+      <h3 class="ult-product">Ultimos productos visitados</h3>
       <div class="container">
         <div class="row">
             <div class="col">

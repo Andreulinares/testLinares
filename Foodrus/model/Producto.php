@@ -8,8 +8,9 @@ abstract class Producto{
     protected $descripcion;
     protected $categoria;
     protected $precio;
+    protected $imagen;
 
-    public function __construct($producto_id, $almacen_id, $nombre_producto, $descripcion, $precio, $categoria)
+    public function __construct($producto_id, $almacen_id, $nombre_producto, $descripcion, $precio, $categoria, $imagen)
     {
         $this->producto_id = $producto_id;
         $this->almacen_id = $almacen_id;
@@ -17,6 +18,7 @@ abstract class Producto{
         $this->descripcion = $descripcion;
         $this->categoria = $categoria;
         $this->precio = $precio;
+        $this->imagen = $imagen;
     }
 
     public abstract function calculaPrecioTotal($numProducto);
@@ -138,6 +140,26 @@ abstract class Producto{
     public function setAlmacen($almacen_id)
     {
         $this->almacen_id = $almacen_id;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of imagen
+     */ 
+    public function getImagen()
+    {
+        return $this->imagen;
+    }
+
+    /**
+     * Set the value of imagen
+     *
+     * @return  self
+     */ 
+    public function setImagen($imagen)
+    {
+        $this->imagen = $imagen;
 
         return $this;
     }
