@@ -28,38 +28,18 @@ class ProductoDAO{
     public static function agregarProducto($producto){
         $con = database::connect();
 
-        $producto_id = $producto->getProducto_id();
-        $nombre_producto = $producto->getNombre_producto();
-        $descripcion = $producto->getDescripcion();
-        $categoria = $producto->getCategoria();
-        $precio = $producto->getPrecio();
-
-        if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK){
-            $nombre_imagen = $_FILES['imagen']['name'];
-            $ruta_temporal = $_FILES['imagen']['tmp_name'];
-
-            $directorioDestino = '../uploads/';
-
-            $nombreUnico = uniqid() . '_' . $nombre_imagen;
-            $rutaDestino = $directorioDestino . $nombreUnico;
-
-            move_uploaded_file($ruta_temporal, $rutaDestino);
-        }else{
-            echo "Porfavor, seleccione una imagen para subir.";
-            return false; 
-        }    
-
-        $stmt = $con->prepare("INSERT INTO productos (producto_id, nombre_producto, descripcion, precio, categoria, imagen) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("issdss", $producto_id, $nombre_producto, $descripcion, $precio, $categoria, $nombreUnico);
-
-        if ($stmt->execute()){
+        
+        $stmt = $con->prepare("INSERT INTO productos (nombre_producto, descripcion, precio, categoria, imagen) VALUES (?, ?, ?, ?, ?)");
+        
+        
+        $stmt->bind_param("ssdss", $producto->getNombreProducto(), $producto->getDescripcion(), $producto->getPrecio(), $producto->getCategoria(), $producto->getImagen());
+    
+        if ($stmt->execute()) {
             return true;
-        }else{
-            unlink($rutaDestino);
-            echo "Error al insertar en la base de datos";
+        } else {
             return false;
         }
-
+    
         $stmt->close();
     }
 
@@ -81,30 +61,26 @@ class ProductoDAO{
     public static function updateProduct($id, $nombre, $descripcion, $categoria, $precio, $imagen){
         $con = database::connect();
     
-        if (!empty($imagen['name'])) {
-            $nombre_imagen = $imagen['name'];
-            $ruta_temporal = $imagen['tmp_name'];
+        if ($imagen['size'] > 0) {
             $directorioDestino = __DIR__ . '/../uploads/';
+            $imagenPath = $directorioDestino . uniqid() . '_' . $imagen['name'];
     
-            $nombreUnico = uniqid() . '_' . $nombre_imagen;
-            $rutaDestino = $directorioDestino . $nombreUnico;
-    
-            if (move_uploaded_file($ruta_temporal, $rutaDestino)) {
-                $stmt = $con->prepare("UPDATE productos SET nombre_producto = ?, descripcion = ?, precio = ?, categoria = ?, imagen = ? WHERE producto_id = ?");
-                $stmt->bind_param("ssdssi", $nombre, $descripcion, $precio, $categoria, $nombreUnico, $id);
-    
-                $stmt->execute();
-            } else {
-                echo "Error al mover la nueva imagen.";
-                return false;
+            if (!move_uploaded_file($imagen['tmp_name'], $imagenPath)) {
+                return false;       
             }
+            $stmt = $con->prepare("UPDATE productos SET nombre_producto = ?, descripcion = ?, precio = ?, categoria = ?, imagen = ? WHERE producto_id = ?");
+            $stmt->bind_param("ssdssi", $nombre, $descripcion, $precio, $categoria, $imagenPath, $id);
         } else {
             $stmt = $con->prepare("UPDATE productos SET nombre_producto = ?, descripcion = ?, precio = ?, categoria = ? WHERE producto_id = ?");
             $stmt->bind_param("ssdsi", $nombre, $descripcion, $precio, $categoria, $id);
-    
-            $stmt->execute();
         }
-    
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+        
+        $stmt->close();
         $con->close();
     }
     
