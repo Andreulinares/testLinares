@@ -1,5 +1,5 @@
 
-    <form action="index.php?action=actualizar" method="post">
+    <form action="index.php?action=actualizar" method="post" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?= $producto->getProducto_id()?>">
         <label for="disId">ID:</label><br>
         <input name="disId" disabled value="<?= $producto->getProducto_id()?>"><br>
@@ -13,5 +13,7 @@
         <input name="precio" value="<?= $producto->getPrecio()?>"><br>
         <label for="categoria">Categoria:</label><br>
         <input name="categoria" value="<?= $producto->getCategoria()?>"><br><br>
+        <label for="imagen">Subir imagen:</label><br>
+        <input type="file" name="imagen" accept="image/*"><br><br>
         <button type="submit" name="edit">Actualizar</button>
     </form>

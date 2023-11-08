@@ -24,15 +24,28 @@ class productoController{
             $precio = $_POST['precio'];
             $descripcion = $_POST['descripcion'];
             $categoria = $_POST['categoria'];
-
-            if ($categoria === 'pizza') {
-                $nuevoProducto = new Pizza($producto_id, 0, $nombre, $descripcion, $precio, $categoria);
-                ProductoDAO::agregarProducto($nuevoProducto);
-            } elseif ($categoria === 'bebida') {
-                $nuevoProducto = new Bebida($producto_id, 0, $nombre, $descripcion, $precio, $categoria);
-                ProductoDAO::agregarProducto($nuevoProducto);
+            if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
+                $directorioDestino = '../uploads/'; 
+                $imagen = $directorioDestino . uniqid() . '_' . $_FILES['imagen']['name'];
+                
+                if(move_uploaded_file($_FILES['imagen']['tmp_name'], $imagen)){
+                
+                    if ($categoria === 'pizza') {
+                        $nuevoProducto = new Pizza($producto_id, 0, $nombre, $descripcion, $precio, $categoria, $imagen);
+                        ProductoDAO::agregarProducto($nuevoProducto);
+                    } elseif ($categoria === 'bebida') {
+                        $nuevoProducto = new Bebida($producto_id, 0, $nombre, $descripcion, $precio, $categoria, $imagen);
+                        ProductoDAO::agregarProducto($nuevoProducto);
+                    } else {
+                        echo "Categoría de producto desconocida";
+                        return;
+                    }
+                } else {
+                    echo "Error al mover la imagen";
+                    return;
+                }
             } else {
-                echo "Categoría de producto desconocida";
+                echo "No se subio una imagen valida";
                 return;
             }
         }
@@ -57,10 +70,11 @@ class productoController{
             $descripcion = $_POST['descripcion'];
             $categoria = $_POST['categoria'];
             $precio = $_POST['precio'];
+            $imagen = $_FILES['imagen'];
     
     
             
-            $result = ProductoDAO::updateProduct($id, $nombre, $descripcion, $categoria, $precio);
+            $result = ProductoDAO::updateProduct($id, $nombre, $descripcion, $categoria, $precio, $imagen);
                 
             header("Location: index.php?action=index");
         }

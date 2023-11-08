@@ -19,6 +19,7 @@ require_once __DIR__ . '/../model/Bebida.php';
             <th scope="col">Precio</th>
             <th scope="col">Descripcion</th>
             <th scope="col">Categoria</th>
+            <th scope="col">Imagen</th>
             <th scope="col"></th>
         </tr>
         <?php foreach ($pizzas as $pizza): ?>
@@ -27,6 +28,7 @@ require_once __DIR__ . '/../model/Bebida.php';
                 <td>$<?= $pizza->getPrecio(); ?></td>
                 <td><?= $pizza->getDescripcion(); ?></td>
                 <td><?= $pizza->getCategoria(); ?></td>
+                <td><img src="<?= $pizza->getImagen(); ?>" width="40" height="50"></td>
                 <td>
                     <div class="row">
                         <div class="col">
@@ -43,6 +45,7 @@ require_once __DIR__ . '/../model/Bebida.php';
                                 <input type="hidden" name="descripcion" value="<?= $pizza->getDescripcion()?>">
                                 <input type="hidden" name="precio" value="<?= $pizza->getPrecio()?>">
                                 <input type="hidden" name="categoria" value="<?= $pizza->getCategoria()?>">
+                                <input type="hidden" name="imagen" value="<?= $pizza->getImagen()?>">
                                 <button type="submit" class="btn btn-warning">Modificar</button>
                             </form>
                         </div>
@@ -57,6 +60,7 @@ require_once __DIR__ . '/../model/Bebida.php';
                 <td>$<?= $bebida->getPrecio(); ?></td>
                 <td><?= $bebida->getDescripcion(); ?></td>
                 <td><?= $bebida->getCategoria(); ?></td>
+                <td><img src="<?= $bebida->getImagen(); ?>" width="40" height="50"></td>
                 <td>
                     <div class="row">
                         <div class="col">
@@ -73,6 +77,7 @@ require_once __DIR__ . '/../model/Bebida.php';
                                 <input type="hidden" name="descripcion" value="<?= $bebida->getDescripcion()?>">
                                 <input type="hidden" name="precio" value="<?= $bebida->getPrecio()?>">
                                 <input type="hidden" name="categoria" value="<?= $bebida->getCategoria()?>">
+                                <input type="hidden" name="imagen" value="<?= $bebida->getImagen()?>">
                                 <button type="submit" class="btn btn-warning">Modificar</button>
                             </form>
                         </div>
@@ -85,12 +90,14 @@ require_once __DIR__ . '/../model/Bebida.php';
     <button id="mostrarFormulario" class="btn btn-primary">Añadir producto</button>
 
     <div id="formulario" style="display: none;">
-            <form action="index.php?action=añadir" method="POST">
+            <form action="index.php?action=añadir" method="POST" enctype="multipart/form-data">
                 <h3>Añadir producto nuevo</h3>
                 <label for="id">ID:</label>
                 <input type="number" name="id" required><br><br>
                 <label for="nombre">Nombre:</label>
                 <input type="text" name="nombre" required><br><br>
+                <label for="imagen">Imagen:</label>
+                <input type="file" name="imagen" accept="image/*">
                 <label for="precio">Precio:</label>
                 <input type="number" name="precio" required><br><br>
                 <label for="descripcion">Descripción:</label>
