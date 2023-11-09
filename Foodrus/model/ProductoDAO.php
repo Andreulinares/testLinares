@@ -68,7 +68,7 @@ class ProductoDAO{
         $con = database::connect();
     
         if ($imagen['size'] > 0) {
-            $directorioDestino = __DIR__ . '/../uploads/';
+            $directorioDestino = __DIR__ . 'uploads/';
             $imagenPath = $directorioDestino . uniqid() . '_' . $imagen['name'];
     
             if (!move_uploaded_file($imagen['tmp_name'], $imagenPath)) {

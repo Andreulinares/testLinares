@@ -60,7 +60,7 @@ require_once __DIR__ . '/../model/Bebida.php';
                 <td>$<?= $bebida->getPrecio(); ?></td>
                 <td><?= $bebida->getDescripcion(); ?></td>
                 <td><?= $bebida->getCategoria(); ?></td>
-                <td><img src="<?= $bebida->getImagen(); ?>" width="50" height="50"></td>
+                <td><img src="uploads/<?= $bebida->getImagen(); ?>" width="50" height="50"></td>
                 <td>
                     <div class="row">
                         <div class="col">
