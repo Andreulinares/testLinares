@@ -9,8 +9,8 @@
     <meta name="author" content="Autor">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/full_estil.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/full_estil.css" rel="stylesheet" type="text/css" media="screen">
 
 </head>
 
@@ -53,5 +53,10 @@
         </div>
       </nav>
    </header>
+
+   <section>
+    <h2>CARTA</h2>
+    
+   </section>
 </body>
 </html>

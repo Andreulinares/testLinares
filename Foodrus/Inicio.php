@@ -65,9 +65,6 @@
         <div class="carousel-inner">
             <div class="carousel-item active sliderbg">
               <img src="assets/images/carrusel1.png" class="d-block w-100" alt="Imagen1"/>
-              <div class="carousel-caption">
-                <h4>Food R Us</h4>
-              </div>
             </div>
             <div class="carousel-item sliderbg">
                 <img src="assets/images/carrusel2.png" class="d-block w-100" alt="Imagen2"/>

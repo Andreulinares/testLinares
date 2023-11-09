@@ -33,34 +33,20 @@ class ProductoDAO{
         $descripcion = $producto->getDescripcion();
         $categoria = $producto->getCategoria();
         $precio = $producto->getPrecio();
-
-        if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK){
-            $nombre_imagen = $_FILES['imagen']['name'];
-            $ruta_temporal = $_FILES['imagen']['tmp_name'];
-
-            $directorioDestino = '../uploads/';
-
-            $nombreUnico = uniqid() . '_' . $nombre_imagen;
-            $rutaDestino = $directorioDestino . $nombreUnico;
-
-            move_uploaded_file($ruta_temporal, $rutaDestino);
-        }else{
-            echo "Porfavor, seleccione una imagen para subir.";
-            return false; 
-        }    
+        $imagen = $producto->getImagen();
 
         $stmt = $con->prepare("INSERT INTO productos (producto_id, nombre_producto, descripcion, precio, categoria, imagen) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("issdss", $producto_id, $nombre_producto, $descripcion, $precio, $categoria, $nombreUnico);
+        $stmt->bind_param("issdss", $producto_id, $nombre_producto, $descripcion, $precio, $categoria, $imagen);
 
-        if ($stmt->execute()){
+        if ($stmt->execute()) {
+            $stmt->close();
             return true;
-        }else{
-            unlink($rutaDestino);
-            echo "Error al insertar en la base de datos";
+        } else {
+            $stmt->close();
             return false;
         }
-
-        $stmt->close();
+        
+        $con->close();
     }
 
     public static function deleteProduct($id){
