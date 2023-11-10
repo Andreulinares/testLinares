@@ -51,7 +51,7 @@ h1{
     flex-wrap: wrap;
 }
 
-h2{
+h2-inicio{
     color: var(--bg-color3);
     text-align: center;
     margin-top: 50px;
@@ -85,6 +85,7 @@ h2{
 .parraf2{
     font-size: 14px;
     font-family: "Nunito Sans", sans-serif;
+    margin-top: 10px;
 }
 
 .ultProductos{
@@ -152,4 +153,8 @@ h2{
 .b-text{
     font-size: 16px;
     font-family: "Nunito Sans", sans-serif;
+}
+
+.t-menu{
+    margin-right: 40px;
 }

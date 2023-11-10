@@ -83,7 +83,7 @@
 
 
     <section>
-        <h2>Menús</h2>
+        <h2 class="h2-inicio">Menús</h2>
 
         <div class="container">
           <div class="row">
@@ -108,7 +108,7 @@
     </section>
 
     <section>
-    <h2>Categorías</h2>
+    <h2 class="h2-inicio">Categorías</h2>
 
     <div class="container">
         <div class="row">
@@ -143,22 +143,22 @@
 
         <div class="container text-center container-sec">
           <div class="row">
-            <div class="col-md-3 col-sm-6">
+            <div class="col-xs-12 col-sm-3">
               <img src="assets/images/punto_recogida.png">
               <p class="parraf">Punto de recogida</p>
               <p class="parraf2">Enviamos tu pedido al punto de recogida que elijas</p>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="col-xs-12 col-sm-3">
               <img src="assets/images/click_and_collect.png">
               <p class="parraf">Click & Collect</p>
               <p class="parraf2">Compra online y recoge en tu tienda mas cercana</p>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="col-xs-12 col-sm-3">
               <img src="assets/images/entregas3horas.png">
               <p class="parraf">Envio en 3 horas</p>
               <p class="parraf2">Creemos que lo unico por lo que tendriamos que tener prisa es por jugar</p>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="col-xs-12 col-sm-3">
               <img src="assets/images/devoluciones.png">
               <p class="parraf">Devolucion gratis</p>
               <p class="parraf2">¿No te gusto lo que compraste? Sin problema</p>

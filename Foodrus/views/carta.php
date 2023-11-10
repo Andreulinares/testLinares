@@ -1,3 +1,9 @@
+<?php
+require __DIR__ . '/../model/ProductoDAO.php';
+
+?>
+
+
 <!DOCTYPE html PUBLIC>
 <html>
 <head>
@@ -55,8 +61,9 @@
    </header>
 
    <section>
-    <h2>CARTA</h2>
+    <h2 class="h2-inicio">CARTA</h2>
     
+    <h2 class="t-menu">MENU INFANTIL</h2>
    </section>
 </body>
 </html>
