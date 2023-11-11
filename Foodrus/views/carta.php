@@ -16,7 +16,7 @@ require __DIR__ . '/../model/ProductoDAO.php';
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../assets/css/full_estil.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="../assets/css/carta.css" rel="stylesheet" type="text/css" media="screen">
 
 </head>
 
@@ -31,10 +31,10 @@ require __DIR__ . '/../model/ProductoDAO.php';
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                <a class="nav-link active" aria-current="page" href="Inicio.php">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="index.php">Carta</a>
+                <a class="nav-link" href="../index.php">Carta</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -61,9 +61,34 @@ require __DIR__ . '/../model/ProductoDAO.php';
    </header>
 
    <section>
-    <h2 class="h2-inicio">CARTA</h2>
+    <h2 class="h2-carta">CARTA</h2>
     
     <h2 class="t-menu">MENU INFANTIL</h2>
+
+    <div class="container">
+      <h3>PIZZAS</h3>
+      <div class="row">
+        <?php
+        $pizzas = ProductoDAO::getAllProducts('pizza'); 
+
+        foreach ($pizzas as $pizza): 
+        ?>
+        
+        <div class="col-md-4">
+          <div class="card">
+            <img src="<?= $pizza->getImagen(); ?>" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title"><?= $pizza->getNombre_producto(); ?></h5>
+              <p class="card-text"><?= $pizza->getPrecio(); ?> €</p>
+            </div>
+          </div>
+        </div>
+        <?php
+        endforeach; 
+        ?>
+      </div>
+
+    </div>
    </section>
 </body>
 </html>

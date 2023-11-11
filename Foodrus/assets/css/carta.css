@@ -1,0 +1,19 @@
+:root{
+    --bg-color: rgb(20, 80, 160 );
+}
+
+
+.h2-carta{
+    text-align: center;
+    font-family: "Arvo", sans-serif;
+    font-size: 30px;
+    color: var(--bg-color);
+}
+
+.t-menu{
+    text-align: center;
+    font-family: "Arvo", sans-serif;
+    font-size: 30px;
+    color: var(--bg-color);
+    padding: 50px;
+}

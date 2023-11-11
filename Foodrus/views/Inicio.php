@@ -9,8 +9,8 @@
     <meta name="author" content="Autor">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/full_estil.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/full_estil.css" rel="stylesheet" type="text/css" media="screen">
 
 </head>
 
@@ -29,7 +29,7 @@
                 <a class="nav-link active" aria-current="page" href="#">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="index.php">Carta</a>
+                <a class="nav-link" href="../index.php">Carta</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -64,10 +64,10 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active sliderbg">
-              <img src="assets/images/carrusel1.png" class="d-block w-100" alt="Imagen1"/>
+              <img src="../assets/images/carrusel1.png" class="d-block w-100" alt="Imagen1"/>
             </div>
             <div class="carousel-item sliderbg">
-                <img src="assets/images/carrusel2.png" class="d-block w-100" alt="Imagen2"/>
+                <img src="../assets/images/carrusel2.png" class="d-block w-100" alt="Imagen2"/>
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -115,21 +115,21 @@
             <div class="col-4">
                 <div class="button-container text-center">
                     <button type="button" class="btn btn-primary btn-custom b1">
-                        <img src="assets/images/categoria1.png" alt="Categoría 1" width="120", height="65">
+                        <img src="../assets/images/categoria1.png" alt="Categoría 1" width="120", height="65">
                     </button>
                 </div>
             </div>
             <div class="col-4">
                 <div class="button-container text-center">
                     <button type="button" class="btn btn-primary btn-custom">
-                        <img src="assets/images/categoria2.png" alt="Categoría 2" width="120", height="65">
+                        <img src="../assets/images/categoria2.png" alt="Categoría 2" width="120", height="65">
                     </button>
                 </div>
             </div>
             <div class="col-4">
                 <div class="button-container text-center">
                     <button type="button" class="btn btn-primary btn-custom b2">
-                        <img src="assets/images/categoria3.png" alt="Categoría 3" width="120", height="65">
+                        <img src="../assets/images/categoria3.png" alt="Categoría 3" width="120", height="65">
                     </button>
                 </div>
             </div>
@@ -141,25 +141,25 @@
 
     <section>
 
-        <div class="container text-center container-sec">
+        <div class=" container-fluid p-0 container text-center container-sec">
           <div class="row">
             <div class="col-xs-12 col-sm-3">
-              <img src="assets/images/punto_recogida.png">
+              <img src="../assets/images/punto_recogida.png">
               <p class="parraf">Punto de recogida</p>
               <p class="parraf2">Enviamos tu pedido al punto de recogida que elijas</p>
             </div>
             <div class="col-xs-12 col-sm-3">
-              <img src="assets/images/click_and_collect.png">
+              <img src="../assets/images/click_and_collect.png">
               <p class="parraf">Click & Collect</p>
               <p class="parraf2">Compra online y recoge en tu tienda mas cercana</p>
             </div>
             <div class="col-xs-12 col-sm-3">
-              <img src="assets/images/entregas3horas.png">
+              <img src="../assets/images/entregas3horas.png">
               <p class="parraf">Envio en 3 horas</p>
               <p class="parraf2">Creemos que lo unico por lo que tendriamos que tener prisa es por jugar</p>
             </div>
             <div class="col-xs-12 col-sm-3">
-              <img src="assets/images/devoluciones.png">
+              <img src="../assets/images/devoluciones.png">
               <p class="parraf">Devolucion gratis</p>
               <p class="parraf2">¿No te gusto lo que compraste? Sin problema</p>
             </div>
@@ -224,13 +224,13 @@
               <div class="mb-2">
                 <div class="d-flex align-items-center">
                   <div class="p-2">
-                    <img src="assets/images/visaIcon.png" class="align-middle">
+                    <img src="../assets/images/visaIcon.png" class="align-middle">
                   </div>
                   <div class="p-2">
-                    <img src="assets/images/MastercardIcon.png" class="align-middle">
+                    <img src="../assets/images/MastercardIcon.png" class="align-middle">
                   </div>
                   <div class="p-2">
-                    <img src="assets/images/paypalIcon.png" class="align-middle">
+                    <img src="../assets/images/paypalIcon.png" class="align-middle">
                   </div>
                 </div>
               </div>
@@ -253,10 +253,10 @@
             <p class="p-foot">DESCARGA NUESTRA APP</p>
             <div class="mb-2 d-flex align-items-center">
                 <div class="p-2">
-                    <img src="assets/images/google-play-es.svg" class="align-middle">
+                    <img src="../assets/images/google-play-es.svg" class="align-middle">
                 </div>
                 <div class="p-2">
-                    <img src="assets/images/app-store-es.svg" class="align-middle">
+                    <img src="../assets/images/app-store-es.svg" class="align-middle">
                 </div>
             </div>
         </div>
@@ -336,6 +336,6 @@
 
 </body>
 
-<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/bootstrap.bundle.min.js"></script>
 
 </html>
