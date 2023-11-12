@@ -90,31 +90,26 @@ class ProductoDAO{
     }
     
 
-    public static function getProductById($id){
+    public static function getProductsByIds($categoria, $ids) {
         $con = database::connect();
-
-        $stmt = $con->prepare("SELECT categoria FROM productos WHERE producto_id=?");
-        $stmt->bind_param("i", $id);
-
-        $stmt->execute();
-        $categoria=$stmt->get_result()->fetch_object()->categoria;
-
-        $stmt = $con->prepare("SELECT * FROM productos WHERE producto_id=?");
-        $stmt->bind_param("i", $id);
-
-        $stmt->execute();
-        $result=$stmt->get_result();
-
-        $con->close();
-
-        if ($categoria === 'pizza') {
-            $producto = $result->fetch_object('Pizza', [6, '', '', '', '', '', '']);
-        } elseif ($categoria === 'bebida') {
-            $producto = $result->fetch_object('Bebida', [6, '', '', '', '', '', '']);
+        $productos = array();
+    
+        $ids = implode(',', array_map('intval', $ids));
+    
+        if ($result = $con->query("SELECT * FROM productos WHERE categoria = '$categoria' AND producto_id IN ($ids)")) {
+    
+            while ($row = $result->fetch_object()) {
+                if ($categoria === 'pizza') {
+                    $producto = new Pizza($row->producto_id, $row->almacen_id, $row->nombre_producto, $row->descripcion, $row->precio, $row->categoria, $row->imagen);
+                } else if ($categoria === 'bebida') {
+                    $producto = new Bebida($row->producto_id, $row->almacen_id, $row->nombre_producto, $row->descripcion, $row->precio, $row->categoria, $row->imagen);
+                }
+                $productos[] = $producto;
+            }
         }
-
-        return $producto;
-    }
+    
+        return $productos;
+    }  
 
     public static function getPizzaById($id){
         $con = database::connect();

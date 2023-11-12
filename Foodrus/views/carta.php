@@ -24,7 +24,7 @@ require __DIR__ . '/../model/ProductoDAO.php';
 <header>
     <nav class="navbar navbar-expand-lg" style="background-color: #1450A0;">
         <div class="container">
-          <a class="navbar-brand" href="#">Navbar</a>
+          <a class="navbar-brand" style="color: white;" href="#">Navbar</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -58,18 +58,19 @@ require __DIR__ . '/../model/ProductoDAO.php';
           </div>
         </div>
       </nav>
-   </header>
+  </header>
 
-   <section>
+  <section>
     <h2 class="h2-carta">CARTA</h2>
     
     <h2 class="t-menu">MENU INFANTIL</h2>
 
     <div class="container">
-      <h3>PIZZAS</h3>
+      <h3 class="mini">MINI PIZZAS</h3>
       <div class="row">
         <?php
-        $pizzas = ProductoDAO::getAllProducts('pizza'); 
+        $pizzasIds = [10, 9, 11, 2, 12, 3];
+        $pizzas = ProductoDAO::getProductsByIds('pizza', $pizzasIds);
 
         foreach ($pizzas as $pizza): 
         ?>
@@ -89,6 +90,10 @@ require __DIR__ . '/../model/ProductoDAO.php';
       </div>
 
     </div>
-   </section>
+
+    <div class="container">
+      <h3 class="mini">BEBIDAS</h3>
+    </div>
+  </section>
 </body>
 </html>
