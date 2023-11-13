@@ -11,12 +11,16 @@
     --bg-color4: rgb(20, 80, 160);
 }
 
+body{
+    background-color: #F5F5F5;
+}
 
 .h2-carta{
     text-align: center;
     font-family: "Arvo", sans-serif;
     font-size: 30px;
     color: var(--bg-color4);
+    margin-top: 30px;
 }
 
 .t-menu{
@@ -27,14 +31,29 @@
     padding: 50px;
 }
 
-.mini-pizzas {
-    font-family: "Nunito Sans", sans-serif;
-    color: var(--bg-color4);
-    font-size: 20px; 
-}
-
-.bebidas {
+.container .subtitulo {
     font-family: "Nunito Sans", sans-serif;
     color: var(--bg-color4);
     font-size: 20px;
+}
+
+.card-title{
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 16px;
+}
+
+.card-text{
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 16px;
+    color: var(--bg-color4);
+}
+
+.card{
+    width: 209px;
+    height: 367px;
+}
+
+.card-container{
+    margin-bottom: 40px;
+    margin-top: 30px;
 }
