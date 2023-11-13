@@ -1,5 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* FONTS */
+@font-face {
+    font-family: "BlantickScript";
+    src: url(../fonts/BlantickScript.ttf);
+}
+
 :root{
-    --bg-color: rgb(20, 80, 160 );
+    --bg-color4: rgb(20, 80, 160);
 }
 
 
@@ -7,19 +16,25 @@
     text-align: center;
     font-family: "Arvo", sans-serif;
     font-size: 30px;
-    color: var(--bg-color);
+    color: var(--bg-color4);
 }
 
 .t-menu{
     text-align: center;
     font-family: "Arvo", sans-serif;
     font-size: 30px;
-    color: var(--bg-color);
+    color: var(--bg-color4);
     padding: 50px;
 }
 
-.mini{
+.mini-pizzas {
     font-family: "Nunito Sans", sans-serif;
-    color: var(--bg-color);
+    color: var(--bg-color4);
+    font-size: 20px; 
+}
+
+.bebidas {
+    font-family: "Nunito Sans", sans-serif;
+    color: var(--bg-color4);
     font-size: 20px;
 }

@@ -66,7 +66,7 @@ require __DIR__ . '/../model/ProductoDAO.php';
     <h2 class="t-menu">MENU INFANTIL</h2>
 
     <div class="container">
-      <h3 class="mini">MINI PIZZAS</h3>
+      <h3 class="mini-pizzas">MINI PIZZAS</h3>
       <div class="row">
         <?php
         $pizzasIds = [10, 9, 11, 2, 12, 3];
@@ -88,11 +88,28 @@ require __DIR__ . '/../model/ProductoDAO.php';
         endforeach; 
         ?>
       </div>
+      <h3 class="bebidas">BEBIDAS</h3>
+      <div class="row">
+        <?php
+        $bebidasIds = [4, 6, 8, 20, 21, 22];
+        $bebidas = ProductoDAO::getProductsByIds('bebida', $bebidasIds);
 
-    </div>
+        foreach ($bebidas as $bebida):
+        ?>
 
-    <div class="container">
-      <h3 class="mini">BEBIDAS</h3>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="<?= $bebida->getImagen(); ?>" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title"><?= $bebida->getNombre_producto(); ?></h5>
+              <p class="card-text"><?= $bebida->getPrecio(); ?> €</p>
+            </div>
+          </div>
+        </div>
+        <?php
+        endforeach;
+        ?>
+      </div>
     </div>
   </section>
 </body>
