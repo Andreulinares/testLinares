@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../model/Pizza.php';
 require_once __DIR__ . '/../model/Bebida.php';
+require_once __DIR__ . '/../model/Postre.php';
 ?>
 
 <!DOCTYPE html>
@@ -85,6 +86,38 @@ require_once __DIR__ . '/../model/Bebida.php';
                 </td>
             </tr>
         <?php endforeach; ?>
+
+        <?php foreach ($postres as $postre): ?>
+            <tr>
+                <td><?= $postre->getNombre_producto(); ?></td>
+                <td>$<?= $postre->getPrecio(); ?></td>
+                <td><?= $postre->getDescripcion(); ?></td>
+                <td><?= $postre->getCategoria(); ?></td> 
+                <td><img src="<?= $postre->getImagen(); ?>" width="50" height="50"></td>
+                <td>
+                    <div class="row">
+                        <div class="col">
+                            <form action="index.php?action=eliminar" method="post">
+                                <input type="hidden" name="producto_id" value="<?= $postre->getProducto_id(); ?>">
+                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                            </form>
+                        </div>
+                        <div class="col">
+                            <form action="index.php?action=editar" method="post">
+                                <input type="hidden" name="id" value="<?= $postre->getProducto_id()?>">
+                                <input type="hidden" name="almacen" value="<?= $postre->getAlmacen()?>">
+                                <input type="hidden" name="nombre" value="<?= $postre->getNombre_producto()?>">
+                                <input type="hidden" name="descripcion" value="<?= $postre->getDescripcion()?>">
+                                <input type="hidden" name="precio" value="<?= $postre->getPrecio()?>">
+                                <input type="hidden" name="categoria" value="<?= $postre->getCategoria()?>">
+                                <input type="hidden" name="imagen" value="<?= $postre->getImagen()?>">
+                                <button type="submit" class="btn btn-warning">Modificar</button>
+                            </form>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        <?php endforeach; ?>
     </table>
     
     <button id="mostrarFormulario" class="btn btn-primary">Añadir producto</button>
@@ -106,6 +139,7 @@ require_once __DIR__ . '/../model/Bebida.php';
                 <select name="categoria" required><br><br>
                     <option value="pizza">Pizza</option>
                     <option value="bebida">Bebida</option>
+                    <option value="postre">Postre</option>
                 </select>
                 <button type="submit" name="agregarProducto" class="btn btn-success">Añadir Producto</button>
             </form>

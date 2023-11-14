@@ -8,6 +8,7 @@ class productoController{
 
         $pizzas = ProductoDAO::getAllProducts('pizza');
         $bebidas = ProductoDAO::getAllProducts('bebida');
+        $postres = ProductoDAO::getAllProducts('postre');
         
         require __DIR__ . '/../views/productos.php';
             
@@ -35,6 +36,9 @@ class productoController{
                         ProductoDAO::agregarProducto($nuevoProducto);
                     } elseif ($categoria === 'bebida') {
                         $nuevoProducto = new Bebida($producto_id, 0, $nombre, $descripcion, $precio, $categoria, $imagen);
+                        ProductoDAO::agregarProducto($nuevoProducto);
+                    } elseif ($categoria === 'postre') {
+                        $nuevoProducto = new Postre($producto_id, 0, $nombre, $descripcion, $precio, $categoria, $imagen);
                         ProductoDAO::agregarProducto($nuevoProducto);
                     } else {
                         echo "Categoría de producto desconocida";
@@ -88,6 +92,8 @@ class productoController{
             $producto = ProductoDAO::getPizzaById($_POST['id']);
         } elseif ($categoria === 'bebida') {
             $producto = ProductoDAO::getBebidaById($_POST['id']);
+        } elseif ($categoria === 'postre') {
+            $producto = ProductoDAO::getPostreById($_POST['id']);
         }
 
         require __DIR__ . '/../views/editarProducto.php';

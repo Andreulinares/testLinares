@@ -4,6 +4,7 @@ require __DIR__ . '/../config/database.php';
 
 require_once 'Pizza.php';
 require 'Bebida.php';
+require 'Postre.php';
 
 class ProductoDAO{
     public static function getAllProducts($categoria){
@@ -17,6 +18,8 @@ class ProductoDAO{
                     $producto = new Pizza($row->producto_id, $row->almacen_id, $row->nombre_producto, $row->descripcion, $row->precio, $row->categoria, $row->imagen);
                 }else if($categoria === 'bebida'){
                     $producto = new Bebida($row->producto_id, $row->almacen_id, $row->nombre_producto, $row->descripcion, $row->precio, $row->categoria, $row->imagen);
+                }else if($categoria === 'postre'){
+                    $producto = new Postre($row->producto_id, $row->almacen_id, $row->nombre_producto, $row->descripcion, $row->precio, $row->categoria, $row->imagen);
                 }
                 $productos[] = $producto;
             }
@@ -103,6 +106,8 @@ class ProductoDAO{
                     $producto = new Pizza($row->producto_id, $row->almacen_id, $row->nombre_producto, $row->descripcion, $row->precio, $row->categoria, $row->imagen);
                 } else if ($categoria === 'bebida') {
                     $producto = new Bebida($row->producto_id, $row->almacen_id, $row->nombre_producto, $row->descripcion, $row->precio, $row->categoria, $row->imagen);
+                } else if ($categoria === 'postre') {
+                    $producto = new Postre($row->producto_id, $row->almacen_id, $row->nombre_producto, $row->descripcion, $row->precio, $row->categoria, $row->imagen);
                 }
                 $productos[] = $producto;
             }
@@ -144,6 +149,26 @@ class ProductoDAO{
             if ($result->num_rows == 1) {
                 $row = $result->fetch_object();
                 return new Bebida($row->producto_id, $row->almacen_id, $row->nombre_producto, $row->descripcion, $row->precio, $row->categoria, $row->imagen);
+            } else {
+                
+                return null;
+            }
+        }
+    }
+
+    public static function getPostreById($id){
+        $con = database::connect();
+    
+        $stmt = $con->prepare("SELECT * FROM productos WHERE producto_id = ? AND categoria = 'postre'");
+        $stmt->bind_param("i", $id);
+    
+        if ($stmt->execute()){
+            $result = $stmt->get_result();
+            $con->close();
+    
+            if ($result->num_rows == 1) {
+                $row = $result->fetch_object();
+                return new Postre($row->producto_id, $row->almacen_id, $row->nombre_producto, $row->descripcion, $row->precio, $row->categoria, $row->imagen);
             } else {
                 
                 return null;

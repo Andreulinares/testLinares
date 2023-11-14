@@ -60,4 +60,15 @@ body{
 
 .carro{
     float: right;
+    width: 30px;
+    height: 37px;
+}
+
+.carro-color{
+    fill: #d3d3d3;
+    stroke: none;
+}
+
+.carro:hover .carro-color{
+    fill: #00AE42;
 }
