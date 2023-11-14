@@ -82,7 +82,7 @@ require __DIR__ . '/../model/ProductoDAO.php';
               <h5 class="card-title"><?= $pizza->getNombre_producto(); ?></h5>
               <p class="card-text">
                 <?= $pizza->getPrecio(); ?> €
-                <img src="../img/cart3.svg" alt="carro" class="carro">
+                <img src="../img/cart3.svg" class="carro">
               </p>
             </div>
           </div>
@@ -107,7 +107,7 @@ require __DIR__ . '/../model/ProductoDAO.php';
               <h5 class="card-title"><?= $bebida->getNombre_producto(); ?></h5>
               <p class="card-text">
                 <?= $bebida->getPrecio(); ?> €
-                <img src="../img/cart3.svg" alt="carro" class="carro">
+                <img src="../img/cart3.svg" class="carro">
               </p>
             </div>
           </div>
