@@ -1,6 +1,12 @@
 <?php
 require __DIR__ . '/../model/ProductoDAO.php';
 
+//$totalProductos = count($pizza, $bebidas, $postres);
+$pizzas = ProductoDAO::getAllProducts('pizza');
+$bebidas = ProductoDAO::getAllProducts('bebida');
+$postres = ProductoDAO::getAllProducts('postre');
+
+$totalProductos = count($pizzas) + count($bebidas) + count($postres);
 ?>
 
 
@@ -67,6 +73,9 @@ require __DIR__ . '/../model/ProductoDAO.php';
 
     <div class="container">
       <h3 class="subtitulo">MINI PIZZAS</h3>
+      <div class="productos-totales">
+        <?= $totalProductos ?> productos encontrados
+      </div>
       <div class="row">
         <?php
         $pizzasIds = [10, 9, 11, 2, 12, 3];
