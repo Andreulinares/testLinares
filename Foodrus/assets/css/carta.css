@@ -42,19 +42,24 @@ body{
 .card-title{
     font-family: "Nunito Sans", sans-serif;
     font-size: 16px;
+    margin-top: 160px;
 }
 
 .card-text{
     font-family: "Nunito Sans", sans-serif;
     font-size: 16px;
     color: var(--bg-color4);
-    margin-top: 90px;
+}
+
+.card-body{
+    margin-top: 110px;
 }
 
 .card{
     width: 209px;
     height: 367px;
     margin-left: 170px;
+    position: relative;
 }
 
 .card-container{
@@ -63,9 +68,10 @@ body{
 }
 
 .carro{
-    float: right;
     width: 25px;
     height: 37px;
+    position: absolute;
+    right: 10px;
 }
 
 .carro-color{
@@ -80,4 +86,12 @@ body{
 .img-product{
     width: 205px;
     height: 186px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.precio{
+    position: absolute;
+    margin-top: 5px;
 }
