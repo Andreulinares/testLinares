@@ -83,13 +83,17 @@ $totalProductos = count($pizzas) + count($bebidas) + count($postres);
         $pizzasIds = [10, 9, 11, 2, 12, 3];
         $pizzas = ProductoDAO::getProductsByIds('pizza', $pizzasIds);
 
-        foreach ($pizzas as $pizza): 
+        foreach ($pizzas as $index => $pizza):
+            $esNovedad = ($index % 2 == 1); 
         ?>
         
         <div class="col-md-4 card-container">
           <div class="card">
           <img src="../<?= $pizza->getImagen(); ?>" class="card-img-top img-fluid img-product">
             <div class="card-body">
+              <?php if ($esNovedad) : ?>
+                <p class="novedad">Novedad</p>
+              <?php endif; ?>
               <h5 class="card-title titulo-producto"><?= $pizza->getNombre_producto(); ?></h5>
               <p class="card-text">
                 <span class="precio"><?= $pizza->getPrecio(); ?> €</span>
@@ -110,13 +114,17 @@ $totalProductos = count($pizzas) + count($bebidas) + count($postres);
         $bebidasIds = [4, 6, 8, 20, 21, 22];
         $bebidas = ProductoDAO::getProductsByIds('bebida', $bebidasIds);
 
-        foreach ($bebidas as $bebida):
+        foreach ($bebidas as $index => $bebida):
+            $esNovedad = ($index % 2 == 1);
         ?>
 
         <div class="col-md-4 card-container">
           <div class="card">
             <img src="../<?= $bebida->getImagen(); ?>" class="card-img-top img-fluid img-product">
             <div class="card-body">
+              <?php if ($esNovedad) : ?>
+                <p class="novedad">Novedad</p>
+              <?php endif; ?>
               <h5 class="card-title titulo-producto"><?= $bebida->getNombre_producto(); ?></h5>
               <p class="card-text">
                 <span class="precio"><?= $bebida->getPrecio(); ?> €</span>
@@ -144,6 +152,7 @@ $totalProductos = count($pizzas) + count($bebidas) + count($postres);
           <div class="card">
             <img src="../<?= $postre->getImagen(); ?>" class="card-img-top img-fluid img-product">
             <div class="card-body">
+              <p class="novedad">Novedad</p>
               <h5 class="card-title titulo-producto"><?= $postre->getNombre_producto(); ?></h5>
               <p class="card-text">
                 <span class="precio"><?= $postre->getPrecio(); ?> €</span>
