@@ -85,9 +85,10 @@ $totalProductos = count($pizzas) + count($bebidas) + count($postres);
 
         foreach ($pizzas as $index => $pizza):
             $esNovedad = ($index % 2 == 1); 
+            $specialClass = $esNovedad ? 'special-card' : '';
         ?>
         
-        <div class="col-md-4 card-container">
+        <div class="col-md-4 card-container <?= $specialClass ?>">
           <div class="card">
           <img src="../<?= $pizza->getImagen(); ?>" class="card-img-top img-fluid img-product">
             <div class="card-body">
@@ -116,9 +117,10 @@ $totalProductos = count($pizzas) + count($bebidas) + count($postres);
 
         foreach ($bebidas as $index => $bebida):
             $esNovedad = ($index % 2 == 1);
+            $specialClass = $esNovedad ? 'special-card' : '';
         ?>
 
-        <div class="col-md-4 card-container">
+        <div class="col-md-4 card-container <?= $specialClass ?>">
           <div class="card">
             <img src="../<?= $bebida->getImagen(); ?>" class="card-img-top img-fluid img-product">
             <div class="card-body">
@@ -145,10 +147,10 @@ $totalProductos = count($pizzas) + count($bebidas) + count($postres);
         $postresIds = [23, 24, 25];
         $postres = ProductoDAO::getProductsByIds('postre', $postresIds);
 
-        foreach ($postres as $postre):
+        foreach ($postres as $index => $postre):
         ?>
 
-        <div class="col-md-4 card-container">
+        <div class="col-md-4 card-container special-card">
           <div class="card">
             <img src="../<?= $postre->getImagen(); ?>" class="card-img-top img-fluid img-product">
             <div class="card-body">

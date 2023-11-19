@@ -107,3 +107,12 @@ body{
     top: 250;
     color: #EB984E;
 }
+
+.special-card::after{
+    content: "";
+    display: block;
+    height: 10px;
+    background-color: #EB984E;
+    width: 209px;
+    margin-left: 170px;
+}
