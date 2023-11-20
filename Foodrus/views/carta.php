@@ -266,7 +266,7 @@ $totalProductos = count($pizzas) + count($bebidas) + count($postres);
       <div class="row">
         <?php
         $postresIds2 = [26, 27, 28];
-        $postres2 = ProductoDAO::getProductsByIds('bebida', $postresIds2);
+        $postres2 = ProductoDAO::getProductsByIds('postre', $postresIds2);
 
         foreach ($postres2 as $index => $postre2):
             $esNovedad = in_array($index, [0, 1]);

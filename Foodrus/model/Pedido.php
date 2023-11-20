@@ -2,12 +2,11 @@
 
 class Pedido{
     private $producto;
-    private $cantidad;
+    private $cantidad = 1;
 
-    public function __construct($producto, $cantidad)
+    public function __construct($producto)
     {
-        $this->producto = $producto; 
-        $this->cantidad = $cantidad;
+        $this->producto = $producto;
     }
 
         /**
@@ -36,18 +35,6 @@ class Pedido{
         public function getCantidad()
         {
                 return $this->cantidad;
-        }
-
-        /**
-         * Set the value of cantidad
-         *
-         * @return  self
-         */ 
-        public function setCantidad($cantidad)
-        {
-                $this->cantidad = $cantidad;
-
-                return $this;
         }
 }
 ?>

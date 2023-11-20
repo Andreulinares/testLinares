@@ -99,7 +99,7 @@ class productoController{
         require __DIR__ . '/../views/editarProducto.php';
     }
 
-    /* public function sel(){
+    public function sel(){
 
         session_start();
 
@@ -109,13 +109,14 @@ class productoController{
             if (isset($_POST['id'])){
                 if ($_POST['categoria'] == 'pizza'){
                     $pedido = new Pedido(ProductoDAO::getPizzaById($_POST['id']));
-                }else{
+                }else if ($_POST['categoria'] == 'bebida'){
                     $pedido = new Pedido(ProductoDAO::getBebidaById($_POST['id']));
+                }else{
+                    $pedido = new Pedido(ProductoDAO::getPostreById($_POST['id']));
                 }
 
                 array_push($_SESSION['selecciones'], $pedido);
             }
         }
-    }*/
-    //Añadir boton para seleccionar en cada producto
+    }
 }
