@@ -72,6 +72,7 @@ body{
     height: 37px;
     position: absolute;
     right: 10px;
+    bottom: 15px;
 }
 
 .carro-color{
@@ -105,7 +106,7 @@ body{
 .novedad{
     position: absolute;
     top: 250;
-    color: #EB984E;
+    color: #ea7125;
 }
 
 .special-card::after{
@@ -115,4 +116,12 @@ body{
     background-color: #ea7125;
     width: 209px;
     margin-left: 170px;
+}
+
+.carro-btn{
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
 }

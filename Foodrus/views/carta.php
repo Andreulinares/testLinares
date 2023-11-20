@@ -98,9 +98,14 @@ $totalProductos = count($pizzas) + count($bebidas) + count($postres);
               <h5 class="card-title titulo-producto"><?= $pizza->getNombre_producto(); ?></h5>
               <p class="card-text">
                 <span class="precio"><?= $pizza->getPrecio(); ?> €</span>
-                <svg class="carro" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                    <path class="carro-color" d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
-                </svg>
+                <form action="" method="post">
+                  <input type="hidden" name="producto_id" value="<?= $pizza->getProducto_id(); ?>">
+                  <button type="submit" name="añadir-carrito" class="carro-btn">
+                    <svg class="carro" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path class="carro-color" d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
+                    </svg>
+                  </button>
+                </form>
               </p>
             </div>
           </div>
@@ -130,9 +135,14 @@ $totalProductos = count($pizzas) + count($bebidas) + count($postres);
               <h5 class="card-title titulo-producto"><?= $bebida->getNombre_producto(); ?></h5>
               <p class="card-text">
                 <span class="precio"><?= $bebida->getPrecio(); ?> €</span>
-                <svg class="carro" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                    <path class="carro-color" d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
-                </svg>
+                <form action="" method="post">
+                  <input type="hidden" name="producto_id" value="<?= $bebida->getProducto_id(); ?>">
+                  <button type="submit" name="añadir-carrito" class="carro-btn">
+                    <svg class="carro" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path class="carro-color" d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
+                    </svg>
+                  </button>
+                </form>
               </p>
             </div>
           </div>
@@ -158,9 +168,129 @@ $totalProductos = count($pizzas) + count($bebidas) + count($postres);
               <h5 class="card-title titulo-producto"><?= $postre->getNombre_producto(); ?></h5>
               <p class="card-text">
                 <span class="precio"><?= $postre->getPrecio(); ?> €</span>
-                <svg class="carro" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                    <path class="carro-color" d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
-                </svg>
+                <form action="" method="post">
+                  <input type="hidden" name="producto_id" value="<?= $postre->getProducto_id(); ?>">
+                  <button type="submit" name="añadir-carrito" class="carro-btn">
+                    <svg class="carro" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path class="carro-color" d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
+                    </svg>
+                  </button>
+                </form>
+              </p>
+            </div>
+          </div>
+        </div>
+        <?php
+        endforeach;
+        ?>
+      </div>
+    </div>
+    <h2 class="t-menu">MENU ESTANDAR</h2>
+
+    <div class="container">
+      <h3 class="subtitulo">PIZZAS GRANDES</h3>
+      <div class="row">
+        <?php 
+        $pizzasIds2 = [13, 7, 5, 17, 14, 15];
+        $pizzas2 = ProductoDAO::getProductsByIds('pizza', $pizzasIds2);
+
+        foreach ($pizzas2 as $index => $pizza2):
+            $esNovedad = ($index % 2 == 1);
+            $specialClass = $esNovedad ? 'special-card' : '';
+        ?>
+
+        <div class="col-md-4 card-container <?= $specialClass ?>">
+          <div class="card">
+            <img src="../<?= $pizza2->getImagen(); ?>" class="card-img-top img-fluid img-product">
+            <div class="card-body">
+              <?php if ($esNovedad) : ?>
+                <p class="novedad">Novedad</p>
+              <?php endif; ?>
+              <h5 class="card-title titulo-producto"><?= $pizza2->getNombre_producto(); ?></h5>
+              <p class="card-text">
+                <span class="precio"><?= $pizza2->getPrecio(); ?> €</span>
+                <form action="" method="post">
+                  <input type="hidden" name="producto_id" value="<?= $pizza2->getProducto_id(); ?>">
+                  <button type="submit" name="añadir-carrito" class="carro-btn">
+                    <svg class="carro" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path class="carro-color" d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
+                    </svg>
+                  </button>
+                </form>
+              </p>
+            </div>
+          </div>
+        </div>
+        <?php
+        endforeach;
+        ?>
+      </div>
+      <h3 class="subtitulo">BEBIDAS</h3>
+      <div class="row">
+        <?php
+        $bebidasIds2 = [19, 16, 18];
+        $bebidas2 = ProductoDAO::getProductsByIds('bebida', $bebidasIds2);
+
+        foreach ($bebidas2 as $index => $bebida2):
+            $esNovedad = ($index == 0);
+            $specialClass = $esNovedad ? 'special-card' : '';
+        ?>
+
+        <div class="col-md-4 card-container <?= $specialClass ?>">
+          <div class="card">
+            <img src="../<?= $bebida2->getImagen(); ?>" class="card-img-top img-fluid img-product">
+            <div class="card-body">
+              <?php if ($esNovedad) : ?>
+                <p class="novedad">Novedad</p>
+              <?php endif; ?>
+              <h5 class="card-title titulo-producto"><?= $bebida2->getNombre_producto(); ?></h5>
+              <p class="card-text">
+                <span class="precio"><?= $bebida2->getPrecio(); ?> €</span>
+                <form action="" method="post">
+                  <input type="hidden" name="producto_id" value="<?= $bebida2->getProducto_id(); ?>">
+                  <button type="submit" name="añadir-carrito" class="carro-btn">
+                    <svg class="carro" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path class="carro-color" d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
+                    </svg>
+                  </button>
+                </form>
+              </p>
+            </div>
+          </div>
+        </div>
+        <?php
+        endforeach;
+        ?>
+      </div>
+      <h3 class="subtitulo">POSTRES</h3>
+      <div class="row">
+        <?php
+        $postresIds2 = [26, 27, 28];
+        $postres2 = ProductoDAO::getProductsByIds('bebida', $postresIds2);
+
+        foreach ($postres2 as $index => $postre2):
+            $esNovedad = in_array($index, [0, 1]);
+            $specialClass = $esNovedad ? 'special-card' : '';
+        ?>
+
+        <div class="col-md-4 card-container <?= $specialClass ?>">
+          <div class="card">
+            <img src="../<?= $postre2->getImagen(); ?>" class="card-img-top img-fluid img-product">
+            <div class="card-body">
+              <?php if ($esNovedad) : ?>
+                <p class="novedad">Novedad</p>
+              <?php endif; ?>
+              <h5 class="card-title titulo-producto"><?= $postre2->getNombre_producto(); ?></h5>
+              <p class="card-text">
+                <span class="precio"><?= $postre2->getPrecio(); ?> €</span>
+                <form action="" method="post">
+                  <input type="hidden" name="producto_id" value="<?= $postre2->getProducto_id(); ?>">
+                  <button type="submit" name="añadir-carrito" class="carro-btn">
+                    <svg class="carro" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path class="carro-color" d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
+                    </svg>
+                  </button>
+                </form>
               </p>
             </div>
           </div>
