@@ -14,6 +14,7 @@ session_start();
     <h3>Mi cesta</h3>
 
     <?php
+    $pos = 0;
     foreach ($_SESSION['selecciones'] as $pedido):
     ?>
 
@@ -28,6 +29,11 @@ session_start();
                 <p>Precio del articulo:<?= $pedido->getProducto()->getPrecio(); ?></p>
             </div>
         </div>
+
+        <form action="" method='post'>
+            <button class="bet-button w3-black w3-section" type="submit" name="Add" value=<?=$pos?>> + </button>
+            <button class="del-button w3-black w3-section" type="submit" name="Del" value=<?=$pos?>> - </button>
+        </form>
     </div>
     <?php
     endforeach;

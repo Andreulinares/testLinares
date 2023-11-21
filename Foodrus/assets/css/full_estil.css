@@ -154,3 +154,10 @@ h1{
     font-size: 16px;
     font-family: "Nunito Sans", sans-serif;
 }
+
+svg{
+    width: 40px;
+    height: 45px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+}
