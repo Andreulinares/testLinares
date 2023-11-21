@@ -15,10 +15,6 @@ class productoController{
             
     }
 
-    public function compra(){
-        echo 'Pagina principal compras';
-    }
-
     public function añadir(){
         if (isset($_POST['agregarProducto'])){
             $producto_id = $_POST['id'];
@@ -101,6 +97,7 @@ class productoController{
     }
 
     public function sel(){
+        session_start();
 
         if (isset($_POST['id']) && isset($_POST['categoria'])) {
             $id = $_POST['id'];
@@ -114,8 +111,6 @@ class productoController{
                 $pedido = new Pedido(ProductoDAO::getPostreById($id));
             }
         
-            session_start();
-        
             if (!isset($_SESSION['selecciones'])) {
                 $_SESSION['selecciones'] = array();
             }
@@ -123,5 +118,21 @@ class productoController{
             array_push($_SESSION['selecciones'], $pedido);
         }
         
+    }
+
+    public function compra(){
+        session_start();
+        if (isset($_POST['Add'])){
+            $pedido = $_SESSION['selecciones'][$_POST['Add']];
+            $pedido->setCantidad($pedido->getCantidad()+1);
+        }else if(isset($_POST['Del'])){
+            $pedido = $_SESSION['selecciones'][$_POST['Del']];
+            if ($pedido->getCantidad()==1){
+                unset($_SESSION['selecciones'][$_POST['Del']]);
+                $_SESSION['selecciones'] = array_values($_SESSION['selecciones']);
+            }else{
+                $pedido->setCantidad($pedido->getCantidad()-1);
+            }
+        }
     }
 }

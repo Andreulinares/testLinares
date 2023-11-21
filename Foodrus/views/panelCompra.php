@@ -1,5 +1,9 @@
 <?php
 require __DIR__ . '/../model/Pedido.php';
+require __DIR__ . '/../model/Pizza.php';
+require __DIR__ . '/../model/Bebida.php';
+require __DIR__ . '/../model/Postre.php';
+
 session_start();
 
 ?>
@@ -10,6 +14,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de compra</title>
+    <link href="../assets/css/carrito.css" rel="stylesheet">
 </head>
 <body>
     <h3>Mi cesta</h3>
@@ -17,6 +22,7 @@ session_start();
     <?php
     $pos = 0;
     foreach ($_SESSION['selecciones'] as $pedido):
+    //var_dump($_SESSION['selecciones']);
     ?>
 
     <div class="producto">
@@ -31,7 +37,7 @@ session_start();
             </div>
         </div>
 
-        <form action="" method='post'>
+        <form action="../index.php?action=compra" method='post'>
             <button class="bet-button w3-black w3-section" type="submit" name="Add" value=<?=$pos?>> + </button>
             <button class="del-button w3-black w3-section" type="submit" name="Del" value=<?=$pos?>> - </button>
         </form>

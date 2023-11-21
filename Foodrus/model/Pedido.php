@@ -36,5 +36,17 @@ class Pedido{
         {
                 return $this->cantidad;
         }
+
+        /**
+         * Set the value of cantidad
+         *
+         * @return  self
+         */ 
+        public function setCantidad($cantidad)
+        {
+                $this->cantidad = $cantidad;
+
+                return $this;
+        }
 }
 ?>
