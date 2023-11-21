@@ -37,7 +37,7 @@ session_start();
             </div>
         </div>
 
-        <form action="../index.php?action=compra" method='post'>
+        <form action="../index.php?action=compra" method='post' class="botones">
             <button class="bet-button w3-black w3-section" type="submit" name="Add" value=<?=$pos?>> + </button>
             <button class="del-button w3-black w3-section" type="submit" name="Del" value=<?=$pos?>> - </button>
         </form>
