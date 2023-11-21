@@ -1,6 +1,7 @@
 <?php
 //Creamos el controlador de pedidos
 require __DIR__ . '/../model/ProductoDAO.php';
+require __DIR__ . '/../model/Pedido.php';
 
 class productoController{
     
@@ -101,22 +102,26 @@ class productoController{
 
     public function sel(){
 
-        session_start();
-
-        if(!isset($_SESSION['selecciones'])){
-            $_SESSION['selecciones'] = array();
-        }else{
-            if (isset($_POST['id'])){
-                if ($_POST['categoria'] == 'pizza'){
-                    $pedido = new Pedido(ProductoDAO::getPizzaById($_POST['id']));
-                }else if ($_POST['categoria'] == 'bebida'){
-                    $pedido = new Pedido(ProductoDAO::getBebidaById($_POST['id']));
-                }else{
-                    $pedido = new Pedido(ProductoDAO::getPostreById($_POST['id']));
-                }
-
-                array_push($_SESSION['selecciones'], $pedido);
+        if (isset($_POST['id']) && isset($_POST['categoria'])) {
+            $id = $_POST['id'];
+            $categoria = $_POST['categoria'];
+        
+            if ($categoria == 'pizza') {
+                $pedido = new Pedido(ProductoDAO::getPizzaById($id));
+            } elseif ($categoria == 'bebida') {
+                $pedido = new Pedido(ProductoDAO::getBebidaById($id));
+            } else {
+                $pedido = new Pedido(ProductoDAO::getPostreById($id));
             }
+        
+            session_start();
+        
+            if (!isset($_SESSION['selecciones'])) {
+                $_SESSION['selecciones'] = array();
+            }
+        
+            array_push($_SESSION['selecciones'], $pedido);
         }
+        
     }
 }

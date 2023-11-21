@@ -125,3 +125,10 @@ body{
     margin: 0;
     cursor: pointer;
 }
+
+.carrito{
+    width: 40px;
+    height: 45px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+}

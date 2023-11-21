@@ -7,6 +7,8 @@ $bebidas = ProductoDAO::getAllProducts('bebida');
 $postres = ProductoDAO::getAllProducts('postre');
 
 $totalProductos = count($pizzas) + count($bebidas) + count($postres);
+
+session_start();
 ?>
 
 
@@ -64,6 +66,11 @@ $totalProductos = count($pizzas) + count($bebidas) + count($postres);
               <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
           </div>
+          <a href="panelCompra.php">
+            <svg class="carrito" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 42.98 49.23"><defs><style>.cls-1{fill:none;}.cls-2{clip-path:url(#clip-path);}.cls-3{fill:#fff;}</style><clipPath id="clip-path" transform="translate(0)"><rect class="cls-1" width="43.75" height="50"/></clipPath></defs><title>carritohead_w</title><g id="Capa_2" data-name="Capa 2"><g id="Capa_1-2" data-name="Capa 1"><g class="cls-2">
+              <path class="cls-3" d="M39.91,13.71a1.55,1.55,0,0,0-1.53-1.41H30.7V9.23a9.21,9.21,0,1,0-18.42,0V12.3H4.6a1.55,1.55,0,0,0-1.53,1.41L0,47.55a1.53,1.53,0,0,0,1.53,1.68H41.45a1.52,1.52,0,0,0,1.13-.5,1.54,1.54,0,0,0,.4-1.18ZM15.35,9.23a6.14,6.14,0,1,1,12.28,0V12.3H15.35ZM3.22,46.15,6,15.38h6.28v3.5a3.08,3.08,0,1,0,3.07,0v-3.5H27.63v3.5a3.08,3.08,0,1,0,3.07,0v-3.5H37l2.78,30.77Z" transform="translate(0)"/></g><path class="cls-3" d="M28,33.75l-2.55,1.76a1.24,1.24,0,0,0-.55,1.15c0,.33-.11,2.66-.11,3s-.15,1.2-1.17.3c0,0-1.7-1.48-1.95-1.71a1.35,1.35,0,0,0-1.55-.32L17.48,39s-1.6.65-1-.79,1-2.56,1.09-2.93a1.42,1.42,0,0,0-.24-1.33c-.15-.18-1.42-1.86-1.72-2.28,0,0-1-1.25.7-1.17l3,.08a1.14,1.14,0,0,0,1-.59c.49-.77,1.93-2.58,1.63-2.2.26-.32.84-1.11,1.23.2,0,0,.55,1.73.81,2.45a1.44,1.44,0,0,0,1.18,1.11l2.74,1s1.29.4.07,1.25" transform="translate(0)"/></g></g>
+            </svg>
+          </a>
         </div>
       </nav>
   </header>
@@ -98,7 +105,7 @@ $totalProductos = count($pizzas) + count($bebidas) + count($postres);
               <h5 class="card-title titulo-producto"><?= $pizza->getNombre_producto(); ?></h5>
               <p class="card-text">
                 <span class="precio"><?= $pizza->getPrecio(); ?> €</span>
-                <form action="index.php?action=sel" method="post">
+                <form action="../index.php?action=sel" method="post">
                   <input type="hidden" name="id" value="<?= $pizza->getProducto_id(); ?>">
                   <input type="hidden" name="categoria" value="<?= $pizza->getCategoria(); ?>">
                   <button type="submit" name="añadir-carrito" class="carro-btn">
@@ -136,7 +143,7 @@ $totalProductos = count($pizzas) + count($bebidas) + count($postres);
               <h5 class="card-title titulo-producto"><?= $bebida->getNombre_producto(); ?></h5>
               <p class="card-text">
                 <span class="precio"><?= $bebida->getPrecio(); ?> €</span>
-                <form action="index.php?action=sel" method="post">
+                <form action="../index.php?action=sel" method="post">
                   <input type="hidden" name="id" value="<?= $bebida->getProducto_id(); ?>">
                   <input type="hidden" name="categoria" value="<?= $bebida->getCategoria(); ?>">
                   <button type="submit" name="añadir-carrito" class="carro-btn">
@@ -170,7 +177,7 @@ $totalProductos = count($pizzas) + count($bebidas) + count($postres);
               <h5 class="card-title titulo-producto"><?= $postre->getNombre_producto(); ?></h5>
               <p class="card-text">
                 <span class="precio"><?= $postre->getPrecio(); ?> €</span>
-                <form action="index.php?action=sel" method="post">
+                <form action="../index.php?action=sel" method="post">
                   <input type="hidden" name="id" value="<?= $postre->getProducto_id(); ?>">
                   <input type="hidden" name="categoria" value="<?= $postre->getCategoria(); ?>">
                   <button type="submit" name="añadir-carrito" class="carro-btn">
@@ -212,7 +219,7 @@ $totalProductos = count($pizzas) + count($bebidas) + count($postres);
               <h5 class="card-title titulo-producto"><?= $pizza2->getNombre_producto(); ?></h5>
               <p class="card-text">
                 <span class="precio"><?= $pizza2->getPrecio(); ?> €</span>
-                <form action="index.php?action=sel" method="post">
+                <form action="../index.php?action=sel" method="post">
                   <input type="hidden" name="id" value="<?= $pizza2->getProducto_id(); ?>">
                   <input type="hidden" name="categoria" value="<?= $pizza2->getCategoria(); ?>">
                   <button type="submit" name="añadir-carrito" class="carro-btn">
@@ -250,7 +257,7 @@ $totalProductos = count($pizzas) + count($bebidas) + count($postres);
               <h5 class="card-title titulo-producto"><?= $bebida2->getNombre_producto(); ?></h5>
               <p class="card-text">
                 <span class="precio"><?= $bebida2->getPrecio(); ?> €</span>
-                <form action="index.php?action=sel" method="post">
+                <form action="../index.php?action=sel" method="post">
                   <input type="hidden" name="id" value="<?= $bebida2->getProducto_id(); ?>">
                   <input type="hidden" name="categoria" value="<?= $bebida2->getCategoria(); ?>">
                   <button type="submit" name="añadir-carrito" class="carro-btn">
@@ -288,7 +295,7 @@ $totalProductos = count($pizzas) + count($bebidas) + count($postres);
               <h5 class="card-title titulo-producto"><?= $postre2->getNombre_producto(); ?></h5>
               <p class="card-text">
                 <span class="precio"><?= $postre2->getPrecio(); ?> €</span>
-                <form action="index.php?action=sel" method="post">
+                <form action="../index.php?action=sel" method="post">
                   <input type="hidden" name="id" value="<?= $postre2->getProducto_id(); ?>">
                   <input type="hidden" name="categoria" value="<?= $postre2->getCategoria(); ?>">
                   <button type="submit" name="añadir-carrito" class="carro-btn">
