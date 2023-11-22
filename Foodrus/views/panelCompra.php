@@ -20,26 +20,29 @@ session_start();
     <h3>Mi cesta</h3>
 
     <?php
-    $pos = 0;
-    foreach ($_SESSION['selecciones'] as $pedido):
-    //var_dump($_SESSION['selecciones']);
+    foreach ($_SESSION['selecciones'] as $pos => $pedido):
+        $producto = $pedido->getProducto();
+        $cantidad = $pedido->getCantidad();
+        $precioTotal = $producto->getPrecio() * $cantidad;
     ?>
 
     <div class="producto">
         <div class="img-producto">
-            <img src="<?= $pedido->getProducto()->getImagen(); ?>" width="100" height="100">
+            <img src="../<?= $pedido->getProducto()->getImagen(); ?>" width="100" height="100">
         </div>
         <div class="detalles">
             <div class="nombre-producto"><?= $pedido->getProducto()->getNombre_producto(); ?></div>
             <div class="id-producto"><?= $pedido->getProducto()->getProducto_id(); ?></div>
             <div class="precio-producto">
-                <p>Precio del articulo:<?= $pedido->getProducto()->getPrecio(); ?></p>
+                <p>Precio del articulo: <?= $precioTotal; ?></p>
             </div>
         </div>
 
         <form action="../index.php?action=compra" method='post' class="botones">
-            <button class="bet-button w3-black w3-section" type="submit" name="Add" value=<?=$pos?>> + </button>
-            <button class="del-button w3-black w3-section" type="submit" name="Del" value=<?=$pos?>> - </button>
+            <label for="cantidad">Cantidad:</label>
+            <button class="b1 bet-button w3-black w3-section" type="submit" name="Add" value=<?=$pos?>> + </button>
+            <input class="cantidad" type="number" id="cantidad" name="cantidad" value="<?= $pedido->getCantidad() ?>" readonly>
+            <button class="b2 del-button w3-black w3-section" type="submit" name="Del" value=<?=$pos?>> - </button>
         </form>
     </div>
     <?php

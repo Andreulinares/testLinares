@@ -122,17 +122,24 @@ class productoController{
 
     public function compra(){
         session_start();
-        if (isset($_POST['Add'])){
-            $pedido = $_SESSION['selecciones'][$_POST['Add']];
-            $pedido->setCantidad($pedido->getCantidad()+1);
-        }else if(isset($_POST['Del'])){
-            $pedido = $_SESSION['selecciones'][$_POST['Del']];
-            if ($pedido->getCantidad()==1){
-                unset($_SESSION['selecciones'][$_POST['Del']]);
+        if (isset($_POST['Add'])) {
+            $pos = $_POST['Add'];
+            $pedido = $_SESSION['selecciones'][$pos];
+            
+            
+            $pedido->setCantidad($pedido->getCantidad() + 1);
+        } elseif (isset($_POST['Del'])) {
+            $pos = $_POST['Del'];
+            $pedido = $_SESSION['selecciones'][$pos];
+
+            if ($pedido->getCantidad() > 1) {
+                $pedido->setCantidad($pedido->getCantidad() - 1);
+                
+            } else {
+                unset($_SESSION['selecciones'][$pos]);
                 $_SESSION['selecciones'] = array_values($_SESSION['selecciones']);
-            }else{
-                $pedido->setCantidad($pedido->getCantidad()-1);
             }
         }
     }
+
 }
