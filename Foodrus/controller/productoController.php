@@ -140,6 +140,8 @@ class productoController{
                 $_SESSION['selecciones'] = array_values($_SESSION['selecciones']);
             }
         }
+
+        header("Location: ../Foodrus/views/panelCompra.php");
     }
 
 }

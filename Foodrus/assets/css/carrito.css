@@ -2,8 +2,12 @@ body {
     background-color: #f5f5f5;
 }
 
-h3 {
-    text-align: center;
+h1 {
+    color: #1450a0;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 24px;
+    margin-left: 35px;
+    margin-bottom: 5px;
 }
 
 .producto {
@@ -13,6 +17,7 @@ h3 {
     padding: 10px;
     margin-left: 10px;
     margin-right: 782px;
+    margin-top: 35px;
 }
 
 .img-producto {
@@ -29,9 +34,75 @@ h3 {
 .botones {
     margin-top: auto; 
     margin-left: 120px;
+    margin-top: 23px;
 }
 
 .cantidad{
     width: 47px;
     text-align: center;
+    height: 29px;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 14px;
+}
+
+.precio-total{
+    margin-left: 455px;
+    margin-top: -35px;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 19px;
+}
+
+label[for="cantidad"]{
+    color: #153a59;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.nombre-producto{
+    font-size: 14px;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.id-producto{
+    font-size: 14px;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.precio-producto{
+    font-size: 14px;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.b1{
+    border: 1px solid #ccc;
+    border-radius: 15px 0 0 15px;
+    color: #d4d2d2;
+    cursor: pointer;
+    width: 29px;
+    height: 29px;
+    background-color: transparent;
+    vertical-align: middle;
+    margin-right: -6px;
+}
+
+.b2{
+    border: 1px solid #ccc;
+    border-radius: 0 15px 15px 0;
+    color: #d4d2d2;
+    cursor: pointer;
+    width: 29px;
+    height: 29px;
+    background-color: transparent;
+    vertical-align: middle;
+    margin-left: -5px;
+}
+
+.carrito{
+    width: 40px;
+    height: 45px;
+    margin-bottom: 15px;
+    margin-left: 20px;
 }
