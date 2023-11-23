@@ -3,8 +3,15 @@ require __DIR__ . '/../model/Pedido.php';
 require __DIR__ . '/../model/Pizza.php';
 require __DIR__ . '/../model/Bebida.php';
 require __DIR__ . '/../model/Postre.php';
+require __DIR__ . '/../utils/CalculadoraPrecios.php';
 
 session_start();
+
+if (!isset($_SESSION['carrito_id'])) {
+    $_SESSION['carrito_id'] = strtoupper(substr(bin2hex(random_bytes(5)), 0, 10));
+}
+
+//Calcular precio envio
 
 ?>
 
@@ -65,7 +72,7 @@ session_start();
         </nav>
 </header>
 <section>
-    <h1>Mi cesta</h1>
+    <h1>Mi cesta | ID: <?= $_SESSION['carrito_id']; ?></h1>
     <hr>
 
     <?php
@@ -73,6 +80,12 @@ session_start();
         $producto = $pedido->getProducto();
         $cantidad = $pedido->getCantidad();
         $precioTotal = $producto->getPrecio() * $cantidad;
+
+        $precioEnvio = 0;
+
+        if (isset($_POST['domicilio']) && $_POST['domicilio'] == 'on') {
+            $precioEnvio += 3.80; 
+        }
     ?>
 
     <div class="producto">
@@ -104,16 +117,29 @@ session_start();
 <section>
     <div class="resumen">
         <div class="envio">
-            <input type="checkbox" id="domicilio" name="domicilio">
-            <label for="domicilio">Envío a domicilio</label>
+            <form action="panelCompra.php" method="post">
+                <input type="radio" id="domicilio" name="domicilio" checked>
+                <label class="c1" for="domicilio">Envío a domicilio</label>
 
-            <input type="checkbox" id="recogida" name="recogida">
-            <label for="recogida">Envio a punto de recogida</label>
+                <input type="radio" id="recogida" name="recogida">
+                <label class="c2" for="recogida">Envio a punto de recogida</label>
 
-            <input type="checkbox" id="tienda" name="tienda">
-            <label for="tienda">Recoger en tienda en 2h</label>
+                <input type="radio" id="tienda" name="tienda">
+                <label class="c3" for="tienda">Recoger en tienda en 2h</label>
+            </form>
+        </div>
+
+        <div class="precios">
+            <p><span class="pre-text">Subtotal:</span> <span class="precio"><?= number_format(CalculadoraPrecios::calcularPrecioPedido($_SESSION['selecciones']), 2)?>€</span></p>
+
+            <p><span class="pre-text">Precio de envío:</span> <span class="precio2"><?= number_format($precioEnvio, 2); ?>€</p></span>
+
+            <p>Total: €</p>
         </div>
     </div>
+</section>
+<section>
+
 </section>
 </body>
 </html>

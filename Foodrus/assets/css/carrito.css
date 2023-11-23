@@ -1,7 +1,7 @@
 body {
     background-color: #f5f5f5;
 }
-
+/* DIV PRODUCTO */
 h1 {
     color: #1450a0;
     font-family: "Nunito Sans", sans-serif;
@@ -18,12 +18,14 @@ h1 {
     margin-left: 10px;
     margin-right: 782px;
     margin-top: 35px;
+    width: 800px;
+    height: 300px;
 }
 
 .img-producto {
     margin-right: 10px;
 }
-
+/* DETALLES DEL PRODUCTO */
 .detalles{
     display: flex;
     flex-direction: column;
@@ -48,7 +50,7 @@ h1 {
 }
 
 .precio-total{
-    margin-left: 455px;
+    margin-left: 682px;
     margin-top: -35px;
     font-family: "Nunito Sans", sans-serif;
     font-size: 19px;
@@ -62,7 +64,7 @@ label[for="cantidad"]{
 }
 
 .nombre-producto{
-    font-size: 14px;
+    font-size: 16px;
     font-family: "Nunito Sans", sans-serif;
 }
 
@@ -105,4 +107,89 @@ label[for="cantidad"]{
     height: 45px;
     margin-bottom: 15px;
     margin-left: 20px;
+}
+
+/* SEGUNDO DIV */
+.resumen{
+    background-color: white;
+    border-radius: 10px;
+    position: absolute;
+    left: 835px;
+    top: 158px;
+    width: 500px;
+    height: 900px;
+}
+
+.envio{
+    display: flex;
+    flex-direction: column;
+}
+
+.envio input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 22px;
+    height: 22px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.envio input[type="radio"]:checked {
+    background-color: #1450A0;
+}
+
+.c1{
+    position: absolute;
+    left: 60px;
+    bottom: 856px;
+}
+
+.c2{
+    position: absolute;
+    top: 96px;
+    left: 60px;
+}
+
+.c3{
+    position: absolute;
+    top: 193px;
+    left: 60px;
+}
+
+input#domicilio {
+    position: relative;
+    top: 23px;
+    left: 29px;
+}
+
+input#recogida {
+    position: relative;
+    top: 98px;
+    right: 5px;
+}
+
+input#tienda {
+    position: relative;
+    top: 194px;
+    right: 40px;
+}
+
+/* PRECIOS SUBTOTAL, TOTAL Y ENVIO */
+
+.precios{
+    position: absolute;
+    top: 286px;
+    left: 30px;
+}
+
+.precio {
+    margin-left: 330px;
+}
+
+.precio2{
+    margin-left: 283px;
 }

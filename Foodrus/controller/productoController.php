@@ -117,6 +117,7 @@ class productoController{
         
             array_push($_SESSION['selecciones'], $pedido);
         }
+        header("Location: ../Foodrus/views/carta.php");
         
     }
 
