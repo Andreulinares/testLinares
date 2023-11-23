@@ -81,11 +81,10 @@ if (!isset($_SESSION['carrito_id'])) {
         $cantidad = $pedido->getCantidad();
         $precioTotal = $producto->getPrecio() * $cantidad;
 
-        $precioEnvio = 0;
+        $precioEnvio = 3.80;
 
-        if (isset($_POST['domicilio']) && $_POST['domicilio'] == 'on') {
-            $precioEnvio += 3.80; 
-        }
+        $subtotal = CalculadoraPrecios::calcularPrecioPedido($_SESSION['selecciones']);
+
     ?>
 
     <div class="producto">
@@ -118,23 +117,23 @@ if (!isset($_SESSION['carrito_id'])) {
     <div class="resumen">
         <div class="envio">
             <form action="panelCompra.php" method="post">
-                <input type="radio" id="domicilio" name="domicilio" checked>
+                <input type="radio" id="domicilio" name="tipoEnvio" value="domicilio" checked>
                 <label class="c1" for="domicilio">Envío a domicilio</label>
 
-                <input type="radio" id="recogida" name="recogida">
+                <input type="radio" id="recogida" name="tipoEnvio" value="recogida">
                 <label class="c2" for="recogida">Envio a punto de recogida</label>
 
-                <input type="radio" id="tienda" name="tienda">
+                <input type="radio" id="tienda" name="tipoEnvio" value="tienda">
                 <label class="c3" for="tienda">Recoger en tienda en 2h</label>
             </form>
         </div>
 
         <div class="precios">
-            <p><span class="pre-text">Subtotal:</span> <span class="precio"><?= number_format(CalculadoraPrecios::calcularPrecioPedido($_SESSION['selecciones']), 2)?>€</span></p>
+            <p><span class="pre-text">Subtotal:</span> <span class="precio"><?= number_format($subtotal, 2)?>€</span></p>
 
-            <p><span class="pre-text">Precio de envío:</span> <span class="precio2"><?= number_format($precioEnvio, 2); ?>€</p></span>
+            <p><span class="pre-text">Envío:</span> <span class="precio2"><?= number_format($precioEnvio, 2); ?>€</p></span>
 
-            <p>Total: €</p>
+            <p><span class="pre-text2">TOTAL</span> <span class="precio3"><?= number_format($subtotal + $precioEnvio, 2) ?>€</span></p>
         </div>
     </div>
 </section>

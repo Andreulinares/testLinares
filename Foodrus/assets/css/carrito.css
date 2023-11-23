@@ -109,7 +109,7 @@ label[for="cantidad"]{
     margin-left: 20px;
 }
 
-/* SEGUNDO DIV */
+/* SEGUNDO DIV (opciones de compra y precios totales*/
 .resumen{
     background-color: white;
     border-radius: 10px;
@@ -146,18 +146,27 @@ label[for="cantidad"]{
     position: absolute;
     left: 60px;
     bottom: 856px;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 14px;
+    color: #153A59;
 }
 
 .c2{
     position: absolute;
     top: 96px;
     left: 60px;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 14px;
+    color: #153A59;
 }
 
 .c3{
     position: absolute;
     top: 193px;
     left: 60px;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 14px;
+    color: #153A59;
 }
 
 input#domicilio {
@@ -187,9 +196,32 @@ input#tienda {
 }
 
 .precio {
-    margin-left: 330px;
+    font-size: 18px;
+    font-family: "Nunito Sans", sans-serif;
+    position: absolute;
+    left: 365px;
 }
 
 .precio2{
-    margin-left: 283px;
+    font-size: 18px;
+    font-family: "Nunito Sans", sans-serif;
+    position: absolute;
+    left: 365px;
+}
+
+.precio3{
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 22px;
+    position: absolute;
+    left: 362px;
+}
+
+.pre-text{
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 18px;
+}
+
+.pre-text2{
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 22px;
 }

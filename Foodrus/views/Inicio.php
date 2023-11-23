@@ -1,3 +1,8 @@
+<?php
+require __DIR__ . '/../model/ProductoDAO.php';
+
+?>
+
 <!DOCTYPE html PUBLIC>
 <html>
 <head>
@@ -148,7 +153,7 @@
 
     <section>
 
-        <div class=" container-fluid p-0 container text-center container-sec">
+        <div class=" container-fluid text-center container-sec">
           <div class="row">
             <div class="col-xs-12 col-sm-3">
               <img src="../assets/images/punto_recogida.png">
@@ -174,49 +179,48 @@
         </div>
 
     </section>
+    <?php
+    $productosParaMostrar = [
+      ['id' => 2, 'categoria' => 'pizza'],
+      ['id' => 9, 'categoria' => 'pizza'],
+      ['id' => 21, 'categoria' => 'bebida'],
+      ['id' => 3, 'categoria' => 'pizza'],
+    ];
 
+    $productos = [];
+
+    foreach ($productosParaMostrar as $productoInfo) {
+      $id = $productoInfo['id'];
+      $categoria = $productoInfo['categoria'];
+  
+      $producto = ProductoDAO::getProductsByIds($categoria, [$id]);
+  
+      if ($producto) {
+          $productos[] = $producto[0]; 
+      }
+    }
+    ?>
     <section class="ultProductos">
       <h3 class="ult-product">Ultimos productos visitados</h3>
       <div class="container">
         <div class="row">
-            <div class="col">
-                <div class="card" style="width: 18 rem; height: 250px;">
-                    <img src="" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">Pepperoni</h5>
-                        <p class="card-text">13,00 €</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18 rem; height: 250px;">
-                    <img src="" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">Margarita</h5>
-                        <p class="card-text">12,00 €</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18 rem; height: 250px;">
-                    <img src="" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">Batido platano</h5>
-                        <p class="card-text">3,00 €</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18 rem; height: 250px;">
-                    <img src="" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">Tropical</h5>
-                        <p class="card-text">13,00 €</p>
-                    </div>
-                </div>
-            </div>
+            <?php
+            foreach ($productos as $producto){
+            ?>
+              <div class="col-md-3 mb-4">
+                  <div class="card" id="product-<?= $producto->getProducto_id(); ?>" style="width: 18rem; height: 250px;">
+                      <img src="../<?= $producto->getImagen(); ?>" class="card-img-top" alt="<?= $producto->getNombre_producto(); ?>">
+                      <div class="card-body">
+                            <h5 class="card-title"><?= $producto->getNombre_producto(); ?></h5>
+                            <p class="card-text"><?= number_format($producto->getPrecio(), 2); ?> €</p>
+                      </div>
+                  </div>
+              </div>
+              <?php
+              }
+              ?>
         </div>
-    </div>
+      </div>
     </section>
 
 </main>

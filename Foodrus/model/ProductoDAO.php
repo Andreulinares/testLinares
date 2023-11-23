@@ -97,7 +97,7 @@ class ProductoDAO{
         $con = database::connect();
         $productos = array();
     
-        $ids = implode(',', array_map('intval', $ids));
+        $ids = implode(',', $ids);
     
         if ($result = $con->query("SELECT * FROM productos WHERE categoria = '$categoria' AND producto_id IN ($ids)")) {
     
