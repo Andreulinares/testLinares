@@ -101,5 +101,19 @@ session_start();
     endforeach;
     ?>
 </section>
+<section>
+    <div class="resumen">
+        <div class="envio">
+            <input type="checkbox" id="domicilio" name="domicilio">
+            <label for="domicilio">Envío a domicilio</label>
+
+            <input type="checkbox" id="recogida" name="recogida">
+            <label for="recogida">Envio a punto de recogida</label>
+
+            <input type="checkbox" id="tienda" name="tienda">
+            <label for="tienda">Recoger en tienda en 2h</label>
+        </div>
+    </div>
+</section>
 </body>
 </html>
