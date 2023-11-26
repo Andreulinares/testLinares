@@ -133,6 +133,31 @@ body{
     margin-left: 20px;
 }
 
+/* FOOTER */
+
+.p-foot{
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 20px;
+}
+
+.margin {
+    margin-top: 20px;
+}
+
+.copyright{
+    background-color: #4373B3;
+    font-size: 14px;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.bg-custom{
+    background-color: #1450A0;
+}
+.f-a{
+    font-size: 14px;
+    font-family: "Nunito Sans", sans-serif;
+}
+
 /* VENTANA EMERGENTE CARRITO */
 
 #ventana{
@@ -171,6 +196,8 @@ body{
     box-shadow: none;
     color: #fff;
     outline: auto;
+    position: relative;
+    top: 60px;
 }
 
 #btnContinuarComprando{
@@ -183,11 +210,20 @@ body{
     margin-left: 48px;
     margin-right: 48px;
     border-radius: 10px;
-    margin-top: 28px;
+    margin-top: 65px;
     outline: auto;
 }
 
 .div-ventana{
     display: flex;
     flex-direction: column;
+}
+
+.mi-cesta{
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 700;
+    margin-left: 48px;
+    position: relative;
+    top: 40px;
 }

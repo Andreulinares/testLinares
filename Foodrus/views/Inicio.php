@@ -347,7 +347,7 @@ require __DIR__ . '/../model/ProductoDAO.php';
 
 <div id="ventana" style="display: none;">
     <div class="div-ventana">
-        <p>Mi cesta</p>
+        <p class="mi-cesta">Mi cesta</p>
         <button id="btnFinalizarCompra">FINALIZAR COMPRA</button>
         <button id="btnContinuarComprando">CONTINUAR COMPRANDO</button>
     </div>
@@ -355,6 +355,14 @@ require __DIR__ . '/../model/ProductoDAO.php';
 
   <div id="fondoOscuro"></div>
 </body>
+
+<?php if (empty($_SESSION['selecciones'])): ?>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById('btnFinalizarCompra').disabled = true;
+        });
+    </script>
+<?php endif; ?>
 
 <script src="../assets/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/js/ventana.js" defer></script>
