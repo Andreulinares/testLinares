@@ -134,6 +134,7 @@ if (!isset($_SESSION['carrito_id'])) {
             <p><span class="pre-text">Envío:</span> <span class="precio2"><?= number_format($precioEnvio, 2); ?>€</p></span>
 
             <p><span class="pre-text2">TOTAL</span> <span class="precio3"><?= number_format($subtotal + $precioEnvio, 2) ?>€</span></p>
+            <hr class="linea">
         </div>
     </div>
 </section>

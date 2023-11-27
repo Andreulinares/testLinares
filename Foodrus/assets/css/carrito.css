@@ -225,3 +225,9 @@ input#tienda {
     font-family: "Nunito Sans", sans-serif;
     font-size: 22px;
 }
+
+.linea{
+    width: 462px;
+    position: relative;
+    right: 12px;
+}
