@@ -108,6 +108,9 @@ if (!isset($_SESSION['carrito_id'])) {
         <div class="precio-total">
             <p><?= number_format($precioTotal, 2); ?> €</p>
         </div>
+
+        <button type="submit" class="eliminar-p">ELIMINAR</button>
+        <button type="submit" class="favoritos">MOVER A FAVORITOS</button>
     </div>
     <?php
     endforeach;
@@ -135,6 +138,19 @@ if (!isset($_SESSION['carrito_id'])) {
 
             <p><span class="pre-text2">TOTAL</span> <span class="precio3"><?= number_format($subtotal + $precioEnvio, 2) ?>€</span></p>
             <hr class="linea">
+
+            <form action="#" method="post" class="cupon-form">
+                <div class="form-group">
+                    <label for="cupon">Código de descuento</label>
+                    <input type="text" class="form-control" id="cupon" placeholder="Introduce el código de cupón">
+                </div>
+                <button type="submit" class="btn btn-primary btn-cupon">APLICAR</button>
+            </form>
+
+            <hr class="linea2">
+
+            <hr class="linea3">
+            <button type="submit" class="btn btn-primary btn-finalizar">FINALIZAR COMPRA</button>
         </div>
     </div>
 </section>
