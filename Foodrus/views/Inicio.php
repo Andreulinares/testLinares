@@ -247,7 +247,7 @@ require __DIR__ . '/../model/ProductoDAO.php';
               </div>
           </div>
 
-          <div class="col-md-2 offset-md-4">
+          <div class="col-md-2 offset-md-4 news">
               <p class="p-foot">Newsletter:</p>
               <div class="mb-2">
                 <form>
@@ -264,10 +264,10 @@ require __DIR__ . '/../model/ProductoDAO.php';
             <p class="p-foot">DESCARGA NUESTRA APP</p>
             <div class="mb-2 d-flex align-items-center">
                 <div class="p-2">
-                    <img src="../assets/images/google-play-es.svg" class="align-middle">
+                    <img src="../assets/images/google-play-es.svg" class="align-middle img-1">
                 </div>
                 <div class="p-2">
-                    <img src="../assets/images/app-store-es.svg" class="align-middle">
+                    <img src="../assets/images/app-store-es.svg" class="align-middle img-2">
                 </div>
             </div>
         </div>
@@ -339,7 +339,7 @@ require __DIR__ . '/../model/ProductoDAO.php';
           </div>
       </div>
       <div class="row bg-secondary"> 
-        <div class="col-xs-12 pt-3 copyright">
+        <div class="col-xs-12 pt-2 copyright">
             <p class="text-white text-center">&copy;2022 PRENATAL RETAIL GROUP SPAIN S.L.U.</P>
         </div>
     </div>

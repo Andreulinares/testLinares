@@ -340,7 +340,7 @@ session_start();
               </div>
           </div>
 
-          <div class="col-md-2 offset-md-4">
+          <div class="col-md-2 offset-md-4 news">
               <p class="p-foot">Newsletter:</p>
               <div class="mb-2">
                 <form>
@@ -357,16 +357,16 @@ session_start();
             <p class="p-foot">DESCARGA NUESTRA APP</p>
             <div class="mb-2 d-flex align-items-center">
                 <div class="p-2">
-                    <img src="../assets/images/google-play-es.svg" class="align-middle">
+                    <img src="../assets/images/google-play-es.svg" class="align-middle img-1">
                 </div>
                 <div class="p-2">
-                    <img src="../assets/images/app-store-es.svg" class="align-middle">
+                    <img src="../assets/images/app-store-es.svg" class="align-middle img-2">
                 </div>
             </div>
         </div>
       </div>
 
-      <div class="row p-5 pb-2 bg-custom text-white">
+      <div class="row p-5 pb-5 pt-4 bg-custom text-white">
           <div class="col-md-2">
               <p class="p-foot">AYUDA</p>
               <div class="mb-2 f-a">
@@ -432,10 +432,10 @@ session_start();
           </div>
       </div>
       <div class="row bg-secondary"> 
-        <div class="col-xs-12 pt-3 copyright">
+        <div class="col-xs-12 pt-2 copyright">
             <p class="text-white text-center">&copy;2022 PRENATAL RETAIL GROUP SPAIN S.L.U.</P>
         </div>
-    </div>
+      </div>
 </footer>
 
   <div id="ventana" style="display: none;">

@@ -158,6 +158,22 @@ body{
     font-family: "Nunito Sans", sans-serif;
 }
 
+.img-1{
+    width: 190px;
+    position: relative;
+    right: 20px;
+}
+
+.img-2{
+    width: 150px;
+    position: relative;
+    right: 11px;
+}
+
+.news{
+    margin-left: 615px;
+}
+
 /* VENTANA EMERGENTE CARRITO */
 
 #ventana{
