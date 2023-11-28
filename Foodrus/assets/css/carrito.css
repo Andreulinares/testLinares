@@ -306,10 +306,27 @@ label[for="cupon"]{
     border-radius: 10px;
     outline: auto;
     background-color: #D9D9D9;
+    border: none;
 }
 
 .eliminar-p:hover{
     color: white;
     background-color: #FF973B;
-    border-color: #FF973B;
+    border: none;
+}
+
+.favoritos{
+    width: 158px;
+    height: 32px;
+    font: 12px arial,sans-serif;
+    border-radius: 10px;
+    outline: auto;
+    background-color: #D9D9D9;
+    border: none;
+}
+
+.favoritos:hover{
+    color: white;
+    background-color: #FF973B;
+    border: none;
 }
