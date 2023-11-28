@@ -175,6 +175,23 @@ class ProductoDAO{
             }
         }
     }
+
+    
+    public static function obtenerProductosAleatorios($productos, $cantidad = 4) {
+        $productosAleatorios = isset($_SESSION['productosAleatorios']) ? $_SESSION['productosAleatorios'] : null;
+    
+        if (!$productosAleatorios || count($productosAleatorios) !== $cantidad) {
+            $productosAleatorios = array_rand($productos, $cantidad);
+            
+            $_SESSION['productosAleatorios'] = $productosAleatorios;
+        }
+    
+        return array_map(function($indice) use ($productos) {
+            return $productos[$indice];
+        }, (array)$productosAleatorios);
+    }
+    
+
     
 }
 

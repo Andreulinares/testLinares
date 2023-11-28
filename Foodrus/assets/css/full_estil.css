@@ -185,21 +185,41 @@ svg{
 #product-2{
     position: absolute;
     left: 40px;
+    border: none;
 }
 
 #product-9{
     position: absolute;
     left: 366px;
+    border: none;
 }
 
 #product-3{
     position: absolute;
     right: 40px;
+    border: none;
 }
 
 #product-21{
     position: relative;
     left: 6px;
+    border: none;
+}
+
+#product-2 .product-image {
+    margin-left: 45px;
+}
+
+#product-9 .product-image {
+    margin-left: 41px;
+}
+
+#product-21 .product-image {
+    margin-left: 25px;
+}
+
+#product-3 .product-image {
+    margin-left: 43px;
 }
 
 .card-img, .card-img-bottom, .card-img-top {

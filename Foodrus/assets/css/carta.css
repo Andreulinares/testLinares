@@ -42,7 +42,7 @@ body{
 .card-title{
     font-family: "Nunito Sans", sans-serif;
     font-size: 16px;
-    margin-top: 160px;
+    margin-top: 95px;
 }
 
 .card-text{
@@ -60,11 +60,17 @@ body{
     height: 367px;
     margin-left: 170px;
     position: relative;
+    border: none;
 }
 
 .card-container{
     margin-bottom: 40px;
     margin-top: 30px;
+}
+
+.tarjetas{
+    position: relative;
+    right: 150px;
 }
 
 .carro{
@@ -94,7 +100,7 @@ body{
 
 .precio{
     position: absolute;
-    margin-top: 5px;
+    margin-top: 70px;
 }
 
 .productos-totales{
@@ -105,7 +111,7 @@ body{
 
 .novedad{
     position: absolute;
-    top: 250;
+    top: 185px;
     color: #ea7125;
 }
 

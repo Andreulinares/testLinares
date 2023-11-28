@@ -1,9 +1,7 @@
 <?php
 require __DIR__ . '/../model/Pedido.php';
-require __DIR__ . '/../model/Pizza.php';
-require __DIR__ . '/../model/Bebida.php';
-require __DIR__ . '/../model/Postre.php';
 require __DIR__ . '/../utils/CalculadoraPrecios.php';
+require __DIR__ . '/../model/ProductoDAO.php';
 
 session_start();
 
@@ -157,7 +155,38 @@ if (!isset($_SESSION['carrito_id'])) {
     </div>
 </section>
 <section>
+    <p class="p-recomendados">Productos recomendados</p>
 
+    <?php 
+    $pizzas = ProductoDAO::getAllProducts('pizza');
+    $bebidas = ProductoDAO::getAllProducts('bebida');
+    $postres = ProductoDAO::getAllProducts('postre');
+
+    $todosProductos = array_merge($pizzas, $bebidas, $postres);
+
+    $productosRecomendados = ProductoDAO::obtenerProductosAleatorios($todosProductos);
+    ?>
+
+    <div class="row tarjetas">
+        <?php
+        $pos = ['uno', 'dos', 'tres', 'cuatro'];
+
+        foreach ($productosRecomendados as $key => $producto){
+            $clase = $pos[$key];
+        ?>
+        <div class="col-md-3 mb-4">
+            <div class="card <?= $clase; ?>" style="width: 18rem; height: 250px;">
+                <img src="../<?= $producto->getImagen(); ?>" class="card-img-top" alt="<?= $producto->getNombre_producto(); ?>">
+                <div class="card-body">
+                    <h5 class="card-title"><?= $producto->getNombre_producto(); ?></h5>
+                    <p class="card-text"><?= number_format($producto->getPrecio(), 2); ?> €</p>
+                </div>
+            </div>
+        </div>
+        <?php
+        }
+        ?>
+    </div>
 </section>
 </body>
 </html>

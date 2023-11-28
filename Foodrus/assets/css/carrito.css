@@ -351,3 +351,44 @@ label[for="cupon"]{
     background-color: #FF973B;
     border: none;
 }
+
+/* PRODUCTOS RECOMENDADOS */
+
+.p-recomendados{
+    text-align: center;
+    font-family:Arvo,'open sans-serif';
+    font-size: 30px;
+    position: relative;
+    top: 665px;
+    color: #1450a0;
+}
+
+.card-title{
+    font-size: 16px;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.card-text{
+    font-size: 19px;
+    font-family: "Arvo", sans-serif;
+    color: #1450A0;
+}
+
+.card-img, .card-img-bottom, .card-img-top {
+    width: 206px;
+    height: 160px;
+}
+
+.tarjetas{
+    position: relative;
+    top: 680px;
+    right: 32px;
+}
+
+.uno{
+    margin-left: 40px;
+}
+
+.dos{
+    margin-left: 15px;
+}
