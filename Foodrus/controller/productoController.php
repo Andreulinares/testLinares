@@ -145,4 +145,15 @@ class productoController{
         header("Location: ../Foodrus/views/panelCompra.php");
     }
 
+    public function eliminaCarrito(){
+        session_start();
+        if (isset($_POST['eliminar'])){
+            $pos = $_POST['eliminar'];
+            
+            unset($_SESSION['selecciones'][$pos]);
+
+            header("Location: ../Foodrus/views/panelCompra.php");
+        }
+    }
+
 }

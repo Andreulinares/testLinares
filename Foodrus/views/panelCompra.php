@@ -109,8 +109,10 @@ if (!isset($_SESSION['carrito_id'])) {
             <p><?= number_format($precioTotal, 2); ?> €</p>
         </div>
 
-        <button type="submit" class="eliminar-p">ELIMINAR</button>
-        <button type="submit" class="favoritos">MOVER A FAVORITOS</button>
+        <form action="../index.php?action=eliminaCarrito" method="post">
+            <button type="submit" name="eliminar" value=<?=$pos?> class="eliminar-p">ELIMINAR</button>
+            <button type="submit" class="favoritos">MOVER A FAVORITOS</button>
+        </form>
     </div>
     <?php
     endforeach;
