@@ -226,124 +226,24 @@ require __DIR__ . '/../model/ProductoDAO.php';
 </main>
 
 <footer>
-
-    <div class="container-fluid margin">
-
-      <div class="row p-5 pb-2 bg-custom text-white">
-          <div class="col-md-2">
-              <p class="p-foot">MEDIOS DE PAGO</p>
-              <div class="mb-2">
-                <div class="d-flex align-items-center">
-                  <div class="p-2">
-                    <img src="../assets/images/visaIcon.png" class="align-middle">
-                  </div>
-                  <div class="p-2">
-                    <img src="../assets/images/MastercardIcon.png" class="align-middle">
-                  </div>
-                  <div class="p-2">
-                    <img src="../assets/images/paypalIcon.png" class="align-middle">
-                  </div>
-                </div>
-              </div>
-          </div>
-
-          <div class="col-md-2 offset-md-4 news">
-              <p class="p-foot">Newsletter:</p>
-              <div class="mb-2">
-                <form>
-                  <div class="input-group">
-                    <input type="text" class="custom-input" id="gmail" placeholder="Escribe tu correo">
-                  </div> 
-                </form>
-              </div>
-          </div>
-      </div>
-
-      <div class="row p-5 pb-2 bg-custom text-white">
-        <div class="col-md-3">
-            <p class="p-foot">DESCARGA NUESTRA APP</p>
-            <div class="mb-2 d-flex align-items-center">
-                <div class="p-2">
-                    <img src="../assets/images/google-play-es.svg" class="align-middle img-1">
-                </div>
-                <div class="p-2">
-                    <img src="../assets/images/app-store-es.svg" class="align-middle img-2">
-                </div>
+    <div class="container-fluid p-5 text-white bg-custom">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-3">
+                <!-- Iconos de redes sociales -->
+                <a href="#" class="text-white"><img src="../img/red1.png" alt="Imagen 1"></a>
+                <a href="#" class="text-white"><img src="../img/red2.png" alt="Imagen 2"></a>
+                <a href="#" class="text-white"><img src="../img/red3.png" alt="Imagen 3"></a>
+                <a href="#" class="text-white"><img src="../img/red4.png" alt="Imagen 4"></a>
             </div>
         </div>
-      </div>
-
-      <div class="row p-5 pb-2 bg-custom text-white">
-          <div class="col-md-2">
-              <p class="p-foot">AYUDA</p>
-              <div class="mb-2 f-a">
-                <a class="text-white text-decoration-none" href="#">Contacto</a> 
-              </div>
-              <div class="mb-2 f-a">
-                <a class="text-white text-decoration-none" href="#">Opciones de entrega y costes</a> 
-              </div>
-              <div class="mb-2 f-a">
-                <a class="text-white text-decoration-none" href="#">Metodos de pago</a> 
-              </div>
-              <div class="mb-2 f-a">
-                <a class="text-white text-decoration-none" href="#">Promociones</a> 
-              </div>
-          </div>
-          <div class="col-md-2">
-              <p class="p-foot">SERVICIOS</p>
-              <div class="mb-2 f-a">
-                <a class="text-white text-decoration-none" href="#">Precio minimo garantizado</a> 
-              </div>
-              <div class="mb-2 f-a">
-                <a class="text-white text-decoration-none" href="#">Tarjeta regalo digital</a> 
-              </div>
-              <div class="mb-2 f-a">
-                <a class="text-white text-decoration-none" href="#">Devoluciones y garantias</a> 
-              </div>
-              <div class="mb-2 f-a">
-                <a class="text-white text-decoration-none" href="#">Envio premium</a> 
-              </div>
-          </div>
-          <div class="col-md-2">
-              <p class="p-foot">EMPRESA</p>
-              <div class="mb-2 f-a">
-                <a class="text-white text-decoration-none" href="#">Historia</a> 
-              </div>
-              <div class="mb-2 f-a">
-                <a class="text-white text-decoration-none" href="#">Tiendas</a> 
-              </div>
-              <div class="mb-2 f-a">
-                <a class="text-white text-decoration-none" href="#">Empleo</a> 
-              </div>
-              <div class="mb-2 f-a">
-                <a class="text-white text-decoration-none" href="#">Afiliados</a> 
-              </div>
-          </div>
-          <div class="col-md-2">
-              <p class="p-foot">OTROS</p>
-              <div class="mb-2 f-a">
-                <a class="text-white text-decoration-none" href="#">Condiciones de compra</a> 
-              </div>
-              <div class="mb-2 f-a">
-                <a class="text-white text-decoration-none" href="#">Politica de privacidad</a> 
-              </div>
-              <div class="mb-2 f-a">
-                <a class="text-white text-decoration-none" href="#">Politica de cookies</a> 
-              </div>
-              <div class="mb-2 f-a">
-                <a class="text-white text-decoration-none" href="#">Eventos</a> 
-              </div>
-          </div>
-          <div class="col-md-2">
-              <p class="p-foot">Siguenos</p>
-          </div>
-      </div>
-      <div class="row bg-secondary"> 
-        <div class="col-xs-12 pt-2 copyright">
-            <p class="text-white text-center">&copy;2022 PRENATAL RETAIL GROUP SPAIN S.L.U.</P>
+        <div class="row"> 
+            <div class="col-xs-12 pt-2 text-center copyright">
+                <!-- Copyright -->
+                <p class="text-white">&copy;2023 | Andreu Linares</p>
+            </div>
         </div>
     </div>
-</footer>
+  </footer>
 
 <div id="ventana" style="display: none;">
     <div class="div-ventana">

@@ -102,43 +102,16 @@ h1{
 
 /* FOOTER */
 
-.p-foot{
-    font-family: "Nunito Sans", sans-serif;
-    font-size: 20px;
-}
-
-.margin {
-    margin-top: 20px;
-}
-
 .copyright{
-    background-color: #4373B3;
     font-size: 14px;
     font-family: "Nunito Sans", sans-serif;
+    position: relative;
+    top: 47px;
+    right: 30px;
 }
 
 .bg-custom{
     background-color: #1450A0;
-}
-.f-a{
-    font-size: 14px;
-    font-family: "Nunito Sans", sans-serif;
-}
-
-.img-1{
-    width: 190px;
-    position: relative;
-    right: 20px;
-}
-
-.img-2{
-    width: 150px;
-    position: relative;
-    right: 11px;
-}
-
-.news{
-    margin-left: 615px;
 }
 
 /* PRODUCTOS VISITADOS */

@@ -387,8 +387,38 @@ label[for="cupon"]{
 
 .uno{
     margin-left: 40px;
+    border: none;
 }
 
 .dos{
     margin-left: 15px;
+    border: none;
+}
+
+.tres{
+    position: relative;
+    right: 12px;
+    border: none;
+}
+
+.cuatro{
+    position: relative;
+    right: 40px;
+    border: none;
+}
+
+.uno .product-image{
+    margin-left: 45px;
+}
+
+.dos .product-image{
+    margin-left: 45px;
+}
+
+.tres .product-image{
+    margin-left: 40px;
+}
+
+.cuatro .product-image{
+    margin-left: 20px;
 }
