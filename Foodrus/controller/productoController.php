@@ -96,30 +96,47 @@ class productoController{
         require __DIR__ . '/../views/editarProducto.php';
     }
 
-    public function sel(){
+    public function sel() {
         session_start();
-
+    
         if (isset($_POST['id']) && isset($_POST['categoria'])) {
             $id = $_POST['id'];
             $categoria = $_POST['categoria'];
-        
+    
             if ($categoria == 'pizza') {
-                $pedido = new Pedido(ProductoDAO::getPizzaById($id));
+                $producto = ProductoDAO::getPizzaById($id);
             } elseif ($categoria == 'bebida') {
-                $pedido = new Pedido(ProductoDAO::getBebidaById($id));
+                $producto = ProductoDAO::getBebidaById($id);
             } else {
-                $pedido = new Pedido(ProductoDAO::getPostreById($id));
+                $producto = ProductoDAO::getPostreById($id);
             }
-        
+    
             if (!isset($_SESSION['selecciones'])) {
                 $_SESSION['selecciones'] = array();
             }
-        
-            array_push($_SESSION['selecciones'], $pedido);
+    
+            // Buscar si el producto ya está en el carrito
+            $productoEnCarrito = null;
+            foreach ($_SESSION['selecciones'] as $pedido) {
+                if ($pedido->getProducto()->getProducto_id() == $id) {
+                    $productoEnCarrito = $pedido;
+                    break;
+                }
+            }
+    
+            if ($productoEnCarrito) {
+                // El producto ya está en el carrito, incrementar la cantidad
+                $productoEnCarrito->setCantidad($productoEnCarrito->getCantidad() + 1);
+            } else {
+                // El producto no está en el carrito, agregarlo como un nuevo pedido
+                $pedido = new Pedido($producto);
+                $_SESSION['selecciones'][] = $pedido;
+            }
         }
+    
         header("Location: ../Foodrus/views/carta.php");
-        
     }
+    
 
     public function compra(){
         session_start();

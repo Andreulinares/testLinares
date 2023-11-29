@@ -15,6 +15,71 @@ body{
     background-color: #F5F5F5;
 }
 
+.container{
+    max-width: 1270px;
+}
+
+/* HEADER */
+
+.usuario{
+    width: 75px;
+    height: 41px;
+    position: relative;
+    right: 65px;
+}
+
+.ubicacion{
+    width: 32px;
+    height: 32px;
+    position: relative;
+    right: 80px;
+}
+
+svg{
+    width: 32px;
+    height: 32px;
+    margin-bottom: 15px;
+    position: relative;
+    right: 60px;
+}
+
+.ms-auto {
+    position: relative;
+    right: 420px;
+}
+
+.custom-search{
+    width: 367px;
+    height: 38px;
+    border-radius: 10px;
+    position: relative;
+    left: 160px;
+    background-color: #376aae;
+    border: 2px solid #4c7ab7;
+    text-indent: 40px;
+}
+
+.img-lupa{
+    position: relative;
+    right: 205px;
+    top: 7px;
+}
+
+.texto-menu{
+    color: white;
+    position: relative;
+    right: 90px;
+}
+
+.carta{
+    position: relative;
+    right: 435px;
+    font-size: 16px;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+/* TITULOS PRINCIPALES */
+
 .h2-carta{
     text-align: center;
     font-family: "Arvo", sans-serif;
@@ -73,8 +138,8 @@ body{
 
 .tarjetas{
     position: relative;
-    right: 300px;
-    margin-left: 240px;
+    right: 365px;
+    margin-left: 360px;
 }
 
 .carro{
@@ -112,7 +177,7 @@ body{
     margin-top: -30px;
     color: #929292;
     position: relative;
-    right: 135px;
+    right: 202px;
 }
 
 .novedad{
