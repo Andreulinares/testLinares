@@ -60,6 +60,7 @@ svg{
     margin-bottom: 15px;
     position: relative;
     right: 60px;
+    top: 15px;
 }
 
 .ms-auto {
@@ -103,6 +104,22 @@ svg{
     background-repeat: no-repeat;
     background-position: center center;
 }
+
+.numero-carrito {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    position: relative;
+    right: 68px;
+    bottom: 35px;
+    display: flex;
+    justify-content: center;
+}
+
+/* SECCIONES DE LA PAGINA */
 
 .btn-group{
     display: flex;
