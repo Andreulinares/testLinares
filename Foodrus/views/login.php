@@ -73,7 +73,7 @@
         </ul>
 
         <!-- Formularios -->
-        <div class="tab-content mt-3">
+        <div class="col-sm-offset-3 col-md-6 bg-login">
             <div class="tab-pane fade show active" id="loginForm" role="tabpanel" aria-labelledby="login-tab">
                 <form action="../path_to_your_login_controller" method="post">
                     <label for="email">Correo Electrónico:</label>
