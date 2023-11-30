@@ -183,6 +183,7 @@ svg{
     left: 303px;
     width: 326px;
     padding-left: 115px;
+    color: black;
 }
 
 #login-tab {
@@ -198,4 +199,8 @@ svg{
     padding-right: 10px;
     position: relative;
     left: 305px;
+}
+
+.custom-tabs {
+    border: none;
 }

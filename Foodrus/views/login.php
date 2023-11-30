@@ -63,7 +63,7 @@
     <div class="container mt-5">
         
         <!-- Pestañas -->
-        <ul class="nav nav-tabs" id="myTabs" role="tablist">
+        <ul class="nav nav-tabs custom-tabs" id="myTabs" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active" id="login-tab" data-toggle="tab" href="#loginForm" role="tab" aria-controls="loginForm" aria-selected="true">ENTRAR</a>
             </li>
