@@ -1,22 +1,9 @@
-@charset "utf-8";
-/* CSS Document */
-
-/* FONTS */
-@font-face {
-    font-family: "BlantickScript";
-    src: url(../fonts/BlantickScript.ttf);
-}
-
-:root{
-    --bg-color4: rgb(20, 80, 160);
+.container{
+    max-width: 1270px;
 }
 
 body{
     background-color: #F5F5F5;
-}
-
-.container{
-    max-width: 1270px;
 }
 
 /* HEADER */
@@ -35,7 +22,7 @@ body{
     right: 80px;
 }
 
-header svg{
+svg{
     width: 32px;
     height: 32px;
     margin-bottom: 15px;
@@ -97,144 +84,6 @@ header svg{
     justify-content: center;
 }
 
-/* TITULOS PRINCIPALES */
-
-.h2-carta{
-    text-align: center;
-    font-family: "Arvo", sans-serif;
-    font-size: 30px;
-    color: var(--bg-color4);
-    margin-top: 30px;
-}
-
-.t-menu{
-    text-align: center;
-    font-family: "Arvo", sans-serif;
-    font-size: 30px;
-    color: var(--bg-color4);
-    padding: 50px;
-    position: relative;
-    bottom: 30px;
-}
-
-/* TARJETAS PRODUCTOS */
-
-.container .subtitulo {
-    font-family: "Nunito Sans", sans-serif;
-    color: var(--bg-color4);
-    font-size: 20px;
-    margin-left: 170px;
-}
-
-.card-title{
-    font-family: "Nunito Sans", sans-serif;
-    font-size: 16px;
-    margin-top: 95px;
-}
-
-.card-text{
-    font-family: "Nunito Sans", sans-serif;
-    font-size: 16px;
-    color: var(--bg-color4);
-}
-
-.card-body{
-    margin-top: 110px;
-}
-
-.card{
-    width: 209px;
-    height: 367px;
-    margin-left: 170px;
-    position: relative;
-    border: none;
-}
-
-.card-container{
-    margin-bottom: 40px;
-    margin-top: 30px;
-}
-
-.tarjetas{
-    position: relative;
-    right: 365px;
-    margin-left: 360px;
-}
-
-.carro{
-    width: 25px;
-    height: 37px;
-    position: absolute;
-    right: 10px;
-    bottom: 15px;
-}
-
-.carro-color{
-    fill: #d3d3d3;
-    stroke: none;
-}
-
-.carro:hover .carro-color{
-    fill: #00AE42;
-}
-
-.img-product{
-    width: 205px;
-    height: 186px;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.precio{
-    position: absolute;
-    margin-top: 70px;
-}
-
-.productos-totales{
-    text-align: right;
-    margin-top: -30px;
-    color: #929292;
-    position: relative;
-    right: 202px;
-}
-
-.novedad{
-    position: absolute;
-    top: 185px;
-    color: #ea7125;
-}
-
-.special-card::after{
-    content: "";
-    display: block;
-    height: 10px;
-    background-color: #ea7125;
-    width: 209px;
-    margin-left: 170px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-.carro-btn{
-    border: none;
-    background: none;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-}
-
-.carrito{
-    width: 40px;
-    height: 45px;
-    margin-bottom: 15px;
-    margin-left: 20px;
-}
-
-.contenedor{
-    position: relative;
-    bottom: 60px;
-}
 /* FOOTER */
 
 .copyright{
@@ -247,6 +96,8 @@ header svg{
 
 .bg-custom{
     background-color: #1450A0;
+    position: absolute;
+    top: 450px;
 }
 
 /* VENTANA EMERGENTE CARRITO */

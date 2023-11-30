@@ -62,12 +62,17 @@ header svg{
     background-color: #376aae;
     border: 2px solid #4c7ab7;
     text-indent: 40px;
+    bottom: 8px;
+}
+
+.custom-search::placeholder {
+    color: white;
 }
 
 .img-lupa{
     position: relative;
     right: 205px;
-    top: 7px;
+    bottom: 1px;
 }
 
 .texto-menu{
@@ -437,8 +442,9 @@ label[for="cupon"]{
     text-align: center;
     font-family:Arvo,'open sans-serif';
     font-size: 30px;
-    position: relative;
-    top: 665px;
+    position: absolute;
+    top: 1070px;
+    left: 420px;
     color: #1450a0;
 }
 
@@ -459,8 +465,8 @@ label[for="cupon"]{
 }
 
 .tarjetas{
-    position: relative;
-    top: 680px;
+    position: absolute;
+    top: 1150px;
     right: 32px;
 }
 
@@ -500,4 +506,74 @@ label[for="cupon"]{
 
 .cuatro .product-image{
     margin-left: 40px;
+}
+
+/* VENTANA EMERGENTE CARRITO */
+
+#ventana{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    /* bottom: -43px; */
+    width: 932px;
+    height: 236px;
+}
+
+#fondoOscuro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 999; 
+    display: none; 
+}
+
+#btnFinalizarCompra{
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-left: 48px;
+    margin-right: 48px;
+    background-color: #00ae42;
+    border-color: #00ae42;
+    box-shadow: none;
+    color: #fff;
+    outline: auto;
+    position: relative;
+    top: 60px;
+}
+
+#btnContinuarComprando{
+    font-size: 16px;
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #66BC29;
+    border-color: #66BC29;
+    box-shadow: none;
+    margin-left: 48px;
+    margin-right: 48px;
+    border-radius: 10px;
+    margin-top: 65px;
+    outline: auto;
+}
+
+.div-ventana{
+    display: flex;
+    flex-direction: column;
+}
+
+.mi-cesta{
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 700;
+    margin-left: 48px;
+    position: relative;
+    top: 40px;
 }

@@ -51,7 +51,7 @@ session_start();
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="login.php">
                       <img src="../img/usuario.svg" alt="mi-cuenta" class="usuario">
                       <span class="texto-menu">MI CUENTA</span>
                     </a>

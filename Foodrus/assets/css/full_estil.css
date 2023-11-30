@@ -79,6 +79,10 @@ svg{
     text-indent: 40px;
 }
 
+.custom-search::placeholder {
+    color: white;
+}
+
 .img-lupa{
     position: relative;
     right: 205px;
