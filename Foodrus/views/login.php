@@ -76,7 +76,7 @@
         <div class="col-sm-offset-3 col-md-6 bg-login">
             <div class="tab-pane fade show active" id="loginForm" role="tabpanel" aria-labelledby="login-tab">
                 <form action="../path_to_your_login_controller" method="post">
-                    <label for="email">Correo Electrónico:</label>
+                    <label for="email">Dirección de correo electrónico:</label>
                     <input type="email" class="form-control" id="email" name="email" required>
 
                     <label for="password">Contraseña:</label>
@@ -88,7 +88,17 @@
 
             <div class="tab-pane fade" id="registroForm" role="tabpanel" aria-labelledby="registro-tab">
                 <form action="../path_to_your_registration_controller" method="post">
-                    
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+
+                    <label for="apell">Apellidos</label>
+                    <input type="text" class="form-control" id="apell" name="apell" required>
+
+                    <label for="mail">Correo electrónico</label>
+                    <input type="text" class="form-control" id="mail" name="mail" required>
+
+                    <label for="passwd">Contraseña:</label>
+                    <input type="password" class="form-control" id="passwd" name="passwd" required>
 
                     <button type="submit" class="btn btn-success mt-3">Registrarse</button>
                 </form>
