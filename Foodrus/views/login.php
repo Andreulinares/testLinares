@@ -65,16 +65,15 @@
         <!-- Pestañas -->
         <ul class="nav nav-tabs custom-tabs" id="myTabs" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" id="login-tab" data-toggle="tab" href="#loginForm" role="tab" aria-controls="loginForm" aria-selected="true">ENTRAR</a>
+                <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#loginForm" type="button" role="tab" aria-controls="loginForm" aria-selected="true">ENTRAR</button>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="registro-tab" data-toggle="tab" href="#registroForm" role="tab" aria-controls="registroForm" aria-selected="false">SOY NUEVO</a>
+                <button class="nav-link" id="registro-tab" data-bs-toggle="tab" data-bs-target="#registroForm" type="button" role="tab" aria-controls="registroForm" aria-selected="false">SOY NUEVO</button>
             </li>
         </ul>
-
+        <div class="tab-content">
         <!-- Formularios -->
-        <div class="col-sm-offset-3 col-md-6 bg-login">
-            <div class="tab-pane fade show active" id="loginForm" role="tabpanel" aria-labelledby="login-tab">
+            <div class="col-sm-offset-3 col-md-6 bg-login tab-pane fade show active" id="loginForm" role="tabpanel" aria-labelledby="login-tab">
                 <form action="../path_to_your_login_controller" method="post">
                     <label for="email">Dirección de correo electrónico:</label>
                     <input type="email" class="form-control" id="email" name="email" required>
@@ -86,13 +85,16 @@
                 </form>
             </div>
 
-            <div class="tab-pane fade" id="registroForm" role="tabpanel" aria-labelledby="registro-tab">
+            <div class="col-sm-offset-3 col-md-6 bg-login tab-pane fade" id="registroForm" role="tabpanel" aria-labelledby="registro-tab">
                 <form action="../path_to_your_registration_controller" method="post">
                     <label for="nombre">Nombre</label>
                     <input type="text" class="form-control" id="nombre" name="nombre" required>
 
                     <label for="apell">Apellidos</label>
                     <input type="text" class="form-control" id="apell" name="apell" required>
+
+                    <label for="tel">Numero de telefono:</label>
+                    <input type="number" class="form-control" id="tel" name="tel" required>
 
                     <label for="mail">Correo electrónico</label>
                     <input type="text" class="form-control" id="mail" name="mail" required>
