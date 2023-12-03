@@ -63,17 +63,17 @@
     <div class="container mt-5">
         
         <!-- Pestañas -->
-        <ul class="nav nav-tabs custom-tabs" id="myTabs" role="tablist">
+        <ul class="nav nav-tabs custom-tabs">
             <li class="nav-item">
-                <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#loginForm" type="button" role="tab" aria-controls="loginForm" aria-selected="true">ENTRAR</button>
+                <a class="nav-link active" id="login-tab" aria-current="page" href="#loginForm">ENTRAR</a>
             </li>
             <li class="nav-item">
-                <button class="nav-link" id="registro-tab" data-bs-toggle="tab" data-bs-target="#registroForm" type="button" role="tab" aria-controls="registroForm" aria-selected="false">SOY NUEVO</button>
+                <a class="nav-link" id="registro-tab" href="#registroForm">SOY NUEVO</a>
             </li>
         </ul>
         <div class="tab-content">
         <!-- Formularios -->
-            <div class="col-sm-offset-3 col-md-6 bg-login tab-pane fade show active" id="loginForm" role="tabpanel" aria-labelledby="login-tab">
+            <div class="col-sm-offset-3 col-md-6 bg-login tab-pane active" id="loginForm" role="tabpanel" aria-labelledby="log-tab">
                 <form action="../path_to_your_login_controller" method="post">
                     <label for="email">Dirección de correo electrónico:</label>
                     <input type="email" class="form-control" id="email" name="email" required>
@@ -85,7 +85,7 @@
                 </form>
             </div>
 
-            <div class="col-sm-offset-3 col-md-6 bg-login tab-pane fade" id="registroForm" role="tabpanel" aria-labelledby="registro-tab">
+            <div class="col-sm-offset-3 col-md-6 bg-login tab-pane" id="registroForm" role="tabpanel" aria-labelledby="reg-tab">
                 <form action="../path_to_your_registration_controller" method="post">
                     <label for="nombre">Nombre</label>
                     <input type="text" class="form-control" id="nombre" name="nombre" required>
