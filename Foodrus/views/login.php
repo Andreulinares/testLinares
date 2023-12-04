@@ -63,17 +63,17 @@
     <div class="container mt-5">
         
         <!-- Pestañas -->
-        <ul class="nav nav-tabs custom-tabs">
+        <ul class="nav nav-tabs custom-tabs" id="myTabs" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" id="login-tab" aria-current="page" href="#loginForm">ENTRAR</a>
+                <a class="nav-link active" id="login-tab" data-bs-toggle="tab" aria-current="page" data-bs-target="#loginForm">ENTRAR</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="registro-tab" href="#registroForm">SOY NUEVO</a>
+                <a class="nav-link" id="registro-tab" data-bs-toggle="tab" data-bs-target="#registroForm">SOY NUEVO</a>
             </li>
         </ul>
         <div class="tab-content">
         <!-- Formularios -->
-            <div class="col-sm-offset-3 col-md-6 bg-login tab-pane active" id="loginForm" role="tabpanel" aria-labelledby="log-tab">
+            <div class="col-md-6 bg-login tab-pane active" id="loginForm" role="tabpanel" aria-labelledby="login-tab">
                 <form action="../path_to_your_login_controller" method="post">
                     <label for="email">Dirección de correo electrónico:</label>
                     <input type="email" class="form-control" id="email" name="email" required>
@@ -85,7 +85,7 @@
                 </form>
             </div>
 
-            <div class="col-sm-offset-3 col-md-6 bg-login tab-pane" id="registroForm" role="tabpanel" aria-labelledby="reg-tab">
+            <div class="col-md-6 bg-login tab-pane" id="registroForm" role="tabpanel" aria-labelledby="registro-tab">
                 <form action="../path_to_your_registration_controller" method="post">
                     <label for="nombre">Nombre</label>
                     <input type="text" class="form-control" id="nombre" name="nombre" required>
