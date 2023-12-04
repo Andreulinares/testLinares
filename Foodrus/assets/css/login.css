@@ -19,6 +19,7 @@ body{
     height: 41px;
     position: relative;
     right: 65px;
+    bottom: 3px;
 }
 
 .ubicacion{
@@ -67,6 +68,7 @@ svg{
     color: white;
     position: relative;
     right: 90px;
+    bottom: 2px;
 }
 
 .carta{
@@ -103,7 +105,7 @@ svg{
 .bg-custom{
     background-color: #1450A0;
     position: absolute;
-    top: 450px;
+    top: 595px;
 }
 
 /* VENTANA EMERGENTE CARRITO */
@@ -191,6 +193,7 @@ svg{
     left: 304px;
     width: 300px;
     padding-left: 115px;
+    color: black;
 }
 
 .bg-login {

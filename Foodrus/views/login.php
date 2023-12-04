@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+session_start();
+?>
+
+<!DOCTYPE html PUBLIC>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -65,16 +69,16 @@
         <!-- Pestañas -->
         <ul class="nav nav-tabs custom-tabs" id="myTabs" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" id="login-tab" data-bs-toggle="tab" aria-current="page" data-bs-target="#loginForm">ENTRAR</a>
+                <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#loginForm" role="tab" aria-controls="loginForm" aria-selected="true">ENTRAR</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="registro-tab" data-bs-toggle="tab" data-bs-target="#registroForm">SOY NUEVO</a>
+                <a class="nav-link" id="registro-tab" data-bs-toggle="tab" href="#registroForm" role="tab" aria-controls="registroForm" aria-selected="false">SOY NUEVO</a>
             </li>
         </ul>
         <div class="tab-content">
         <!-- Formularios -->
-            <div class="col-md-6 bg-login tab-pane active" id="loginForm" role="tabpanel" aria-labelledby="login-tab">
-                <form action="../path_to_your_login_controller" method="post">
+            <div class="col-md-6 bg-login tab-pane show active" id="loginForm" role="tabpanel" aria-labelledby="login-tab">
+                <form action="" method="post">
                     <label for="email">Dirección de correo electrónico:</label>
                     <input type="email" class="form-control" id="email" name="email" required>
 
@@ -86,7 +90,7 @@
             </div>
 
             <div class="col-md-6 bg-login tab-pane" id="registroForm" role="tabpanel" aria-labelledby="registro-tab">
-                <form action="../path_to_your_registration_controller" method="post">
+                <form action="" method="post">
                     <label for="nombre">Nombre</label>
                     <input type="text" class="form-control" id="nombre" name="nombre" required>
 
@@ -150,9 +154,12 @@
         });
     </script>
 <?php endif; ?>
+
+<script src="../assets/js/bootstrap.bundle.min.js"></script>
+
 <!-- Bolita roja actualizar cantidad -->
 <script>
-    function actualizarNumCarrito(){
+function actualizarNumCarrito(){
     let numProductos = <?php echo count($_SESSION['selecciones']); ?>;
 
     let bolitaRoja = document.getElementById('numero-carrito');
@@ -161,10 +168,8 @@
     }
 }
 
-    document.addEventListener('DOMContentLoaded', function () {
-            actualizarNumCarrito();
-    });
+document.addEventListener('DOMContentLoaded', function () {
+        actualizarNumCarrito();
+});
 </script>
-
-<script src="../assets/js/bootstrap.bundle.min.js"></script>
 </html>
