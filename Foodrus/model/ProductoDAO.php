@@ -5,6 +5,7 @@ require __DIR__ . '/../config/database.php';
 require_once 'Pizza.php';
 require 'Bebida.php';
 require 'Postre.php';
+require 'Usuario.php';
 
 class ProductoDAO{
     public static function getAllProducts($categoria){
@@ -191,7 +192,29 @@ class ProductoDAO{
         }, (array)$productosAleatorios);
     }
     
+    public static function agregarUsuario($usuario){
+        $con = database::connect();
 
+        $cliente_id = $usuario->getCliente_id();
+        $nombre = $usuario->getNombre();
+        $apellidos = $usuario->getApellidos();
+        $telefono = $usuario->getTelefono();
+        $email = $usuario->getEmail();
+        $passwd = $usuario->getPassword();
+
+        $stmt = $con->prepare("INSERT INTO clientes (cliente_id, email, nombre, apellido, contraseña, telefono) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("issssi", $cliente_id, $email, $nombre, $apellidos, $passwd, $telefono);
+
+        if ($stmt->execute()) {
+            $stmt->close();
+            return true;
+        } else {
+            $stmt->close();
+            return false;
+        }
+        
+        $con->close();
+    }
     
 }
 

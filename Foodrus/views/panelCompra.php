@@ -87,6 +87,8 @@ if (!isset($_SESSION['carrito_id'])) {
 
         $subtotal = CalculadoraPrecios::calcularPrecioPedido($_SESSION['selecciones']);
 
+        $cantidadTotal = $subtotal + $precioEnvio;
+
     ?>
 
     <div class="producto">
@@ -154,7 +156,10 @@ if (!isset($_SESSION['carrito_id'])) {
             <hr class="linea2">
 
             <hr class="linea3">
-            <button type="submit" class="btn btn-primary btn-finalizar">FINALIZAR COMPRA</button>
+            <form action="../index.php?action=finalizarCompra" method="post">
+                <input type="hidden" name="cantidadTotal" value="<?= $cantidadTotal ?>">
+                <button type="submit" class="btn btn-primary btn-finalizar">FINALIZAR COMPRA</button>
+            </form>
         </div>
     </div>
 </section>

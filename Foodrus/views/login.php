@@ -106,7 +106,7 @@ session_start();
                     <label for="passwd">Contraseña:</label>
                     <input type="password" class="form-control" id="passwd" name="passwd" required>
 
-                    <button type="submit" class="btn btn-success mt-3">Registrarse</button>
+                    <button type="submit" name="registrar" class="btn btn-success mt-3">Registrarse</button>
                 </form>
             </div>
         </div>

@@ -173,4 +173,11 @@ class productoController{
         }
     }
 
+    public function finalizarCompra(){
+        //Te almacena el pedido en la base de datos ProductoDAO que guarda el pedido en BBDD
+
+        //Guardar cookie
+        //set_cookie('UltimoPedido',$_POST['cantidadTotal'], time() + 3600);
+    }
+
 }
