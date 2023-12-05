@@ -103,7 +103,7 @@ if (!isset($_SESSION['carrito_id'])) {
             </div>
         </div>
 
-        <form action="../index.php?action=compra" method='post' class="botones">
+        <form action="../index.php?controller=producto&action=compra" method='post' class="botones">
             <label for="cantidad">Cantidad:</label>
             <button class="b1 bet-button w3-black w3-section" type="submit" name="Add" value=<?=$pos?>> + </button>
             <input class="cantidad" type="number" id="cantidad" name="cantidad" value="<?= $pedido->getCantidad() ?>" readonly>
@@ -113,7 +113,7 @@ if (!isset($_SESSION['carrito_id'])) {
             <p><?= number_format($precioTotal, 2); ?> €</p>
         </div>
 
-        <form action="../index.php?action=eliminaCarrito" method="post">
+        <form action="../index.php?controller=producto&action=eliminaCarrito" method="post">
             <button type="submit" name="eliminar" value=<?=$pos?> class="eliminar-p">ELIMINAR</button>
             <button type="submit" class="favoritos">MOVER A FAVORITOS</button>
         </form>
@@ -156,7 +156,7 @@ if (!isset($_SESSION['carrito_id'])) {
             <hr class="linea2">
 
             <hr class="linea3">
-            <form action="../index.php?action=finalizarCompra" method="post">
+            <form action="../index.php?controller=producto&action=finalizarCompra" method="post">
                 <input type="hidden" name="cantidadTotal" value="<?= $cantidadTotal ?>">
                 <button type="submit" class="btn btn-primary btn-finalizar">FINALIZAR COMPRA</button>
             </form>

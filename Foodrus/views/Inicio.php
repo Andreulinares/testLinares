@@ -53,7 +53,16 @@ session_start();
                 <li class="nav-item">
                     <a class="nav-link" href="login.php">
                       <img src="../img/usuario.svg" alt="mi-cuenta" class="usuario">
-                      <span class="texto-menu">MI CUENTA</span>
+                      <span class="texto-menu">
+                        <?php
+                        if (isset($_SESSION['user_email'])){
+                          $usuario = ProductoDAO::obtenerUsuario($_SESSION['user_email']);
+                          echo $usuario->getNombre();
+                        } else {
+                          echo "MI CUENTA";
+                        }
+                        ?>
+                        </span>
                     </a>
                 </li>
                 <li class="nav-item">

@@ -33,13 +33,13 @@ require_once __DIR__ . '/../model/Postre.php';
                 <td>
                     <div class="row">
                         <div class="col">
-                            <form action="index.php?action=eliminar" method="post">
+                            <form action="index.php?controller=producto&action=eliminar" method="post">
                                 <input type="hidden" name="producto_id" value="<?= $pizza->getProducto_id(); ?>">
                                 <button type="submit" class="btn btn-danger">Eliminar</button>
                             </form>
                         </div>
                         <div class="col">
-                            <form action="index.php?action=editar" method="post">
+                            <form action="index.php?controller=producto&action=editar" method="post">
                                 <input type="hidden" name="id" value="<?= $pizza->getProducto_id()?>">
                                 <input type="hidden" name="almacen" value="<?= $pizza->getAlmacen()?>">
                                 <input type="hidden" name="nombre" value="<?= $pizza->getNombre_producto()?>">
@@ -65,13 +65,13 @@ require_once __DIR__ . '/../model/Postre.php';
                 <td>
                     <div class="row">
                         <div class="col">
-                            <form action="index.php?action=eliminar" method="post">
+                            <form action="index.php?controller=producto&action=eliminar" method="post">
                                 <input type="hidden" name="producto_id" value="<?= $bebida->getProducto_id(); ?>">
                                 <button type="submit" class="btn btn-danger">Eliminar</button>
                             </form>
                         </div>
                         <div class="col">
-                            <form action="index.php?action=editar" method="post">
+                            <form action="index.php?controller=producto&action=editar" method="post">
                                 <input type="hidden" name="id" value="<?= $bebida->getProducto_id()?>">
                                 <input type="hidden" name="almacen" value="<?= $bebida->getAlmacen()?>">
                                 <input type="hidden" name="nombre" value="<?= $bebida->getNombre_producto()?>">
@@ -97,13 +97,13 @@ require_once __DIR__ . '/../model/Postre.php';
                 <td>
                     <div class="row">
                         <div class="col">
-                            <form action="index.php?action=eliminar" method="post">
+                            <form action="index.php?controller=producto&action=eliminar" method="post">
                                 <input type="hidden" name="producto_id" value="<?= $postre->getProducto_id(); ?>">
                                 <button type="submit" class="btn btn-danger">Eliminar</button>
                             </form>
                         </div>
                         <div class="col">
-                            <form action="index.php?action=editar" method="post">
+                            <form action="index.php?controller=producto&action=editar" method="post">
                                 <input type="hidden" name="id" value="<?= $postre->getProducto_id()?>">
                                 <input type="hidden" name="almacen" value="<?= $postre->getAlmacen()?>">
                                 <input type="hidden" name="nombre" value="<?= $postre->getNombre_producto()?>">
@@ -123,7 +123,7 @@ require_once __DIR__ . '/../model/Postre.php';
     <button id="mostrarFormulario" class="btn btn-primary">Añadir producto</button>
 
     <div id="formulario" style="display: none;">
-            <form action="index.php?action=añadir" method="POST" enctype="multipart/form-data">
+            <form action="index.php?controller=producto&action=añadir" method="POST" enctype="multipart/form-data">
                 <h3>Añadir producto nuevo</h3>
                 <label for="id">ID:</label>
                 <input type="number" name="id" required><br><br>

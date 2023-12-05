@@ -192,6 +192,8 @@ class ProductoDAO{
         }, (array)$productosAleatorios);
     }
     
+    //USUARIOS BASE DE DATOS
+
     public static function agregarUsuario($usuario){
         $con = database::connect();
 
@@ -210,10 +212,43 @@ class ProductoDAO{
             return true;
         } else {
             $stmt->close();
+            echo "Error al registrar usuario" . $stmt->error;
             return false;
         }
         
         $con->close();
+    }
+
+    public static function obtenerUsuario($email){
+        $con = database::connect();
+
+        $stmt = $con->prepare("SELECT * FROM CLIENTES WHERE email = ?");
+        $stmt->bind_param("s", $email);
+    
+        if ($stmt->execute()){
+            $result = $stmt->get_result();
+            $con->close();
+    
+            if ($result->num_rows == 1) {
+                $row = $result->fetch_object();
+                return new Usuario($row->cliente_id, $row->email, $row->nombre, $row->apellido, $row->contraseña, $row->telefono);
+            } else {
+                
+                return null;
+            }
+        }
+    }
+
+    public static function verificarCredenciales($email, $password) {
+        // Obtener el usuario basado en la dirección de correo electrónico
+        $usuario = self::obtenerUsuario($email);
+
+        // Verificar si el usuario existe y la contraseña es correcta
+        if ($usuario && password_verify($password, $usuario->getPassword())) {
+            return true;
+        }
+
+        return false;
     }
     
 }

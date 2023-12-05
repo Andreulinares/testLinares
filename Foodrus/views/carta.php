@@ -123,7 +123,7 @@ session_start();
                         <h5 class="card-title titulo-producto"><?= $producto->getNombre_producto(); ?></h5>
                         <p class="card-text">
                             <span class="precio"><?= $producto->getPrecio(); ?> €</span>
-                            <form action="../index.php?action=sel" method="post">
+                            <form action="../index.php?controller=producto&action=sel" method="post">
                                 <input type="hidden" name="id" value="<?= $producto->getProducto_id(); ?>">
                                 <input type="hidden" name="categoria" value="<?= $producto->getCategoria(); ?>">
                                 <button type="submit" name="añadir-carrito" class="carro-btn">
@@ -179,7 +179,7 @@ session_start();
                         <h5 class="card-title titulo-producto"><?= $producto2->getNombre_producto(); ?></h5>
                         <p class="card-text">
                             <span class="precio"><?= $producto2->getPrecio(); ?> €</span>
-                            <form action="../index.php?action=sel" method="post">
+                            <form action="../index.php?controller=producto&action=sel" method="post">
                                 <input type="hidden" name="id" value="<?= $producto2->getProducto_id(); ?>">
                                 <input type="hidden" name="categoria" value="<?= $producto2->getCategoria(); ?>">
                                 <button type="submit" name="añadir-carrito" class="carro-btn">

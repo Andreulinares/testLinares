@@ -78,19 +78,19 @@ session_start();
         <div class="tab-content">
         <!-- Formularios -->
             <div class="col-md-6 bg-login tab-pane show active" id="loginForm" role="tabpanel" aria-labelledby="login-tab">
-                <form action="" method="post">
+                <form action="../index.php?controller=usuario&action=iniciarSesion" method="post">
                     <label for="email">Dirección de correo electrónico:</label>
                     <input type="email" class="form-control" id="email" name="email" required>
 
                     <label for="password">Contraseña:</label>
                     <input type="password" class="form-control" id="password" name="password" required>
 
-                    <button type="submit" class="btn btn-primary mt-3">Iniciar Sesión</button>
+                    <button type="submit" name="iniciar_sesion" class="btn btn-primary mt-3">Iniciar Sesión</button>
                 </form>
             </div>
 
             <div class="col-md-6 bg-login tab-pane" id="registroForm" role="tabpanel" aria-labelledby="registro-tab">
-                <form action="" method="post">
+                <form action="../index.php?controller=usuario&action=registrarUsuario" method="post">
                     <label for="nombre">Nombre</label>
                     <input type="text" class="form-control" id="nombre" name="nombre" required>
 
