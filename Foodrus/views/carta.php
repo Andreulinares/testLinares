@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/../model/ProductoDAO.php';
+require_once __DIR__ . '/../model/ProductoDAO.php';
 
 //$totalProductos = count($pizza, $bebidas, $postres);
 $pizzas = ProductoDAO::getAllProducts('pizza');

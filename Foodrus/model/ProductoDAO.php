@@ -1,11 +1,11 @@
 <?php
 
-require __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../config/database.php';
 
 require_once 'Pizza.php';
-require 'Bebida.php';
-require 'Postre.php';
-require 'Usuario.php';
+require_once 'Bebida.php';
+require_once 'Postre.php';
+require_once 'Usuario.php';
 
 class ProductoDAO{
     public static function getAllProducts($categoria){
