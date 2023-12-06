@@ -244,7 +244,7 @@ class ProductoDAO{
         $usuario = self::obtenerUsuario($email);
 
         // Verificar si el usuario existe y la contraseña es correcta
-        if ($usuario && password_verify($password, $usuario->getPassword())) {
+        if ($usuario && $password === $usuario->getPassword()) {
             return true;
         }
 
