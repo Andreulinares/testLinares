@@ -2,20 +2,20 @@
 
 class Usuario{
     private $cliente_id;
+    private $email;
     private $nombre;
     private $apellidos;
-    private $telefono;
-    private $email;
     private $password;
+    private $telefono;
 
-    public function __construct($cliente_id, $nombre, $apellidos, $telefono, $email, $password)
+    public function __construct($cliente_id, $email, $nombre, $apellido, $password, $telefono)
     {
         $this->cliente_id = $cliente_id;
-        $this->nombre = $nombre;
-        $this->apellidos = $apellidos;
-        $this->telefono = $telefono;
         $this->email = $email;
+        $this->nombre = $nombre;
+        $this->apellidos = $apellido;
         $this->password = $password;
+        $this->telefono = $telefono;
     }
 
     public function getCliente_id(){
