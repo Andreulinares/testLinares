@@ -76,7 +76,7 @@ session_start();
             </li>
         </ul>
         <div class="tab-content">
-        <!-- Formularios --> 
+        <!-- Formularios -->  
             <div class="col-md-6 bg-login tab-pane show active" id="loginForm" role="tabpanel" aria-labelledby="login-tab">
                 <form action="../index.php?controller=usuario&action=iniciarSesion" method="post">
                     <label for="email">Dirección de correo electrónico:</label>
