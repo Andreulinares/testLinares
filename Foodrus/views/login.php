@@ -85,7 +85,7 @@ session_start();
                     <label for="password">Contraseña:</label>
                     <input type="password" class="form-control" id="password" name="password" required>
 
-                    <button type="submit" name="iniciar_sesion" class="btn btn-primary mt-3">Iniciar Sesión</button>
+                    <button type="submit" name="iniciar_sesion" class="btn btn-primary mt-3 btn-iniciar">INICIAR SESION</button>
                 </form>
             </div>
 
@@ -106,7 +106,7 @@ session_start();
                     <label for="passwd">Contraseña:</label>
                     <input type="password" class="form-control" id="passwd" name="passwd" required>
 
-                    <button type="submit" name="registrar" class="btn btn-success mt-3">Registrarse</button>
+                    <button type="submit" name="registrar" class="btn btn-success mt-3 btn-registrar">REGISTRARSE</button>
                 </form>
             </div>
         </div>

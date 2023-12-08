@@ -196,6 +196,16 @@ svg{
     color: black;
 }
 
+.nav-link.active::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #004bbe;
+    top: 0;
+    left: 0px;
+}
+
 .bg-login {
     background-color: white;
     padding-left: 15px;
@@ -207,4 +217,30 @@ svg{
 
 .custom-tabs {
     border: none;
+}
+
+.btn-iniciar{
+    border-radius: 10px;
+    width: 100%;
+    background-color: #00ae42;
+    border: none;
+}
+
+.btn-iniciar:hover{
+    background-color: #FF973B;
+    border: none;
+    border-radius: 10px;
+}
+
+.btn-registrar{
+    border-radius: 10px;
+    width: 100%;
+    background-color: #66BC29;
+    border: none;
+}
+
+.btn-registrar:hover{
+    background-color: #FF973B;
+    border: none;
+    border-radius: 10px;
 }
