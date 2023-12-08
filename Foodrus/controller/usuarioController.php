@@ -22,6 +22,7 @@ class usuarioController{
     }
 
     public function iniciarSesion(){
+        session_start();
         if(isset($_POST['iniciar_sesion'])){
             $email = $_POST['email'];
             $passwd = $_POST['password'];
