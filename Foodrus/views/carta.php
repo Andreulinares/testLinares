@@ -75,7 +75,7 @@ session_start();
                         if (isset($_SESSION['user_email'])) : ?>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li>
-                            <form action="" method="post">
+                            <form action="../index.php?controller=usuario&action=logout" method="post">
                                 <button type="submit" class="dropdown-item" name="cerrar_sesion">Salir</button>
                             </form>
                             </li>
