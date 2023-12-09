@@ -263,6 +263,9 @@ session_start();
         });
     </script>
 <?php endif; ?>
+
+<script src="../assets/js/bootstrap.bundle.min.js"></script>
+
 <!-- Bolita roja actualizar cantidad -->
 <script>
     function actualizarNumCarrito(){
@@ -278,6 +281,4 @@ session_start();
             actualizarNumCarrito();
     });
 </script>
-
-<script src="../assets/js/bootstrap.bundle.min.js"></script>
 </html>
