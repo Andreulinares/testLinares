@@ -37,5 +37,17 @@ class usuarioController{
             }
         }
     }
+
+    public function logout(){
+        session_start();
+
+        if(isset($_POST['cerrar_sesion'])){
+            session_unset();
+            session_destroy();
+
+            header("Location: ../Foodrus/views/Inicio.php");
+            exit();
+        }
+    }
     
 }
