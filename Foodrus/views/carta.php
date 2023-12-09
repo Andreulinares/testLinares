@@ -50,7 +50,7 @@ session_start();
             </form>
         
 
-            <!-- mi cuenta, ubicacion y carta -->
+                <!-- mi cuenta, ubicacion y carta -->
                 <ul class="navbar-nav me-2">
                     <li class="nav-item">
                         <a class="nav-link" href="#">
@@ -58,10 +58,29 @@ session_start();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="<?= isset($_SESSION['user_email']) ? '#' : 'login.php'; ?>" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img src="../img/usuario.svg" alt="mi-cuenta" class="usuario">
-                            <span class="texto-menu">MI CUENTA</span>
+                            <span class="texto-menu">
+                            <?php
+                            if (isset($_SESSION['user_email'])){
+                                $usuario = ProductoDAO::obtenerUsuario($_SESSION['user_email']);
+                                echo $usuario->getNombre();
+                            } else {
+                                echo "MI CUENTA";
+                            }
+                            ?>
+                            </span>
                         </a>
+                        <?php
+                        if (isset($_SESSION['user_email'])) : ?>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                            <form action="" method="post">
+                                <button type="submit" class="dropdown-item" name="cerrar_sesion">Salir</button>
+                            </form>
+                            </li>
+                        </ul>
+                        <?php endif; ?>
                     </li>
                     <li class="nav-item">
                         <a href="carta.php" class="nav-link text-white carta">Carta</a>
