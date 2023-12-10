@@ -51,7 +51,7 @@ session_start();
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= isset($_SESSION['user_email']) ? '#' : 'login.php'; ?>" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link" href="<?= isset($_SESSION['user_email']) ? '#' : 'login.php'; ?>" id="navbarDropdownInicio" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <img src="../img/usuario.svg" alt="mi-cuenta" class="usuario">
                       <span class="texto-menu">
                         <?php
