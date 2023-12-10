@@ -577,3 +577,17 @@ label[for="cupon"]{
     position: relative;
     top: 40px;
 }
+
+/* FOOTER */
+
+.copyright{
+    font-size: 14px;
+    font-family: "Nunito Sans", sans-serif;
+    position: relative;
+    top: 47px;
+    right: 30px;
+}
+
+.bg-custom{
+    background-color: #1450A0;
+}

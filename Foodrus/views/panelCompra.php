@@ -197,6 +197,26 @@ if (!isset($_SESSION['carrito_id'])) {
         ?>
     </div>
 </section>
+
+<footer>
+    <div class="container-fluid p-5 text-white bg-custom">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-3">
+                <!-- Iconos de redes sociales -->
+                <a href="#" class="text-white"><img src="../img/red1.png" alt="Imagen 1"></a>
+                <a href="#" class="text-white"><img src="../img/red2.png" alt="Imagen 2"></a>
+                <a href="#" class="text-white"><img src="../img/red3.png" alt="Imagen 3"></a>
+                <a href="#" class="text-white"><img src="../img/red4.png" alt="Imagen 4"></a>
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="col-xs-12 pt-2 text-center copyright">
+                <!-- Copyright -->
+                <p class="text-white">&copy;2023 | Andreu Linares</p>
+            </div>
+        </div>
+    </div>
+</footer>
 <!-- VENTANA EMERGENTE CARRITO -->
     <div id="ventana" style="display: none;">
         <div class="div-ventana">
