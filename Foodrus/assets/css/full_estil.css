@@ -94,7 +94,7 @@ svg{
     color: white;
     position: relative;
     right: 90px;
-    bottom: 1px;
+    bottom: 2px;
 }
 
 .carta{
@@ -283,6 +283,10 @@ svg{
 
 ul.dropdown-menu.show{
     left: 1010px;
+}
+
+.dropdown-toggle::after {
+    display: none;
 }
 
 /* VENTANA EMERGENTE CARRITO */
