@@ -105,7 +105,7 @@ svg{
 .bg-custom{
     background-color: #1450A0;
     position: absolute;
-    top: 595px;
+    top: 705px;
 }
 
 /* VENTANA EMERGENTE CARRITO */
@@ -200,8 +200,8 @@ svg{
     content: "";
     position: absolute;
     width: 100%;
-    height: 4px;
-    background-color: #004bbe;
+    height: 5px;
+    background-color: #1450a0;
     top: 0;
     left: 0px;
 }
@@ -224,6 +224,7 @@ svg{
     width: 100%;
     background-color: #00ae42;
     border: none;
+    padding: 10px 15px;
 }
 
 .btn-iniciar:hover{
@@ -237,10 +238,30 @@ svg{
     width: 100%;
     background-color: #66BC29;
     border: none;
+    padding: 10px 15px;
 }
 
 .btn-registrar:hover{
     background-color: #FF973B;
     border: none;
     border-radius: 10px;
+}
+
+.label-form {
+    border: 1px solid #ccc;
+    font-size: 14px;
+    border-radius: 10px;
+    height: 32px;
+}
+
+label {
+    color: black;
+    font-weight: 500;
+    font-size: 13px;
+    text-transform: none;
+    margin-bottom: 5px;
+}
+
+.form-group {
+    margin-bottom: 30px;
 }

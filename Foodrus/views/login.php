@@ -64,7 +64,7 @@ session_start();
 </nav>
 </header>
 <section>
-    <div class="container mt-5">
+    <div class="container mt-4">
         
         <!-- Pestañas -->
         <ul class="nav nav-tabs custom-tabs" id="myTabs" role="tablist">
@@ -79,33 +79,40 @@ session_start();
         <!-- Formularios -->  
             <div class="col-md-6 bg-login tab-pane show active" id="loginForm" role="tabpanel" aria-labelledby="login-tab">
                 <form action="../index.php?controller=usuario&action=iniciarSesion" method="post">
-                    <label for="email">Dirección de correo electrónico:</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-
-                    <label for="password">Contraseña:</label>
-                    <input type="password" class="form-control" id="password" name="password" required>
-
+                    <div class="form-group">
+                        <label for="email">Dirección de correo electrónico:</label>
+                        <input type="email" class="form-control label-form" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" class="form-control label-form" id="password" name="password" required>
+                    </div>
                     <button type="submit" name="iniciar_sesion" class="btn btn-primary mt-3 btn-iniciar">INICIAR SESION</button>
                 </form>
             </div>
 
             <div class="col-md-6 bg-login tab-pane" id="registroForm" role="tabpanel" aria-labelledby="registro-tab">
                 <form action="../index.php?controller=usuario&action=registrarUsuario" method="post">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" required>
-
-                    <label for="apell">Apellidos</label>
-                    <input type="text" class="form-control" id="apell" name="apell" required>
-
-                    <label for="tel">Numero de telefono:</label>
-                    <input type="number" class="form-control" id="tel" name="tel" required>
-
-                    <label for="mail">Correo electrónico</label>
-                    <input type="text" class="form-control" id="mail" name="mail" required>
-
-                    <label for="passwd">Contraseña:</label>
-                    <input type="password" class="form-control" id="passwd" name="passwd" required>
-
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control label-form" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apell">Apellidos</label>
+                        <input type="text" class="form-control label-form" id="apell" name="apell" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tel">Numero de telefono:</label>
+                        <input type="number" class="form-control label-form" id="tel" name="tel" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mail">Correo electrónico</label>
+                        <input type="text" class="form-control label-form" id="mail" name="mail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="passwd">Contraseña:</label>
+                        <input type="password" class="form-control label-form" id="passwd" name="passwd" required>
+                    </div>
                     <button type="submit" name="registrar" class="btn btn-success mt-3 btn-registrar">REGISTRARSE</button>
                 </form>
             </div>
