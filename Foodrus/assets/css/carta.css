@@ -251,6 +251,12 @@ header svg{
     background-color: #1450A0;
 }
 
+/* DESPLEGABLE MI CUENTA */
+
+ul.dropdown-menu.show{
+    left: 1010px;
+}
+
 /* VENTANA EMERGENTE CARRITO */
 
 #ventana{
