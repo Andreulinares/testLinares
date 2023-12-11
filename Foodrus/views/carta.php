@@ -26,9 +26,11 @@ session_start();
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/css/carta.css" rel="stylesheet" type="text/css" media="screen">
 
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    
 </head>
-
 <body>
+
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1450A0;">
         <div class="container">
@@ -58,7 +60,7 @@ session_start();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= isset($_SESSION['user_email']) ? '#' : 'login.php'; ?>" id="navbarDropdownCarta" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img src="../img/usuario.svg" alt="mi-cuenta" class="usuario">
                             <span class="texto-menu">
                             <?php
@@ -73,13 +75,25 @@ session_start();
                         </a>
                         <?php
                         if (isset($_SESSION['user_email'])) : ?>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" class="desplegable">
+                        <ul class="dropdown-menu">
                             <li>
                             <form action="../index.php?controller=usuario&action=logout" method="post">
                                 <button type="submit" class="dropdown-item" name="cerrar_sesion">Salir</button>
                             </form>
                             </li>
                         </ul>
+                        <?php else : ?>
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function () {
+                                    let dropdownToggle = document.querySelector('.nav-link.dropdown-toggle');
+
+                                    if (dropdownToggle) {
+                                        dropdownToggle.addEventListener('click', function () {
+                                            window.location.href = 'login.php';
+                                        });
+                                    }
+                                });
+                            </script>
                         <?php endif; ?>
                     </li>
                     <li class="nav-item">
@@ -263,8 +277,6 @@ session_start();
         });
     </script>
 <?php endif; ?>
-
-<script src="../assets/js/bootstrap.bundle.min.js"></script>
 
 <!-- Bolita roja actualizar cantidad -->
 <script>
