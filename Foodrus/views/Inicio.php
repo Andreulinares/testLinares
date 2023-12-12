@@ -19,11 +19,12 @@ session_start();
     <link href="../assets/css/full_estil.css" rel="stylesheet" type="text/css" media="screen">
 
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/desplegable.js"></script>
 
 </head>
 <body>
 
-<header>
+<header id="mi-header">
   <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1450A0;">
     <div class="container">
         <!-- Logo foodrus -->
@@ -52,7 +53,7 @@ session_start();
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a id="usuario-btn" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <img src="../img/usuario.svg" alt="mi-cuenta" class="usuario">
                       <span class="texto-menu">
                         <?php
@@ -67,7 +68,7 @@ session_start();
                     </a>
                     <?php
                     if (isset($_SESSION['user_email'])) : ?>
-                    <ul class="dropdown-menu">
+                    <ul id="desplegable-menu" class="dropdown-menu">
                       <li>
                         <form action="../index.php?controller=usuario&action=logout" method="post">
                           <button type="submit" class="dropdown-item" name="cerrar_sesion">Salir</button>

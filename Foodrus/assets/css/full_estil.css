@@ -289,6 +289,17 @@ ul.dropdown-menu.show{
     display: none;
 }
 
+#mi-header{
+    transition: transform 0.3s ease-in-out;
+}
+
+#desplegable-menu{
+    position: absolute;
+    transform: translateY(-142px);
+    height: 57px;
+    left: 569px;
+}
+
 /* VENTANA EMERGENTE CARRITO */
 
 #ventana{
