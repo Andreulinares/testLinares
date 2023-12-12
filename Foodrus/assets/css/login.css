@@ -254,6 +254,10 @@ svg{
     height: 32px;
 }
 
+.label-form:focus{
+    box-shadow: none;
+}
+
 label {
     color: black;
     font-weight: 500;

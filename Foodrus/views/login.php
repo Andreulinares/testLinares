@@ -80,11 +80,11 @@ session_start();
             <div class="col-md-6 bg-login tab-pane show active" id="loginForm" role="tabpanel" aria-labelledby="login-tab">
                 <form action="../index.php?controller=usuario&action=iniciarSesion" method="post">
                     <div class="form-group">
-                        <label for="email">Dirección de correo electrónico:</label>
+                        <label for="email">Dirección de correo electrónico</label>
                         <input type="email" class="form-control label-form" id="email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="password">Contraseña:</label>
+                        <label for="password">Contraseña</label>
                         <input type="password" class="form-control label-form" id="password" name="password" required>
                     </div>
                     <button type="submit" name="iniciar_sesion" class="btn btn-primary mt-3 btn-iniciar">INICIAR SESION</button>
