@@ -116,7 +116,7 @@ session_start();
 <section>
     <h2 class="h2-carta">CARTA</h2>
     
-    <h2 class="t-menu">MENU INFANTIL</h2>
+    <h2 id="infantil" class="t-menu">MENU INFANTIL</h2>
 
     <div class="container">
     <div class="productos-totales">
@@ -176,7 +176,7 @@ session_start();
     </div>
     </div>
 
-    <h2 class="t-menu">MENU ESTANDAR</h2>
+    <h2 id="estandar" class="t-menu">MENU ESTANDAR</h2>
 
     <div class="container contenedor">
     <div class="row tarjetas">

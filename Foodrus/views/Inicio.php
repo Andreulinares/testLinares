@@ -145,17 +145,17 @@ session_start();
           <div class="row">
             <div class="col-4">
               <div class="button-container text-center">
-                <button type="button" class="btn btn-primary btn-custom b1 b-text">INFANTIL</button>
+                <a href="carta.php#infantil" class="btn btn-primary btn-custom b1 b-text">INFANTIL</a>
               </div>
             </div>
             <div class="col-4">
               <div class="button-container text-center">
-                <button type="button" class="btn btn-primary btn-custom b-text">ESTANDAR</button>
+                <a href="carta.php#estandar" class="btn btn-primary btn-custom b-text">ESTANDAR</a>
               </div>
             </div>
             <div class="col-4">
               <div class="button-container text-center">
-                <button type="button" class="btn btn-primary btn-custom b2 b-text">TEMPORAL</button>
+                <a href="#" class="btn btn-primary btn-custom b2 b-text">TEMPORAL</a>
               </div>
             </div>
           </div>
