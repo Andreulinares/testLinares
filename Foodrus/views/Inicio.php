@@ -19,7 +19,6 @@ session_start();
     <link href="../assets/css/full_estil.css" rel="stylesheet" type="text/css" media="screen">
 
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/js/desplegable.js"></script>
 
 </head>
 <body>
@@ -71,10 +70,16 @@ session_start();
                     <ul id="desplegable-menu" class="dropdown-menu">
                       <li>
                         <form action="../index.php?controller=usuario&action=logout" method="post">
-                          <button type="submit" class="dropdown-item" name="cerrar_sesion">Salir</button>
+                          <button type="submit" class="dropdown-item salir" name="cerrar_sesion">Salir</button>
+                        </form>
+                      </li>
+                      <li>
+                        <form action="">
+                          <button type="submit" class="dropdown-item mis-pedidos" name="mis-pedidos">Mis pedidos</button>
                         </form>
                       </li>
                     </ul>
+                    <script src="../assets/js/desplegable.js"></script>
                     <?php else : ?>
                       <script>
                         document.addEventListener('DOMContentLoaded', function () {
