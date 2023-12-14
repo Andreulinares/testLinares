@@ -198,6 +198,19 @@ if (!isset($_SESSION['carrito_id'])) {
     </div>
 </section>
 
+<section>
+    <p class="ultimos-pedidos">ULTIMOS PEDIDOS</p>
+
+    <?php
+    // Para mostrar el último pedido
+    if (isset($_COOKIE['UltimoPedido'])) {
+        echo 'Último pedido: ' . $_COOKIE['ultimoPedido'];
+    } else {
+        echo 'No hay pedidos anteriores.';
+    }
+    ?>
+</section>
+
 <footer>
     <div class="container-fluid p-5 text-white bg-custom">
         <div class="row justify-content-center align-items-center">
