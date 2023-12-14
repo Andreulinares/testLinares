@@ -253,12 +253,36 @@ header svg{
 
 /* DESPLEGABLE MI CUENTA */
 
-ul.dropdown-menu.show{
-    left: 1010px;
-}
-
 .dropdown-toggle::after {
     display: none;
+}
+
+#mi-header{
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    position: relative;
+}
+
+#desplegable-menu{
+    top: -52px;
+    display: none;
+    /* background: #ffff; */
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    background-color: #4e78b4;
+    left: 0px;
+}
+
+.mis-pedidos{
+    position: relative;
+    left: 697px;
+    width: 650px;
+    bottom: 50px;
+}
+
+.salir{
+    width: 650px;
 }
 
 /* VENTANA EMERGENTE CARRITO */

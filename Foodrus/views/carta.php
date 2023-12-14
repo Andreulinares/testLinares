@@ -77,11 +77,17 @@ session_start();
                         if (isset($_SESSION['user_email'])) : ?>
                         <ul id="desplegable-menu" class="dropdown-menu">
                             <li>
-                            <form action="../index.php?controller=usuario&action=logout" method="post">
-                                <button type="submit" class="dropdown-item" name="cerrar_sesion">Salir</button>
-                            </form>
+                                <form action="../index.php?controller=usuario&action=logout" method="post">
+                                    <button type="submit" class="dropdown-item salir" name="cerrar_sesion">Salir</button>
+                                </form>
+                            </li>
+                            <li>
+                                <form action="">
+                                    <button type="submit" class="dropdown-item mis-pedidos" name="mis-pedidos">Mis pedidos</button>
+                                </form>
                             </li>
                         </ul>
+                        <script src="../assets/js/desplegable.js"></script>
                         <?php else : ?>
                             <script>
                                 document.addEventListener('DOMContentLoaded', function () {
