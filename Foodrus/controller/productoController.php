@@ -125,10 +125,10 @@ class productoController{
             }
     
             if ($productoEnCarrito) {
-                // El producto ya está en el carrito, incrementar la cantidad
+                // Si el producto ya está en el carrito, se incrementa la cantidad
                 $productoEnCarrito->setCantidad($productoEnCarrito->getCantidad() + 1);
             } else {
-                // El producto no está en el carrito, agregarlo como un nuevo pedido
+                // En caso contrario, se añadadira como un nuevo producto
                 $pedido = new Pedido($producto);
                 $_SESSION['selecciones'][] = $pedido;
             }
@@ -174,10 +174,17 @@ class productoController{
     }
 
     public function finalizarCompra(){
+        session_start();
+        if (!isset($_SESSION['user_email'])){
+            header("Location: ../Foodrus/views/login.php");
+            exit();
+        }else{
+            setcookie('UltimoPedido',$_POST['cantidadTotal'], time() + 3600);
+        }
         //Te almacena el pedido en la base de datos ProductoDAO que guarda el pedido en BBDD
 
         //Guardar cookie
-        //set_cookie('UltimoPedido',$_POST['cantidadTotal'], time() + 3600);
+        
     }
 
 }
