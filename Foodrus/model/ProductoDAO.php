@@ -203,9 +203,10 @@ class ProductoDAO{
         $telefono = $usuario->getTelefono();
         $email = $usuario->getEmail();
         $passwd = $usuario->getPassword();
+        $rol = $usuario ->getRol();
 
-        $stmt = $con->prepare("INSERT INTO clientes (cliente_id, email, nombre, apellido, contraseña, telefono) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("issssi", $cliente_id, $email, $nombre, $apellidos, $passwd, $telefono);
+        $stmt = $con->prepare("INSERT INTO clientes (cliente_id, email, nombre, apellido, contraseña, telefono, rol) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("issssis", $cliente_id, $email, $nombre, $apellidos, $passwd, $telefono, $rol);
 
         if ($stmt->execute()) {
             $stmt->close();
@@ -231,7 +232,7 @@ class ProductoDAO{
     
             if ($result->num_rows == 1) {
                 $row = $result->fetch_object();
-                return new Usuario($row->cliente_id, $row->email, $row->nombre, $row->apellido, $row->contraseña, $row->telefono);
+                return new Usuario($row->cliente_id, $row->email, $row->nombre, $row->apellido, $row->contraseña, $row->telefono, $row->rol);
             } else {
                 
                 return null;

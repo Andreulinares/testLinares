@@ -11,8 +11,9 @@ class usuarioController{
             $telefono = $_POST['tel'];
             $email = $_POST['mail'];
             $passwd = $_POST['passwd'];
+            $rol = "usuario";
 
-            $usuario = new Usuario(0, $nombre, $apellidos, $telefono, $email, $passwd);
+            $usuario = new Usuario(0, $nombre, $apellidos, $telefono, $email, $passwd, $rol);
             ProductoDAO::agregarUsuario($usuario);
 
             header("Location: ../Foodrus/views/login.php");

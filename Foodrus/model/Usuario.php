@@ -7,8 +7,9 @@ class Usuario{
     private $apellidos;
     private $password;
     private $telefono;
+    private $rol;
 
-    public function __construct($cliente_id, $email, $nombre, $apellido, $password, $telefono)
+    public function __construct($cliente_id, $email, $nombre, $apellido, $password, $telefono, $rol)
     {
         $this->cliente_id = $cliente_id;
         $this->email = $email;
@@ -16,6 +17,7 @@ class Usuario{
         $this->apellidos = $apellido;
         $this->password = $password;
         $this->telefono = $telefono;
+        $this->rol = $rol;
     }
 
     public function getCliente_id(){
@@ -40,6 +42,10 @@ class Usuario{
 
     public function getPassword() {
         return $this->password;
+    }
+
+    public function getRol(){
+        return $this->rol;
     }
 }
 ?>
