@@ -264,25 +264,56 @@ header svg{
 }
 
 #desplegable-menu{
-    top: -52px;
     display: none;
-    /* background: #ffff; */
-    height: 50px;
+    height: 102px;
     width: 100%;
     text-align: center;
     background-color: #4e78b4;
     left: 0px;
+    transform: translateY(-187px);
+    border-bottom: 1px solid #1450a0;
+    border-left: 1px solid #4e78b4;
+    border-right: 1px solid #4e78b4;
 }
 
-.mis-pedidos{
+.mis-pedidos {
     position: relative;
     left: 697px;
     width: 650px;
-    bottom: 50px;
+    bottom: 68px;
+    height: 45px;
+    color: white;
 }
 
-.salir{
+.mis-pedidos:hover{
+    color: white;
+    background-color: #1450A0;
+}
+
+.salir {
     width: 650px;
+    color: white;
+    height: 45px;
+    position: relative;
+    bottom: 7px;
+}
+
+.salir:hover {
+    color: white;
+    background-color: #1450a0;
+}
+
+.admin-productos{
+    color: white;
+    position: relative;
+    width: 650px;
+    bottom: 75px;
+    height: 45px;
+}
+
+.admin-productos:hover {
+    color: white;
+    background-color: #1450a0;
 }
 
 /* VENTANA EMERGENTE CARRITO */

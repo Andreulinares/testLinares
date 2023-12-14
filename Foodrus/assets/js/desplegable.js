@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (isOpen) {
             // Deslizar el header hacia abajo y mostrar el menú desplegable
-            header.style.transform = 'translateY(50px)'; 
+            header.style.transform = 'translateY(100px)'; 
             dropdownMenu.style.display = 'block';
         } else {
             // El header vuelve a su posición original y se oculta el menú desplegable

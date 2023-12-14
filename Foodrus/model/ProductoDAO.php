@@ -240,6 +240,23 @@ class ProductoDAO{
         }
     }
 
+    public static function obtenerRolUsuario($email){
+        $con = database::connect();
+
+        $stmt = $con->prepare("SELECT rol FROM CLIENTES WHERE email = ?");
+        $stmt->bind_param("s", $email);
+
+        $stmt->execute();
+    
+        $stmt->bind_result($rol);
+    
+        $stmt->fetch();
+
+        $stmt->close();
+
+        return $rol ? $rol : false;
+    }
+
     public static function verificarCredenciales($email, $password) {
         // Obtener el usuario basado en la dirección de correo electrónico
         $usuario = self::obtenerUsuario($email);

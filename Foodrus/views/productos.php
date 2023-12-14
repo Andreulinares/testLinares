@@ -23,6 +23,7 @@ require_once __DIR__ . '/../model/Postre.php';
             <th scope="col">Imagen</th>
             <th scope="col"></th>
         </tr>
+        <!-- Pizzas -->
         <?php foreach ($pizzas as $pizza): ?>
             <tr>
                 <td><?= $pizza->getNombre_producto(); ?></td>
@@ -54,7 +55,7 @@ require_once __DIR__ . '/../model/Postre.php';
                 </td>
             </tr>
         <?php endforeach; ?>
-
+<!-- Bebidas -->
         <?php foreach ($bebidas as $bebida): ?>
             <tr>
                 <td><?= $bebida->getNombre_producto(); ?></td>
@@ -86,7 +87,7 @@ require_once __DIR__ . '/../model/Postre.php';
                 </td>
             </tr>
         <?php endforeach; ?>
-
+<!-- Postres -->
         <?php foreach ($postres as $postre): ?>
             <tr>
                 <td><?= $postre->getNombre_producto(); ?></td>
@@ -119,7 +120,7 @@ require_once __DIR__ . '/../model/Postre.php';
             </tr>
         <?php endforeach; ?>
     </table>
-    
+    <!-- Añadir producto --> 
     <button id="mostrarFormulario" class="btn btn-primary">Añadir producto</button>
 
     <div id="formulario" style="display: none;">

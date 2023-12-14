@@ -78,6 +78,16 @@ session_start();
                           <button type="submit" class="dropdown-item mis-pedidos" name="mis-pedidos">Mis pedidos</button>
                         </form>
                       </li>
+                      <?php
+                      $rol = ProductoDAO::obtenerRolUsuario($_SESSION['user_email']);
+                      if ($rol == 'administrador'){
+                          ?>
+                          <li>
+                              <a href="../index.php?controller=producto&action=index" class="dropdown-item admin-productos" name="ad-product">Productos</a>
+                          </li>
+                          <?php
+                      }
+                      ?>
                     </ul>
                     <script src="../assets/js/desplegable.js"></script>
                     <?php else : ?>
