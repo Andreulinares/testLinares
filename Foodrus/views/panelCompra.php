@@ -253,7 +253,7 @@ if (!isset($_SESSION['carrito_id'])) {
 
     <?php
     // Para mostrar el último pedido
-    if (isset($_COOKIE['UltimoPedido'])) {
+    if (isset ($_SESSION['user_email']) && isset($_COOKIE['UltimoPedido'])) {
         echo '<p class="pedido-real">Último pedido: ' . $_COOKIE['UltimoPedido'] . '</p>';
     } else {
         echo '<p class="pedido-real">No hay pedidos anteriores.</p>';
