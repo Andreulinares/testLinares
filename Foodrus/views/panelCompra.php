@@ -22,9 +22,12 @@ if (!isset($_SESSION['carrito_id'])) {
     <title>Panel de compra</title>
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/css/carrito.css" rel="stylesheet">
+    <link href="../assets/css/carrito2.css" rel="stylesheet">
+
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-<header>
+<header id="mi-header">
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1450A0;">
     <div class="container">
         <!-- Logo foodrus -->
@@ -52,11 +55,58 @@ if (!isset($_SESSION['carrito_id'])) {
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <img src="../img/usuario.svg" alt="mi-cuenta" class="usuario">
-                        <span class="texto-menu">MI CUENTA</span>
-                    </a>
-                </li>
+                        <a id="usuario-btn" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="../img/usuario.svg" alt="mi-cuenta" class="usuario">
+                            <span class="texto-menu">
+                            <?php
+                            if (isset($_SESSION['user_email'])){
+                                $usuario = ProductoDAO::obtenerUsuario($_SESSION['user_email']);
+                                echo $usuario->getNombre();
+                            } else {
+                                echo "MI CUENTA";
+                            }
+                            ?>
+                            </span>
+                        </a>
+                        <?php
+                        if (isset($_SESSION['user_email'])) : ?>
+                        <ul id="desplegable-menu" class="dropdown-menu">
+                            <li>
+                                <form action="../index.php?controller=usuario&action=logout" method="post">
+                                    <button type="submit" class="dropdown-item salir" name="cerrar_sesion">Salir</button>
+                                </form>
+                            </li>
+                            <li>
+                                <form action="">
+                                    <button type="submit" class="dropdown-item mis-pedidos" name="mis-pedidos">Mis pedidos</button>
+                                </form>
+                            </li>
+                            <?php
+                            $rol = ProductoDAO::obtenerRolUsuario($_SESSION['user_email']);
+                            if ($rol == 'administrador'){
+                                ?>
+                                <li>
+                                    <a href="../index.php?controller=producto&action=index" class="dropdown-item admin-productos" name="ad-product">Productos</a>
+                                </li>
+                                <?php
+                            }
+                            ?>
+                        </ul>
+                        <script src="../assets/js/desplegable.js"></script>
+                        <?php else : ?>
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function () {
+                                    let dropdownToggle = document.querySelector('.nav-link.dropdown-toggle');
+
+                                    if (dropdownToggle) {
+                                        dropdownToggle.addEventListener('click', function () {
+                                            window.location.href = 'login.php';
+                                        });
+                                    }
+                                });
+                            </script>
+                        <?php endif; ?>
+                    </li>
                 <li class="nav-item">
                     <a href="carta.php" class="nav-link text-white carta">Carta</a>
                 </li>
@@ -266,6 +316,4 @@ if (!isset($_SESSION['carrito_id'])) {
             actualizarNumCarrito();
     });
 </script>
-
-<script src="../assets/js/bootstrap.bundle.min.js"></script>
 </html>
