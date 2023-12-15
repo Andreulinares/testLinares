@@ -602,7 +602,7 @@ label[for="cupon"]{
     position: relative;
     display: flex;
     justify-content: end;
-    top: 500px;
+    top: 900px;
     right: 200px;
     color: #1450a0;
     font-family: "Nunito Sans", sans-serif;
@@ -613,6 +613,6 @@ label[for="cupon"]{
     position: relative;
     display: flex;
     justify-content: end;
-    top: 500px;
+    top: 945px;
     right: 215px;
 }

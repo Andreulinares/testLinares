@@ -156,6 +156,12 @@ class productoController{
             } else {
                 unset($_SESSION['selecciones'][$pos]);
                 $_SESSION['selecciones'] = array_values($_SESSION['selecciones']);
+
+                if (empty($_SESSION['selecciones'])) {
+                    // Redireccionar a la página de inicio si no quedan productos en el carrito
+                    header("Location: ../Foodrus/views/Inicio.php");
+                    exit();
+                }
             }
         }
 
@@ -170,6 +176,12 @@ class productoController{
             unset($_SESSION['selecciones'][$pos]);
 
             header("Location: ../Foodrus/views/panelCompra.php");
+
+            if (empty($_SESSION['selecciones'])) {
+                // Redireccionar a la página de inicio si no quedan productos en el carrito
+                header("Location: ../Foodrus/views/Inicio.php");
+                exit();
+            }
         }
     }
 
