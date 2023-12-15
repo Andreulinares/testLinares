@@ -599,7 +599,7 @@ label[for="cupon"]{
 /* ULTIMOS PEDIDOS REALIZADOS */
 
 .ultimos-pedidos{
-    position: relative;
+    position: absolute;
     display: flex;
     justify-content: end;
     top: 900px;
@@ -610,7 +610,7 @@ label[for="cupon"]{
 }
 
 .pedido-real{
-    position: relative;
+    position: absolute;
     display: flex;
     justify-content: end;
     top: 945px;
