@@ -595,3 +595,24 @@ label[for="cupon"]{
     position: absolute;
     top: 1435px;
 }
+
+/* ULTIMOS PEDIDOS REALIZADOS */
+
+.ultimos-pedidos{
+    position: relative;
+    display: flex;
+    justify-content: end;
+    top: 500px;
+    right: 200px;
+    color: #1450a0;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 18px;
+}
+
+.pedido-real{
+    position: relative;
+    display: flex;
+    justify-content: end;
+    top: 500px;
+    right: 215px;
+}

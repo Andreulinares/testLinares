@@ -87,7 +87,7 @@ if (!isset($_SESSION['carrito_id'])) {
 
         $subtotal = CalculadoraPrecios::calcularPrecioPedido($_SESSION['selecciones']);
 
-        $cantidadTotal = $subtotal + $precioEnvio;
+        $cantidadTotal = number_format($subtotal + $precioEnvio, 2);
 
     ?>
 
@@ -204,9 +204,9 @@ if (!isset($_SESSION['carrito_id'])) {
     <?php
     // Para mostrar el último pedido
     if (isset($_COOKIE['UltimoPedido'])) {
-        echo 'Último pedido: ' . $_COOKIE['ultimoPedido'];
+        echo '<p class="pedido-real">Último pedido: ' . $_COOKIE['UltimoPedido'] . '</p>';
     } else {
-        echo 'No hay pedidos anteriores.';
+        echo '<p class="pedido-real">No hay pedidos anteriores.</p>';
     }
     ?>
 </section>
