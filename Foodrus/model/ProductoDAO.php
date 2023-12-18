@@ -268,6 +268,30 @@ class ProductoDAO{
 
         return false;
     }
+
+    public static function insertarPedido($pedido){
+        $con = database::connect();
+
+        $pedido_id = $pedido->getPedido_id();
+        $id_cliente = $pedido->getId_cliente();
+        $cantidad = $pedido->getCantidad();
+        $estado = $pedido->getEstado();
+        $fecha_pedido = $pedido->getFecha_pedido();
+
+        $stmt = $con->prepare("INSERT INTO pedidos (pedido_id, id_cliente, cantidad, estado, fecha_pedido) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("sidss", $pedido_id, $id_cliente, $cantidad, $estado, $fecha_pedido);
+
+        if ($stmt->execute()) {
+            $stmt->close();
+            return true;
+        } else {
+            $stmt->close();
+            echo "Error al insertar pedido" . $stmt->error;
+            return false;
+        }
+        
+        $con->close();
+    }
     
 }
 

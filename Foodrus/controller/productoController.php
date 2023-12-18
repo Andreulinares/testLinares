@@ -191,12 +191,20 @@ class productoController{
             header("Location: ../Foodrus/views/login.php");
             exit();
         }else{
+            //Guardar cookie
             setcookie('UltimoPedido',$_POST['cantidadTotal'], time() + 3600);
-        }
-        //Te almacena el pedido en la base de datos ProductoDAO que guarda el pedido en BBDD
 
-        //Guardar cookie
-        
+            //Te almacena el pedido en la base de datos ProductoDAO que guarda el pedido en BBDD
+            $pedido_id = $_SESSION['carrito_id'];
+            $cantidad = $_POST['cantidadTotal'];
+            $estado = 'pendiente';
+            $fecha = date('Y-m-d H:i:s');
+            $usuario = ProductoDAO::obtenerUsuario($_SESSION['user_email']);
+            $cliente_id = $usuario->getCliente_id();
+            
+            $pedido = new PedidoBD($pedido_id, $cliente_id, $cantidad, $estado, $fecha);
+            ProductoDAO::insertarPedido($pedido);
+        }
     }
 
 }
