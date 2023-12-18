@@ -11,8 +11,8 @@ session_start();
 
     <meta charset="UTF-8">
     <meta name="description" content="Descripció web">
-    <meta name="keywords" content="Paraules clau">
-    <meta name="author" content="Autor">
+    <meta name="keywords" content="Restaurante Foodrus">
+    <meta name="author" content="Andreu">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
@@ -78,6 +78,7 @@ session_start();
                           <button type="submit" class="dropdown-item mis-pedidos" name="mis-pedidos">Mis pedidos</button>
                         </form>
                       </li>
+                      <!-- PANEL ADMINISTRADOR -->
                       <?php
                       $rol = ProductoDAO::obtenerRolUsuario($_SESSION['user_email']);
                       if ($rol == 'administrador'){

@@ -82,10 +82,11 @@ session_start();
                                 </form>
                             </li>
                             <li>
-                                <form action="">
+                                <form action="../index.php?controller=usuario&action=mostrarPedidos">
                                     <button type="submit" class="dropdown-item mis-pedidos" name="mis-pedidos">Mis pedidos</button>
                                 </form>
                             </li>
+                            <!-- PANEL ADMINISTRADOR -->
                             <?php
                             $rol = ProductoDAO::obtenerRolUsuario($_SESSION['user_email']);
                             if ($rol == 'administrador'){
