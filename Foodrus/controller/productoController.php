@@ -2,6 +2,7 @@
 //Creamos el controlador de pedidos
 require_once __DIR__ . '/../model/ProductoDAO.php';
 require __DIR__ . '/../model/Pedido.php';
+require __DIR__ . '/../model/PedidoBD.php';
 
 class productoController{
     
