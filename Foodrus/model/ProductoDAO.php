@@ -292,6 +292,26 @@ class ProductoDAO{
         
         $con->close();
     }
+
+    public static function obtenerPedidosUsuario($cliente_id){
+        $con = database::connect();
+
+        $stmt = $con->prepare("SELECT * FROM PEDIDOS WHERE id_cliente = ?");
+        $stmt->bind_param("i", $cliente_id);
+
+        if ($stmt->execute()){
+            $result = $stmt->get_result();
+            $con->close();
+    
+            if ($result->num_rows == 1) {
+                $row = $result->fetch_object();
+                return new PedidoBD($row->pedido_id, $row->id_cliente, $row->cantidad, $row->estado, $row->fecha_pedido);
+            } else {
+                
+                return null;
+            }
+        }
+    }
     
 }
 

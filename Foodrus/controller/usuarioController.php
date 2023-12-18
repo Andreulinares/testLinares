@@ -50,5 +50,16 @@ class usuarioController{
             exit();
         }
     }
+
+    public function mostrarPedidos(){
+        session_start();
+
+        $usuario = ProductoDAO::obtenerUsuario($_SESSION['user_email']);
+        $cliente_id = $usuario->getCliente_id();
+
+        $pedidos = ProductoDAO::obtenerPedidosUsuario($cliente_id);
+
+        require __DIR__ . '/../views/misPedidos.php';
+    }
     
 }
