@@ -303,14 +303,15 @@ class ProductoDAO{
             $result = $stmt->get_result();
             $con->close();
     
-            if ($result->num_rows == 1) {
-                $row = $result->fetch_object();
-                return new PedidoBD($row->pedido_id, $row->id_cliente, $row->cantidad, $row->estado, $row->fecha_pedido);
-            } else {
-                
-                return null;
+            $pedidos = array();
+    
+            while ($row = $result->fetch_object()) {
+                $pedidos[] = new PedidoBD($row->pedido_id, $row->id_cliente, $row->cantidad, $row->estado, $row->fecha_pedido);
             }
+    
+            return $pedidos;
         }
+        return null;
     }
     
 }
