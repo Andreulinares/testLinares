@@ -70,12 +70,12 @@ session_start();
                     <ul id="desplegable-menu" class="dropdown-menu">
                       <li>
                         <form action="../index.php?controller=usuario&action=logout" method="post">
-                          <button type="submit" class="dropdown-item salir" name="cerrar_sesion">Salir</button>
+                          <button type="submit" class="dropdown-item salir boton-desp" name="cerrar_sesion">Salir</button>
                         </form>
                       </li>
                       <li>
                         <form action="../index.php?controller=usuario&action=mostrarPedidos" method="post">
-                          <button type="submit" class="dropdown-item mis-pedidos" name="mis-pedidos">Mis pedidos</button>
+                          <button type="submit" class="dropdown-item mis-pedidos boton-desp" name="mis-pedidos">Mis pedidos</button>
                         </form>
                       </li>
                       <!-- PANEL ADMINISTRADOR -->
@@ -84,7 +84,7 @@ session_start();
                       if ($rol == 'administrador'){
                           ?>
                           <li>
-                              <a href="../index.php?controller=producto&action=index" class="dropdown-item admin-productos" name="ad-product">Productos</a>
+                              <a href="../index.php?controller=producto&action=index" class="dropdown-item admin-productos boton-desp" name="ad-product">Productos</a>
                           </li>
                           <?php
                       }

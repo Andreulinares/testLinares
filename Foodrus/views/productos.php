@@ -4,6 +4,8 @@ require_once __DIR__ . '/../model/Bebida.php';
 require_once __DIR__ . '/../model/Postre.php';
 
 require_once __DIR__ . '/../model/ProductoDAO.php';
+
+session_start();
 ?>
 
 <!DOCTYPE html>
