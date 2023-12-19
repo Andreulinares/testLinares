@@ -77,7 +77,7 @@ if (!isset($_SESSION['carrito_id'])) {
                                 </form>
                             </li>
                             <li>
-                                <form action="../index.php?controller=usuario&action=mostrarPedidos">
+                                <form action="../index.php?controller=usuario&action=mostrarPedidos" method="post">
                                     <button type="submit" class="dropdown-item mis-pedidos" name="mis-pedidos">Mis pedidos</button>
                                 </form>
                             </li>
