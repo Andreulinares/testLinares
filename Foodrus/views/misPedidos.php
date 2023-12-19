@@ -113,7 +113,7 @@ require_once __DIR__ . '/../model/ProductoDAO.php';
     </div>
 </nav>
 </header>
-    <h2>Mis pedidos</h2>
+    <h2 class="mispedidos">Mis pedidos</h2>
 
     <table class="table table-bordered table-striped">
         <tr>

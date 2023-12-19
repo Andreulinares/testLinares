@@ -205,6 +205,8 @@ class productoController{
             
             $pedido = new PedidoBD($pedido_id, $cliente_id, $cantidad, $estado, $fecha);
             ProductoDAO::insertarPedido($pedido);
+
+            header("Location: ../Foodrus/views/panelCompra.php");
         }
     }
 

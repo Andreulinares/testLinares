@@ -1,3 +1,12 @@
+:root {
+    /* --main-bg-color: brown; */
+    --bg-color1: rgb(94, 37, 37);
+    --bg-color2: rgb(4, 178, 91);
+    --bg-color3: rgb(20, 80, 160);
+
+}
+
+
 .container{
     max-width: 1270px;
 }
@@ -182,6 +191,18 @@ svg{
     color: white;
     background-color: #1450a0;
 }
+
+/* TITULO H2  */
+
+.mispedidos{
+    font-family: "Arvo", sans-serif;
+    font-size: 30px;
+    color: var(--bg-color3);
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+
 
 /* VENTANA EMERGENTE CARRITO */
 
