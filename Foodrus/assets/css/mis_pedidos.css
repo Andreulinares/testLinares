@@ -130,13 +130,20 @@ svg{
     border-right: 1px solid #4e78b4;
 }
 
+#desplegable-menu li button, #desplegable-menu li a{
+    border: 1px solid #638ECB;
+    border-top: none;
+}
+
 .mis-pedidos {
     position: relative;
-    left: 697px;
-    width: 650px;
-    bottom: 68px;
-    height: 45px;
+    left: 647px;
+    width: 701px;
+    bottom: 57px;
+    height: 50px;
     color: white;
+    padding-top: 0px;
+    text-align: left;
 }
 
 .mis-pedidos:hover{
@@ -147,9 +154,12 @@ svg{
 .salir {
     width: 650px;
     color: white;
-    height: 45px;
+    height: 50px;
     position: relative;
     bottom: 7px;
+    padding-top: 0px;
+    text-align: left;
+    right: 2px;
 }
 
 .salir:hover {
@@ -161,8 +171,11 @@ svg{
     color: white;
     position: relative;
     width: 650px;
-    bottom: 75px;
-    height: 45px;
+    bottom: 58px;
+    height: 50px;
+    padding-top: 10px;
+    text-align: left;
+    right: 2px;
 }
 
 .admin-productos:hover {
