@@ -61,14 +61,19 @@ require_once __DIR__ . '/../model/ProductoDAO.php';
                     if (isset($_SESSION['user_email'])) : ?>
                     <ul id="desplegable-menu" class="dropdown-menu">
                         <li>
-                        <form action="/Foodrus/index.php?controller=usuario&action=logout" method="post">
-                            <button type="submit" class="dropdown-item salir" name="cerrar_sesion">Salir</button>
-                        </form>
+                            <form action="/Foodrus/index.php?controller=usuario&action=logout" method="post">
+                                <button type="submit" class="dropdown-item salir" name="cerrar_sesion">Salir</button>
+                            </form>
                         </li>
                         <li>
-                        <form action="/Foodrus/index.php?controller=usuario&action=mostrarPedidos" method="post">
-                            <button type="submit" class="dropdown-item mis-pedidos" name="mis-pedidos">Mis pedidos</button>
-                        </form>
+                            <form action="/Foodrus/index.php?controller=usuario&action=mostrarPedidos" method="post">
+                                <button type="submit" class="dropdown-item mis-pedidos" name="mis-pedidos">Mis pedidos</button>
+                            </form>
+                        </li>
+                        <li>
+                            <form action="" method="post">
+                                <button type="submit" class="dropdown-item mod-usuario" name="mod-usuario">Modificar datos</button>
+                            </form>
                         </li>
                         <!-- PANEL ADMINISTRADOR -->
                         <?php

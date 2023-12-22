@@ -86,6 +86,11 @@ session_start();
                                     <button type="submit" class="dropdown-item mis-pedidos" name="mis-pedidos">Mis pedidos</button>
                                 </form>
                             </li>
+                            <li>
+                                <form action="" method="post">
+                                    <button type="submit" class="dropdown-item mod-usuario" name="mod-usuario">Modificar datos</button>
+                                </form>
+                            </li>
                             <!-- PANEL ADMINISTRADOR -->
                             <?php
                             $rol = ProductoDAO::obtenerRolUsuario($_SESSION['user_email']);

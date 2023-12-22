@@ -81,3 +81,18 @@
     color: white;
     background-color: #1450a0;
 }
+
+.mod-usuario{
+    position: relative;
+    width: 701px;
+    height: 50px;
+    left: 647px;
+    bottom: 90px;
+    color: white;
+    text-align: left;
+}
+
+.mod-usuario:hover{
+    color: white;
+    background-color: #1450a0;
+}
