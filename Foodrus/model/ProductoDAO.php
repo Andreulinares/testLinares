@@ -318,7 +318,7 @@ class ProductoDAO{
         $con = database::connect();
 
         $stmt = $con->prepare("UPDATE clientes SET email = ?, nombre = ?, apellido = ?, contraseña = ?, telefono = ? WHERE cliente_id = ?");
-        $stmt->bind_param("ssdssi", $nombre, $apellidos, $telefono, $email, $contraseña, $id);
+        $stmt->bind_param("ssssdi", $email, $nombre, $apellidos, $contraseña, $telefono, $id);
 
         if ($stmt->execute()) {
             return true;

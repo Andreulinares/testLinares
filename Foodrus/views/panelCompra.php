@@ -82,7 +82,7 @@ if (!isset($_SESSION['carrito_id'])) {
                                 </form>
                             </li>
                             <li>
-                                <form action="" method="post">
+                                <form action="../index.php?controller=usuario&action=editarUsuario" method="post">
                                     <button type="submit" class="dropdown-item mod-usuario" name="mod-usuario">Modificar datos</button>
                                 </form>
                             </li>
