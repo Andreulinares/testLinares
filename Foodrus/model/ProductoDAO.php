@@ -313,6 +313,21 @@ class ProductoDAO{
         }
         return null;
     }
+
+    public static function actualizarUsuario($id, $nombre, $apellidos, $telefono, $email, $contraseña){
+        $con = database::connect();
+
+        $stmt = $con->prepare("UPDATE clientes SET email = ?, nombre = ?, apellido = ?, contraseña = ?, telefono = ? WHERE cliente_id = ?");
+        $stmt->bind_param("ssdssi", $nombre, $apellidos, $telefono, $email, $contraseña, $id);
+
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+        
+        $con->close();
+    }
     
 }
 

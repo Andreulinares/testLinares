@@ -70,4 +70,17 @@ class usuarioController{
         require __DIR__ . '/../views/editarUsuario.php';
     }
     
+    public function actualizar(){
+        $nombre = $_POST['nombre'];
+        $apellidos = $_POST['apell'];
+        $telefono = $_POST['tel'];
+        $email = $_POST['mail'];
+        $contraseña = $_POST['passwd'];
+        $id = $_POST['id'];
+
+        ProductoDAO::actualizarUsuario($id, $nombre, $apellidos, $telefono, $email, $contraseña);
+
+        header("Location: ../Foodrus/views/Inicio.php");
+        exit();
+    }
 }

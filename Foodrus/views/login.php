@@ -107,7 +107,7 @@ session_start();
                     </div>
                     <div class="form-group">
                         <label for="mail">Correo electrónico</label>
-                        <input type="text" class="form-control label-form" id="mail" name="mail" required>
+                        <input type="email" class="form-control label-form" id="mail" name="mail" required>
                     </div>
                     <div class="form-group">
                         <label for="passwd">Contraseña:</label>

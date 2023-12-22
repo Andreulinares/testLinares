@@ -1,5 +1,5 @@
 
-    <form action="index.php?action=actualizar" method="post" enctype="multipart/form-data">
+    <form action="index.php?controller=producto&action=actualizar" method="post" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?= $producto->getProducto_id()?>">
         <label for="disId">ID:</label><br>
         <input name="disId" disabled value="<?= $producto->getProducto_id()?>"><br>
