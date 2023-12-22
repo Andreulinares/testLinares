@@ -61,5 +61,13 @@ class usuarioController{
 
         require __DIR__ . '/../views/misPedidos.php';
     }
+
+    public function editarUsuario(){
+        session_start();
+
+        $usuario = ProductoDAO::obtenerUsuario($_SESSION['user_email']);
+
+        require __DIR__ . '/../views/editarUsuario.php';
+    }
     
 }
