@@ -123,7 +123,7 @@ session_start();
     </div>
 </nav>
 </header>
-<h2>Productos FoodRus</h2>
+<h2 class="titulo-p">Productos FoodRus</h2>
     <table class="table table-bordered table-striped">
         <tr>
             <th scope="col">Nombre</th>
