@@ -83,4 +83,9 @@ class usuarioController{
         header("Location: ../Foodrus/views/Inicio.php");
         exit();
     }
+
+    public function cancelar(){
+        header("Location: ../Foodrus/views/Inicio.php");
+        exit();
+    }
 }

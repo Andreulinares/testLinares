@@ -72,7 +72,7 @@ require_once __DIR__ . '/../model/ProductoDAO.php';
                         </li>
                         <li>
                             <form action="" method="post">
-                                <button type="submit" class="dropdown-item mod-usuario" name="mod-usuario">Modificar datos</button>
+                                <button type="submit" class="dropdown-item mod-usuario" name="mod-usuario">Detalles de la cuenta</button>
                             </form>
                         </li>
                         <!-- PANEL ADMINISTRADOR -->

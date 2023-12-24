@@ -1,0 +1,82 @@
+:root{
+    --bg-color4: rgb(20, 80, 160);
+}
+
+body{
+    background-color: #F5F5F5;
+}
+
+.container{
+    max-width: 1270px;
+}
+
+label {
+    color: black;
+    font-weight: 500;
+    font-size: 13px;
+    text-transform: none;
+    margin-bottom: 5px;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.principal {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.titulo{
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 30px;
+    color: var(--bg-color4);
+}
+
+.linea{
+    position: relative;
+    right: 25px;
+    width: 104%;
+}
+
+/* BOTONES */
+
+.btn-act{
+    border-radius: 10px!important;
+    color: #fff;
+    background-color: #00ae42;
+    border-color: #00ae42;
+    width: 315px;
+}
+
+.btn-act:hover{
+    color: #fff;
+    background-color: #ff973b;
+    border-color: #ff973b;
+}
+
+.btn.btn-act:active, .btn.btn-act:focus{
+    background-color: #ff973b;
+    border-color: #ff973b;
+    color: #fff;
+}
+
+.btn-cancelar{
+    border-radius: 10px!important;
+    color: #fff;
+    background-color: #66BC29;
+    border-color: #66BC29;
+    width: 315px;
+}
+
+.btn-cancelar:hover{
+    color: #fff;
+    background-color: #ff973b;
+    border-color: #ff973b;
+}
+
+.btn.btn-cancelar:active, .btn.btn-cancelar:focus{
+    background-color: #ff973b;
+    border-color: #ff973b;
+    color: #fff;
+}

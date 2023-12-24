@@ -88,7 +88,7 @@ session_start();
                             </li>
                             <li>
                                 <form action="../index.php?controller=usuario&action=editarUsuario" method="post">
-                                    <button type="submit" class="dropdown-item mod-usuario" name="mod-usuario">Modificar datos</button>
+                                    <button type="submit" class="dropdown-item mod-usuario" name="mod-usuario">Detalles de la cuenta</button>
                                 </form>
                             </li>
                             <!-- PANEL ADMINISTRADOR -->
