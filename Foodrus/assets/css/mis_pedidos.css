@@ -121,11 +121,6 @@ svg{
     position: relative;
 }
 
-#carouselExampleIndicators{
-    position: relative;
-    z-index: 500;
-}
-
 #desplegable-menu{
     display: none;
     height: 102px;
