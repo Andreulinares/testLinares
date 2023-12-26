@@ -314,6 +314,26 @@ class ProductoDAO{
         return null;
     }
 
+    public static function obtenerTodosPedidos(){
+        $con = database::connect();
+
+        $stmt = $con->prepare("SELECT * FROM PEDIDOS");
+        
+        if ($stmt->execute()){
+            $result = $stmt->get_result();
+            $con->close();
+
+            $pedidos = array();
+
+            while ($row = $result->fetch_object()) {
+                $pedidos[] = new PedidoBD($row->pedido_id, $row->id_cliente, $row->cantidad, $row->estado, $row->fecha_pedido);
+            }
+
+            return $pedidos;
+        }
+        return null;
+    }
+
     public static function actualizarUsuario($id, $nombre, $apellidos, $telefono, $email, $contraseña){
         $con = database::connect();
 
