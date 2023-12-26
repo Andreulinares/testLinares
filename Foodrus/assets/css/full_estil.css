@@ -32,6 +32,30 @@ h1{
         width: 100%;
         background: yellow;
     }
+
+    .ubi {
+        position: relative;
+        left: 266px;
+        bottom: 106px;
+    }
+    
+    .mi-cuenta{
+        position: relative;
+        left: 295px;
+        bottom: 156px;
+    }
+
+    .carta {
+        position: relative;
+        left: 210px;
+        bottom: 85px;
+    }
+
+    .buscador{
+        left: 50%;
+        transform: translateX(-75%);
+        top: 20px;
+    }
 }
 
 .container{
