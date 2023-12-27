@@ -121,7 +121,7 @@ session_start();
 </section>
 
 <footer>
-    <div class="container-fluid p-5 text-white bg-custom">
+    <div class="container-fluid p-5 text-white bg-custom" id="mi-footer">
         <div class="row justify-content-center align-items-center">
             <div class="col-md-3">
                 <!-- Iconos de redes sociales -->
@@ -150,8 +150,31 @@ session_start();
 </div>
 
 <div id="fondoOscuro"></div>
-</body>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Función para ajustar la posición del footer
+        function ajustarPosicionFooter() {
+            var footer = document.getElementById('mi-footer'); 
+
+            // Obtener el elemento de la pestaña activa
+            var pestañaActiva = document.querySelector('.nav-link.active');
+
+            if (pestañaActiva && pestañaActiva.id === 'login-tab') {
+                // Ajustar la posición para la pestaña "Entrar"
+                footer.style.top = '455px';
+            } else {
+                // Ajustar la posición para la pestaña "soy nuevo"
+                footer.style.top = '705px'; 
+            }
+        }
+
+        ajustarPosicionFooter();
+        document.addEventListener('shown.bs.tab', ajustarPosicionFooter);
+    });
+</script>
+</body>
+<!-- OTROS SCRIPTS -->
 <script src="../assets/js/ventana.js" defer></script>
 
 <?php if (empty($_SESSION['selecciones'])): ?>
