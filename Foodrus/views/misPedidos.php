@@ -126,6 +126,7 @@ require_once __DIR__ . '/../model/ProductoDAO.php';
             <th scope="col">Cantidad</th>
             <th scope="col">Estado</th>
             <th scope="col">Fecha pedido</th>
+            <th scope="col">Acciones</th>
         </tr>
         <?php foreach ($pedidos as $pedido) : ?>
             <tr>
@@ -133,6 +134,12 @@ require_once __DIR__ . '/../model/ProductoDAO.php';
                 <td>€<?= $pedido->getCantidad(); ?></td>
                 <td><?= $pedido->getEstado(); ?></td>
                 <td><?= $pedido->getFecha_pedido(); ?></td>
+                <td>
+                    <form action="index.php?controller=user&action=eliminarPedido" method="post">
+                        <input type="hidden" name="pedido_id" value="<?= $pedido->getPedido_id(); ?>">
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                </td>
             </tr>
         <?php endforeach; ?>
     </table>

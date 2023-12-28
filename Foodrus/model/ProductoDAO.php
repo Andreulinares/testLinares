@@ -268,7 +268,7 @@ class ProductoDAO{
 
         return false;
     }
-
+// OPERACIONES CON PEDIDOS DE LA BASE DE DATOS
     public static function insertarPedido($pedido){
         $con = database::connect();
 
@@ -333,7 +333,7 @@ class ProductoDAO{
         }
         return null;
     }
-
+//Funcion para actualizar datos del usuario
     public static function actualizarUsuario($id, $nombre, $apellidos, $telefono, $email, $contraseña){
         $con = database::connect();
 
@@ -347,6 +347,21 @@ class ProductoDAO{
         }
         
         $con->close();
+    }
+// Eliminar pedido de la base de datos
+    public static function deletePedido($id){
+        $con = database::connect();
+
+        $stmt = $con->prepare("DELETE FROM pedidos WHERE pedido_id = ?");
+        $stmt->bind_param("s", $id); 
+
+        if ($stmt->execute()){
+            $stmt->close();
+            return true;
+        }else{
+            $stmt->close();
+            return false;
+        }
     }
     
 }

@@ -3,7 +3,7 @@ require_once __DIR__ . '/../model/ProductoDAO.php';
 
 
 class usuarioController{
-
+//REGISTRAR USUARIO Y INICIAR SESION
     public function registrarUsuario(){
         if(isset($_POST['registrar'])){
             $nombre = $_POST['nombre'];
@@ -38,7 +38,7 @@ class usuarioController{
             }
         }
     }
-
+//CERRAR SESION
     public function logout(){
         session_start();
 
@@ -50,7 +50,7 @@ class usuarioController{
             exit();
         }
     }
-
+//MOSTRAR PEDIDOS 
     public function mostrarPedidos(){
         session_start();
 
@@ -67,7 +67,7 @@ class usuarioController{
 
         require __DIR__ . '/../views/misPedidos.php';
     }
-
+//EDITAR Y ACTUALIZAR DATOS USUARIOS
     public function editarUsuario(){
         session_start();
 
@@ -89,9 +89,21 @@ class usuarioController{
         header("Location: ../Foodrus/views/Inicio.php");
         exit();
     }
-
+//SALIR DE LA PAGINA DE EDITAR USUARIO SIN MODIFICAR NADA
     public function cancelar(){
         header("Location: ../Foodrus/views/Inicio.php");
         exit();
+    }
+
+    public function eliminarPedido(){
+        if (isset($_POST['pedido_id'])){
+            $pedido_id = $_POST['pedido_id'];
+            if (ProductoDAO::deletePedido($pedido_id)){
+                echo "El pedido se elimino correctamente";
+                header("Location: ../Foodrus/views/misPedidos.php");
+            }else{
+                echo "Error, no se ha podido eliminar el pedido";
+            }
+        }
     }
 }
