@@ -33,28 +33,33 @@ h1{
         background: yellow;
     }
 
+    .navbar-toggler{
+        z-index: 1000;
+    }
+
     .ubi {
         position: relative;
-        left: 266px;
-        bottom: 106px;
+        left: 285px;
+        bottom: 25px;
     }
     
     .mi-cuenta{
         position: relative;
-        left: 295px;
+        left: 260px;
         bottom: 156px;
+        width: 100px;
     }
 
     .carta {
         position: relative;
-        left: 210px;
-        bottom: 85px;
+        left: 205px;
+        top: 35px;
     }
 
     .buscador{
         left: 50%;
         transform: translateX(-75%);
-        top: 20px;
+        top: 120px;
     }
 }
 
