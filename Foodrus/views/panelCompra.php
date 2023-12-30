@@ -214,6 +214,10 @@ if (!isset($_SESSION['carrito_id'])) {
             <hr class="linea3">
             <form action="../index.php?controller=producto&action=finalizarCompra" method="post">
                 <input type="hidden" name="cantidadTotal" value="<?= $cantidadTotal ?>">
+                <?php foreach ($_SESSION['selecciones'] as $pos => $pedido): ?>
+                    <input type="hidden" name="productos[<?= $pos ?>][id]" value="<?= $pedido->getProducto()->getProducto_id(); ?>">
+                    <input type="hidden" name="productos[<?= $pos ?>][cantidad]" value="<?= $pedido->getCantidad(); ?>">
+                <?php endforeach ?>
                 <button type="submit" class="btn btn-primary btn-finalizar">FINALIZAR COMPRA</button>
             </form>
         </div>
@@ -261,6 +265,9 @@ if (!isset($_SESSION['carrito_id'])) {
     // Para mostrar el último pedido
     if (isset ($_SESSION['user_email']) && isset($_COOKIE['UltimoPedido'])) {
         echo '<p class="pedido-real">Último pedido: ' . $_COOKIE['UltimoPedido'] . '</p>';
+        echo '<form action="../index.php?controller=producto&action=recuperarPedido" method="post">';
+        echo '<button type="submit" class="rec-p" name="recuperar_pedido">Recuperar pedido</button>';
+        echo '</form>';
     } else {
         echo '<p class="pedido-real">No hay pedidos anteriores.</p>';
     }
