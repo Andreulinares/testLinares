@@ -616,3 +616,9 @@ label[for="cupon"]{
     top: 945px;
     right: 215px;
 }
+
+.rec-p{
+    position: absolute;
+    left: 1000px;
+    top: 995px;
+}

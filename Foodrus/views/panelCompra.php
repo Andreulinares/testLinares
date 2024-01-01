@@ -263,8 +263,8 @@ if (!isset($_SESSION['carrito_id'])) {
 
     <?php
     // Para mostrar el último pedido
-    if (isset ($_SESSION['user_email']) && isset($_COOKIE['UltimoPedido' . $_SESSION['user_email']])) {
-        echo '<p class="pedido-real">Último pedido: ' . $_COOKIE['UltimoPedido' . $_SESSION['user_email']] . '</p>';
+    if (isset ($_SESSION['user_email']) && isset($_COOKIE['UltimoPedido'])) {
+        echo '<p class="pedido-real">Último pedido: ' . $_COOKIE['UltimoPedido'] . '</p>';
         echo '<form action="../index.php?controller=producto&action=recuperarPedido" method="post">';
         echo '<button type="submit" class="rec-p" name="recuperar_pedido">Recuperar pedido</button>';
         echo '</form>';
