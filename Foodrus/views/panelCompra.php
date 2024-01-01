@@ -214,10 +214,6 @@ if (!isset($_SESSION['carrito_id'])) {
             <hr class="linea3">
             <form action="../index.php?controller=producto&action=finalizarCompra" method="post">
                 <input type="hidden" name="cantidadTotal" value="<?= $cantidadTotal ?>">
-                <?php foreach ($_SESSION['selecciones'] as $pos => $pedido): ?>
-                    <input type="hidden" name="productos[<?= $pos ?>][id]" value="<?= $pedido->getProducto()->getProducto_id(); ?>">
-                    <input type="hidden" name="productos[<?= $pos ?>][cantidad]" value="<?= $pedido->getCantidad(); ?>">
-                <?php endforeach ?>
                 <button type="submit" class="btn btn-primary btn-finalizar">FINALIZAR COMPRA</button>
             </form>
         </div>

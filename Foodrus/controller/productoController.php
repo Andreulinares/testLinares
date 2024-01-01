@@ -194,7 +194,7 @@ class productoController{
         }else{
             //Guardar cookie
             setcookie('UltimoPedido', $_POST['cantidadTotal'], time() + 3600);
-            setcookie('UltimosProductos', serialize($_POST['productos']), time() + 3600);
+            setcookie('UltimosProductos', serialize($_SESSION['selecciones']), time() + 3600);
 
             //Te almacena el pedido en la base de datos ProductoDAO que guarda el pedido en BBDD
             $pedido_id = $_SESSION['carrito_id'];
@@ -217,7 +217,6 @@ class productoController{
         if(isset($_POST['recuperar_pedido'])){
             if(isset($_COOKIE['UltimosProductos'])){
                 $productosRecuperados = unserialize($_COOKIE['UltimosProductos']);
-
                 $_SESSION['selecciones'] = $productosRecuperados;
             }
         }
