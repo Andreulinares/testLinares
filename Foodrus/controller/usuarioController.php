@@ -100,7 +100,7 @@ class usuarioController{
             $pedido_id = $_POST['pedido_id'];
             if (ProductoDAO::deletePedido($pedido_id)){
                 echo "El pedido se elimino correctamente";
-                header("Location: ../Foodrus/views/misPedidos.php");
+                $this->mostrarPedidos();
             }else{
                 echo "Error, no se ha podido eliminar el pedido";
             }

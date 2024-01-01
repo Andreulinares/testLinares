@@ -135,7 +135,7 @@ require_once __DIR__ . '/../model/ProductoDAO.php';
                 <td><?= $pedido->getEstado(); ?></td>
                 <td><?= $pedido->getFecha_pedido(); ?></td>
                 <td>
-                    <form action="index.php?controller=user&action=eliminarPedido" method="post">
+                    <form action="index.php?controller=usuario&action=eliminarPedido" method="post">
                         <input type="hidden" name="pedido_id" value="<?= $pedido->getPedido_id(); ?>">
                         <button type="submit" class="btn btn-danger">Eliminar</button>
                     </form>
