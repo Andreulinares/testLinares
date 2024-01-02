@@ -218,6 +218,8 @@ class productoController{
             if(isset($_COOKIE['UltimosProductos'])){
                 $productosRecuperados = unserialize($_COOKIE['UltimosProductos']);
                 $_SESSION['selecciones'] = $productosRecuperados;
+
+                header("Location: ../Foodrus/views/panelCompra.php");
             }
         }
     }
