@@ -140,6 +140,12 @@ require_once __DIR__ . '/../model/ProductoDAO.php';
                         <button type="submit" class="btn btn-danger">Eliminar</button>
                     </form>
                 </td>
+                <td>
+                    <form action="" method="post">
+                        <input type="hidden" name="pedido_id" value="<?= $pedido->getPedido_id(); ?>">
+                        <button type="submit" class="btn btn-secondary">Ver detalles</button>
+                    </form>
+                </td>
             </tr>
         <?php endforeach; ?>
     </table>
