@@ -176,13 +176,6 @@ require_once __DIR__ . '/../model/ProductoDAO.php';
 </div>
 
 <div id="fondoOscuro"></div>
-<!-- ABRIR PAGINA DE DETALLES-->
-<script>
-    function verDetalles(idPedido) {
-        // Obtén los detalles del pedido desde el servidor usando PHP
-        window.location.href = 'detalles_pedido.php?id=' + idPedido;
-    }
-</script>
 
 </body>
 <script src="/Foodrus/assets/js/ventana.js" defer></script>
