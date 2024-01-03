@@ -621,4 +621,8 @@ label[for="cupon"]{
     position: absolute;
     left: 1000px;
     top: 995px;
+    border-radius: 10px!important;
+    color: #fff;
+    background-color: #00ae42;
+    border-color: #00ae42;
 }
