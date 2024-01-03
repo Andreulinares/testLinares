@@ -141,10 +141,7 @@ require_once __DIR__ . '/../model/ProductoDAO.php';
                     </form>
                 </td>
                 <td>
-                    <form action="" method="post">
-                        <input type="hidden" name="pedido_id" value="<?= $pedido->getPedido_id(); ?>">
-                        <button type="submit" class="btn btn-secondary">Ver detalles</button>
-                    </form>
+                    <button onclick="verDetalles(<?= $pedido->getPedido_id(); ?>)" class="btn btn-danger">Ver detalles</button>
                 </td>
             </tr>
         <?php endforeach; ?>
@@ -179,6 +176,14 @@ require_once __DIR__ . '/../model/ProductoDAO.php';
 </div>
 
 <div id="fondoOscuro"></div>
+<!-- ABRIR PAGINA DE DETALLES-->
+<script>
+    function verDetalles(idPedido) {
+        // Obtén los detalles del pedido desde el servidor usando PHP
+        window.location.href = 'detalles_pedido.php?id=' + idPedido;
+    }
+</script>
+
 </body>
 <script src="/Foodrus/assets/js/ventana.js" defer></script>
 

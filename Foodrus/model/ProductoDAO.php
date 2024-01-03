@@ -363,6 +363,46 @@ class ProductoDAO{
             return false;
         }
     }
+
+    public static function associarProductoPedido($id_pedido, $id_producto, $cantidad){
+        $con = database::connect();
+
+        $stmt = $con->prepare("INSERT INTO productos_pedido (id_pedido, id_producto, cantidad) VALUES (?, ?, ?)");
+        $stmt->bind_param("sii", $id_pedido, $id_producto, $cantidad);
+
+        if ($stmt->execute()){
+            $stmt->close();
+            return true;
+        }else{
+            $stmt->close();
+            return false;
+        }
+    }
+
+    public static function obtenerDetallesProductos($id_pedido) {
+        $con = database::connect();
+    
+        $stmt = $con->prepare("SELECT p.nombre_producto, pp.cantidad
+                                FROM productos_pedido pp
+                                JOIN productos p ON pp.id_producto = p.producto_id
+                                WHERE pp.id_pedido = ?");
+        $stmt->bind_param("s", $id_pedido);
+        $stmt->execute();
+        $stmt->bind_result($nombre_producto, $cantidad);
+    
+        $detallesProductos = array();
+    
+        while ($stmt->fetch()) {
+            $detallesProductos[] = array(
+                'nombre_producto' => $nombre_producto,
+                'cantidad' => $cantidad
+            );
+        }
+    
+        $stmt->close();
+        return $detallesProductos;
+    }
+    
     
 }
 
