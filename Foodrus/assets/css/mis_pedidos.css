@@ -104,6 +104,8 @@ svg{
 
 .bg-custom{
     background-color: #1450A0;
+    position: absolute;
+    margin-top: 140px;
 }
 
 /* DESPLEGABLE MI CUENTA */

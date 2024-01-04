@@ -141,9 +141,38 @@ require_once __DIR__ . '/../model/ProductoDAO.php';
                     </form>
                 </td>
                 <td>
-                    <button onclick="verDetalles(<?= $pedido->getPedido_id(); ?>)" class="btn btn-danger">Ver detalles</button>
+                    <button type="button" class="btn btn-secondary ver-detalles" data-bs-toggle="modal" data-bs-target="#detallesModal-<?= $pedido->getPedido_id(); ?>">Ver Detalles</button>
                 </td>
             </tr>
+<!-- VENTANA DETALLES PEDIDO -->
+            <div class="modal fade" id="detallesModal-<?= $pedido->getPedido_id(); ?>" tabindex="-1" role="dialog" aria-labelledby="detallesModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="detallesModalLabel">Detalles del Pedido <?= $pedido->getPedido_id(); ?></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <?php
+                            // Obtener los detalles de los productos para este pedido
+                            $detallesProductos = ProductoDAO::obtenerDetallesProductos($pedido->getPedido_id());
+
+                            // Mostrar los detalles en una lista
+                            echo '<ul>';
+                            foreach ($detallesProductos as $detalle) {
+                                echo '<li>' . $detalle['nombre_producto'] . ' - Cantidad: ' . $detalle['cantidad'] . '</li>';
+                            }
+                            echo '</ul>';
+                            ?>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         <?php endforeach; ?>
     </table>
 
