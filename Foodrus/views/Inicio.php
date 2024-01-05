@@ -171,7 +171,7 @@ session_start();
             </div>
             <div class="col-4">
               <div class="button-container text-center">
-                <a href="#" class="btn btn-primary btn-custom b2 b-text">TEMPORAL</a>
+                <a href="carta.php#temporal" class="btn btn-primary btn-custom b2 b-text">TEMPORAL</a>
               </div>
             </div>
           </div>

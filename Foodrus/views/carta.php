@@ -254,7 +254,7 @@ session_start();
     </div>
     </div>
 
-    <h2 id="especial" class="t-menu">MENU TEMPORAL</h2>
+    <h2 id="temporal" class="t-menu">MENU TEMPORAL</h2>
 
     <div class="container">
         <div class="row tarjetas">
