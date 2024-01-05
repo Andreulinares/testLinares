@@ -201,6 +201,8 @@ header svg{
     right: 202px;
 }
 
+/* TARJETAS EXCLUSIVAS Y NOVEDADES */
+
 .novedad{
     position: absolute;
     top: 185px;
@@ -217,6 +219,25 @@ header svg{
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+
+.exclusivo{
+    position: absolute;
+    top: 185px;
+    color: #00ae42;
+}
+
+.special-card2::after{
+    content: "";
+    display: block;
+    height: 10px;
+    background-color: #00ae42;
+    width: 209px;
+    margin-left: 170px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* carrito */
 
 .carro-btn{
     border: none;
