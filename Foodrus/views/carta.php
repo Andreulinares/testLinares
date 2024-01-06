@@ -270,20 +270,16 @@ session_start();
             $tarjetasPorFila = 0;
 
             foreach ($productos3 as $index => $producto3):
-                $esExclusivo = ($index % 2 == 1);
-                $specialClass = $esExclusivo ? 'special-card2' : '';
             ?>
                 <?php if ($tarjetasPorFila % 4 == 0): ?>
                     </div><div class="row tarjetas">
                 <?php endif; ?>
 
-                <div class="col-md-3 card-container <?= $specialClass ?>">
+                <div class="col-md-3 card-container special-card2">
                     <div class="card">
                         <img src="../<?= $producto3->getImagen(); ?>" class="card-img-top img-fluid img-product">
                         <div class="card-body">
-                            <?php if ($esExclusivo) : ?>
                                 <p class="exclusivo">Exclusivo</p>
-                            <?php endif; ?>
                             <h5 class="card-title titulo-producto"><?= $producto3->getNombre_producto(); ?></h5>
                             <p class="card-text">
                                 <span class="precio"><?= $producto3->getPrecio(); ?> €</span>
