@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actualizar datos</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link href="/Foodrus/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="/Foodrus/assets/css/editarUsuario.css" rel="stylesheet" type="text/css" media="screen">
 
     <script src="/Foodrus/assets/js/bootstrap.bundle.min.js"></script>
@@ -176,7 +176,6 @@
 </div>
 
 <div id="fondoOscuro"></div>
-</body>
 
 <script src="/Foodrus/assets/js/ventana.js" defer></script>
 
@@ -203,4 +202,5 @@
             actualizarNumCarrito();
     });
 </script>
+</body>
 </html>
