@@ -231,6 +231,7 @@ header svg{
 .precio{
     position: absolute;
     margin-top: 70px;
+    font-weight: 700;
 }
 
 .productos-totales{
