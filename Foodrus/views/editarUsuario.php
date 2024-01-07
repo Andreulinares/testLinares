@@ -15,7 +15,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1450A0;">
         <div class="container">
             <!-- Logo foodrus -->
-            <a class="navbar-brand" href="Inicio.php">
+            <a class="navbar-brand" href="/Foodrus/views/Inicio.php">
                 <img src="/Foodrus/img/Logo-foodrus.png" width="150" height="50">
             </a>
 
@@ -99,7 +99,7 @@
                         <?php endif; ?>
                     </li>
                     <li class="nav-item mi-carta">
-                        <a href="carta.php" class="nav-link text-white carta">Carta</a>
+                        <a href="/Foodrus/views/carta.php" class="nav-link text-white carta">Carta</a>
                     </li>
                 </ul>
             </div>
