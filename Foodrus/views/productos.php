@@ -76,7 +76,7 @@ session_start();
                             </form>
                         </li>
                         <li>
-                            <form action="" method="post">
+                            <form action="/Foodrus/index.php?controller=usuario=editarUsuario" method="post">
                                 <button type="submit" class="dropdown-item mod-usuario" name="mod-usuario">Detalles de la cuenta</button>
                             </form>
                         </li>
