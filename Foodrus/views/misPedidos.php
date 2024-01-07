@@ -1,6 +1,12 @@
 <?php
 require_once __DIR__ . '/../model/ProductoDAO.php';
 
+if (isset($_SESSION['user_email'])){
+    $rol = ProductoDAO::obtenerRolUsuario($_SESSION['user_email']);
+
+    $esAdmin = ($rol == 'administrador');
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -118,7 +124,12 @@ require_once __DIR__ . '/../model/ProductoDAO.php';
     </div>
 </nav>
 </header>
-    <h2 class="mispedidos">Mis pedidos</h2>
+    
+    <?php if (isset($esAdmin) && $esAdmin) : ?>
+        <h2 class="mispedidos">Todos los pedidos realizados</h2>
+    <?php else : ?>
+        <h2 class="mispedidos">Mis pedidos</h2>
+    <?php endif; ?>
 
     <table class="table table-bordered table-striped">
         <tr>
