@@ -46,7 +46,7 @@ session_start();
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
             <!-- Buscador -->
-            <form class="d-flex ms-auto" role="search">
+            <form class="d-flex ms-auto buscador" role="search">
                     <input class="form-control me-2 custom-search" type="search" placeholder="Busca aqui algo divertido">
                     <img src="../img/lupa.png" width="20" height="20" class="img-lupa">
             </form>
@@ -54,12 +54,12 @@ session_start();
 
                 <!-- mi cuenta, ubicacion y carta -->
                 <ul class="navbar-nav me-2">
-                    <li class="nav-item">
+                    <li class="nav-item ubi">
                         <a class="nav-link" href="#">
                             <img src="../img/storeFinder.svg" alt="ubicacion" class="ubicacion">
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item mi-cuenta">
                         <a id="usuario-btn" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img src="../img/usuario.svg" alt="mi-cuenta" class="usuario">
                             <span class="texto-menu">

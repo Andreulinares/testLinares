@@ -19,6 +19,46 @@ body{
     max-width: 1270px;
 }
 
+@media only screen and (max-width: 600px) {
+    /* body {
+      background-color: lightblue;
+    } */
+    h1{
+        color: var(--bg-color2);
+        width: 100%;
+        background: yellow;
+    }
+
+    .navbar-toggler{
+        z-index: 1000;
+    }
+
+    .ubi {
+        position: relative;
+        left: 285px;
+        bottom: 25px;
+    }
+    
+    .mi-cuenta{
+        position: relative;
+        left: 260px;
+        bottom: 156px;
+        width: 100px;
+    }
+
+    .carta {
+        position: relative;
+        left: 205px;
+        top: 35px;
+    }
+
+    .buscador{
+        left: 50%;
+        transform: translateX(-75%);
+        top: 120px;
+    }
+}
+
 /* HEADER */
 
 .usuario{

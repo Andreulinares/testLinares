@@ -61,22 +61,13 @@ h1{
         transform: translateX(-75%);
         top: 120px;
     }
-
-    .dropdown-menu{
-        
-    }
 }
 
 .container{
     max-width: 1270px;
 }
 
-/*CARROUSEL FLECHA */
-
-.carousel-control-prev-icon, 
-.carousel-control-next-icon{
-
-}
+/*CARROUSEL CSS */
 
 .carousel-indicators [data-bs-target]{
     width: 10px; 
