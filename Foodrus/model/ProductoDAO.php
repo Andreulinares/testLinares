@@ -403,6 +403,47 @@ class ProductoDAO{
         return $detallesProductos;
     }
     
+    //ACTUALIZAR PEDIDO BASE DE  DATOS Y COMPROBAR SI PEDIDO_ID EXISTE 
+
+    public static function carritoExiste($carritoId) {
+        $con = database::connect();
+
+        $stmt = $con->prepare("SELECT COUNT(*) FROM pedidos WHERE pedido_id = ?");
+        $stmt->bind_param("s", $carritoId);
+        $stmt->execute();
+        $stmt->bind_result($count);
+
+        $stmt->fetch();
+
+        $stmt->close();
+
+        return $count > 0;
+    }
+
+    public static function actualizarPedido($pedido_id, $cantidad, $estado, $fecha) {
+        $con = database::connect();
+
+        $stmt = $con->prepare("UPDATE pedidos SET cantidad = ?, estado = ?, fecha_pedido = ? WHERE pedido_id = ?");
+        $stmt->bind_param("dsss", $cantidad, $estado, $fecha, $pedido_id);
+        
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+        
+        $con->close();
+    }
+//VACIAR DETALLES AL ACTUALIZAR PEDIDO 
+    public static function limpiarDetallesPedido($id_pedido) {
+        $con = database::connect();
+    
+        $stmt = $con->prepare("DELETE FROM productos_pedido WHERE id_pedido = ?");
+        $stmt->bind_param("s", $id_pedido);
+        $stmt->execute();
+    
+        $stmt->close();
+    }
     
 }
 

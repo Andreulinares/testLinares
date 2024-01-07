@@ -203,18 +203,33 @@ class productoController{
             $fecha = date('Y-m-d H:i:s');
             $usuario = ProductoDAO::obtenerUsuario($_SESSION['user_email']);
             $cliente_id = $usuario->getCliente_id();
-            
-            $pedido = new PedidoBD($pedido_id, $cliente_id, $cantidad, $estado, $fecha);
-            ProductoDAO::insertarPedido($pedido);
+            if (ProductoDAO::carritoExiste($pedido_id)){
+                ProductoDAO::limpiarDetallesPedido($pedido_id);
 
-            foreach ($_SESSION['selecciones'] as $pedido){
-                $id_producto = $pedido->getProducto()->getProducto_id();
-                $cantidad = $pedido->getCantidad();
+                ProductoDAO::actualizarPedido($pedido_id, $cantidad, $estado, $fecha);
 
-                ProductoDAO::associarProductoPedido($pedido_id, $id_producto, $cantidad);
+                foreach ($_SESSION['selecciones'] as $pedido){
+                    $id_producto = $pedido->getProducto()->getProducto_id();
+                    $cantidad = $pedido->getCantidad();
+    
+                    ProductoDAO::associarProductoPedido($pedido_id, $id_producto, $cantidad);
+                }
+
+                header("Location: ../Foodrus/views/panelCompra.php");
+            } else {
+                $pedido = new PedidoBD($pedido_id, $cliente_id, $cantidad, $estado, $fecha);
+                ProductoDAO::insertarPedido($pedido);
+
+                foreach ($_SESSION['selecciones'] as $pedido){
+                    $id_producto = $pedido->getProducto()->getProducto_id();
+                    $cantidad = $pedido->getCantidad();
+    
+                    ProductoDAO::associarProductoPedido($pedido_id, $id_producto, $cantidad);
+                }
+
+                unset($_SESSION['selecciones']);
+                header("Location: ../Foodrus/views/carta.php");
             }
-
-            header("Location: ../Foodrus/views/panelCompra.php");
         }
     }
 
