@@ -153,7 +153,7 @@ session_start();
     </div>
 </section>
 
-
+<!-- SECCION 1 -->
     <section>
         <h2 class="h2-inicio">Menús</h2>
 
@@ -178,7 +178,7 @@ session_start();
         </div>
 
     </section>
-
+<!-- SECCION 2 CATEGORIAS PRODUCTOS -->
     <section>
     <h2 class="h2-inicio">Categorías</h2>
 
@@ -210,7 +210,7 @@ session_start();
 
 
     </section>
-
+<!-- SECCION 3 INFORMACION SOBRE EL SERVICIO DE LA PAGINA -->
     <section>
 
         <div class=" container-fluid text-center container-sec">
@@ -259,7 +259,7 @@ session_start();
           $productos[] = $producto[0]; 
       }
     }
-    ?>
+    ?><!-- SECCION 4 ULTIMOS PRODUCTOS VISITADOS -->
     <section class="ultProductos">
       <h3 class="ult-product">Ultimos productos visitados</h3>
       <div class="container">
