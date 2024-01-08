@@ -28,7 +28,7 @@ class ProductoDAO{
 
         return $productos;
     }
-
+// OPERACIONES CON PRODUCTOS DE LA BASE DE DATOS
     public static function agregarProducto($producto){
         $con = database::connect();
 
@@ -363,7 +363,10 @@ class ProductoDAO{
             return false;
         }
     }
-
+/**
+ * funcion para associar productos a un pedido en concreto segun la id del pedido
+ * recuperamos los valores de id de pedido, id de producto y cantidad y los insertamos
+ */
     public static function associarProductoPedido($id_pedido, $id_producto, $cantidad){
         $con = database::connect();
 
@@ -378,7 +381,10 @@ class ProductoDAO{
             return false;
         }
     }
-
+/**
+ * obtenemos los detalles correspondientes de los productos del pedido
+ * seleccionamos el nombre de los productos y su cantidad
+ */
     public static function obtenerDetallesProductos($id_pedido) {
         $con = database::connect();
     

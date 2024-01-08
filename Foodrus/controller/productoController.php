@@ -26,7 +26,7 @@ class productoController{
             if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
                 $directorioDestino = 'uploads';
                 $imagen = $directorioDestino . '/' . $_FILES['imagen']['name'];
-                
+                //Seleccionamos la imagen del directorio y la movemos en la ruta correspondiente para cargar la img
                 if(move_uploaded_file($_FILES['imagen']['tmp_name'], $imagen)){
                 
                     if ($categoria === 'pizza') {
@@ -41,7 +41,7 @@ class productoController{
                     } else {
                         echo "Categoría de producto desconocida";
                         return;
-                    }
+                    }//Dependiendo de la categoria del producto, añadimos un producto del tipo correspondiente
                 } else {
                     echo "Error al mover la imagen";
                     return;
@@ -203,6 +203,8 @@ class productoController{
             $fecha = date('Y-m-d H:i:s');
             $usuario = ProductoDAO::obtenerUsuario($_SESSION['user_email']);
             $cliente_id = $usuario->getCliente_id();
+            //Si la id del carrito ya existe en la base de datos 
+            //actualizamos pedido con los nuevos datos
             if (ProductoDAO::carritoExiste($pedido_id)){
                 ProductoDAO::limpiarDetallesPedido($pedido_id);
 
@@ -216,7 +218,7 @@ class productoController{
                 }
 
                 header("Location: ../Foodrus/views/panelCompra.php");
-            } else {
+            } else {//En caso contrario, insertamos pedido en la BD
                 $pedido = new PedidoBD($pedido_id, $cliente_id, $cantidad, $estado, $fecha);
                 ProductoDAO::insertarPedido($pedido);
 
