@@ -146,7 +146,10 @@ if (!isset($_SESSION['carrito_id'])) {
         $cantidadTotal = number_format($subtotal + $precioEnvio, 2);
 
     ?>
-
+    <!--
+    contenedor producto donde se veran los productos añadidos al carrito
+    con sus detalles y cantidad. Tambien tendran botones para eliminar y añadir a favoritos.
+    -->
     <div class="producto">
         <div class="img-producto">
             <img src="../<?= $pedido->getProducto()->getImagen(); ?>" width="100" height="100">
@@ -178,6 +181,10 @@ if (!isset($_SESSION['carrito_id'])) {
     endforeach;
     ?>
 </section>
+    <!--
+    contenedor resumen donde se mostraran opciones de compra y 
+    el precio total mas el precio de envio que se tendra que pagar
+    -->
 <section>
     <div class="resumen">
         <div class="envio">
@@ -221,7 +228,8 @@ if (!isset($_SESSION['carrito_id'])) {
 </section>
 <section>
     <p class="p-recomendados">Productos recomendados</p>
-
+<!-- Seccion de productos recomendados -->
+<!-- Los productos iran cambiando cada vez que se accede a la pagina de panelCompra -->
     <?php 
     $pizzas = ProductoDAO::getAllProducts('pizza');
     $bebidas = ProductoDAO::getAllProducts('bebida');
@@ -264,7 +272,7 @@ if (!isset($_SESSION['carrito_id'])) {
         echo '<form action="../index.php?controller=producto&action=recuperarPedido" method="post">';
         echo '<button type="submit" class="btn btn-primary rec-p" name="recuperar_pedido">Recuperar pedido</button>';
         echo '</form>';
-    } else {
+    } else {//Si no se ha hecho ningun pedido o si no esta la sesion iniciada:
         echo '<p class="pedido-real">No hay pedidos anteriores.</p>';
     }
     ?>
