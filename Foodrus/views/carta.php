@@ -137,14 +137,14 @@ session_start();
 
 <section>
     <h2 class="h2-carta">CARTA</h2>
-    
+    <!-- MENU INFANTIL -->
     <h2 id="infantil" class="t-menu">MENU INFANTIL</h2>
 
     <div class="container">
     <div class="productos-totales">
         <?= $totalProductos ?> productos encontrados
     </div>
-
+<!-- recogemos las ids de los productos correspondientes -->
     <div class="row tarjetas">
         <?php
         $pizzasIds = [10, 9, 11, 2, 12, 3];
@@ -167,7 +167,10 @@ session_start();
             <?php if ($tarjetasPorFila % 4 == 0): ?>
                 </div><div class="row tarjetas">
             <?php endif; ?>
-
+<!-- Haciendo uso de la variable $tarjetasPorFila nos aseguramos de que las tarjetas -->
+<!-- esten en filas de 4. Luego usando un foreach recorremos el array de $productos -->
+<!-- que contiene todas las ids de los productos de esta seccion y aplicamos la clase special-card -->
+<!-- a las tarjetas impares.-->
             <div class="col-md-3 card-container <?= $specialClass ?>">
                 <div class="card">
                     <img src="../<?= $producto->getImagen(); ?>" class="card-img-top img-fluid img-product">
@@ -199,7 +202,7 @@ session_start();
     </div>
 
     <h2 id="estandar" class="t-menu">MENU ESTANDAR</h2>
-
+<!-- MENU ESTANDAR -->
     <div class="container contenedor">
     <div class="row tarjetas">
         <?php
@@ -255,7 +258,7 @@ session_start();
     </div>
 
     <h2 id="temporal" class="t-menu">MENU TEMPORAL</h2>
-
+<!-- MENU TEMPORAL -->
     <div class="container">
         <div class="row tarjetas">
             <?php
