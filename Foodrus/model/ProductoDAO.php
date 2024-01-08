@@ -450,6 +450,21 @@ class ProductoDAO{
     
         $stmt->close();
     }
+
+    public static function actualizarEstadoPedido($pedido_id, $estado){
+        $con = database::connect();
+
+        $stmt = $con->prepare("UPDATE pedidos SET estado = ? WHERE pedido_id = ?");
+        $stmt->bind_param("ss", $estado, $pedido_id);
+
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+        
+        $con->close();
+    }
     
 }
 

@@ -138,6 +138,7 @@ if (isset($_SESSION['user_email'])){
             <th scope="col">Estado</th>
             <th scope="col">Fecha pedido</th>
             <th scope="col">Acciones</th>
+            <th scope="col"></th>
         </tr>
         <?php foreach ($pedidos as $pedido) : ?>
             <tr>
@@ -146,10 +147,18 @@ if (isset($_SESSION['user_email'])){
                 <td><?= $pedido->getEstado(); ?></td>
                 <td><?= $pedido->getFecha_pedido(); ?></td>
                 <td>
-                    <form action="index.php?controller=usuario&action=eliminarPedido" method="post">
-                        <input type="hidden" name="pedido_id" value="<?= $pedido->getPedido_id(); ?>">
-                        <button type="submit" class="btn btn-danger">Eliminar</button>
-                    </form>
+                    <?php if ($rol == 'administrador') : ?>
+                        <form action="index.php?controller=usuario&action=finalizarPedido" method="post">
+                            <input type="hidden" name="pedido_id" value="<?= $pedido->getPedido_id(); ?>">
+                            <input type="hidden" name="nuevo_estado" value="entregado">
+                            <button type="submit" class="btn btn-success">Finalizado</button>
+                        </form>
+                    <?php else: ?>
+                        <form action="index.php?controller=usuario&action=eliminarPedido" method="post">
+                            <input type="hidden" name="pedido_id" value="<?= $pedido->getPedido_id(); ?>">
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </form>
+                    <?php endif; ?>
                 </td>
                 <td>
                     <button type="button" class="btn btn-secondary ver-detalles" data-bs-toggle="modal" data-bs-target="#detallesModal-<?= $pedido->getPedido_id(); ?>">Ver Detalles</button>

@@ -106,4 +106,12 @@ class usuarioController{
             }
         }
     }
+//Cambiar estado del pedido a entregado
+    public function finalizarPedido(){
+        $pedido_id = $_POST['pedido_id'];
+        $estado = $_POST['nuevo_estado'];
+
+        ProductoDAO::actualizarEstadoPedido($pedido_id, $estado);
+        $this->mostrarPedidos();
+    }
 }
