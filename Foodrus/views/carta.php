@@ -173,7 +173,7 @@ session_start();
 <!-- a las tarjetas impares.-->
             <div class="col-md-3 card-container <?= $specialClass ?>">
                 <div class="card">
-                    <img src="../<?= $producto->getImagen(); ?>" class="card-img-top img-fluid img-product">
+                    <img src="../<?= $producto->getImagen(); ?>" class="card-img-top img-fluid img-product" alt="<?= $producto->getNombre_producto(); ?>">
                     <div class="card-body">
                         <?php if ($esNovedad) : ?>
                             <p class="novedad">Novedad</p>
@@ -229,7 +229,7 @@ session_start();
 
             <div class="col-md-3 card-container <?= $specialClass ?>">
                 <div class="card">
-                    <img src="../<?= $producto2->getImagen(); ?>" class="card-img-top img-fluid img-product">
+                    <img src="../<?= $producto2->getImagen(); ?>" class="card-img-top img-fluid img-product" alt="<?= $producto2->getNombre_producto(); ?>">
                     <div class="card-body">
                         <?php if ($esNovedad) : ?>
                             <p class="novedad">Novedad</p>
@@ -280,7 +280,7 @@ session_start();
 
                 <div class="col-md-3 card-container special-card2">
                     <div class="card">
-                        <img src="../<?= $producto3->getImagen(); ?>" class="card-img-top img-fluid img-product">
+                        <img src="../<?= $producto3->getImagen(); ?>" class="card-img-top img-fluid img-product" alt="<?= $producto3->getNombre_producto(); ?>">
                         <div class="card-body">
                                 <p class="exclusivo">Exclusivo</p>
                             <h5 class="card-title titulo-producto"><?= $producto3->getNombre_producto(); ?></h5>
