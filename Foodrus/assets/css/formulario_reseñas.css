@@ -1,0 +1,75 @@
+/*Variables CSS*/
+:root {
+    /* --main-bg-color: brown; */
+    --bg-color1: rgb(94, 37, 37);
+    --bg-color2: rgb(4, 178, 91);
+    --bg-color3: rgb(20, 80, 160);
+
+}
+
+/* TITULOS PAGINA */
+
+.h3-reseña{
+    color: var(--bg-color3);
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-family: "Arvo", sans-serif;
+    font-size: 30px;
+}
+
+.h2-reseña{
+    color: var(--bg-color3);
+    text-align: center;
+    font-family: "Arvo", sans-serif;
+    font-size: 30px;
+    margin-top: 40px;
+}
+
+/* FORMULARIO */
+
+.label-form {
+    border: 1px solid #ccc;
+    font-size: 14px;
+    border-radius: 10px;
+    height: 32px;
+    width: 50%;
+}
+
+.label-form:focus{
+    box-shadow: none;
+}
+
+label {
+    color: black;
+    font-weight: 500;
+    font-size: 13px;
+    text-transform: none;
+    margin-bottom: 5px;
+}
+
+.form-group {
+    margin-bottom: 30px;
+    margin-left: 460px;
+}
+
+/* BOTONES */
+
+.btn-enviar{
+    border-radius: 10px;
+    background-color: #00ae42;
+    border: none;
+    margin-left: 460px;
+}
+
+.btn-enviar:hover{
+    background-color: #FF973B;
+    border: none;
+    border-radius: 10px;
+}
+
+/* TABLA RESEÑAS */
+
+#reseñas-container{
+    margin-left: 460px;
+}
