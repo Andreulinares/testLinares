@@ -1,0 +1,217 @@
+.container{
+    max-width: 1270px;
+}
+
+@media only screen and (max-width: 600px) {
+    /* body {
+      background-color: lightblue;
+    } */
+
+    .navbar-toggler{
+        z-index: 1000;
+    }
+
+    .ubi {
+        position: relative;
+        left: 285px;
+        bottom: 25px;
+    }
+    
+    .mi-cuenta{
+        position: relative;
+        left: 260px;
+        bottom: 156px;
+        width: 100px;
+    }
+
+    .carta {
+        position: relative;
+        left: 205px;
+        top: 35px;
+    }
+
+    .buscador{
+        left: 50%;
+        transform: translateX(-75%);
+        top: 120px;
+    }
+}
+
+/* HEADER */
+
+.usuario{
+    width: 75px;
+    height: 41px;
+    position: relative;
+    right: 65px;
+    bottom: 3px;
+}
+
+.ubicacion{
+    width: 32px;
+    height: 32px;
+    position: relative;
+    right: 80px;
+}
+
+svg{
+    width: 32px;
+    height: 32px;
+    margin-bottom: 15px;
+    position: relative;
+    right: 60px;
+    top: 15px;
+}
+
+.ms-auto {
+    position: relative;
+    right: 420px;
+}
+
+.custom-search{
+    width: 367px;
+    height: 38px;
+    border-radius: 10px;
+    position: relative;
+    left: 160px;
+    background-color: #376aae;
+    border: 2px solid #4c7ab7;
+    text-indent: 40px;
+}
+
+.custom-search::placeholder {
+    color: white;
+}
+
+.img-lupa{
+    position: relative;
+    right: 205px;
+    top: 7px;
+}
+
+.texto-menu{
+    color: white;
+    position: relative;
+    right: 90px;
+    bottom: 2px;
+}
+
+.carta{
+    position: relative;
+    right: 435px;
+    font-size: 16px;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.numero-carrito {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    position: relative;
+    right: 68px;
+    bottom: 35px;
+    display: flex;
+    justify-content: center;
+}
+
+/* DESPLEGABLE MI CUENTA */
+
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+#mi-header{
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    position: relative;
+}
+
+#carouselExampleIndicators{
+    position: relative;
+    z-index: 500;
+}
+
+#desplegable-menu{
+    display: none;
+    height: 102px;
+    width: 100%;
+    text-align: center;
+    background-color: #4e78b4;
+    left: 0px;
+    transform: translateY(-187px);
+    border-bottom: 1px solid #1450a0;
+    border-left: 1px solid #4e78b4;
+    border-right: 1px solid #4e78b4;
+}
+
+#desplegable-menu li button, #desplegable-menu li a{
+    border: 1px solid #638ECB;
+    border-top: none;
+}
+
+.mis-pedidos {
+    position: relative;
+    left: 647px;
+    width: 701px;
+    bottom: 73px;
+    height: 50px;
+    color: white;
+    padding-top: 0px;
+    text-align: left;
+}
+
+.mis-pedidos:hover{
+    color: white;
+    background-color: #1450A0;
+}
+
+.salir {
+    width: 650px;
+    color: white;
+    height: 50px;
+    position: relative;
+    bottom: 7px;
+    padding-top: 0px;
+    text-align: left;
+    right: 2px;
+}
+
+.salir:hover {
+    color: white;
+    background-color: #1450a0;
+}
+
+.admin-productos{
+    color: white;
+    position: relative;
+    width: 650px;
+    bottom: 156px;
+    height: 50px;
+    padding-top: 10px;
+    text-align: left;
+    right: 2px;
+}
+
+.admin-productos:hover {
+    color: white;
+    background-color: #1450a0;
+}
+
+.mod-usuario{
+    position: relative;
+    width: 701px;
+    height: 50px;
+    left: 647px;
+    bottom: 90px;
+    color: white;
+    text-align: left;
+}
+
+.mod-usuario:hover{
+    color: white;
+    background-color: #1450a0;
+}
