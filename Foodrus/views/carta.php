@@ -27,6 +27,8 @@ session_start();
     <link href="../assets/css/carta.css" rel="stylesheet" type="text/css" media="screen">
     <link href="../assets/css/header.css" rel="stylesheet" type="text/css" media="screen">
 
+    <link href="../assets/css/ventana_emergente.css" rel="stylesheet" type="text/css" media="screen">
+
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
     
 </head>

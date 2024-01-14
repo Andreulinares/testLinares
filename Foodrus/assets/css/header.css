@@ -126,11 +126,6 @@ header svg{
     position: relative;
 }
 
-#carouselExampleIndicators{
-    position: relative;
-    z-index: 500;
-}
-
 #desplegable-menu{
     display: none;
     height: 102px;
@@ -142,6 +137,7 @@ header svg{
     border-bottom: 1px solid #1450a0;
     border-left: 1px solid #4e78b4;
     border-right: 1px solid #4e78b4;
+    z-index: 2000;
 }
 
 #desplegable-menu li button, #desplegable-menu li a{
