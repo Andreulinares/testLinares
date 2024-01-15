@@ -13,7 +13,7 @@ if (!isset($_SESSION['carrito_id'])) {
 
 ?>
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -23,6 +23,8 @@ if (!isset($_SESSION['carrito_id'])) {
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/css/carrito.css" rel="stylesheet">
     <link href="../assets/css/header.css" rel="stylesheet">
+
+    <link href="../assets/css/ventana_emergente.css" rel="stylesheet" type="text/css" media="screen">
 
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
 </head>

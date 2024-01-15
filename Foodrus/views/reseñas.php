@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -6,10 +6,15 @@
     <title>Reseñas</title>
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/css/formulario_reseñas.css" rel="stylesheet" type="text/css" media="screen">
+
+    <link href="../assets/css/header.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="../assets/css/ventana_emergente.css" rel="stylesheet" type="text/css" media="screen">
+
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <header></header>
-
+    <?php include('../views/header.php'); ?>
+<section>
     <h3 class="h3-reseña">Deja tu reseña</h3>
         <form id="form-reseñas" action="" method="post">
             <div class="form-group">
@@ -38,7 +43,44 @@
             </tbody>
         </table>
     </div>
+</section>
+<script src="../assets/js/reseñas.js"></script>
+<!-- VENTANA CARRITO -->
 
-    <script src="../assets/js/reseñas.js"></script>
+<div id="ventana" style="display: none;">
+    <div class="div-ventana">
+        <p class="mi-cesta">Mi cesta</p>
+        <button id="btnFinalizarCompra">FINALIZAR COMPRA</button>
+        <button id="btnContinuarComprando">CONTINUAR COMPRANDO</button>
+    </div>
+</div>
+
+<div id="fondoOscuro"></div>
+
+    <script src="../assets/js/ventana.js" defer></script>
+
+    <?php if (empty($_SESSION['selecciones'])): ?>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                document.getElementById('btnFinalizarCompra').disabled = true;
+            });
+        </script>
+    <?php endif; ?>
+
+    <!-- Bolita roja actualizar cantidad -->
+    <script>
+        function actualizarNumCarrito(){
+            let numProductos = <?php echo count($_SESSION['selecciones']); ?>;
+
+            let bolitaRoja = document.getElementById('numero-carrito');
+            if(bolitaRoja){
+            bolitaRoja.textContent = numProductos;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+                    actualizarNumCarrito();
+        });
+    </script>
 </body>
 </html>

@@ -126,8 +126,17 @@ header svg{
     position: relative;
 }
 
+.header-expandido {
+    transform: translateY(100px);
+    z-index: 1000;
+}
+
+#usuario-btn{
+    z-index: 1001;
+}
+
 #desplegable-menu{
-    display: none;
+    /*display: none;*/
     height: 102px;
     width: 100%;
     text-align: center;
@@ -137,7 +146,7 @@ header svg{
     border-bottom: 1px solid #1450a0;
     border-left: 1px solid #4e78b4;
     border-right: 1px solid #4e78b4;
-    z-index: 2000;
+    z-index: 9000;
 }
 
 #desplegable-menu li button, #desplegable-menu li a{

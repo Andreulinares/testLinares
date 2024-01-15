@@ -7,6 +7,11 @@
 
 }
 
+
+.container{
+    max-width: 1270px;
+}
+
 /* TITULOS PAGINA */
 
 .h3-reseña{
