@@ -90,6 +90,8 @@ header svg{
     position: relative;
     right: 90px;
     bottom: 2px;
+    font-weight: 500;
+    font-size: 14px;
 }
 
 .carta{
@@ -97,6 +99,7 @@ header svg{
     right: 435px;
     font-size: 16px;
     font-family: "Nunito Sans", sans-serif;
+    font-weight: 600;
 }
 
 .numero-carrito {

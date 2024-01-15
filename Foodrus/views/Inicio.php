@@ -37,7 +37,7 @@ session_start();
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active sliderbg">
-              <img src="../assets/images/carrusel1.png" class="d-block w-100" alt="Imagen1"/>
+              <img src="../assets/images/cafeteria1.jpg" class="d-block w-100" alt="Imagen1"/>
             </div>
             <div class="carousel-item sliderbg">
                 <img src="../assets/images/carrusel2.png" class="d-block w-100" alt="Imagen2"/>
