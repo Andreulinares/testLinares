@@ -9,12 +9,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Validar y agregar la nueva reseña a la tabla
         if (comentario && puntuacion) {
-            agregarReseñaATabla(comentario, puntuacion);
+            agregarReseñaAContenedor(comentario, puntuacion);
         }
     });
 });
 
-function agregarReseñaATabla(comentario, puntuacion) {
+/*function agregarReseñaATabla(comentario, puntuacion) {
     // Crear una nueva fila y celdas
     var fila = document.createElement('tr');
     var celdaComentario = document.createElement('td');
@@ -32,6 +32,32 @@ function agregarReseñaATabla(comentario, puntuacion) {
     document.getElementById('tablaReseñas').getElementsByTagName('tbody')[0].appendChild(fila);
 
     // Limpiar los campos del formulario
+    document.getElementById('coment').value = '';
+    document.getElementById('puntuacion').value = '';
+}*/
+
+function agregarReseñaAContenedor(comentario, puntuacion) {
+    // Se crea un nuevo contenedor
+    const contenedor = document.createElement('div');
+    contenedor.classList.add('reseña-contenedor');
+    // Zona Puntuacion
+    const puntuacionElement = document.createElement('div');
+    puntuacionElement.classList.add('puntuacion');
+    // Convertir la puntuación a estrellas
+    let estrellasHtml = '';
+    for (let i = 0; i < puntuacion; i++) {
+        estrellasHtml += '<img src="../img/fullstar.png" class="img-estrella" alt="Estrella">';
+    }
+    puntuacionElement.innerHTML = estrellasHtml;
+    contenedor.appendChild(puntuacionElement);
+    // Zona Comentario
+    const comentarioElement = document.createElement('div');
+    comentarioElement.classList.add('comentario');
+    comentarioElement.textContent = comentario;
+    contenedor.appendChild(comentarioElement);
+    // Agregar el contenedor al elemento tbody
+    document.getElementById('reseñas-container').appendChild(contenedor);
+    // Limpiar campos del formualario
     document.getElementById('coment').value = '';
     document.getElementById('puntuacion').value = '';
 }

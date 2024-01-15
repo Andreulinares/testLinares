@@ -30,19 +30,7 @@
 
     <h2 class="h2-reseña">Reseñas de los clientes</h2>
 
-    <div id="reseñas-container">
-        <table id="tablaReseñas" border="1">
-            <thead>
-                <tr>
-                    <th>Comentario</th>
-                    <th>Puntuación</th>
-                </tr>
-            </thead>
-            <tbody>
-                
-            </tbody>
-        </table>
-    </div>
+    <div id="reseñas-container"></div>
 </section>
 <script src="../assets/js/reseñas.js"></script>
 <!-- VENTANA CARRITO -->

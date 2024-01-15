@@ -81,4 +81,32 @@ label {
 
 #reseñas-container{
     margin-left: 460px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-auto-rows: minmax(80px, auto);
+    grid-gap: 5px;
+}
+
+.reseña-contenedor {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 5px;
+    position: relative;
+    right: 230px;
+}
+
+/* ESTRELLAS Y ELEMENTOS CONTENEDOR */
+
+img.img-estrella {
+    width: 16px;
+}
+
+.comentario {
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.puntuacion {
+    margin-top: 10px;
+    margin-left: 15px;
 }
