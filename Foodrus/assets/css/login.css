@@ -106,6 +106,7 @@ body{
     width: 326px;
     padding-left: 115px;
     color: black;
+    top: 74px;
 }
 
 #login-tab {
@@ -114,6 +115,7 @@ body{
     width: 300px;
     padding-left: 115px;
     color: black;
+    top: 74px;
 }
 
 .nav-link.active::before {
@@ -133,6 +135,7 @@ body{
     position: relative;
     left: 305px;
     padding-bottom: 20px;
+    top: 75px;
 }
 
 .custom-tabs {

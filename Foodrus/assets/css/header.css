@@ -35,11 +35,22 @@
 
 /* HEADER */
 
+.nav-principal{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.nav-secundario{
+    position: relative;
+    top: 83px;
+}
+
 .usuario{
     width: 75px;
     height: 41px;
     position: relative;
-    right: 65px;
+    right: 95px;
     bottom: 3px;
 }
 
@@ -47,7 +58,7 @@
     width: 32px;
     height: 32px;
     position: relative;
-    right: 80px;
+    right: 123px;
 }
 
 header svg{
@@ -88,7 +99,7 @@ header svg{
 .texto-menu{
     color: white;
     position: relative;
-    right: 90px;
+    right: 120px;
     bottom: 2px;
     font-weight: 500;
     font-size: 14px;
@@ -96,10 +107,17 @@ header svg{
 
 .carta{
     position: relative;
-    right: 435px;
     font-size: 16px;
     font-family: "Nunito Sans", sans-serif;
     font-weight: 600;
+}
+
+.reseñas{
+    position: relative;
+    font-size: 16px;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 600;
+    left: 90px;
 }
 
 .numero-carrito {

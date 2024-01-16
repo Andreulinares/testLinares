@@ -17,7 +17,7 @@ session_start();
 <body>
 
 <header>
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1450A0;">
+<nav class="navbar navbar-expand-lg navbar-dark nav-principal" style="background-color: #1450A0;">
     <div class="container">
         <!-- Logo foodrus -->
         <a class="navbar-brand" href="Inicio.php">
@@ -49,9 +49,6 @@ session_start();
                         <span class="texto-menu">MI CUENTA</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="carta.php" class="nav-link text-white carta">Carta</a>
-                </li>
             </ul>
         </div>
 
@@ -64,6 +61,19 @@ session_start();
         </a>
     </div>
 </nav>
+<nav class="navbar navbar-expand-lg navbar-dark nav-secundario" style="background-color: #1450A0;">
+        <div class="container">
+            <!-- Contenido del segundo menú -->
+                <ul class="navbar-nav me-2">
+                    <li class="nav-item mi-carta">
+                        <a href="carta.php" class="nav-link text-white carta">Carta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="reseñas.php" class="nav-link text-white reseñas">Reseñas</a>
+                    </li>
+                </ul>
+        </div>
+    </nav>
 </header>
 <section>
     <div class="container mt-4">
@@ -152,7 +162,7 @@ session_start();
 </div>
 
 <div id="fondoOscuro"></div>
-
+<!-- SCRIPT POSICIONAMIENTO LOGIN -->
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         // Función para ajustar la posición del footer
@@ -164,10 +174,10 @@ session_start();
 
             if (pestañaActiva && pestañaActiva.id === 'login-tab') {
                 // Ajustar la posición para la pestaña "Entrar"
-                footer.style.top = '455px';
+                footer.style.top = '475px';
             } else {
                 // Ajustar la posición para la pestaña "soy nuevo"
-                footer.style.top = '705px'; 
+                footer.style.top = '740px'; 
             }
         }
 
