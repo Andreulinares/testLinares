@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+/*document.addEventListener('DOMContentLoaded', function () {
     // Manejar el evento de envío del formulario
     document.getElementById('form-reseñas').addEventListener('submit', function (event) {
         event.preventDefault(); // Evitar el envío normal del formulario
@@ -13,28 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
-/*function agregarReseñaATabla(comentario, puntuacion) {
-    // Crear una nueva fila y celdas
-    var fila = document.createElement('tr');
-    var celdaComentario = document.createElement('td');
-    var celdaPuntuacion = document.createElement('td');
-
-    // Establecer el contenido de las celdas
-    celdaComentario.textContent = comentario;
-    celdaPuntuacion.textContent = puntuacion;
-
-    // Agregar las celdas a la fila
-    fila.appendChild(celdaComentario);
-    fila.appendChild(celdaPuntuacion);
-
-    // Agregar la fila a la tabla
-    document.getElementById('tablaReseñas').getElementsByTagName('tbody')[0].appendChild(fila);
-
-    // Limpiar los campos del formulario
-    document.getElementById('coment').value = '';
-    document.getElementById('puntuacion').value = '';
-}*/
 
 function agregarReseñaAContenedor(comentario, puntuacion) {
     // Se crea un nuevo contenedor
@@ -60,4 +38,32 @@ function agregarReseñaAContenedor(comentario, puntuacion) {
     // Limpiar campos del formualario
     document.getElementById('coment').value = '';
     document.getElementById('puntuacion').value = '';
-}
+}*/
+
+document.getElementById('form-reseñas').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    let formDatos = new FormData(event.target);
+    formDatos.append('accion', 'add_review');
+
+    fetch('../controller/APIController.php', {
+        method: 'POST',
+        body: JSON.stringify({ 
+            accion: 'add_review', 
+            reseña: {
+                puntuacion: formDatos.get('puntuacion'),
+                comentario: formDatos.get('coment')
+            }
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error('Error al enviar la reseña:', error);
+    });
+});

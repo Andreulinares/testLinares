@@ -5,6 +5,7 @@
 /** IMPORTANTE**/
 //Cargar Modelos necesarios BBDD
 require_once __DIR__ . '/../model/ProductoDAO.php';
+require __DIR__ . '/../model/Reseña.php';
 
 /** IMPORTANTE**/
 //Instala la extensión Thunder Client en VSC. Te permite probar si tu API funciona correctamente.
@@ -25,23 +26,22 @@ class APIController{
             return; //return para salir de la funcion
 
         }else if($_POST["accion"] == 'add_review'){
+            $usuario = ProductoDAO::obtenerUsuario($_SESSION['user_email']);
+            $cliente_id = $usuario->getCliente_id();
 
-            $id_pedido = json_decode($_POST["pedido"]); //se decodifican los datos JSON que se reciben desde JS
-            $id_usuario = json_decode($_POST["id_usuario"]); //se decodifican los datos JSON que se reciben desde JS
-            
-            /*
+            $data = json_decode(file_get_contents('php://input'));
 
-                Otras operaciones
+            $reseña = new Reseña(
+                null,
+                $cliente_id,
+                $data->reseña->puntuacion,
+                $data->reseña->comentario,
+                date("Y-m-d H:i:s")
+            );
 
-            */
-            
-            //si solo quieres devolver un pequeño mensaje, simplemente puedes hacer un echo de texto
-            echo "Bienvenido Pedrito"; 
-            return;
+            ProductoDAO::insertarReseñas($reseña);
+
+            echo json_encode(['mensaje' => 'Reseña añadida correctamente']);
         }
-    }
-
-    public function insertarReseñaBD(){
-        
     }
 }
