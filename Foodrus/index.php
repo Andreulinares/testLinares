@@ -2,6 +2,7 @@
 require __DIR__ . '/../Foodrus/config/parameters.php';
 require __DIR__ . '/../Foodrus/controller/productoController.php';
 require __DIR__ .'/../Foodrus/controller/usuarioController.php';
+require __DIR__ .'/../Foodrus/controller/APIController.php';
 
 if (isset($_GET['controller'])) {
     // Creamos el nombre del controlador

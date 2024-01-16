@@ -40,4 +40,8 @@ class APIController{
             return;
         }
     }
+
+    public function insertarReseñaBD(){
+        
+    }
 }
