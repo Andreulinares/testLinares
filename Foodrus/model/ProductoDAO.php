@@ -465,6 +465,44 @@ class ProductoDAO{
         
         $con->close();
     }
+
+    //Obtener todas las reseñas y insertarlas a la tabla reseñas de la BD
+
+    public static function obtenerReseñas($id_cliente){
+        $con = database::connect();
+
+        $stmt = $con->prepare("SELECT puntuacion, comentario FROM reseñas WHERE id_cliente = ? ");
+        $stmt->bind_param("i", $id_cliente);
+
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+        
+        $con->close();
+    }
+
+    public static function insertarReseñas($reseña){
+        $con = database::connect();
+
+        $id_cliente = $reseña->getId_cliente();
+        $puntuacion = $reseña->getPuntuacion();
+        $comentario = $reseña->getComentario();
+        $fecha_creacion = $reseña->getFecha_creacion();
+
+
+        $stmt = $con->prepare("INSERT INTO reseñas (id_cliente, puntuacion, comentario, fecha_creacion) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("iiss", $id_cliente, $puntuacion, $comentario, $fecha_creacion);
+
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+        
+        $con->close();
+    }
     
 }
 
