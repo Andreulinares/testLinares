@@ -54,7 +54,7 @@ document.getElementById('form-reseñas').addEventListener('submit', function (ev
         }
     };
 
-    fetch('../index.php?controller=API&action=api', {
+    fetch('index.php?controller=API&action=api', {
         method: 'POST',
         body: JSON.stringify(datosReseña),
         headers: {

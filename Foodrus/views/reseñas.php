@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../model/ProductoDAO.php';
+require __DIR__ . '/../controller/APIController.php';
 session_start();
 ?>
 
