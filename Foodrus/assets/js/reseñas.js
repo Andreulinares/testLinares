@@ -40,32 +40,34 @@ function agregarReseñaAContenedor(comentario, puntuacion) {
     document.getElementById('puntuacion').value = '';
 }*/
 
-document.getElementById('form-reseñas').addEventListener('submit', function (event) {
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('form-reseñas').addEventListener('submit', function (event) {
     event.preventDefault();
 
-    let puntuacion = document.getElementById('puntuacion').value;
-    let comentario = document.getElementById('coment').value;
+        let puntuacion = document.getElementById('puntuacion').value;
+        let comentario = document.getElementById('coment').value;
 
-    let datosReseña = {
-        accion: 'add_review',
-        reseña: {
-            puntuacion: puntuacion,
-            comentario: comentario
-        }
-    };
+        let datosReseña = {
+            accion: 'add_review',
+            reseña: {
+                puntuacion: puntuacion,
+                comentario: comentario
+            }
+        };
 
-    fetch('index.php?controller=API&action=api', {
-        method: 'POST',
-        body: JSON.stringify(datosReseña),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-    })
-    .catch(error => {
-        console.error('Error al enviar la reseña:', error);
+        fetch('http://testlinares.com/Foodrus/index.php?controller=API&action=api', {
+            method: 'POST',
+            body: JSON.stringify(datosReseña),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Error al enviar la reseña:', error);
+        });
     });
 });
