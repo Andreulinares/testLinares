@@ -1,3 +1,8 @@
+<?php
+require_once __DIR__ . '/../model/ProductoDAO.php';
+session_start();
+?>
+
 <!DOCTYPE html PUBLIC>
 <html lang="es">
 <head>

@@ -34,8 +34,8 @@ class APIController{
             $reseña = new Reseña(
                 null,
                 $cliente_id,
-                $data->reseña->puntuacion,
-                $data->reseña->comentario,
+                $data['reseña']['puntuacion'],
+                $data['reseña']['comentario'],
                 date("Y-m-d H:i:s")
             );
 

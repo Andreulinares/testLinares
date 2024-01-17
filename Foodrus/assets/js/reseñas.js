@@ -43,18 +43,20 @@ function agregarReseñaAContenedor(comentario, puntuacion) {
 document.getElementById('form-reseñas').addEventListener('submit', function (event) {
     event.preventDefault();
 
-    let formDatos = new FormData(event.target);
-    formDatos.append('accion', 'add_review');
+    let puntuacion = document.getElementById('puntuacion').value;
+    let comentario = document.getElementById('coment').value;
 
-    fetch('../controller/APIController.php', {
+    let datosReseña = {
+        accion: 'add_review',
+        reseña: {
+            puntuacion: puntuacion,
+            comentario: comentario
+        }
+    };
+
+    fetch('../index.php?controller=API&action=api', {
         method: 'POST',
-        body: JSON.stringify({ 
-            accion: 'add_review', 
-            reseña: {
-                puntuacion: formDatos.get('puntuacion'),
-                comentario: formDatos.get('coment')
-            }
-        }),
+        body: JSON.stringify(datosReseña),
         headers: {
             'Content-Type': 'application/json'
         }
