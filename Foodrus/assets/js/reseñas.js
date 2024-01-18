@@ -12,33 +12,34 @@
             agregarReseñaAContenedor(comentario, puntuacion);
         }
     });
-});
+});*/
 
-function agregarReseñaAContenedor(comentario, puntuacion) {
-    // Se crea un nuevo contenedor
+function mostrarReseña(puntuacion, comentario) {
     const contenedor = document.createElement('div');
     contenedor.classList.add('reseña-contenedor');
-    // Zona Puntuacion
+
+    // Zona Puntuación
     const puntuacionElement = document.createElement('div');
     puntuacionElement.classList.add('puntuacion');
+
     // Convertir la puntuación a estrellas
     let estrellasHtml = '';
     for (let i = 0; i < puntuacion; i++) {
         estrellasHtml += '<img src="../img/fullstar.png" class="img-estrella" alt="Estrella">';
     }
+
     puntuacionElement.innerHTML = estrellasHtml;
     contenedor.appendChild(puntuacionElement);
+
     // Zona Comentario
     const comentarioElement = document.createElement('div');
     comentarioElement.classList.add('comentario');
     comentarioElement.textContent = comentario;
     contenedor.appendChild(comentarioElement);
-    // Agregar el contenedor al elemento tbody
+
+    // Agregar el contenedor al elemento contenedor de reseñas
     document.getElementById('reseñas-container').appendChild(contenedor);
-    // Limpiar campos del formualario
-    document.getElementById('coment').value = '';
-    document.getElementById('puntuacion').value = '';
-}*/
+}
 
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('form-reseñas').addEventListener('submit', function (event) {
@@ -65,6 +66,23 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(response => response.json())
         .then(data => {
             console.log(data);
+
+            return fetch('http://testlinares.com/Foodrus/index.php?controller=API&action=api', {
+                method: 'POST',
+                body: JSON.stringify({ accion: 'mostrar_reseñas' }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+        })
+        .then(response => response.json())
+        .then(reseñas => {
+            console.log('Reseñas obtenidas:', reseñas);
+
+            // Mostrar cada reseña en la página
+            reseñas.forEach(reseña => {
+                mostrarReseña(reseña.puntuacion, reseña.comentario);
+            });
         })
         .catch(error => {
             console.error('Error al enviar la reseña:', error);

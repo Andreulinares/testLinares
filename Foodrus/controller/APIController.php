@@ -19,9 +19,11 @@ class APIController{
 
         $data = json_decode(file_get_contents('php://input'), true);
 
-        if($data["accion"] == 'buscar_pedido'){
+        if($data["accion"] == 'mostrar_reseñas'){
 
             $reseñas = ProductoDAO::obtenerReseñas($cliente_id);
+            echo json_encode($reseñas, JSON_UNESCAPED_UNICODE);
+            exit;
 
         }else if($data["accion"] == 'add_review'){
 
