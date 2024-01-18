@@ -17,13 +17,13 @@ class APIController{
         $usuario = ProductoDAO::obtenerUsuario($_SESSION['user_email']);
         $cliente_id = $usuario->getCliente_id();
 
-        if($_POST["accion"] == 'buscar_pedido'){
+        $data = json_decode(file_get_contents('php://input'), true);
+
+        if($data["accion"] == 'buscar_pedido'){
 
             $reseñas = ProductoDAO::obtenerReseñas($cliente_id);
 
-        }else if($_POST["accion"] == 'add_review'){
-
-            $data = json_decode(file_get_contents('php://input'));
+        }else if($data["accion"] == 'add_review'){
 
             $reseña = new Reseña(
                 null,
