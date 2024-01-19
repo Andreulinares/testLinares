@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         fetch('http://testlinares.com/Foodrus/index.php?controller=API&action=api', {
             method: 'POST',
-            body: reseñaJSON,
+            body: reseñaJSON, accion: 'add_review',
             headers: {
                 'Content-Type': 'application/json'
             }

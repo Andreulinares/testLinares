@@ -24,8 +24,9 @@ class APIController{
             echo json_encode($reseñas, JSON_UNESCAPED_UNICODE);
             exit;
         } elseif ($accion == 'add_review') {
-            $puntuacion = $_POST['puntuacion'];
-            $comentario = $_POST['comentario'];
+            $data = json_decode(file_get_contents('php://input'), true);
+            $puntuacion = $data['reseña']['puntuacion'];
+            $comentario = $data['reseña']['comentario'];
         
             $reseña = new Reseña(
                 null,
