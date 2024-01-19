@@ -468,20 +468,26 @@ class ProductoDAO{
 
     //Obtener todas las reseñas y insertarlas a la tabla reseñas de la BD
 
-    public static function obtenerReseñas($id_cliente){
+    public static function obtenerReseñas(){
         $con = database::connect();
-
-        $stmt = $con->prepare("SELECT puntuacion, comentario FROM reseñas WHERE id_cliente = ? ");
-        $stmt->bind_param("i", $id_cliente);
-
-        if ($stmt->execute()) {
-            return true;
-        } else {
-            return false;
+    
+        $stmt = $con->prepare("SELECT puntuacion, comentario FROM reseñas");
+        $stmt->execute();
+    
+        $result = $stmt->get_result();
+    
+        $reseñas = array();
+    
+        while ($row = $result->fetch_assoc()) {
+            $reseñas[] = $row;
         }
-        
+    
+        $stmt->close();
         $con->close();
+    
+        return $reseñas;
     }
+    
 
     public static function insertarReseñas($reseña){
         $con = database::connect();

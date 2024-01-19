@@ -11,31 +11,34 @@ require __DIR__ . '/../model/Reseña.php';
 //Instala la extensión Thunder Client en VSC. Te permite probar si tu API funciona correctamente.
 
 class APIController{    
- 
-    public function api(){
+
+    public function api() {
         session_start();
         $usuario = ProductoDAO::obtenerUsuario($_SESSION['user_email']);
         $cliente_id = $usuario->getCliente_id();
-
-        if($_POST["accion"] == 'mostrar_reseñas'){
-
-            $reseñas = ProductoDAO::obtenerReseñas($cliente_id);
+    
+        $accion = $_POST["accion"];  // Obtén la acción del formulario
+    
+        if ($accion == 'mostrar_reseñas') {
+            $reseñas = ProductoDAO::obtenerReseñas();
             echo json_encode($reseñas, JSON_UNESCAPED_UNICODE);
             exit;
-
-        }else if($_POST["accion"] == 'add_review'){
-            $data = json_decode(file_get_contents('php://input'), true);
+        } elseif ($accion == 'add_review') {
+            $puntuacion = $_POST['puntuacion'];
+            $comentario = $_POST['comentario'];
+        
             $reseña = new Reseña(
                 null,
                 $cliente_id,
-                $data['reseña']['puntuacion'],
-                $data['reseña']['comentario'],
+                $puntuacion,
+                $comentario,
                 date("Y-m-d H:i:s")
             );
-
+        
             ProductoDAO::insertarReseñas($reseña);
-
+        
             echo json_encode(['mensaje' => 'Reseña añadida correctamente']);
         }
-    }
+        
+    }   
 }
