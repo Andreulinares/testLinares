@@ -43,7 +43,7 @@ function mostrarReseña(puntuacion, comentario) {
 
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('form-reseñas').addEventListener('submit', function (event) {
-    event.preventDefault();
+        event.preventDefault();
 
         let puntuacion = document.getElementById('puntuacion').value;
         let comentario = document.getElementById('coment').value;
