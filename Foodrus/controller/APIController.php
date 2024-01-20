@@ -25,6 +25,7 @@ class APIController{
             exit;
         } elseif ($accion == 'add_review') {
             $data = json_decode(file_get_contents('php://input'), true);
+            
             $puntuacion = $data['reseña']['puntuacion'];
             $comentario = $data['reseña']['comentario'];
         

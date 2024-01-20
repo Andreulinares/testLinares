@@ -66,38 +66,33 @@ function mostrarReseñasEnPagina() {
     });
 }
 
-// Evento cuando se carga la página
 document.addEventListener('DOMContentLoaded', function () {
-    // Llamada a la función para mostrar reseñas al cargar la página
     mostrarReseñasEnPagina();
 
-    // Evento de envío del formulario para agregar una nueva reseña
     document.getElementById('form-reseñas').addEventListener('submit', function (event) {
         event.preventDefault();
 
         let puntuacion = document.getElementById('puntuacion').value;
         let comentario = document.getElementById('coment').value;
 
-        // Crear un objeto URLSearchParams con los datos del formulario
-        const reseña = {
-            puntuacion: puntuacion,
-            comentario: comentario
+        const datosReseña = {
+            accion: 'add_review',
+            reseña: {
+                puntuacion: puntuacion,
+                comentario: comentario
+            }
         };
-
-        const reseñaJSON = JSON.stringify(reseña); 
 
         fetch('http://testlinares.com/Foodrus/index.php?controller=API&action=api', {
             method: 'POST',
-            body: reseñaJSON, accion: 'add_review',
+            body: new URLSearchParams(datosReseña), // Cambiado a URLSearchParams
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
             }
         })
         .then(response => response.json())
         .then(data => {
             console.log(data);
-
-            // Llamada a la función para mostrar reseñas después de agregar una nueva
             mostrarReseñasEnPagina();
         })
         .catch(error => {
