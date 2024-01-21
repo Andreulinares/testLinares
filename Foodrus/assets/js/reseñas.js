@@ -69,26 +69,20 @@ function mostrarReseñasEnPagina() {
 document.addEventListener('DOMContentLoaded', function () {
     mostrarReseñasEnPagina();
 
-    document.getElementById('form-reseñas').addEventListener('submit', function (event) {
+    let formulario = document.getElementById('form-reseñas');
+
+    formulario.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        let puntuacion = document.getElementById('puntuacion').value;
-        let comentario = document.getElementById('coment').value;
+        const comentario = document.getElementById('comentario').value;
+        const puntuacion = document.getElementById('puntuacion').value; 
 
-        const datosReseña = {
-            accion: 'add_review',
-            reseña: {
-                puntuacion: puntuacion,
-                comentario: comentario
-            }
-        };
-
-        fetch('http://testlinares.com/Foodrus/index.php?controller=API&action=api', {
+        fetch('http://testlinares.com/Foodrus/index.php?controller=API&action=insertarReseñas', {
             method: 'POST',
-            body: new URLSearchParams(datosReseña), // Cambiado a URLSearchParams
+            body: JSON.stringify({ comentario, puntuacion}),
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-            }
+                "Content-Type": "application/json",
+            },
         })
         .then(response => response.json())
         .then(data => {

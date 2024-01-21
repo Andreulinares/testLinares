@@ -24,8 +24,8 @@ session_start();
     <h3 class="h3-reseña">Deja tu reseña</h3>
         <form id="form-reseñas" action="" method="post">
             <div class="form-group">
-                <label for="coment">Comentario</label>
-                <textarea class="form-control label-form" id="coment" name="coment" required></textarea>
+                <label for="comentario">Comentario</label>
+                <textarea class="form-control label-form" id="comentario" name="comentario" required></textarea>
             </div>
             <div class="form-group">
                 <label for="puntuacion">Puntuacion</label>

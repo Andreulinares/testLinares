@@ -14,33 +14,35 @@ class APIController{
 
     public function api() {
         session_start();
-        $usuario = ProductoDAO::obtenerUsuario($_SESSION['user_email']);
-        $cliente_id = $usuario->getCliente_id();
-    
-        $accion = $_POST["accion"];  // Obtén la acción del formulario
+        $accion = $_POST["accion"];  
     
         if ($accion == 'mostrar_reseñas') {
             $reseñas = ProductoDAO::obtenerReseñas();
             echo json_encode($reseñas, JSON_UNESCAPED_UNICODE);
             exit;
-        } elseif ($accion == 'add_review') {
-            $data = json_decode(file_get_contents('php://input'), true);
-            
-            $puntuacion = $data['reseña']['puntuacion'];
-            $comentario = $data['reseña']['comentario'];
-        
-            $reseña = new Reseña(
-                null,
-                $cliente_id,
-                $puntuacion,
-                $comentario,
-                date("Y-m-d H:i:s")
-            );
-        
-            ProductoDAO::insertarReseñas($reseña);
-        
-            echo json_encode(['mensaje' => 'Reseña añadida correctamente']);
-        }
-        
-    }   
+        }   
+    }
+
+    public function insertarReseñas(){
+        session_start();
+        $usuario = ProductoDAO::obtenerUsuario($_SESSION['user_email']);
+        $cliente_id = $usuario->getCliente_id();
+
+        $input = json_decode(file_get_contents('php://input'), true);
+
+        $puntuacion = $input['puntuacion'];
+        $comentario = $input['comentario'];
+
+        $reseña = new Reseña(
+            null,
+            $cliente_id,
+            $puntuacion,
+            $comentario,
+            date("Y-m-d H:i:s")
+        );
+
+        ProductoDAO::insertarReseñas($reseña);
+
+        echo json_encode(['mensaje' => 'Reseña añadida correctamente']);
+    }
 }
