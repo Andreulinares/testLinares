@@ -509,6 +509,8 @@ class ProductoDAO{
         
         $con->close();
     }
+
+    //Funciones puntos de usuario 
     
 }
 

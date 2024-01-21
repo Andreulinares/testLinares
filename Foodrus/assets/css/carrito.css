@@ -283,7 +283,7 @@ input#cupon{
     border-radius: 10px;
     position: absolute;
     right: 10px;
-    top: 206px;
+    top: 203px;
     font-size: 12px;
 }
 
@@ -474,4 +474,16 @@ label[for="cupon"]{
     color: #fff;
     background-color: #00ae42;
     border-color: #00ae42;
+}
+
+/* PUNTOS CLIENTE */
+
+label[for="puntos-usuario"] {
+    font-size: 18px;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.form-puntos {
+    position: relative;
+    bottom: 7px;
 }
