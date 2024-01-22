@@ -22,7 +22,7 @@ session_start();
     <?php include('../views/header.php'); ?>
 <section>
     <h3 class="h3-reseña">Deja tu reseña</h3>
-        <form id="form-reseñas" action="" method="post">
+        <form id="form-reseñas" action="">
             <div class="form-group">
                 <label for="comentario">Comentario</label>
                 <textarea class="form-control label-form" id="comentario" name="comentario" required></textarea>

@@ -77,17 +77,20 @@ document.addEventListener('DOMContentLoaded', function () {
         const comentario = document.getElementById('comentario').value;
         const puntuacion = document.getElementById('puntuacion').value; 
 
+        const formData = new FormData();
+        formData.append('comentario', comentario);
+        formData.append('puntuacion', puntuacion);
+
         fetch('http://testlinares.com/Foodrus/index.php?controller=API&action=insertarReseñas', {
             method: 'POST',
-            body: JSON.stringify({ comentario, puntuacion}),
-            headers: {
-                "Content-Type": "application/json",
-            },
+            body: formData,
         })
         .then(response => response.json())
         .then(data => {
             console.log(data);
             mostrarReseñasEnPagina();
+            document.getElementById('comentario').value = '';
+            document.getElementById('puntuacion').value = '';
         })
         .catch(error => {
             console.error('Error al enviar la reseña:', error);

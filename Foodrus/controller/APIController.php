@@ -26,12 +26,10 @@ class APIController{
     public function insertarReseñas(){
         session_start();
         $usuario = ProductoDAO::obtenerUsuario($_SESSION['user_email']);
-        $cliente_id = $usuario->getCliente_id();
+        $cliente_id = $usuario->getCliente_id();    
 
-        $input = json_decode(file_get_contents('php://input'), true);
-
-        $puntuacion = $input['puntuacion'];
-        $comentario = $input['comentario'];
+        $puntuacion = $_POST['puntuacion'];
+        $comentario = $_POST['comentario'];
 
         $reseña = new Reseña(
             null,
@@ -43,7 +41,8 @@ class APIController{
 
         ProductoDAO::insertarReseñas($reseña);
 
-        echo json_encode(['mensaje' => 'Reseña añadida correctamente']);
+        $response = ['mensaje' => 'Reseña añadida correctamente'];
+        echo json_encode($response);
     }
 
     public function apiPuntos(){
