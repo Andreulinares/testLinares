@@ -45,4 +45,21 @@ class APIController{
 
         echo json_encode(['mensaje' => 'Reseña añadida correctamente']);
     }
+
+    public function apiPuntos(){
+        session_start();
+        $usuario = ProductoDAO::obtenerUsuario($_SESSION['user_email']);
+        $cliente_id = $usuario->getCliente_id();
+
+        $accion = $_POST["accion"];
+
+        if ($accion == 'obtener_puntos') {
+            $puntos = ProductoDAO::obtenerPuntos($cliente_id);
+
+            echo json_encode(['puntos' => $puntos], JSON_UNESCAPED_UNICODE);
+            exit;
+        }else if($accion == 'actualizar_puntos') {
+            
+        }
+    }
 }

@@ -512,6 +512,27 @@ class ProductoDAO{
 
     //Funciones puntos de usuario 
     
+    public static function obtenerPuntos($cliente_id){
+        $con = database::connect();
+
+        $stmt = $con->prepare("SELECT puntos FROM puntos WHERE id_cliente = ?");
+        $stmt->bind_param("i", $cliente_id);
+
+        $stmt->execute();
+    
+        $result = $stmt->get_result();
+    
+        $puntos = array();
+    
+        while ($row = $result->fetch_assoc()) {
+            $puntos[] = $row;
+        }
+    
+        $stmt->close();
+        $con->close();
+    
+        return $puntos;
+    }
 }
 
 ?>
