@@ -17,13 +17,13 @@ session_start();
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link href="/Foodrus/assets/css/admin_productos.css" rel="stylesheet" type="text/css" media="screen">
 
-    <link href="../assets/css/header.css" rel="stylesheet">
-    <link href="../assets/css/ventana_emergente.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="/Foodrus/assets/css/header.css" rel="stylesheet">
+    <link href="/Foodrus/assets/css/ventana_emergente.css" rel="stylesheet" type="text/css" media="screen">
 
     <script src="/Foodrus/assets/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <?php include('../views/header.php'); ?>
+    <?php include('header.php'); ?>
 
 <h2 class="titulo-p">Productos FoodRus</h2>
     <table class="table table-bordered table-striped">
