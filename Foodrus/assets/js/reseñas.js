@@ -14,7 +14,7 @@
     });
 });*/
 
-function mostrarReseña(puntuacion, comentario) {
+function mostrarReseña(puntuacion, comentario, nombre_usuario) {
     const contenedor = document.createElement('div');
     contenedor.classList.add('reseña-contenedor');
 
@@ -36,6 +36,12 @@ function mostrarReseña(puntuacion, comentario) {
     comentarioElement.classList.add('comentario');
     comentarioElement.textContent = comentario;
     contenedor.appendChild(comentarioElement);
+
+    // Zona nombre usuario
+    const nombreElement = document.createElement('div');
+    nombreElement.classList.add('nombreUsuario');
+    nombreElement.textContent = nombre_usuario;
+    contenedor.appendChild(nombreElement);
 
     // Agregar el contenedor al elemento contenedor de reseñas
     document.getElementById('reseñas-container').appendChild(contenedor);
@@ -60,7 +66,7 @@ function mostrarReseñasEnPagina() {
         contenedorReseñas.innerHTML = '';
         // Mostrar cada reseña en la página
         reseñas.forEach(reseña => {
-            mostrarReseña(reseña.puntuacion, reseña.comentario);
+            mostrarReseña(reseña.puntuacion, reseña.comentario, reseña.nombre_usuario);
         });
     })
     .catch(error => {

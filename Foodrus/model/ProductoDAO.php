@@ -471,7 +471,7 @@ class ProductoDAO{
     public static function obtenerReseñas(){
         $con = database::connect();
     
-        $stmt = $con->prepare("SELECT puntuacion, comentario FROM reseñas");
+        $stmt = $con->prepare("SELECT puntuacion, comentario, nombre_usuario FROM reseñas");
         $stmt->execute();
     
         $result = $stmt->get_result();
@@ -496,10 +496,11 @@ class ProductoDAO{
         $puntuacion = $reseña->getPuntuacion();
         $comentario = $reseña->getComentario();
         $fecha_creacion = $reseña->getFecha_creacion();
+        $nombre_usuario = $reseña->getNombre_usuario();
 
 
-        $stmt = $con->prepare("INSERT INTO reseñas (id_cliente, puntuacion, comentario, fecha_creacion) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("iiss", $id_cliente, $puntuacion, $comentario, $fecha_creacion);
+        $stmt = $con->prepare("INSERT INTO reseñas (id_cliente, puntuacion, comentario, fecha_creacion, nombre_usuario) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("iisss", $id_cliente, $puntuacion, $comentario, $fecha_creacion, $nombre_usuario);
 
         if ($stmt->execute()) {
             return true;

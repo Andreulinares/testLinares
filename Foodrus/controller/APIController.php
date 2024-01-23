@@ -26,7 +26,8 @@ class APIController{
     public function insertarReseñas(){
         session_start();
         $usuario = ProductoDAO::obtenerUsuario($_SESSION['user_email']);
-        $cliente_id = $usuario->getCliente_id();    
+        $cliente_id = $usuario->getCliente_id();   
+        $nombre_usuario = $usuario->getNombre();
 
         $puntuacion = $_POST['puntuacion'];
         $comentario = $_POST['comentario'];
@@ -36,7 +37,8 @@ class APIController{
             $cliente_id,
             $puntuacion,
             $comentario,
-            date("Y-m-d H:i:s")
+            date("Y-m-d H:i:s"),
+            $nombre_usuario
         );
 
         ProductoDAO::insertarReseñas($reseña);

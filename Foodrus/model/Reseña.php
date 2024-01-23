@@ -3,17 +3,19 @@
 class Reseña{
     private $reseña_id;
     private $id_cliente;
+    private $nombre_usuario;
     private $puntuacion;
     private $comentario;
     private $fecha_creacion;
 
-    public function __construct($reseña_id, $id_cliente, $puntuacion, $comentario, $fecha_creacion)
+    public function __construct($reseña_id, $id_cliente, $puntuacion, $comentario, $fecha_creacion, $nombre_usuario)
     {
         $this->reseña_id = $reseña_id;
         $this->id_cliente = $id_cliente;
         $this->puntuacion = $puntuacion;
         $this->comentario = $comentario;
         $this->fecha_creacion = $fecha_creacion;
+        $this->nombre_usuario = $nombre_usuario;
     }
 
     /**
@@ -112,6 +114,26 @@ class Reseña{
     public function setFecha_creacion($fecha_creacion)
     {
         $this->fecha_creacion = $fecha_creacion;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of nombre_usuario
+     */ 
+    public function getNombre_usuario()
+    {
+        return $this->nombre_usuario;
+    }
+
+    /**
+     * Set the value of nombre_usuario
+     *
+     * @return  self
+     */ 
+    public function setNombre_usuario($nombre_usuario)
+    {
+        $this->nombre_usuario = $nombre_usuario;
 
         return $this;
     }

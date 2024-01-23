@@ -110,3 +110,8 @@ img.img-estrella {
     margin-top: 10px;
     margin-left: 15px;
 }
+
+.nombreUsuario {
+    margin-left: 15px;
+    font-weight: 500;
+}
