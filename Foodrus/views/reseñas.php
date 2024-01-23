@@ -51,6 +51,7 @@ session_start();
 
     <div id="reseñas-container"></div>
 </section>
+<!-- SCRIPTS RESEÑAS Y NOTIE.JS -->
 <script src="../notie-master/dist/notie.js"></script>
 <script src="../assets/js/reseñas.js"></script>
 <!-- VENTANA CARRITO -->

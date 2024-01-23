@@ -1,19 +1,3 @@
-/*document.addEventListener('DOMContentLoaded', function () {
-    // Manejar el evento de envío del formulario
-    document.getElementById('form-reseñas').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar el envío normal del formulario
-
-        // Obtener los valores del formulario
-        var comentario = document.getElementById('coment').value;
-        var puntuacion = document.getElementById('puntuacion').value;
-
-        // Validar y agregar la nueva reseña a la tabla
-        if (comentario && puntuacion) {
-            agregarReseñaAContenedor(comentario, puntuacion);
-        }
-    });
-});*/
-
 function mostrarReseña(puntuacion, comentario, nombre_usuario) {
     const contenedor = document.createElement('div');
     contenedor.classList.add('reseña-contenedor');
@@ -75,7 +59,7 @@ function mostrarReseñasEnPagina() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    mostrarReseñasEnPagina();
+    mostrarReseñasEnPagina();//mostrar reseñas
 
     let formulario = document.getElementById('form-reseñas');
 
@@ -84,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const comentario = document.getElementById('comentario').value;
         const puntuacion = document.getElementById('puntuacion').value; 
-
+        //obtenemos los datos insertados en el formulario mediante FormData
         const formData = new FormData();
         formData.append('comentario', comentario);
         formData.append('puntuacion', puntuacion);
@@ -96,15 +80,24 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            mostrarReseñasEnPagina();
-            document.getElementById('comentario').value = '';
-            document.getElementById('puntuacion').value = '';
+            if (data.mensaje === 'Reseña añadida correctamente'){
+                success();//llamar a funcion notie
+                mostrarReseñasEnPagina();//mostrar reseñas actualizadas una vez insertada nueva reseña
+                document.getElementById('comentario').value = '';
+                document.getElementById('puntuacion').value = '';
+            }
+            
         })
         .catch(error => {
             console.error('Error al enviar la reseña:', error);
         });
     });
 });
+
+//funcion notie js que muestra mensaje de exito
+function success() {
+    notie.alert({ type: 1, text: 'Reseña adida con exito!', time: 2 });
+}
 
 document.getElementById('filtro-nota').addEventListener('change', function () {
     const notaSeleccionada = this.value;
@@ -125,7 +118,7 @@ document.getElementById('filtro-nota').addEventListener('change', function () {
             }
         });
     } else {
-        // Si se selecciona "Mostrar Todas", muestra todas las reseñas
+        // Si se selecciona "Mostrar Todas", muestra todas las reseñas (opcion por defecto)
         reseñas.forEach(reseña => reseña.style.display = 'block');
     }
 });
