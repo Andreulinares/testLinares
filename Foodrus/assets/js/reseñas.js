@@ -55,7 +55,9 @@ function mostrarReseñasEnPagina() {
     .then(response => response.json())
     .then(reseñas => {
         console.log('Reseñas obtenidas:', reseñas);
-
+        //Limpiar contenedor para evitar reseñas duplicadas
+        const contenedorReseñas = document.getElementById('reseñas-container');
+        contenedorReseñas.innerHTML = '';
         // Mostrar cada reseña en la página
         reseñas.forEach(reseña => {
             mostrarReseña(reseña.puntuacion, reseña.comentario);
