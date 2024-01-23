@@ -18,14 +18,14 @@ if (isset($_SESSION['user_email'])){
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link href="/Foodrus/assets/css/mis_pedidos.css" rel="stylesheet" type="text/css" media="screen">
 
-    <link href="../assets/css/header.css" rel="stylesheet" type="text/css" media="screen">
-    <link href="../assets/css/ventana_emergente.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="/Foodrus/assets/css/header.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="/Foodrus/assets/css/ventana_emergente.css" rel="stylesheet" type="text/css" media="screen">
 
     <script src="/Foodrus/assets/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 
-    <?php include('../views/header.php'); ?>
+    <?php include('header.php'); ?>
     
     <?php if (isset($esAdmin) && $esAdmin) : ?>
         <h2 class="mispedidos">Todos los pedidos realizados</h2>

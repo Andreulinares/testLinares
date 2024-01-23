@@ -105,3 +105,29 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+document.getElementById('filtro-nota').addEventListener('change', function () {
+    const notaSeleccionada = this.value;
+
+    // Oculta todas las reseñas
+    const reseñas = document.querySelectorAll('.reseña-contenedor');
+    reseñas.forEach(reseña => reseña.style.display = 'none');
+
+    // Muestra solo las reseñas de la nota seleccionada
+    if (notaSeleccionada !== '0') {
+        const reseñasFiltradas = document.querySelectorAll(`.puntuacion img[src="../img/fullstar.png"]`);
+        reseñasFiltradas.forEach(reseña => {
+            const contenedor = reseña.closest('.reseña-contenedor');
+            const puntuacion = reseña.parentNode.querySelectorAll('img').length;
+
+            if (puntuacion == notaSeleccionada) {
+                contenedor.style.display = 'block';
+            }
+        });
+    } else {
+        // Si se selecciona "Mostrar Todas", muestra todas las reseñas
+        reseñas.forEach(reseña => reseña.style.display = 'block');
+    }
+});
+
+

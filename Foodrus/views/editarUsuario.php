@@ -8,12 +8,12 @@
     <link href="/Foodrus/assets/css/editarUsuario.css" rel="stylesheet" type="text/css" media="screen">
 
     <link href="/Foodrus/assets/css/header.css" rel="stylesheet">
-    <link href="../assets/css/ventana_emergente.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="/Foodrus/assets/css/ventana_emergente.css" rel="stylesheet" type="text/css" media="screen">
 
     <script src="/Foodrus/assets/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <?php include('../views/header.php'); ?>
+    <?php include('header.php'); ?>
 
     <div class="principal">
         <h2 class="titulo">Datos Personales</h2>

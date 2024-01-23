@@ -18,47 +18,6 @@ label {
     margin-bottom: 5px;
 }
 
-/*Media query*/
-@media only screen and (max-width: 600px) {
-    /* body {
-      background-color: lightblue;
-    } */
-    h1{
-        color: var(--bg-color2);
-        width: 100%;
-        background: yellow;
-    }
-
-    .navbar-toggler{
-        z-index: 1000;
-    }
-
-    .ubi {
-        position: relative;
-        left: 285px;
-        bottom: 25px;
-    }
-    
-    .mi-cuenta{
-        position: relative;
-        left: 260px;
-        bottom: 156px;
-        width: 100px;
-    }
-
-    .carta {
-        position: relative;
-        left: 205px;
-        top: 35px;
-    }
-
-    .buscador{
-        left: 50%;
-        transform: translateX(-75%);
-        top: 120px;
-    }
-}
-
 /* CSS PAGINA ELEMENTOS */
 
 .form-group {
@@ -68,6 +27,7 @@ label {
 .principal {
     margin-left: 40px;
     margin-right: 40px;
+    margin-top: 90px;
 }
 
 .titulo{
@@ -122,87 +82,6 @@ label {
     background-color: #ff973b;
     border-color: #ff973b;
     color: #fff;
-}
-
-/* HEADER Y FOOTER */
-
-.usuario{
-    width: 75px;
-    height: 41px;
-    position: relative;
-    right: 65px;
-    bottom: 3px;
-}
-
-.ubicacion{
-    width: 32px;
-    height: 32px;
-    position: relative;
-    right: 80px;
-}
-
-header svg{
-    width: 32px;
-    height: 32px;
-    margin-bottom: 15px;
-    position: relative;
-    right: 60px;
-    top: 15px;
-}
-
-.ms-auto {
-    position: relative;
-    right: 420px;
-}
-
-.custom-search{
-    width: 367px;
-    height: 38px;
-    border-radius: 10px;
-    position: relative;
-    left: 160px;
-    background-color: #376aae;
-    border: 2px solid #4c7ab7;
-    text-indent: 40px;
-    bottom: 8px;
-}
-
-.custom-search::placeholder {
-    color: white;
-}
-
-.img-lupa{
-    position: relative;
-    right: 205px;
-    bottom: 1px;
-}
-
-.texto-menu{
-    color: white;
-    position: relative;
-    right: 90px;
-    bottom: 2px;
-}
-
-.carta{
-    position: relative;
-    right: 435px;
-    font-size: 16px;
-    font-family: "Nunito Sans", sans-serif;
-}
-
-.numero-carrito {
-    background-color: red;
-    color: white;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    font-size: 12px;
-    position: relative;
-    right: 68px;
-    bottom: 35px;
-    display: flex;
-    justify-content: center;
 }
 
 /* FOOTER */

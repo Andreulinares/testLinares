@@ -3,7 +3,7 @@
         <div class="container">
             <!-- Logo foodrus -->
             <a class="navbar-brand" href="Inicio.php">
-                <img src="../img/Logo-foodrus.png" width="150" height="50">
+                <img src="/Foodrus/img/Logo-foodrus.png" width="150" height="50">
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +15,7 @@
             <!-- Buscador -->
             <form class="d-flex ms-auto buscador" role="search">
                     <input class="form-control me-2 custom-search" type="search" placeholder="Busca aqui algo divertido">
-                    <img src="../img/lupa.png" width="20" height="20" class="img-lupa">
+                    <img src="/Foodrus/img/lupa.png" width="20" height="20" class="img-lupa">
             </form>
         
 
@@ -23,12 +23,12 @@
                 <ul class="navbar-nav me-2">
                     <li class="nav-item ubi">
                         <a class="nav-link" href="#">
-                        <img src="../img/storeFinder.svg" alt="ubicacion" class="ubicacion">
+                        <img src="/Foodrus/img/storeFinder.svg" alt="ubicacion" class="ubicacion">
                         </a>
                     </li>
                     <li class="nav-item mi-cuenta">
                         <a id="usuario-btn" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="../img/usuario.svg" alt="mi-cuenta" class="usuario">
+                        <img src="/Foodrus/img/usuario.svg" alt="mi-cuenta" class="usuario">
                         <span class="texto-menu">
                             <?php
                             if (isset($_SESSION['user_email'])){
@@ -44,17 +44,17 @@
                         if (isset($_SESSION['user_email'])) : ?>
                         <ul id="desplegable-menu" class="dropdown-menu">
                         <li>
-                            <form action="../index.php?controller=usuario&action=logout" method="post">
+                            <form action="/Foodrus/index.php?controller=usuario&action=logout" method="post">
                             <button type="submit" class="dropdown-item salir boton-desp" name="cerrar_sesion">Salir</button>
                             </form>
                         </li>
                         <li>
-                            <form action="../index.php?controller=usuario&action=mostrarPedidos" method="post">
+                            <form action="/Foodrus/index.php?controller=usuario&action=mostrarPedidos" method="post">
                             <button type="submit" class="dropdown-item mis-pedidos boton-desp" name="mis-pedidos">Mis pedidos</button>
                             </form>
                         </li>
                         <li>
-                            <form action="../index.php?controller=usuario&action=editarUsuario" method="post">
+                            <form action="/Foodrus/index.php?controller=usuario&action=editarUsuario" method="post">
                             <button type="submit" class="dropdown-item mod-usuario" name="mod-usuario">Detalles de la cuenta</button>
                             </form>
                         </li>
@@ -64,13 +64,13 @@
                         if ($rol == 'administrador'){
                             ?>
                             <li>
-                                <a href="../index.php?controller=producto&action=index" class="dropdown-item admin-productos boton-desp" name="ad-product">Productos</a>
+                                <a href="/Foodrus/index.php?controller=producto&action=index" class="dropdown-item admin-productos boton-desp" name="ad-product">Productos</a>
                             </li>
                             <?php
                         }
                         ?>
                         </ul>
-                        <script src="../assets/js/desplegable.js"></script>
+                        <script src="/Foodrus/assets/js/desplegable.js"></script>
                         <?php else : ?>
                         <script>
                             document.addEventListener('DOMContentLoaded', function () {
@@ -103,10 +103,10 @@
             <!-- Contenido del segundo menú -->
                 <ul class="navbar-nav me-2">
                     <li class="nav-item mi-carta">
-                        <a href="carta.php" class="nav-link text-white carta">Carta</a>
+                        <a href="/Foodrus/views/carta.php" class="nav-link text-white carta">Carta</a>
                     </li>
                     <li class="nav-item">
-                        <a href="reseñas.php" class="nav-link text-white reseñas">Reseñas</a>
+                        <a href="/Foodrus/views/reseñas.php" class="nav-link text-white reseñas">Reseñas</a>
                     </li>
                 </ul>
         </div>

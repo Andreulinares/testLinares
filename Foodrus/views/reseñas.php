@@ -36,6 +36,18 @@ session_start();
 
     <h2 class="h2-reseña">Reseñas de los clientes</h2>
 
+    <div class="filtro-reseñas">
+            <label for="filtro-nota">Filtrar por Nota:</label>
+            <select id="filtro-nota">
+                <option value="0">Mostrar Todas</option>
+                <option value="1">1 estrella</option>
+                <option value="2">2 estrellas</option>
+                <option value="3">3 estrellas</option>
+                <option value="4">4 estrellas</option>
+                <option value="5">5 estrellas</option>
+            </select>
+    </div>
+
     <div id="reseñas-container"></div>
 </section>
 <script src="../assets/js/reseñas.js"></script>
