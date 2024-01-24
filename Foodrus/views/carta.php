@@ -37,6 +37,13 @@ session_start();
 <?php include('../views/header.php'); ?>
 
 <section>
+
+    <div id="filtros">
+        <label><input type="checkbox" class="filtro-categoria" value="pizza"> Pizza</label>
+        <label><input type="checkbox" class="filtro-categoria" value="bebida"> Bebida</label>
+        <label><input type="checkbox" class="filtro-categoria" value="postre"> Postre</label>
+    </div>
+
     <h2 class="h2-carta">CARTA</h2>
     <!-- MENU INFANTIL -->
     <h2 id="infantil" class="t-menu">MENU INFANTIL</h2>
@@ -72,7 +79,7 @@ session_start();
 <!-- esten en filas de 4. Luego usando un foreach recorremos el array de $productos -->
 <!-- que contiene todas las ids de los productos de esta seccion y aplicamos la clase special-card -->
 <!-- a las tarjetas impares.-->
-            <div class="col-md-3 card-container <?= $specialClass ?>">
+            <div class="col-md-3 card-container <?= $specialClass ?> <?= $producto->getCategoria(); ?>">
                 <div class="card">
                     <img src="../<?= $producto->getImagen(); ?>" class="card-img-top img-fluid img-product" alt="<?= $producto->getNombre_producto(); ?>">
                     <div class="card-body">
@@ -102,7 +109,7 @@ session_start();
     </div>
     </div>
 
-    <h2 id="estandar" class="t-menu">MENU ESTANDAR</h2>
+    <h2 id="estandar" class="t-menu t-estandar">MENU ESTANDAR</h2>
 <!-- MENU ESTANDAR -->
     <div class="container contenedor">
     <div class="row tarjetas">
@@ -128,7 +135,7 @@ session_start();
                     </div><div class="row tarjetas">
             <?php endif; ?>
 
-            <div class="col-md-3 card-container <?= $specialClass ?>">
+            <div class="col-md-3 card-container <?= $specialClass ?> <?= $producto2->getCategoria(); ?>">
                 <div class="card">
                     <img src="../<?= $producto2->getImagen(); ?>" class="card-img-top img-fluid img-product" alt="<?= $producto2->getNombre_producto(); ?>">
                     <div class="card-body">
@@ -158,7 +165,7 @@ session_start();
     </div>
     </div>
 
-    <h2 id="temporal" class="t-menu">MENU TEMPORAL</h2>
+    <h2 id="temporal" class="t-menu-temporal">MENU TEMPORAL</h2>
 <!-- MENU TEMPORAL -->
     <div class="container">
         <div class="row tarjetas">
@@ -179,7 +186,7 @@ session_start();
                     </div><div class="row tarjetas">
                 <?php endif; ?>
 
-                <div class="col-md-3 card-container special-card2">
+                <div class="col-md-3 card-container special-card2 <?= $producto3->getCategoria(); ?>">
                     <div class="card">
                         <img src="../<?= $producto3->getImagen(); ?>" class="card-img-top img-fluid img-product" alt="<?= $producto3->getNombre_producto(); ?>">
                         <div class="card-body">
@@ -211,7 +218,7 @@ session_start();
     </div>
 
 </section>
-
+<script src="../assets/js/filtroProductos.js"></script>
 <footer>
     <div class="container-fluid p-5 text-white bg-custom">
         <div class="row justify-content-center align-items-center">

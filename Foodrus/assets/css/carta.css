@@ -39,6 +39,20 @@ body{
     bottom: 30px;
 }
 
+.t-menu-temporal{
+    text-align: center;
+    font-family: "Arvo", sans-serif;
+    font-size: 30px;
+    color: var(--bg-color4);
+    position: relative;
+    bottom: 30px;
+}
+
+.t-estandar{
+    width: 440px;
+    left: 450px;
+}
+
 /* TARJETAS PRODUCTOS */
 
 .container .subtitulo {
@@ -119,7 +133,8 @@ body{
     margin-top: -30px;
     color: #929292;
     position: relative;
-    right: 202px;
+    left: 850px;
+    width: 190px;
 }
 
 /* TARJETAS EXCLUSIVAS Y NOVEDADES */
@@ -191,4 +206,13 @@ body{
 
 .bg-custom{
     background-color: #1450A0;
+}
+
+/* FILTRO CATEGORIAS */
+
+#filtros{
+    position: relative;
+    top: 215px;
+    left: 240px;
+    width: 190px;
 }
