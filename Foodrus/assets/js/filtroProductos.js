@@ -10,18 +10,13 @@ document.addEventListener('DOMContentLoaded', function () {
     function filtrarProductos() {
         const categoriasSeleccionadas = obtenerCategoriasSeleccionadas();
 
-        // Mostrar todas las tarjetas
+        // Obtener todas las tarjetas
         const todasLasTarjetas = Array.from(document.querySelectorAll('.card-container'));
-        todasLasTarjetas.forEach(tarjeta => {
-            tarjeta.style.display = 'block';
-        });
 
-        // Ocultar tarjetas de categorías no seleccionadas
-        categoriasSeleccionadas.forEach(categoria => {
-            const tarjetasNoSeleccionadas = todasLasTarjetas.filter(tarjeta => !tarjeta.classList.contains(categoria));
-            tarjetasNoSeleccionadas.forEach(tarjeta => {
-                tarjeta.style.display = 'none';
-            });
+        // Mostrar u ocultar tarjetas según las categorías seleccionadas
+        todasLasTarjetas.forEach(tarjeta => {
+            const categoriaTarjeta = obtenerCategoriaTarjeta(tarjeta);
+            tarjeta.style.display = categoriasSeleccionadas.length === 0 || categoriasSeleccionadas.includes(categoriaTarjeta) ? 'block' : 'none';
         });
     }
 
@@ -29,6 +24,11 @@ document.addEventListener('DOMContentLoaded', function () {
         return Array.from(checkboxes)
             .filter(checkbox => checkbox.checked)
             .map(checkbox => checkbox.value);
+    }
+
+    function obtenerCategoriaTarjeta(tarjeta) {
+        const categoriasSeleccionadas = obtenerCategoriasSeleccionadas();
+        return tarjeta.classList.value.split(' ').find(clase => categoriasSeleccionadas.includes(clase));
     }
 
     // Inicialmente, muestra todas las tarjetas al cargar la página
