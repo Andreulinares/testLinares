@@ -534,6 +534,21 @@ class ProductoDAO{
     
         return $puntos;
     }
+
+    public static function insertarPuntosUsuario($cliente_id, $puntosObtenidos){
+        $con = database::connect();
+
+        $stmt = $con->prepare("INSERT INTO puntos (id_cliente, puntos) VALUES (?, ?)");
+        $stmt->bind_param("ii", $cliente_id, $puntosObtenidos);
+
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+        
+        $con->close();
+    }
 }
 
 ?>

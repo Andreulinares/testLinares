@@ -60,7 +60,17 @@ class APIController{
             echo json_encode(['puntos' => $puntos], JSON_UNESCAPED_UNICODE);
             exit;
         }else if($accion == 'actualizar_puntos') {
-            
+            $precioEnvio = 3.80;
+            $subtotal = CalculadoraPrecios::calcularPrecioPedido($_SESSION['selecciones']);
+            $cantidadTotal = number_format($subtotal + $precioEnvio, 2);
+
+            $puntosObtenidos = $this->calcularPuntosCompra($cantidadTotal);
+
+            ProductoDAO::insertarPuntosUsuario($cliente_id, $puntosObtenidos);
         }
+    }
+
+    private function calcularPuntosCompra($cantidadTotal){
+        return floor($cantidadTotal / 100);
     }
 }
