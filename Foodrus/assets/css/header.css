@@ -31,6 +31,16 @@
         transform: translateX(-75%);
         top: 120px;
     }
+
+    header svg{
+        left: 321px;
+        bottom: 207px;
+    }
+
+    .numero-carrito{
+        left: 321px;
+        bottom: 255px;
+    }
 }
 
 /* HEADER */
