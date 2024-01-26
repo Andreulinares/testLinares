@@ -20,26 +20,20 @@
         width: 100px;
     }
 
-    .carta {
-        position: relative;
-        left: 205px;
-        top: 35px;
-    }
-
     .buscador{
         left: 50%;
         transform: translateX(-75%);
         top: 120px;
     }
 
-    header svg{
-        left: 321px;
-        bottom: 207px;
+    .carrito-svg{
+        left: 382px;
+        bottom: 221px;
+        position: relative;
     }
 
     .numero-carrito{
-        left: 321px;
-        bottom: 255px;
+        transform: translateX(10px);
     }
 }
 

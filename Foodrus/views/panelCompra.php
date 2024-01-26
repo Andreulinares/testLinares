@@ -204,7 +204,7 @@ if (!isset($_SESSION['carrito_id'])) {
     </div>
 </footer>
 <!-- VENTANA EMERGENTE CARRITO -->
-    <div id="ventana" style="display: none;">
+    <div id="ventana" class="cont-ventana" style="display: none;">
         <div class="div-ventana">
             <p class="mi-cesta">Mi cesta</p>
             <button id="btnFinalizarCompra">FINALIZAR COMPRA</button>
