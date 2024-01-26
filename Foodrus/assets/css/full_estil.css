@@ -66,13 +66,6 @@ main {
     font-size: 30px;
 }
 
-.btn-primary{
-    background-color: #004BBE;
-}
-.btn-primary:hover{
-    background-color: #FF973B;
-}
-
 .mx-6 {
     margin-right: 9.85rem; 
     margin-left: 9.85rem;  

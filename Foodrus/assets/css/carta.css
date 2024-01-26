@@ -94,7 +94,7 @@ body{
 .tarjetas{
     position: relative;
     right: 365px;
-    margin-left: 370px;
+    margin-left: 380px;
 }
 
 .carro{
@@ -213,6 +213,6 @@ body{
 #filtros{
     position: relative;
     top: 215px;
-    left: 240px;
+    left: 250px;
     width: 190px;
 }
