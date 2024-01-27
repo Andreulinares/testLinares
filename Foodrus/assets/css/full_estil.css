@@ -24,6 +24,87 @@ h1{
 main {
     margin-top: 83px;
 }
+
+/*RESPONSIVE EN PANTALLAS 600PX*/
+
+@media (max-width: 600px){
+    #product-2{
+        width: 13rem;
+        transform: translateX(-10px);
+    }
+    
+    #product-9{
+        width: 13rem;
+        transform: translateX(-120px);
+    }
+    
+    #product-3{
+        width: 13rem;
+        top: 1963px;
+        left: 245px;
+    }
+    
+    #product-21{
+        width: 13rem;
+        top: 256px;
+        transform: translateX(-24px);
+    }
+
+    #product-2 .product-image {
+        width: 198px;
+        position: relative;
+        right: 36px;
+    }
+    
+    #product-9 .product-image {
+        width: 170px;
+        position: relative;
+        right: 22px;
+    }
+    
+    #product-21 .product-image {
+        right: 41px;
+        position: relative;
+    }
+    
+    #product-3 .product-image {
+        width: 170px;
+        position: relative;
+        right: 22px;
+    }
+
+    .ultProductos{
+        height: 640px;
+    }
+
+    .bg-custom{
+        position: absolute;
+        top: 2253px;
+    }
+
+    .b2 {
+        transform: translateX(-148px);
+        width: 155px;
+    }
+
+    .b1 {
+        transform: translateX(127px);
+        width: 155px;
+    }
+
+    .b3{
+        position: relative;
+        right: 11px;
+        width: 155px;
+    }
+
+}
+
+.card{
+    width: 18rem;
+    height: 250px;
+}
+
 /*CARROUSEL CSS */
 
 .carousel-indicators [data-bs-target]{

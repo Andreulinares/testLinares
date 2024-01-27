@@ -67,7 +67,7 @@ session_start();
             </div>
             <div class="col-4">
               <div class="button-container text-center">
-                <a href="carta.php#estandar" class="btn btn-primary btn-custom b-text">ESTANDAR</a>
+                <a href="carta.php#estandar" class="btn btn-primary btn-custom b3 b-text">ESTANDAR</a>
               </div>
             </div>
             <div class="col-4">
@@ -94,7 +94,7 @@ session_start();
             </div>
             <div class="col-4">
                 <div class="button-container text-center">
-                    <button type="button" class="btn btn-primary btn-custom">
+                    <button type="button" class="btn btn-primary btn-custom b3">
                         <img src="../assets/images/categoria2.png" alt="Categoría 2" width="120", height="65">
                     </button>
                 </div>
@@ -168,8 +168,8 @@ session_start();
             <?php
             foreach ($productos as $producto){
             ?>
-              <div class="col-md-3 mb-4">
-                  <div class="card" id="product-<?= $producto->getProducto_id(); ?>" style="width: 18rem; height: 250px;">
+              <div class="col-md-3 col-6 mb-4">
+                  <div class="card" id="product-<?= $producto->getProducto_id(); ?>">
                       <img src="../<?= $producto->getImagen(); ?>" class="card-img-top product-image" alt="<?= $producto->getNombre_producto(); ?>">
                       <div class="card-body">
                             <h5 class="card-title"><?= $producto->getNombre_producto(); ?></h5>
