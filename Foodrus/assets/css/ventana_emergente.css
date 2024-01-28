@@ -1,5 +1,5 @@
 @media only screen and (max-width: 600px) {
-    .cont-ventana{
+    #ventana{
         width: 476px;
         height: 233px;
     }
@@ -7,7 +7,7 @@
 
 /* VENTANA EMERGENTE CARRITO */
 
-#ventana{
+.cont-ventana{
     position: fixed;
     top: 50%;
     left: 50%;
