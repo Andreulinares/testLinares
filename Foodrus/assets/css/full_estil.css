@@ -84,17 +84,18 @@ main {
 
     .b2 {
         transform: translateX(-148px);
-        width: 155px;
     }
 
     .b1 {
         transform: translateX(127px);
-        width: 155px;
     }
 
     .b3{
         position: relative;
         right: 11px;
+    }
+
+    #btn-tamaño{
         width: 155px;
     }
 

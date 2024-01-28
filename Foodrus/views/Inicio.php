@@ -62,17 +62,17 @@ session_start();
           <div class="row">
             <div class="col-4">
               <div class="button-container text-center">
-                <a href="carta.php#infantil" class="btn btn-primary btn-custom b1 b-text">INFANTIL</a>
+                <a href="carta.php#infantil" id="btn-tamaño" class="btn btn-primary btn-custom b1 b-text">INFANTIL</a>
               </div>
             </div>
             <div class="col-4">
               <div class="button-container text-center">
-                <a href="carta.php#estandar" class="btn btn-primary btn-custom b3 b-text">ESTANDAR</a>
+                <a href="carta.php#estandar" id="btn-tamaño" class="btn btn-primary btn-custom b3 b-text">ESTANDAR</a>
               </div>
             </div>
             <div class="col-4">
               <div class="button-container text-center">
-                <a href="carta.php#temporal" class="btn btn-primary btn-custom b2 b-text">TEMPORAL</a>
+                <a href="carta.php#temporal" id="btn-tamaño" class="btn btn-primary btn-custom b2 b-text">TEMPORAL</a>
               </div>
             </div>
           </div>
@@ -87,21 +87,21 @@ session_start();
         <div class="row">
             <div class="col-4">
                 <div class="button-container text-center">
-                    <button type="button" class="btn btn-primary btn-custom b1">
+                    <button type="button" id="btn-tamaño" class="btn btn-primary btn-custom b1">
                         <img src="../assets/images/categoria1.png" alt="Categoría 1" width="120", height="65">
                     </button>
                 </div>
             </div>
             <div class="col-4">
                 <div class="button-container text-center">
-                    <button type="button" class="btn btn-primary btn-custom b3">
+                    <button type="button" id="btn-tamaño" class="btn btn-primary btn-custom b3">
                         <img src="../assets/images/categoria2.png" alt="Categoría 2" width="120", height="65">
                     </button>
                 </div>
             </div>
             <div class="col-4">
                 <div class="button-container text-center">
-                    <button type="button" class="btn btn-primary btn-custom b2">
+                    <button type="button" id="btn-tamaño" class="btn btn-primary btn-custom b2">
                         <img src="../assets/images/categoria3.png" alt="Categoría 3" width="120", height="65">
                     </button>
                 </div>
