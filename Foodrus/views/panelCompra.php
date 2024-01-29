@@ -121,13 +121,17 @@ if (!isset($_SESSION['carrito_id'])) {
             <hr class="linea2">
 
             <hr class="linea3">
-            <form id="form-compra" action="../index.php?controller=producto&action=finalizarCompra" method="post">
+            <form action="../index.php?controller=producto&action=finalizarCompra" method="post">
                 <input type="hidden" name="cantidadTotal" value="<?= $cantidadTotal ?>">
                 <div class="form-group form-puntos">
                     <label for="puntos-usuario">Utilizar puntos:</label>
                     <input type="number" id="puntos-usuario" name="puntos-usuario" min="0">
                 </div>
                 <button type="submit" class="btn btn-primary btn-finalizar">FINALIZAR COMPRA</button>
+            </form>
+            <!-- CREAR OTRO FORMULARIO PARA GESTIONAR PUNTOS -->
+            <form id="form-compra">
+                <input type="hidden" name="cantidadTotal" value="<?= $cantidadTotal ?>">
             </form>
         </div>
     </div>
