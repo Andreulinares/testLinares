@@ -1,5 +1,5 @@
 // Función para obtener y mostrar los puntos actuales
-function obtenerYMostrarPuntos() {
+function mostrarPuntos() {
     fetch('http://testlinares.com/Foodrus/index.php?controller=API&action=apiPuntos', {
         method: 'POST',
         body: new URLSearchParams({
