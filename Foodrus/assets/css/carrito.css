@@ -381,14 +381,14 @@ label[for="cupon"]{
 }
 
 .card-img, .card-img-bottom, .card-img-top {
-    width: 206px;
+    width: 195px;
     height: 160px;
 }
 
 .tarjetas{
     position: absolute;
     top: 1150px;
-    right: 32px;
+    right: 30px;
 }
 
 .uno{
@@ -418,11 +418,11 @@ label[for="cupon"]{
 }
 
 .dos .product-image{
-    margin-left: 45px;
+    margin-left: 55px;
 }
 
 .tres .product-image{
-    margin-left: 40px;
+    margin-left: 35px;
 }
 
 .cuatro .product-image{

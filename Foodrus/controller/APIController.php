@@ -60,9 +60,7 @@ class APIController{
             echo json_encode(['puntos' => $puntos], JSON_UNESCAPED_UNICODE);
             exit;
         }else if($accion == 'actualizar_puntos') {
-            $precioEnvio = 3.80;
-            $subtotal = CalculadoraPrecios::calcularPrecioPedido($_SESSION['selecciones']);
-            $cantidadTotal = number_format($subtotal + $precioEnvio, 2);
+            $cantidadTotal = $_POST['cantidadTotal'];
 
             $puntosObtenidos = $this->calcularPuntosCompra($cantidadTotal);
 

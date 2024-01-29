@@ -22,7 +22,7 @@ function mostrarPuntos() {
     });
 }
 
-function actualizarPuntos() {
+/*function actualizarPuntos() {
     fetch('http://testlinares.com/Foodrus/index.php?controller=API&action=apiPuntos', {
         method: 'POST',
         body: new URLSearchParams({
@@ -39,4 +39,34 @@ function actualizarPuntos() {
     .catch(error => {
         console.error('Error al actualizar los puntos:', error);
     });
-}
+}*/
+
+document.addEventListener('DOMContentLoaded', function() {
+    let formulario = document.getElementById('form-compra');
+
+    formulario.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const cantidadTotal = document.getElementById('cantidadTotal').value;
+
+        const datos = {
+            accion: 'actualizar_puntos',
+            cantidadTotal: cantidadTotal
+        };
+
+        fetch('http://testlinares.com/Foodrus/index.php?controller=API&action=apiPuntos',{
+            method: 'POST',
+            body: JSON.stringify(datos),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Error al actualizar los puntos:', error);
+        });
+    })
+})
