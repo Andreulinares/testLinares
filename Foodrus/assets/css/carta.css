@@ -115,7 +115,7 @@ body{
 }
 
 .img-product{
-    width: 205px;
+    width: auto;
     height: 186px;
     position: absolute;
     top: 0;
@@ -212,7 +212,7 @@ body{
 
 #filtros{
     position: relative;
-    top: 215px;
-    left: 250px;
+    top: 310px;
+    left: 50px;
     width: 190px;
 }

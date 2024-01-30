@@ -39,9 +39,9 @@ session_start();
 <section>
 
     <div id="filtros">
-        <label><input type="checkbox" class="filtro-categoria" value="pizza"> Pizza</label>
-        <label><input type="checkbox" class="filtro-categoria" value="bebida"> Bebida</label>
-        <label><input type="checkbox" class="filtro-categoria" value="postre"> Postre</label>
+        <label><input type="checkbox" class="filtro-categoria" value="pizza"> Pizza</label><br>
+        <label><input type="checkbox" class="filtro-categoria" value="bebida"> Bebida</label><br>
+        <label><input type="checkbox" class="filtro-categoria" value="postre"> Postre</label><br>
     </div>
 
     <h2 class="h2-carta">CARTA</h2>
