@@ -267,7 +267,7 @@ input#tienda {
     width: 462px;
     position: relative;
     right: 12px;
-    top: 55px;
+    top: 90px;
 }
 
 input#cupon{
@@ -309,7 +309,7 @@ label[for="cupon"]{
     width: 436px;
     height: 60px;
     position: absolute;
-    top: 350px;
+    top: 375px;
     right: 25px;
 }
 

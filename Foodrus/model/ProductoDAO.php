@@ -519,20 +519,17 @@ class ProductoDAO{
         $stmt = $con->prepare("SELECT puntos FROM puntos WHERE id_cliente = ?");
         $stmt->bind_param("i", $cliente_id);
 
-        $stmt->execute();
+        if ($stmt->execute()) {
+            $stmt->bind_result($puntos);
     
-        $result = $stmt->get_result();
+            $stmt->fetch();
+
+            $con->close();
     
-        $puntos = array();
-    
-        while ($row = $result->fetch_assoc()) {
-            $puntos[] = $row;
+            return $puntos;
+        } else {
+            return false;
         }
-    
-        $stmt->close();
-        $con->close();
-    
-        return $puntos;
     }
 
     public static function insertarPuntosUsuario($cliente_id, $puntosObtenidos){
@@ -540,6 +537,21 @@ class ProductoDAO{
 
         $stmt = $con->prepare("INSERT INTO puntos (id_cliente, puntos) VALUES (?, ?)");
         $stmt->bind_param("ii", $cliente_id, $puntosObtenidos);
+
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+        
+        $con->close();
+    }
+
+    public static function actualizarPuntos($cliente_id, $puntos){
+        $con = database::connect();
+
+        $stmt = $con->prepare("UPDATE puntos SET puntos = ? WHERE id_cliente = ?");
+        $stmt->bind_param("ii", $puntos, $cliente_id);
 
         if ($stmt->execute()) {
             return true;

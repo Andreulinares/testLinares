@@ -47,11 +47,11 @@ document.addEventListener('DOMContentLoaded', function() {
     formulario.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        const cantidadTotal = document.getElementById('cantidadTotal').value;
+        const puntosUsuario = parseInt(document.getElementById('puntos-usuario').value);
 
         const datos = {
             accion: 'actualizar_puntos',
-            cantidadTotal: cantidadTotal
+            puntosUsuario: puntosUsuario
         };
 
         fetch('http://testlinares.com/Foodrus/index.php?controller=API&action=apiPuntos',{

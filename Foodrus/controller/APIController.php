@@ -60,15 +60,16 @@ class APIController{
             echo json_encode(['puntos' => $puntos], JSON_UNESCAPED_UNICODE);
             exit;
         }else if($accion == 'actualizar_puntos') {
-            $cantidadTotal = $_POST['cantidadTotal'];
+            $puntosUsuario = $_POST['puntosUsuario'];
+            $puntosActuales = ProductoDAO::obtenerPuntos($cliente_id);
 
-            $puntosObtenidos = $this->calcularPuntosCompra($cantidadTotal);
+            $puntosNuevos = $puntosActuales - $puntosUsuario;
 
-            ProductoDAO::insertarPuntosUsuario($cliente_id, $puntosObtenidos);
+            ProductoDAO::actualizarPuntos($cliente_id, $puntosNuevos);
+
+            $response = ['mensaje' => 'Puntos actualizados correctamente'];
+            echo json_encode($response);
+
         }
-    }
-
-    private function calcularPuntosCompra($cantidadTotal){
-        return floor($cantidadTotal / 100);
     }
 }
