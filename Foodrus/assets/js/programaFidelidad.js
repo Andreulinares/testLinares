@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
         //Obtenemos cantidad total del pedido
         const cantidadTotal = parseInt(document.getElementById('cantidadTotal').value);
         //Calcular cantidad de puntos necesarios
-        const puntosNecesarios = Math.ceil(cantidadTotal / 100.0);
+        const puntosNecesarios = Math.floor(cantidadTotal * 100);
 
         if (puntosUsuario >= puntosNecesarios && puntosUsuario <= puntosActuales){
             const datos = {

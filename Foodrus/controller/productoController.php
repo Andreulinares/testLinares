@@ -233,7 +233,7 @@ class productoController{
                 header("Location: ../Foodrus/views/carta.php"); 
             }
 
-            $puntosObtenidos = ceil($_POST['cantidadTotal'] / 100.0);
+            $puntosObtenidos = floor($_POST['cantidadTotal'] * 100);
             ProductoDAO::insertarPuntosUsuario($cliente_id, $puntosObtenidos); 
         }
     }
