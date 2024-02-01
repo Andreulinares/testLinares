@@ -6,6 +6,7 @@
 //Cargar Modelos necesarios BBDD
 require_once __DIR__ . '/../model/ProductoDAO.php';
 require __DIR__ . '/../model/Reseña.php';
+require __DIR__ . '/../model/PedidoBD.php';
 
 /** IMPORTANTE**/
 //Instala la extensión Thunder Client en VSC. Te permite probar si tu API funciona correctamente.
@@ -67,7 +68,15 @@ class APIController{
 
             ProductoDAO::actualizarPuntos($cliente_id, $puntosNuevos);
 
-            $response = ['mensaje' => 'Puntos actualizados correctamente'];
+            $pedido_id = $_SESSION['carrito_id'];
+            $cantidad = $_POST['cantidadTotal'];
+            $estado = 'pendiente';
+            $fecha = date('Y-m-d H:i:s');
+
+            $pedido = new PedidoBD($pedido_id, $cliente_id, $cantidad, $estado, $fecha);
+            ProductoDAO::insertarPedido($pedido);
+
+            $response = ['mensaje' => 'Operacion realizada correctamente'];
             echo json_encode($response);
 
         }

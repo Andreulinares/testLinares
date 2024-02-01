@@ -127,7 +127,7 @@ if (!isset($_SESSION['carrito_id'])) {
             </form>
             <!-- CREAR OTRO FORMULARIO PARA GESTIONAR PUNTOS -->
             <form id="form-compra" action="">
-                <input type="hidden" name="cantidadTotal" value="<?= $cantidadTotal ?>">
+                <input type="hidden" id="cantidadTotal" name="cantidadTotal" value="<?= $cantidadTotal ?>">
 
                 <div class="form-group form-puntos">
                     <label for="puntos-usuario">Utilizar puntos:</label>
@@ -138,10 +138,14 @@ if (!isset($_SESSION['carrito_id'])) {
                     <p><span class="pre-text3">Puntos actuales:</span>
                     <span id="puntos-actuales">0</span></p>
                 </div>
+
+                <button type="submit" class="btn btn-primary btn-puntos">USAR</button>
             </form>
         </div>
     </div>
 </section>
+<!-- Script del programa de fidelidad -->
+<script src="../assets/js/programaFidelidad.js"></script>
 <section>
     <p class="p-recomendados">Productos recomendados</p>
 <!-- Seccion de productos recomendados -->
@@ -223,30 +227,30 @@ if (!isset($_SESSION['carrito_id'])) {
     </div>
 
     <div id="fondoOscuro"></div>
-</body>
 
-<script src="../assets/js/ventana.js" defer></script>
+    <script src="../assets/js/ventana.js" defer></script>
 
-<?php if (empty($_SESSION['selecciones'])): ?>
+    <?php if (empty($_SESSION['selecciones'])): ?>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                document.getElementById('btnFinalizarCompra').disabled = true;
+            });
+        </script>
+    <?php endif; ?>
+    <!-- Bolita roja actualizar cantidad -->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById('btnFinalizarCompra').disabled = true;
+        function actualizarNumCarrito(){
+        let numProductos = <?php echo count($_SESSION['selecciones']); ?>;
+
+        let bolitaRoja = document.getElementById('numero-carrito');
+        if(bolitaRoja){
+            bolitaRoja.textContent = numProductos;
+        }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+                actualizarNumCarrito();
         });
     </script>
-<?php endif; ?>
-<!-- Bolita roja actualizar cantidad -->
-<script>
-    function actualizarNumCarrito(){
-    let numProductos = <?php echo count($_SESSION['selecciones']); ?>;
-
-    let bolitaRoja = document.getElementById('numero-carrito');
-    if(bolitaRoja){
-        bolitaRoja.textContent = numProductos;
-    }
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-            actualizarNumCarrito();
-    });
-</script>
+</body>
 </html>

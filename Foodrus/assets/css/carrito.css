@@ -319,6 +319,23 @@ label[for="cupon"]{
     border-color: #ff973b;
 }
 
+.btn-puntos{
+    position: absolute;
+    bottom: 25px;
+    left: 372px;
+    color: #fff;
+    background-color: #00ae42;
+    border-color: #00ae42;
+    border-radius: 10px!important;
+    width: 75px;
+}
+
+.btn-puntos:hover{
+    color: #fff;
+    background-color: #ff973b;
+    border-color: #ff973b;
+}
+
 /*ELIMINAR PRODCUTO Y MOVER A FAVORITOS - BOTONES */
 
 .eliminar-p{
@@ -383,6 +400,7 @@ label[for="cupon"]{
 .card-img, .card-img-bottom, .card-img-top {
     width: 195px;
     height: 160px;
+    object-fit: contain;
 }
 
 .tarjetas{
