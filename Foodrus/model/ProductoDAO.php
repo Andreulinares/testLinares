@@ -535,15 +535,22 @@ class ProductoDAO{
     public static function insertarPuntosUsuario($cliente_id, $puntosObtenidos){
         $con = database::connect();
 
-        $stmt = $con->prepare("INSERT INTO puntos (id_cliente, puntos) VALUES (?, ?)");
-        $stmt->bind_param("ii", $cliente_id, $puntosObtenidos);
+        // Obtener puntos actuales
+        $puntosActuales = self::obtenerPuntos($cliente_id);
 
-        if ($stmt->execute()) {
-            return true;
+        if ($puntosActuales !== false) {
+            // Si el cliente ya tiene una fila con puntos, actualizamos
+            $nuevosPuntos = $puntosActuales + $puntosObtenidos;
+            $stmt = $con->prepare("UPDATE puntos SET puntos = ? WHERE id_cliente = ?");
+            $stmt->bind_param("ii", $nuevosPuntos, $cliente_id);
+            $stmt->execute();
         } else {
-            return false;
+            // Si el cliente no tiene ningun punto todavia, insertamos nueva fila
+            $stmt = $con->prepare("INSERT INTO puntos (id_cliente, puntos) VALUES (?, ?)");
+            $stmt->bind_param("ii", $cliente_id, $puntosObtenidos);
+            $stmt->execute();
         }
-        
+
         $con->close();
     }
 

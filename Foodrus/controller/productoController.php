@@ -2,7 +2,7 @@
 //Creamos el controlador de pedidos
 require_once __DIR__ . '/../model/ProductoDAO.php';
 require __DIR__ . '/../model/Pedido.php';
-require __DIR__ . '/../model/PedidoBD.php';
+require_once __DIR__ . '/../model/PedidoBD.php';
 
 class productoController{
     
@@ -233,7 +233,7 @@ class productoController{
                 header("Location: ../Foodrus/views/carta.php"); 
             }
 
-            $puntosObtenidos = floor($_POST['cantidadTotal'] / 100);
+            $puntosObtenidos = ceil($_POST['cantidadTotal'] / 100.0);
             ProductoDAO::insertarPuntosUsuario($cliente_id, $puntosObtenidos); 
         }
     }

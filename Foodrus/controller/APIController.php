@@ -6,7 +6,7 @@
 //Cargar Modelos necesarios BBDD
 require_once __DIR__ . '/../model/ProductoDAO.php';
 require __DIR__ . '/../model/Reseña.php';
-require __DIR__ . '/../model/PedidoBD.php';
+require_once __DIR__ . '/../model/PedidoBD.php';
 
 /** IMPORTANTE**/
 //Instala la extensión Thunder Client en VSC. Te permite probar si tu API funciona correctamente.

@@ -14,8 +14,8 @@ function mostrarPuntos() {
         console.log(data);
 
         // Mostrar los puntos actuales en alguna parte de la página
-        const puntosActuales = data.puntos; 
-        document.getElementById('puntos-actuales').textContent = `Puntos actuales: ${puntosActuales}`;
+        const puntosActuales = data.puntos === null ? 0 : data.puntos;
+        document.getElementById('puntos-actuales').textContent = puntosActuales;
     })
     .catch(error => {
         console.error('Error al obtener puntos:', error);
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
         //Obtenemos cantidad total del pedido
         const cantidadTotal = parseInt(document.getElementById('cantidadTotal').value);
         //Calcular cantidad de puntos necesarios
-        const puntosNecesarios = Math.floor(cantidadTotal / 100);
+        const puntosNecesarios = Math.ceil(cantidadTotal / 100.0);
 
         if (puntosUsuario >= puntosNecesarios && puntosUsuario <= puntosActuales){
             const datos = {
