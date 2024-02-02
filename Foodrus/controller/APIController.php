@@ -76,6 +76,15 @@ class APIController{
             $pedido = new PedidoBD($pedido_id, $cliente_id, $cantidad, $estado, $fecha);
             ProductoDAO::insertarPedido($pedido);
 
+            foreach ($_SESSION['selecciones'] as $pedido){
+                $id_producto = $pedido->getProducto()->getProducto_id();
+                $cantidad = $pedido->getCantidad();
+
+                ProductoDAO::associarProductoPedido($pedido_id, $id_producto, $cantidad);
+            }
+
+            header("Location: ../Foodrus/views/carta.php"); 
+
             $response = ['mensaje' => 'Operacion realizada correctamente'];
             echo json_encode($response);
 

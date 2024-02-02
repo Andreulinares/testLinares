@@ -521,13 +521,16 @@ class ProductoDAO{
 
         if ($stmt->execute()) {
             $stmt->bind_result($puntos);
-    
-            $stmt->fetch();
-
-            $con->close();
-    
-            return $puntos;
+        
+            if ($stmt->fetch()) {
+                $con->close();
+                return $puntos;
+            } else {
+                $con->close();
+                return 0; 
+            }
         } else {
+            $con->close();
             return false;
         }
     }
@@ -535,17 +538,19 @@ class ProductoDAO{
     public static function insertarPuntosUsuario($cliente_id, $puntosObtenidos){
         $con = database::connect();
 
-        // Obtener puntos actuales
-        $puntosActuales = self::obtenerPuntos($cliente_id);
+        // Verificar si ya existe una fila para el cliente
+        $stmt = $con->prepare("SELECT puntos FROM puntos WHERE id_cliente = ?");
+        $stmt->bind_param("i", $cliente_id);
+        $stmt->execute();
+        $stmt->store_result();
 
-        if ($puntosActuales !== false) {
-            // Si el cliente ya tiene una fila con puntos, actualizamos
-            $nuevosPuntos = $puntosActuales + $puntosObtenidos;
-            $stmt = $con->prepare("UPDATE puntos SET puntos = ? WHERE id_cliente = ?");
-            $stmt->bind_param("ii", $nuevosPuntos, $cliente_id);
+        if ($stmt->num_rows > 0) {
+            // Si la fila existe, actualizar puntos
+            $stmt = $con->prepare("UPDATE puntos SET puntos = puntos + ? WHERE id_cliente = ?");
+            $stmt->bind_param("ii", $puntosObtenidos, $cliente_id);
             $stmt->execute();
         } else {
-            // Si el cliente no tiene ningun punto todavia, insertamos nueva fila
+            // Si la fila no existe, insertar una nueva fila
             $stmt = $con->prepare("INSERT INTO puntos (id_cliente, puntos) VALUES (?, ?)");
             $stmt->bind_param("ii", $cliente_id, $puntosObtenidos);
             $stmt->execute();
