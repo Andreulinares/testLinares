@@ -31,14 +31,23 @@ function mostrarCodigoQR(codigoQR) {
     let contenedorQR = document.createElement('div');
     contenedorQR.appendChild(img);
 
-    // Agregar el contenedor al body
-    document.body.appendChild(contenedorQR);
+    // Añadir ventana pop up al contenedor
+    let popup = window.open('', '_blank', 'width=300,height=300');
+    popup.document.body.appendChild(contenedorQR);
+
+    let botonCerrar = document.createElement('button');
+    botonCerrar.textContent = 'Cerrar';
+    botonCerrar.addEventListener('click', function () {
+        popup.close();  // Cerrar el pop-up cuando se hace clic en el botón
+    });
+    contenedorQR.appendChild(botonCerrar);
 
     // diseño y estilo contenedor (opcional)
 
     // Llamar a la función para redirigir a la pagina de carta.php
-    setTimeout(() => {
-        window.location.href = 'carta.php';
-    }, 5000);  // Redirigir después de un cierto tiempo
 }
+function mostrarVentanaQR(){
+    generarCodigoQR();
 
+    return true;
+}

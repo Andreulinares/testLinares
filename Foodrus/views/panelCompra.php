@@ -121,7 +121,7 @@ if (!isset($_SESSION['carrito_id'])) {
             <hr class="linea2">
 
             <hr class="linea3">
-            <form action="../index.php?controller=producto&action=finalizarCompra" method="post">
+            <form action="../index.php?controller=producto&action=finalizarCompra" method="post" onsubmit="return mostrarVentanaQR();">
                 <input type="hidden" name="cantidadTotal" value="<?= $cantidadTotal ?>">
                 <button type="submit" class="btn btn-primary btn-finalizar">FINALIZAR COMPRA</button>
             </form>
@@ -146,6 +146,7 @@ if (!isset($_SESSION['carrito_id'])) {
 </section>
 <!-- Script del programa de fidelidad -->
 <script src="../assets/js/programaFidelidad.js"></script>
+<script src="../assets/js/qr.js"></script>
 <section>
     <p class="p-recomendados">Productos recomendados</p>
 <!-- Seccion de productos recomendados -->
