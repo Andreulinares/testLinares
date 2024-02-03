@@ -121,7 +121,7 @@ if (!isset($_SESSION['carrito_id'])) {
             <hr class="linea2">
 
             <hr class="linea3">
-            <form action="../index.php?controller=producto&action=finalizarCompra" method="post" onsubmit="return mostrarVentanaQR();">
+            <form action="../index.php?controller=producto&action=finalizarCompra" method="post">
                 <input type="hidden" name="cantidadTotal" value="<?= $cantidadTotal ?>">
                 <button type="submit" class="btn btn-primary btn-finalizar">FINALIZAR COMPRA</button>
             </form>
