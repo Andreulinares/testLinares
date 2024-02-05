@@ -227,6 +227,7 @@ if (isset($_SESSION['mostrarModal']) && $_SESSION['mostrarModal']) {
     <div id="modalQR" class="modal">
         <div class="modal-content">
             <span class="close" onclick="cerrarModal()">&times;</span>
+            <h2 class="tit-qr">Gracias por su compra!</h2>
             <div id="contenedorQR"></div>
             <button class="btn-modal" onclick="cerrarModal()">Cerrar</button>
         </div>
