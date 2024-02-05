@@ -146,7 +146,6 @@ if (!isset($_SESSION['carrito_id'])) {
 </section>
 <!-- Script del programa de fidelidad -->
 <script src="../assets/js/programaFidelidad.js"></script>
-<script src="../assets/js/qr.js"></script>
 <section>
     <p class="p-recomendados">Productos recomendados</p>
 <!-- Seccion de productos recomendados -->

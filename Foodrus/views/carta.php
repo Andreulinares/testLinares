@@ -9,6 +9,13 @@ $postres = ProductoDAO::getAllProducts('postre');
 $totalProductos = count($pizzas) + count($bebidas) + count($postres);
 
 session_start();
+
+if (isset($_SESSION['mostrarModal']) && $_SESSION['mostrarModal']) {
+    // Establecer sessionStorage para indicar que se debe mostrar el modal
+    echo '<script>sessionStorage.setItem("mostrarModal", "true");</script>';
+    // Limpiar la variable de sesión
+    unset($_SESSION['mostrarModal']);
+}
 ?>
 
 
@@ -217,8 +224,17 @@ session_start();
         </div>  
     </div>
 
+    <div id="modalQR" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal()">&times;</span>
+            <div id="contenedorQR"></div>
+            <button class="btn-modal" onclick="cerrarModal()">Cerrar</button>
+        </div>
+    </div>
+
 </section>
 <script src="../assets/js/filtroProductos.js"></script>
+<script src="../assets/js/qr.js"></script>
 <footer>
     <div class="container-fluid p-5 text-white bg-custom">
         <div class="row justify-content-center align-items-center">

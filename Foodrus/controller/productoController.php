@@ -231,6 +231,8 @@ class productoController{
 
                 unset($_SESSION['selecciones']);
                 header("Location: ../Foodrus/views/carta.php"); 
+
+                $_SESSION['mostrarModal'] = true;
             }
 
             $puntosObtenidos = floor($_POST['cantidadTotal'] * 100);

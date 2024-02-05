@@ -216,3 +216,25 @@ body{
     left: 50px;
     width: 190px;
 }
+
+.modal{
+    display: none;
+    width: 350px;
+    margin-left: 470px;
+    margin-top: 75px;
+}
+
+.modal-content{
+    height: 350px;
+}
+
+.btn-modal{
+    position: relative;
+    top: 144px;
+}
+
+#contenedorQR{
+    position: relative;
+    left: 95px;
+    top: 70px;
+}

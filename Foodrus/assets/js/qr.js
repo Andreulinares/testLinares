@@ -1,53 +1,51 @@
 function generarCodigoQR() {
-    // Obtener datos necesarios, especificar la url de la pagina que queremos usar
+    // url que se usara para generar la imagen qr
     let urlMisPedidos = 'http://testlinares.com/Foodrus/views/misPedidos.php';
 
-    // Hacer una solicitud a la API que genera el codigo QR
-    fetch('https://api.qr-code-generator.com/v1/create/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            data: urlMisPedidos,
-            size: '200x200',  //ajustamos tamaño de la imagen 
-            margin: 10
-        })
+    // Construir la URL de la API de generación de códigos QR
+    let apiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(urlMisPedidos)}`;
+
+    // Hacer una solicitud para obtener la imagen del código QR
+    fetch(apiUrl, {
+        method: 'GET',
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Error al obtener el código QR: ${response.status}`);
+        }
+        return response.blob();
+    })
     .then(data => {
         // Llamar a una función para mostrar el código QR en la pantalla
-        mostrarCodigoQR(data.qr_code);
+        mostrarCodigoQR(URL.createObjectURL(data));
     })
     .catch(error => console.error('Error al generar el código QR:', error));
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Verificar si se debe mostrar el modal
+    let mostrarModal = sessionStorage.getItem('mostrarModal');
+    if (mostrarModal === 'true') {
+        // Limpiar el valor almacenado
+        sessionStorage.removeItem('mostrarModal');
+        // Mostrar el modal
+        generarCodigoQR();
+    }
+});
 
 function mostrarCodigoQR(codigoQR) {
     // Crear elemento img especificando el codigo QR como contenido del src.
     let img = document.createElement('img');
     img.src = codigoQR;
-
-    // Crear un contenedor 
-    let contenedorQR = document.createElement('div');
+    //Añadimos la imagen qr al contenedor
+    let contenedorQR = document.getElementById('contenedorQR');
+    contenedorQR.innerHTML = '';  // Limpiar cualquier contenido previo
     contenedorQR.appendChild(img);
-
-    // Añadir ventana pop up al contenedor
-    let popup = window.open('', '_blank', 'width=300,height=300');
-    popup.document.body.appendChild(contenedorQR);
-
-    let botonCerrar = document.createElement('button');
-    botonCerrar.textContent = 'Cerrar';
-    botonCerrar.addEventListener('click', function () {
-        popup.close();  // Cerrar el pop-up cuando se hace clic en el botón
-    });
-    contenedorQR.appendChild(botonCerrar);
-
-    // diseño y estilo contenedor (opcional)
-
-    // Llamar a la función para redirigir a la pagina de carta.php
+    //Mostramos el modal al llamar a esta funcion
+    document.getElementById('modalQR').style.display = 'block';
 }
-function mostrarVentanaQR(){
-    generarCodigoQR();
 
-    return true;
+function cerrarModal() {
+    //Cerrar el modal
+    document.getElementById('modalQR').style.display = 'none';
 }
