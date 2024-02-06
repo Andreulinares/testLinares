@@ -10,12 +10,12 @@ $totalProductos = count($pizzas) + count($bebidas) + count($postres);
 
 session_start();
 
-if (isset($_SESSION['mostrarModal']) && $_SESSION['mostrarModal']) {
+/*if (isset($_SESSION['mostrarModal']) && $_SESSION['mostrarModal']) {
     // Establecer sessionStorage para indicar que se debe mostrar el modal
     echo '<script>sessionStorage.setItem("mostrarModal", "true");</script>';
     // Limpiar la variable de sesión
     unset($_SESSION['mostrarModal']);
-}
+}*/
 ?>
 
 
@@ -35,7 +35,7 @@ if (isset($_SESSION['mostrarModal']) && $_SESSION['mostrarModal']) {
     <link href="../assets/css/header.css" rel="stylesheet" type="text/css" media="screen">
 
     <link href="../assets/css/ventana_emergente.css" rel="stylesheet" type="text/css" media="screen">
-
+    <script src="../assets/js/qr.js"></script>
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
     
 </head>
@@ -235,7 +235,6 @@ if (isset($_SESSION['mostrarModal']) && $_SESSION['mostrarModal']) {
 
 </section>
 <script src="../assets/js/filtroProductos.js"></script>
-<script src="../assets/js/qr.js"></script>
 <footer>
     <div class="container-fluid p-5 text-white bg-custom">
         <div class="row justify-content-center align-items-center">

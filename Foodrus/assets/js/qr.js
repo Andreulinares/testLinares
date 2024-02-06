@@ -22,17 +22,6 @@ function generarCodigoQR() {
     .catch(error => console.error('Error al generar el código QR:', error));
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Verificar si se debe mostrar el modal
-    let mostrarModal = sessionStorage.getItem('mostrarModal');
-    if (mostrarModal === 'true') {
-        // Limpiar el valor almacenado
-        sessionStorage.removeItem('mostrarModal');
-        // Mostrar el modal
-        generarCodigoQR();
-    }
-});
-
 function mostrarCodigoQR(codigoQR) {
     // Crear elemento img especificando el codigo QR como contenido del src.
     let img = document.createElement('img');

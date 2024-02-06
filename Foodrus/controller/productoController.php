@@ -230,9 +230,9 @@ class productoController{
                 }
 
                 unset($_SESSION['selecciones']);
-                header("Location: ../Foodrus/views/carta.php"); 
 
-                $_SESSION['mostrarModal'] = true;
+                $_SESSION['mostrarModalQR'] = true;
+                header("Location: ../Foodrus/views/carta.php"); 
             }
 
             $puntosObtenidos = floor($_POST['cantidadTotal'] * 100);
