@@ -278,4 +278,5 @@ main {
 .card-img, .card-img-bottom, .card-img-top {
     width: 206px;
     height: 160px;
+    object-fit: contain;
 }
