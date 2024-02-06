@@ -37,4 +37,10 @@ function mostrarCodigoQR(codigoQR) {
 function cerrarModal() {
     //Cerrar el modal
     document.getElementById('modalQR').style.display = 'none';
+
+    window.location.href = '/Foodrus/views/carta.php';
+}
+
+if (mostrarModalQR) {
+    generarCodigoQR();  // Llama a tu función para generar el código QR
 }

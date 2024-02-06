@@ -35,7 +35,6 @@ session_start();
     <link href="../assets/css/header.css" rel="stylesheet" type="text/css" media="screen">
 
     <link href="../assets/css/ventana_emergente.css" rel="stylesheet" type="text/css" media="screen">
-    <script src="../assets/js/qr.js"></script>
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
     
 </head>
@@ -222,15 +221,6 @@ session_start();
         <div class="productos-totales">
             <?= $totalProductos ?> productos encontrados
         </div>  
-    </div>
-
-    <div id="modalQR" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="cerrarModal()">&times;</span>
-            <h2 class="tit-qr">Gracias por su compra!</h2>
-            <div id="contenedorQR"></div>
-            <button class="btn-modal" onclick="cerrarModal()">Cerrar</button>
-        </div>
     </div>
 
 </section>

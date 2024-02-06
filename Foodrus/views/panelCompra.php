@@ -9,7 +9,16 @@ if (!isset($_SESSION['carrito_id'])) {
     $_SESSION['carrito_id'] = strtoupper(substr(bin2hex(random_bytes(5)), 0, 10));
 }
 
-//Calcular precio envio
+if (isset($_SESSION['mostrarModalQR']) && $_SESSION['mostrarModalQR']) {
+    // Limpiar la variable de sesión
+    unset($_SESSION['mostrarModalQR']);
+    
+    // Establecer una variable de JavaScript para mostrar el modal
+    echo '<script>var mostrarModalQR = true;</script>';
+} else {
+    // Establecer la variable de JavaScript como false si no se debe mostrar el modal
+    echo '<script>var mostrarModalQR = false;</script>';
+}
 
 ?>
 
@@ -125,6 +134,16 @@ if (!isset($_SESSION['carrito_id'])) {
                 <input type="hidden" name="cantidadTotal" value="<?= $cantidadTotal ?>">
                 <button type="submit" class="btn btn-primary btn-finalizar">FINALIZAR COMPRA</button>
             </form>
+
+            <div id="modalQR" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="cerrarModal()">&times;</span>
+                    <h2 class="tit-qr">Gracias por su compra!</h2>
+                    <div id="contenedorQR"></div>
+                    <button class="btn-modal" onclick="cerrarModal()">Cerrar</button>
+                </div>
+            </div>
+
             <!-- CREAR OTRO FORMULARIO PARA GESTIONAR PUNTOS -->
             <form id="form-compra" action="">
                 <input type="hidden" id="cantidadTotal" name="cantidadTotal" value="<?= $cantidadTotal ?>">
@@ -145,6 +164,7 @@ if (!isset($_SESSION['carrito_id'])) {
     </div>
 </section>
 <!-- Script del programa de fidelidad -->
+<script src="../assets/js/qr.js"></script>
 <script src="../assets/js/programaFidelidad.js"></script>
 <section>
     <p class="p-recomendados">Productos recomendados</p>
