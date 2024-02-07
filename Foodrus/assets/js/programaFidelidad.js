@@ -21,7 +21,7 @@ function mostrarPuntos() {
         console.error('Error al obtener puntos:', error);
     });
 }
-
+//Actualizamos los puntos correspondientes recogiendo los valores del formulario
 document.addEventListener('DOMContentLoaded', function() {
     mostrarPuntos();
 

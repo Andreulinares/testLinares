@@ -42,5 +42,5 @@ function cerrarModal() {
 }
 
 if (mostrarModalQR) {
-    generarCodigoQR();  // Llama a tu función para generar el código QR
+    generarCodigoQR();  
 }

@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const checkboxes = document.querySelectorAll('.filtro-categoria');
 
     checkboxes.forEach(checkbox => {
+        //Llamamos a la funcion de filtrarProductos
         checkbox.addEventListener('change', function () {
             filtrarProductos();
         });
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function obtenerCategoriasSeleccionadas() {
+        //funcion para obtener categorias seleccionadas en el checkbox
         return Array.from(checkboxes)
             .filter(checkbox => checkbox.checked)
             .map(checkbox => checkbox.value);

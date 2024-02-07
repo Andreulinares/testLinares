@@ -14,10 +14,10 @@ if (isset($_SESSION['mostrarModalQR']) && $_SESSION['mostrarModalQR']) {
     unset($_SESSION['mostrarModalQR']);
     
     // Establecer una variable de JavaScript para mostrar el modal
-    echo '<script>var mostrarModalQR = true;</script>';
+    echo '<script>let mostrarModalQR = true;</script>';
 } else {
     // Establecer la variable de JavaScript como false si no se debe mostrar el modal
-    echo '<script>var mostrarModalQR = false;</script>';
+    echo '<script>let mostrarModalQR = false;</script>';
 }
 
 ?>
@@ -134,7 +134,7 @@ if (isset($_SESSION['mostrarModalQR']) && $_SESSION['mostrarModalQR']) {
                 <input type="hidden" name="cantidadTotal" value="<?= $cantidadTotal ?>">
                 <button type="submit" class="btn btn-primary btn-finalizar">FINALIZAR COMPRA</button>
             </form>
-
+            <!-- Modal que contiene la imagen qr generada -->
             <div id="modalQR" class="modal">
                 <div class="modal-content">
                     <span class="close" onclick="cerrarModal()">&times;</span>
@@ -163,7 +163,7 @@ if (isset($_SESSION['mostrarModalQR']) && $_SESSION['mostrarModalQR']) {
         </div>
     </div>
 </section>
-<!-- Script del programa de fidelidad -->
+<!-- Script del programa de fidelidad y del qr-->
 <script src="../assets/js/qr.js"></script>
 <script src="../assets/js/programaFidelidad.js"></script>
 <section>
