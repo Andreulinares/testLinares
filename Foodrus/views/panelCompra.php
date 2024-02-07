@@ -163,9 +163,6 @@ if (isset($_SESSION['mostrarModalQR']) && $_SESSION['mostrarModalQR']) {
         </div>
     </div>
 </section>
-<!-- Script del programa de fidelidad y del qr-->
-<script src="../assets/js/qr.js"></script>
-<script src="../assets/js/programaFidelidad.js"></script>
 <section>
     <p class="p-recomendados">Productos recomendados</p>
 <!-- Seccion de productos recomendados -->
@@ -237,6 +234,9 @@ if (isset($_SESSION['mostrarModalQR']) && $_SESSION['mostrarModalQR']) {
         </div>
     </div>
 </footer>
+<!-- Script del programa de fidelidad y del qr-->
+<script src="../assets/js/qr.js"></script>
+<script src="../assets/js/programaFidelidad.js"></script>
 <!-- VENTANA EMERGENTE CARRITO -->
     <div id="ventana" class="cont-ventana" style="display: none;">
         <div class="div-ventana">

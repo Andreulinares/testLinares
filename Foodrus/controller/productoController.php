@@ -229,8 +229,6 @@ class productoController{
                     ProductoDAO::associarProductoPedido($pedido_id, $id_producto, $cantidad);
                 }
 
-                unset($_SESSION['selecciones']);
-
                 $_SESSION['mostrarModalQR'] = true;
                 header("Location: ../Foodrus/views/panelCompra.php"); 
             }

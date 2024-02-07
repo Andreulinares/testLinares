@@ -90,4 +90,10 @@ class APIController{
 
         }
     }
+
+    public function limpiarCarrito(){
+        session_start();
+
+        unset($_SESSION['selecciones']);
+    }
 }

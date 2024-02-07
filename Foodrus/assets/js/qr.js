@@ -39,6 +39,19 @@ function cerrarModal() {
     document.getElementById('modalQR').style.display = 'none';
 
     window.location.href = '/Foodrus/views/carta.php';
+
+    limpiarCarrito();
+}
+
+function limpiarCarrito(){
+    fetch('http://testlinares.com/Foodrus/index.php?controller=API&action=limpiarCarrito', {
+        method: 'POST',
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => console.error('Error al limpiar la sesión:', error));
 }
 
 if (mostrarModalQR) {
