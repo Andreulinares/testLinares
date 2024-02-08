@@ -54,6 +54,8 @@ function limpiarCarrito(){
     .catch(error => console.error('Error al limpiar la sesión:', error));
 }
 
-if (mostrarModalQR) {
-    generarCodigoQR();  
-}
+document.addEventListener("DOMContentLoaded", function() {
+    if (mostrarModalQR) {
+        generarCodigoQR();
+    }
+});

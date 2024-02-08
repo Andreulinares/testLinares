@@ -4,6 +4,10 @@ require __DIR__ . '/../Foodrus/controller/productoController.php';
 require __DIR__ .'/../Foodrus/controller/usuarioController.php';
 require __DIR__ .'/../Foodrus/controller/APIController.php';
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 if (isset($_GET['controller'])) {
     // Creamos el nombre del controlador
     $nombre_controller = $_GET['controller'] . 'Controller';
