@@ -216,3 +216,12 @@ body{
     left: 50px;
     width: 190px;
 }
+
+.filtro-cat{
+    position: relative;
+    top: 300px;
+    font-family: "Arvo", sans-serif;
+    color: var(--bg-color4);
+    width: 195px;
+    left: 45px;
+}

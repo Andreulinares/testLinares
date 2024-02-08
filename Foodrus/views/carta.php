@@ -43,12 +43,15 @@ session_start();
 <?php include('../views/header.php'); ?>
 
 <section>
-
+    
+<div class="filtro-productos">
+    <h3 class="filtro-cat">CATEGORIAS</h3>
     <div id="filtros">
         <label><input type="checkbox" class="filtro-categoria" value="pizza"> Pizza</label><br>
         <label><input type="checkbox" class="filtro-categoria" value="bebida"> Bebida</label><br>
         <label><input type="checkbox" class="filtro-categoria" value="postre"> Postre</label><br>
     </div>
+</div>
 
     <h2 class="h2-carta">CARTA</h2>
     <!-- MENU INFANTIL -->
