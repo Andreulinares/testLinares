@@ -506,6 +506,11 @@ label[for="puntos-usuario"] {
     bottom: 7px;
 }
 
+#form-compra{
+    position: absolute;
+    top: 290px;
+}
+
 .modal{
     display: none;
     width: 350px;
@@ -526,4 +531,12 @@ label[for="puntos-usuario"] {
     position: relative;
     left: 95px;
     top: 70px;
+}
+
+/* MODAL PROPINAS */
+
+.btn-propina{
+    position: relative;
+    right: 190px;
+    bottom: 315px;
 }

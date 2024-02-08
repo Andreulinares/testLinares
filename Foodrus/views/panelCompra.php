@@ -128,12 +128,27 @@ if (isset($_SESSION['mostrarModalQR']) && $_SESSION['mostrarModalQR']) {
             </form>
 
             <hr class="linea2">
-
+<!-- FORMULARIO PRINCIPAL PARA REALIZAR PEDIDO -->
             <hr class="linea3">
             <form action="../index.php?controller=producto&action=finalizarCompra" method="post">
                 <input type="hidden" name="cantidadTotal" value="<?= $cantidadTotal ?>">
                 <button type="submit" class="btn btn-primary btn-finalizar">FINALIZAR COMPRA</button>
             </form>
+            <!-- Abrir modal de propinas -->
+            <!--<button onclick="mostrarModalPropina()" class="btn-propina">Agregar Propina</button>-->
+            <button type="button" class="btn-propina" data-bs-toggle="modal" data-bs-target="#modal-propinas">Añadir propina</button>
+            <!-- Modal de las propinas -->
+            <div id="modalPropina modal-propinas" class="modal fade" tabindex="-1" aria-labelledby="propinasLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                            <!-- Contenido del modal con opciones de propina -->
+                            <label>Selecciona la propina:</label>
+                            <input type="number" id="inputPropina" min="1" max="100" value="3">
+                            <button onclick="guardarPropina()" class="btn-guardar-p">Guardar Propina</button>
+                            <button type="button" class="btn-omitir-p" data-bs-dismiss="modal">Omitir Propina</button>
+                    </div>
+                </div>
+            </div>        
             <!-- Modal que contiene la imagen qr generada -->
             <div id="modalQR" class="modal">
                 <div class="modal-content">
@@ -234,9 +249,10 @@ if (isset($_SESSION['mostrarModalQR']) && $_SESSION['mostrarModalQR']) {
         </div>
     </div>
 </footer>
-<!-- Script del programa de fidelidad y del qr-->
+<!-- Script del programa de fidelidad, qr y propinas-->
 <script src="../assets/js/qr.js"></script>
 <script src="../assets/js/programaFidelidad.js"></script>
+<script src="../assets/js/propinas.js"></script>
 <!-- VENTANA EMERGENTE CARRITO -->
     <div id="ventana" class="cont-ventana" style="display: none;">
         <div class="div-ventana">
