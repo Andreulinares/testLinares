@@ -33,7 +33,7 @@ function mostrarReseña(puntuacion, comentario, nombre_usuario) {
 
 // Función para mostrar reseñas en la página
 function mostrarReseñasEnPagina() {
-    fetch('http://testlinares.com/Foodrus/index.php?controller=API&action=api', {
+    fetch('//testlinares.com/Foodrus/index.php?controller=API&action=api', {
         method: 'POST',
         body: new URLSearchParams({
             accion: 'mostrar_reseñas'
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
         formData.append('comentario', comentario);
         formData.append('puntuacion', puntuacion);
 
-        fetch('http://testlinares.com/Foodrus/index.php?controller=API&action=insertarReseñas', {
+        fetch('//testlinares.com/Foodrus/index.php?controller=API&action=insertarReseñas', {
             method: 'POST',
             body: formData,
         })
