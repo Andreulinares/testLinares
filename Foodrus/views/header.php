@@ -64,7 +64,7 @@
                         if ($rol == 'administrador'){
                             ?>
                             <li>
-                                <a href="/Foodrus/index.php?controller=producto&action=index" class="dropdown-item admin-productos boton-desp" name="ad-product">Productos</a>
+                                <a href="/Foodrus/index.php?controller=producto&action=listaProductos" class="dropdown-item admin-productos boton-desp" name="ad-product">Productos</a>
                             </li>
                             <?php
                         }

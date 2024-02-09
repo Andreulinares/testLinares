@@ -540,3 +540,31 @@ label[for="puntos-usuario"] {
     right: 190px;
     bottom: 315px;
 }
+
+.m-contenido {
+    height: 280px;
+}
+
+.btn-guardar-p {
+    position: relative;
+    top: 160px;
+    left: 30px;
+}
+
+.btn-omitir-p {
+    position: relative;
+    top: 160px;
+    left: 60px;
+}
+
+#inputPropina {
+    position: relative;
+    top: 70px;
+    left: 50px;
+}
+
+label[for="inputPropina"]{
+    position: relative;
+    top: 70px;
+    left: 50px;
+}

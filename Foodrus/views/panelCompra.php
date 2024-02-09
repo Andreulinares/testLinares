@@ -135,17 +135,18 @@ if (isset($_SESSION['mostrarModalQR']) && $_SESSION['mostrarModalQR']) {
                 <button type="submit" class="btn btn-primary btn-finalizar">FINALIZAR COMPRA</button>
             </form>
             <!-- Abrir modal de propinas -->
-            <!--<button onclick="mostrarModalPropina()" class="btn-propina">Agregar Propina</button>-->
             <button type="button" class="btn-propina" data-bs-toggle="modal" data-bs-target="#modal-propinas">Añadir propina</button>
             <!-- Modal de las propinas -->
-            <div id="modalPropina modal-propinas" class="modal fade" tabindex="-1" aria-labelledby="propinasLabel" aria-hidden="true">
+            <div id="modal-propinas" class="modal fade" tabindex="-1" aria-labelledby="propinasLabel" aria-hidden="true">
                 <div class="modal-dialog">
-                    <div class="modal-content">
+                    <div class="modal-content m-contenido">
+                        <div class="modal-cont">
                             <!-- Contenido del modal con opciones de propina -->
-                            <label>Selecciona la propina:</label>
+                            <label for="inputPropina">Selecciona la propina:</label>
                             <input type="number" id="inputPropina" min="1" max="100" value="3">
                             <button onclick="guardarPropina()" class="btn-guardar-p">Guardar Propina</button>
                             <button type="button" class="btn-omitir-p" data-bs-dismiss="modal">Omitir Propina</button>
+                        </div>
                     </div>
                 </div>
             </div>        

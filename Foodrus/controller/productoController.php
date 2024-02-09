@@ -5,8 +5,14 @@ require __DIR__ . '/../model/Pedido.php';
 require_once __DIR__ . '/../model/PedidoBD.php';
 
 class productoController{
-    
+
     public function index(){
+        //require header
+        //vista home
+        //require footer
+    }
+    
+    public function listaProductos(){
 
         $pizzas = ProductoDAO::getAllProducts('pizza');
         $bebidas = ProductoDAO::getAllProducts('bebida');
