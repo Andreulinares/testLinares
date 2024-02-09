@@ -1,11 +1,9 @@
-function mostrarModalPropina(){
-    document.getElementById('modalPropina').style.display = 'block';
-}
-
 function guardarPropina(){
-    document.getElementById('modalPropina').style.display = 'none';
-}
+    let propinaSeleccionada = parseFloat(document.getElementById('inputPropina').value);
+    let precioTotal = parseFloat(document.getElementById('cantidadTotal').value);
 
-function omitirPropina(){
-    document.getElementById('modalPropina').style.display = 'none';
+    let precioMasPropina = (propinaSeleccionada / 100) * precioTotal;
+    let nuevoPrecio = precioTotal + precioMasPropina;
+
+    document.getElementById('precioTotal').innerText = nuevoPrecio.toFixed(2) + '€';
 }

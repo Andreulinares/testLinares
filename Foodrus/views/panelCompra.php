@@ -116,7 +116,7 @@ if (isset($_SESSION['mostrarModalQR']) && $_SESSION['mostrarModalQR']) {
 
             <p><span class="pre-text">Envío:</span> <span class="precio2"><?= number_format($precioEnvio, 2); ?>€</p></span>
 
-            <p><span class="pre-text2">TOTAL</span> <span class="precio3"><?= number_format($subtotal + $precioEnvio, 2) ?>€</span></p>
+            <p><span class="pre-text2">TOTAL</span> <span id="precioTotal" class="precio3"><?= number_format($subtotal + $precioEnvio, 2) ?>€</span></p>
             <hr class="linea">
 
             <form action="#" method="post" class="cupon-form">
@@ -144,7 +144,9 @@ if (isset($_SESSION['mostrarModalQR']) && $_SESSION['mostrarModalQR']) {
                             <!-- Contenido del modal con opciones de propina -->
                             <label for="inputPropina">Selecciona la propina:</label>
                             <input type="number" id="inputPropina" min="1" max="100" value="3">
-                            <button onclick="guardarPropina()" class="btn-guardar-p">Guardar Propina</button>
+                            <input type="hidden" id="cantidadTotal" name="cantidadTotal" value="<?= $cantidadTotal ?>">
+
+                            <button onclick="guardarPropina()" class="btn-guardar-p" data-bs-dismiss="modal">Guardar Propina</button>
                             <button type="button" class="btn-omitir-p" data-bs-dismiss="modal">Omitir Propina</button>
                         </div>
                     </div>
