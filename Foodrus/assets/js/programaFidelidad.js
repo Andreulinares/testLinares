@@ -29,14 +29,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     formulario.addEventListener('submit', function (event) {
         event.preventDefault();
-
+        //Obtenemos los valores introducidos por el usuario y sus puntos actuales
         const puntosUsuario = parseInt(document.getElementById('puntos-usuario').value);
-        const puntosActuales = parseInt(document.getElementById('puntos-actuales').value);
+        const puntosActualesSpan = document.getElementById('puntos-actuales');
+        const puntosActualesText = puntosActualesSpan.innerText;
+        const puntosActuales = parseInt(puntosActualesText);
         //Obtenemos cantidad total del pedido
         const cantidadTotal = parseInt(document.getElementById('cantidadTotal').value);
         //Calcular cantidad de puntos necesarios
         const puntosNecesarios = Math.floor(cantidadTotal * 100);
-
+        console.log(puntosUsuario, puntosNecesarios, puntosActuales);
         if (puntosUsuario >= puntosNecesarios && puntosUsuario <= puntosActuales){
             const datos = {
                 accion: 'actualizar_puntos',
