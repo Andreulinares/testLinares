@@ -62,7 +62,7 @@ session_start();
         <?= $totalProductos ?> productos encontrados
     </div>
 <!-- recogemos las ids de los productos correspondientes -->
-    <div class="row tarjetas">
+    <div id="cartas" class="row tarjetas">
         <?php
         $pizzasIds = [10, 9, 11, 2, 12, 3];
         $pizzas = ProductoDAO::getProductsByIds('pizza', $pizzasIds);
@@ -82,13 +82,13 @@ session_start();
             $specialClass = $esNovedad ? 'special-card' : '';
         ?>
             <?php if ($tarjetasPorFila % 4 == 0): ?>
-                </div><div class="row tarjetas">
+                </div><div id="cartas" class="row tarjetas">
             <?php endif; ?>
 <!-- Haciendo uso de la variable $tarjetasPorFila nos aseguramos de que las tarjetas -->
 <!-- esten en filas de 4. Luego usando un foreach recorremos el array de $productos -->
 <!-- que contiene todas las ids de los productos de esta seccion y aplicamos la clase special-card -->
 <!-- a las tarjetas impares.-->
-            <div class="col-md-3 card-container <?= $specialClass ?> <?= $producto->getCategoria(); ?>">
+            <div class="col-6 col-md-3 card-container <?= $specialClass ?> <?= $producto->getCategoria(); ?>">
                 <div class="card">
                     <img src="../<?= $producto->getImagen(); ?>" class="card-img-top img-fluid img-product" alt="<?= $producto->getNombre_producto(); ?>">
                     <div class="card-body">
@@ -121,7 +121,7 @@ session_start();
     <h2 id="estandar" class="t-menu t-estandar">MENU ESTANDAR</h2>
 <!-- MENU ESTANDAR -->
     <div class="container contenedor">
-    <div class="row tarjetas">
+    <div id="cartas" class="row tarjetas">
         <?php
         $pizzasIds2 = [13, 7, 5, 17, 14, 15];
         $pizzas2 = ProductoDAO::getProductsByIds('pizza', $pizzasIds2);
@@ -141,10 +141,10 @@ session_start();
             $specialClass = $esNovedad ? 'special-card' : '';
         ?>
             <?php if ($tarjetasPorFila % 4 == 0): ?>
-                    </div><div class="row tarjetas">
+                    </div><div id="cartas" class="row tarjetas">
             <?php endif; ?>
 
-            <div class="col-md-3 card-container <?= $specialClass ?> <?= $producto2->getCategoria(); ?>">
+            <div class="col-6 col-md-3 card-container <?= $specialClass ?> <?= $producto2->getCategoria(); ?>">
                 <div class="card">
                     <img src="../<?= $producto2->getImagen(); ?>" class="card-img-top img-fluid img-product" alt="<?= $producto2->getNombre_producto(); ?>">
                     <div class="card-body">
@@ -177,7 +177,7 @@ session_start();
     <h2 id="temporal" class="t-menu-temporal">MENU TEMPORAL</h2>
 <!-- MENU TEMPORAL -->
     <div class="container">
-        <div class="row tarjetas">
+        <div id="cartas" class="row tarjetas">
             <?php
             $pizzasIds3 = [29, 30];
             $pizzas3 = ProductoDAO::getProductsByIds('pizza', $pizzasIds3);                
@@ -192,10 +192,10 @@ session_start();
             foreach ($productos3 as $index => $producto3):
             ?>
                 <?php if ($tarjetasPorFila % 4 == 0): ?>
-                    </div><div class="row tarjetas">
+                    </div><div id="cartas" class="row tarjetas">
                 <?php endif; ?>
 
-                <div class="col-md-3 card-container special-card2 <?= $producto3->getCategoria(); ?>">
+                <div class="col-6 col-md-3 card-container special-card2 <?= $producto3->getCategoria(); ?>">
                     <div class="card">
                         <img src="../<?= $producto3->getImagen(); ?>" class="card-img-top img-fluid img-product" alt="<?= $producto3->getNombre_producto(); ?>">
                         <div class="card-body">

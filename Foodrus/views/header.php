@@ -99,7 +99,7 @@
     </nav>
 
     <nav class="navbar navbar-expand-lg navbar-dark nav-secundario" style="background-color: #1450A0;">
-        <div class="container">
+        <div id="nav-contenedor" class="container">
             <!-- Contenido del segundo menú -->
                 <ul class="navbar-nav me-2">
                     <li class="nav-item mi-carta">

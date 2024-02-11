@@ -35,6 +35,10 @@
     .numero-carrito{
         transform: translateX(10px);
     }
+
+    .navbar>.container{
+        margin-bottom: 7px;
+    }
 }
 
 /* HEADER */

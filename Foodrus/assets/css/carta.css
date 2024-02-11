@@ -19,6 +19,21 @@ body{
     max-width: 1270px;
 }
 
+@media only screen and (max-width: 600px){
+    .card-container{
+        
+    }
+
+    .productos-totales{
+        transform: translateX(-605px);
+    }
+
+    #cartas{
+        right: 195px;
+        margin-left: 35px;
+    }
+}
+
 /* TITULOS PRINCIPALES */
 
 .h2-carta{
