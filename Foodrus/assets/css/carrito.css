@@ -539,6 +539,16 @@ label[for="puntos-usuario"] {
     position: relative;
     right: 190px;
     bottom: 315px;
+    background: rgb(20, 80, 160);
+    border: rgb(20, 80, 160);
+    border-radius: 10px;
+    color: white;
+    height: 29px;
+}
+
+.btn-propina:hover{
+    background-color: #FF973B;
+    border-color: #FF973B;
 }
 
 .m-contenido {
@@ -549,12 +559,22 @@ label[for="puntos-usuario"] {
     position: relative;
     top: 160px;
     left: 30px;
+    background: rgb(20, 80, 160);
+    border: rgb(20, 80, 160);
+    border-radius: 10px;
+    color: white;
+    height: 34px;
 }
 
 .btn-omitir-p {
     position: relative;
     top: 160px;
     left: 60px;
+    background: rgb(20, 80, 160);
+    border: rgb(20, 80, 160);
+    border-radius: 10px;
+    color: white;
+    height: 34px;
 }
 
 #inputPropina {
