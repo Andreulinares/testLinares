@@ -20,8 +20,8 @@ body{
 }
 
 @media only screen and (max-width: 600px){
-    .card-container{
-        
+    #filtros br {
+        display: none;
     }
 
     .productos-totales{
@@ -31,6 +31,23 @@ body{
     #cartas{
         right: 195px;
         margin-left: 35px;
+    }
+
+    .filtro-check {
+        transform: translateY(-100px);
+    }
+
+    #filtro-cat{
+        position: relative;
+        top: 216px;
+    }
+
+    .filtro-productos{
+        transform: translateX(-15px);
+    }
+
+    .t-estandar{
+        transform: translateX(-500px);
     }
 }
 

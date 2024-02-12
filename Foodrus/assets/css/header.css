@@ -39,6 +39,14 @@
     .navbar>.container{
         margin-bottom: 7px;
     }
+
+    .reseñas{
+        bottom: 40px;
+    }
+
+    .nav-secundario{
+        height: 60px;
+    }
 }
 
 /* HEADER */

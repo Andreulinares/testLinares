@@ -45,8 +45,8 @@ session_start();
 <section>
     
 <div class="filtro-productos">
-    <h3 class="filtro-cat">CATEGORIAS</h3>
-    <div id="filtros">
+    <h3 id="filtro-cat" class="filtro-cat">CATEGORIAS</h3>
+    <div id="filtros" class="filtro-check">
         <label><input type="checkbox" class="filtro-categoria" value="pizza"> Pizza</label><br>
         <label><input type="checkbox" class="filtro-categoria" value="bebida"> Bebida</label><br>
         <label><input type="checkbox" class="filtro-categoria" value="postre"> Postre</label><br>
