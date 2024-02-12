@@ -280,3 +280,9 @@ main {
     height: 160px;
     object-fit: contain;
 }
+
+/* IMAGENES SECCION CATEGORIAS */
+
+.img-categoria{
+    object-fit: contain;
+}

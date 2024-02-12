@@ -88,21 +88,21 @@ session_start();
             <div class="col-4">
                 <div class="button-container text-center">
                     <button type="button" id="btn-tamaño" class="btn btn-primary btn-custom b1">
-                        <img src="../assets/images/categoria1.png" alt="Categoría 1" width="120", height="65">
+                        <img class="img-categoria" src="../assets/images/categoria1.png" alt="Categoría 1" width="120", height="65">
                     </button>
                 </div>
             </div>
             <div class="col-4">
                 <div class="button-container text-center">
                     <button type="button" id="btn-tamaño" class="btn btn-primary btn-custom b3">
-                        <img src="../assets/images/categoria2.png" alt="Categoría 2" width="120", height="65">
+                        <img class="img-categoria" src="../assets/images/categoria2.png" alt="Categoría 2" width="120", height="65">
                     </button>
                 </div>
             </div>
             <div class="col-4">
                 <div class="button-container text-center">
                     <button type="button" id="btn-tamaño" class="btn btn-primary btn-custom b2">
-                        <img src="../assets/images/categoria3.png" alt="Categoría 3" width="120", height="65">
+                        <img class="img-categoria" src="../assets/images/categoria3.png" alt="Categoría 3" width="120", height="65">
                     </button>
                 </div>
             </div>
