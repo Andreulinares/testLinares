@@ -6,4 +6,10 @@ function guardarPropina(){
     let nuevoPrecio = precioTotal + precioMasPropina;
 
     document.getElementById('precioTotal').innerText = nuevoPrecio.toFixed(2) + '€';
+
+    success();
+}
+
+function success() {
+    notie.alert({ type: 1, text: 'Reseña adida con exito!', time: 2 });
 }

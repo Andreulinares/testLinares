@@ -253,6 +253,7 @@ if (isset($_SESSION['mostrarModalQR']) && $_SESSION['mostrarModalQR']) {
     </div>
 </footer>
 <!-- Script del programa de fidelidad, qr y propinas-->
+<script src="../notie-master/dist/notie.js"></script>
 <script src="../assets/js/qr.js"></script>
 <script src="../assets/js/programaFidelidad.js"></script>
 <script src="../assets/js/propinas.js"></script>
