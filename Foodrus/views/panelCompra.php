@@ -34,6 +34,7 @@ if (isset($_SESSION['mostrarModalQR']) && $_SESSION['mostrarModalQR']) {
     <link href="../assets/css/header.css" rel="stylesheet">
 
     <link href="../assets/css/ventana_emergente.css" rel="stylesheet" type="text/css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../notie-master/dist/notie.css">
 
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
 </head>

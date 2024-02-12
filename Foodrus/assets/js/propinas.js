@@ -11,5 +11,5 @@ function guardarPropina(){
 }
 
 function success() {
-    notie.alert({ type: 1, text: 'Reseña adida con exito!', time: 2 });
+    notie.alert({ type: 1, text: 'Propina añadida con exito!', time: 2 });
 }
