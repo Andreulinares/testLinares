@@ -215,31 +215,31 @@ session_start();
 </div>
 
   <div id="fondoOscuro"></div>
-</body>
 
-<script src="../assets/js/ventana.js" defer></script>
+  <script src="../assets/js/ventana.js" defer></script>
 
-<?php if (empty($_SESSION['selecciones'])): ?>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById('btnFinalizarCompra').disabled = true;
-        });
-    </script>
-<?php endif; ?>
+  <?php if (empty($_SESSION['selecciones'])): ?>
+      <script>
+          document.addEventListener("DOMContentLoaded", function() {
+              document.getElementById('btnFinalizarCompra').disabled = true;
+          });
+      </script>
+  <?php endif; ?>
 
-<!-- Bolita roja actualizar cantidad -->
-<script>
-  function actualizarNumCarrito(){
-    let numProductos = <?php echo count($_SESSION['selecciones']); ?>;
+  <!-- Bolita roja actualizar cantidad -->
+  <script>
+    function actualizarNumCarrito(){
+      let numProductos = <?php echo count($_SESSION['selecciones']); ?>;
 
-    let bolitaRoja = document.getElementById('numero-carrito');
-    if(bolitaRoja){
-      bolitaRoja.textContent = numProductos;
+      let bolitaRoja = document.getElementById('numero-carrito');
+      if(bolitaRoja){
+        bolitaRoja.textContent = numProductos;
+      }
     }
-  }
 
-  document.addEventListener('DOMContentLoaded', function () {
-            actualizarNumCarrito();
-  });
-</script>
+    document.addEventListener('DOMContentLoaded', function () {
+              actualizarNumCarrito();
+    });
+  </script>
+</body>
 </html>
