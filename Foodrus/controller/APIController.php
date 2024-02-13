@@ -60,35 +60,38 @@ class APIController{
 
             echo json_encode(['puntos' => $puntos], JSON_UNESCAPED_UNICODE);
             exit;
-        }else if($accion == 'actualizar_puntos') {
-            $puntosUsuario = $_POST['puntosUsuario'];
-            $puntosActuales = ProductoDAO::obtenerPuntos($cliente_id);
-
-            $puntosNuevos = $puntosActuales - $puntosUsuario;
-
-            ProductoDAO::actualizarPuntos($cliente_id, $puntosNuevos);
-
-            $pedido_id = $_SESSION['carrito_id'];
-            $cantidad = $_POST['cantidadTotal'];
-            $estado = 'pendiente';
-            $fecha = date('Y-m-d H:i:s');
-
-            $pedido = new PedidoBD($pedido_id, $cliente_id, $cantidad, $estado, $fecha);
-            ProductoDAO::insertarPedido($pedido);
-
-            foreach ($_SESSION['selecciones'] as $pedido){
-                $id_producto = $pedido->getProducto()->getProducto_id();
-                $cantidad = $pedido->getCantidad();
-
-                ProductoDAO::associarProductoPedido($pedido_id, $id_producto, $cantidad);
-            }
-
-            header("Location: ../Foodrus/views/carta.php"); 
-
-            $response = ['mensaje' => 'Operacion realizada correctamente'];
-            echo json_encode($response);
-
         }
+    }
+
+    public function actualizarPuntos(){
+        session_start();
+        $usuario = ProductoDAO::obtenerUsuario($_SESSION['user_email']);
+        $cliente_id = $usuario->getCliente_id();
+        
+        $puntosUsuario = $_POST['puntosUsuario'];
+        $puntosActuales = ProductoDAO::obtenerPuntos($cliente_id);
+
+        $puntosNuevos = $puntosActuales - $puntosUsuario;
+
+        ProductoDAO::actualizarPuntos($cliente_id, $puntosNuevos);
+
+        $pedido_id = $_SESSION['carrito_id'];
+        $cantidad = $_POST['cantidadTotal'];
+        $estado = 'pendiente';
+        $fecha = date('Y-m-d H:i:s');
+
+        $pedido = new PedidoBD($pedido_id, $cliente_id, $cantidad, $estado, $fecha);
+        ProductoDAO::insertarPedido($pedido);
+
+        foreach ($_SESSION['selecciones'] as $pedido){
+            $id_producto = $pedido->getProducto()->getProducto_id();
+            $cantidad = $pedido->getCantidad();
+
+            ProductoDAO::associarProductoPedido($pedido_id, $id_producto, $cantidad);
+        }
+
+        $response = ['mensaje' => 'Operacion realizada correctamente'];
+        echo json_encode($response);
     }
 
     public function limpiarCarrito(){

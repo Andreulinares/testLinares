@@ -40,22 +40,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const puntosNecesarios = Math.floor(cantidadTotal * 100);
         console.log(puntosUsuario, puntosNecesarios, puntosActuales);
         if (puntosUsuario >= puntosNecesarios && puntosUsuario <= puntosActuales){
-            const datos = {
-                accion: 'actualizar_puntos',
-                puntosUsuario: puntosUsuario,
-                cantidadTotal: cantidadTotal
-            };
+            const formData = new FormData(); 
+            formData.append('puntosUsuario', puntosUsuario);
+            formData.append('cantidadTotal', cantidadTotal);
     
-            fetch('http://testlinares.com/Foodrus/index.php?controller=API&action=apiPuntos',{
+            fetch('http://testlinares.com/Foodrus/index.php?controller=API&action=actualizarPuntos',{
                 method: 'POST',
-                body: JSON.stringify(datos),
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                body: formData,
             })
             .then(response => response.json())
             .then(data => {
                 console.log(data);
+
+                if (data && data.mensaje === 'Operacion realizada correctamente') {
+                    window.location.href = 'carta.php';
+                }
     
                 mostrarPuntos();
             })
