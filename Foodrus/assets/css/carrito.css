@@ -524,13 +524,27 @@ label[for="puntos-usuario"] {
 
 .btn-modal{
     position: relative;
-    top: 100px;
+    top: 70px;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #00ae42;
+    border-color: #00ae42;
+    border: none;
+    width: 150px;
+    height: 30px;
+    left: 95px;
+
+}
+
+.btn-modal:hover{
+    background-color: #FF973B;
+    border-color: #FF973B;
 }
 
 #contenedorQR{
     position: relative;
     left: 95px;
-    top: 70px;
+    top: 35px;
 }
 
 /* MODAL PROPINAS */

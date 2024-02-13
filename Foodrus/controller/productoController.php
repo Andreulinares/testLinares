@@ -222,7 +222,8 @@ class productoController{
     
                     ProductoDAO::associarProductoPedido($pedido_id, $id_producto, $cantidad);
                 }
-
+                
+                $_SESSION['mostrarModalQR'] = true;
                 header("Location: ../Foodrus/views/panelCompra.php");
             } else {//En caso contrario, insertamos pedido en la BD
                 $pedido = new PedidoBD($pedido_id, $cliente_id, $cantidad, $estado, $fecha);

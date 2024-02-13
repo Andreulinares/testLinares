@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark nav-principal" style="background-color: #1450A0;">
         <div class="container">
             <!-- Logo foodrus -->
-            <a class="navbar-brand" href="Inicio.php">
+            <a class="navbar-brand" href="/Foodrus/views/Inicio.php">
                 <img src="/Foodrus/img/Logo-foodrus.png" width="150" height="50">
             </a>
 

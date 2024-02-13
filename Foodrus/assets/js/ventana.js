@@ -5,7 +5,7 @@ function mostrarVentana() {
     fondoOscuro.style.display = 'block';
 
     document.getElementById('btnFinalizarCompra').addEventListener('click', function() {
-        window.location.href = 'panelCompra.php';
+        window.location.href = '/Foodrus/views/panelCompra.php';
     });
 
     document.getElementById('btnContinuarComprando').addEventListener('click', function() {

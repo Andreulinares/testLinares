@@ -156,7 +156,6 @@ if (isset($_SESSION['mostrarModalQR']) && $_SESSION['mostrarModalQR']) {
             <!-- Modal que contiene la imagen qr generada -->
             <div id="modalQR" class="modal">
                 <div class="modal-content">
-                    <span class="close" onclick="cerrarModal()">&times;</span>
                     <h2 class="tit-qr">Gracias por su compra!</h2>
                     <div id="contenedorQR"></div>
                     <button class="btn-modal" onclick="cerrarModal()">Cerrar</button>
