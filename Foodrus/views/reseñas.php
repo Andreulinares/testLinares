@@ -48,6 +48,13 @@ session_start();
                 <option value="5">5 estrellas</option>
             </select>
     </div>
+    <div class="filtro-ordenar">
+        <label for="filtro-orden">Ordenar por:</label>
+        <select id="filtro-orden">
+            <option value="asc">Ascendente</option>
+            <option value="desc">Descendente</option>
+        </select>
+    </div>
 
     <div id="reseñas-container"></div>
 </section>

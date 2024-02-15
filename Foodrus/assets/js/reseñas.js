@@ -123,4 +123,39 @@ document.getElementById('filtro-nota').addEventListener('change', function () {
     }
 });
 
+document.getElementById('filtro-orden').addEventListener('change', function () {
+    const ordenSeleccionado = this.value;
+
+    // Obtener todas las reseñas
+    const reseñas = document.querySelectorAll('.reseña-contenedor');
+
+    // Almacenar las reseñas en un array para poder ordenarlas usando sort
+    const reseñasArray = Array.from(reseñas);
+
+    // Ordenamos las reseñas 
+    reseñasArray.sort((a, b) => {
+        const puntuacionA = obtenerPuntuacion(a);
+        const puntuacionB = obtenerPuntuacion(b);
+
+        return (ordenSeleccionado === 'asc') ? puntuacionA - puntuacionB : puntuacionB - puntuacionA;
+    });
+
+    // Eliminar las reseñas del contenedor actual
+    const contenedorReseñas = document.getElementById('reseñas-container');
+    contenedorReseñas.innerHTML = '';
+
+    // Agregar las reseñas ordenadas al contenedor
+    reseñasArray.forEach(reseña => {
+        contenedorReseñas.appendChild(reseña);
+    });
+});
+
+function obtenerPuntuacion(reseñaElemento) {
+    // Obtenemos la puntuación desde las imágenes de estrellas
+    const estrellas = reseñaElemento.querySelectorAll('.puntuacion img[src="../img/fullstar.png"]');
+    return estrellas.length;
+}
+
+
+
 

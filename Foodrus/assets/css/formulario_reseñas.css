@@ -121,4 +121,13 @@ img.img-estrella {
 .filtro-reseñas {
     margin-left: 235px;
     margin-bottom: 20px;
+    position: relative;
+    top: 20px;
+}
+
+.filtro-ordenar {
+    position: relative;
+    left: 500px;
+    width: 200px;
+    bottom: 30px;
 }
