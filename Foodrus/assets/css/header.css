@@ -47,6 +47,30 @@
     .nav-secundario{
         height: 60px;
     }
+
+    #salir{
+        width: 250px;
+        top: 5px;
+    }
+
+    #mis-pedidos{
+        width: 235px;
+        bottom: 61px;
+        transform: translateX(-400px);
+    }
+
+    #mod-usuario{
+        width: 235px;
+        transform: translateX(-400px);
+        bottom: 78px;
+    }
+
+    body #desplegable-menu{
+        width: 485px;
+        position: absolute;
+        transform: translateX(-272px) translateY(-187px);
+        height: 114px;
+    }
 }
 
 /* HEADER */

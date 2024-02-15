@@ -45,17 +45,17 @@
                         <ul id="desplegable-menu" class="dropdown-menu">
                         <li>
                             <form action="/Foodrus/index.php?controller=usuario&action=logout" method="post">
-                            <button type="submit" class="dropdown-item salir boton-desp" name="cerrar_sesion">Salir</button>
+                            <button type="submit" id="salir" class="dropdown-item salir boton-desp" name="cerrar_sesion">Salir</button>
                             </form>
                         </li>
                         <li>
                             <form action="/Foodrus/index.php?controller=usuario&action=mostrarPedidos" method="post">
-                            <button type="submit" class="dropdown-item mis-pedidos boton-desp" name="mis-pedidos">Mis pedidos</button>
+                            <button type="submit" id="mis-pedidos" class="dropdown-item mis-pedidos boton-desp" name="mis-pedidos">Mis pedidos</button>
                             </form>
                         </li>
                         <li>
                             <form action="/Foodrus/index.php?controller=usuario&action=editarUsuario" method="post">
-                            <button type="submit" class="dropdown-item mod-usuario" name="mod-usuario">Detalles de la cuenta</button>
+                            <button type="submit" id="mod-usuario" class="dropdown-item mod-usuario" name="mod-usuario">Detalles de la cuenta</button>
                             </form>
                         </li>
                         <!-- PANEL ADMINISTRADOR -->
