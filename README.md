@@ -13,6 +13,9 @@ El archiu index.php s'ha configurat de manera que es puguin utilizat els 3 contr
 
 ## Pagina d'inici
 
+A la pagina d'inici hi hauran 4 seccions, la **primera seccio** mostrara 3 botons on portaran a l'usuari a diferents seccions de la pagina de la carta.
+A la **segona seccio** es mostraran altres 3 botons amb les 3 categories dels productes de la web.
+
 ## Pagina carta
 
 ## Pagina PanelCompra
