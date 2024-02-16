@@ -12,7 +12,8 @@ require_once __DIR__ . '/../model/PedidoBD.php';
 //Instala la extensión Thunder Client en VSC. Te permite probar si tu API funciona correctamente.
 
 class APIController{    
-
+//funcion para mostrar las reseñas en la pagina reseñas.php
+//utilizamos la funcion obtener Reseñas para realizar un select a la bd y las guardamos en una variable
     public function api() {
         session_start();
         $accion = $_POST["accion"];  
@@ -23,7 +24,8 @@ class APIController{
             exit;
         }   
     }
-
+//Funcion insertar reseñas, obtenemos los datos correspondientes y insertamos a la base de datos 
+//utilizando la funcion insertarReseñas, insertamos los datos de la reseña en la bd
     public function insertarReseñas(){
         session_start();
         $usuario = ProductoDAO::obtenerUsuario($_SESSION['user_email']);
@@ -47,7 +49,7 @@ class APIController{
         $response = ['mensaje' => 'Reseña añadida correctamente'];
         echo json_encode($response);
     }
-
+//obtenemos los puntos correspondientes del usuario y los almacenamos en una variable
     public function apiPuntos(){
         session_start();
         $usuario = ProductoDAO::obtenerUsuario($_SESSION['user_email']);
@@ -62,7 +64,8 @@ class APIController{
             exit;
         }
     }
-
+//Funcion para actualizar los puntos y insertar pedido en la bd. Obtenemos los `puntos del usuario
+//Y los puntos actuales, y luego los actualizamos. Despues insertamos pedido en la bd 
     public function actualizarPuntos(){
         session_start();
         $usuario = ProductoDAO::obtenerUsuario($_SESSION['user_email']);
@@ -95,7 +98,7 @@ class APIController{
         $response = ['mensaje' => 'Operacion realizada correctamente'];
         echo json_encode($response);
     }
-
+//vaciar carrito al cerrar el modal del qr
     public function limpiarCarrito(){
         session_start();
 
