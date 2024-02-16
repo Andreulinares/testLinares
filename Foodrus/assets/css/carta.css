@@ -147,11 +147,11 @@ body{
 }
 
 .img-product{
-    width: auto;
     height: 186px;
     position: absolute;
     top: 0;
     left: 0;
+    object-fit: contain;
 }
 
 .precio{
