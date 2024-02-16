@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log(data);
 
                 if (data && data.mensaje === 'Operacion realizada correctamente') {
-                    window.location.href = 'carta.php';
+                    window.location.href = 'panelCompra.php';
                 }
     
                 mostrarPuntos();

@@ -90,6 +90,8 @@ class APIController{
             ProductoDAO::associarProductoPedido($pedido_id, $id_producto, $cantidad);
         }
 
+        $_SESSION['mostrarModalQR'] = true;
+
         $response = ['mensaje' => 'Operacion realizada correctamente'];
         echo json_encode($response);
     }
