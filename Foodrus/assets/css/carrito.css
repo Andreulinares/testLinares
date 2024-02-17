@@ -398,7 +398,6 @@ label[for="cupon"]{
 }
 
 .card-img, .card-img-bottom, .card-img-top {
-    width: 195px;
     height: 160px;
     object-fit: contain;
 }
@@ -429,22 +428,6 @@ label[for="cupon"]{
     position: relative;
     right: 40px;
     border: none;
-}
-
-.uno .product-image{
-    margin-left: 45px;
-}
-
-.dos .product-image{
-    margin-left: 55px;
-}
-
-.tres .product-image{
-    margin-left: 35px;
-}
-
-.cuatro .product-image{
-    margin-left: 40px;
 }
 
 /* FOOTER */
