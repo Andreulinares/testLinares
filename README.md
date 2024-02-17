@@ -34,7 +34,14 @@ es redirigira al usuari a la pagina de la carta i es buidara la cistella.
 
 ## Propines
 
-Per les propines, el que s'ha fet es crear un altre modal que s'abrira 
+Per les propines, el que s'ha fet es crear un altre __modal__ que s'obrira quant l'usuari premi un boto abans de finalitzar la compra, al modal hi haurà una opció per poder indicar 
+quina propina es vol guardar, per defecte, estara marcat un **3%** pero l'usuari el pot cambiar. També podra **ometre i sortir del modal** prement un boto, si no vol pagar propines, 
+l'usuari podra ometre aquest modal i realitzar una compra de manera normal, sense propines. Al javascript *propinas.js* s'agafan els valors corresponents i si l'usuari **guarda 
+una propina** prenent el boto de guardar, el percentatge de propina que ha especificat es sumara automaticamente al preu total de la compra.
 
 ## Filtre productes
 
+De la mateixa manera que s'ha fet el filtre de las **resenyes** agafan els valors dels *select* per poder especificar dins d'una condició quines resenyes volem mostrar i guardarles
+en un array per poder ordenarlas segons indiqui l'usuari en el filtre, en el cas dels **productes de la carta**  el que s'ha fet es utilitzant els metodes d'array __.map__ y 
+__.filter__ s'han emmagatzemat totes les tarjetes dels productes a un array amb el metode __Array.from()__ i depenent dels *checkboxs* marcats, s'ocultaran o 
+es mostraran els productes utilizant el *display: none* o *display: block*. Cada tarjeta tindra una **clase** per poder idenfiticarlos com a pizza, postre o beguda i d'aquesta manera podrem espeficiar en el js quines categories em de mostrar i quines no. S'han utilizat *3 funcions* per implementar el funcionament del filtre, una per obtindre les categories dels productes, una altre per obtindre les categories seleccionades als checkboxs i una altre que s'encarregara de filtrar els productes.
