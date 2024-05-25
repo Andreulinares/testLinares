@@ -5,7 +5,11 @@ function guardarPropina(){
     let precioMasPropina = (propinaSeleccionada / 100) * precioTotal;
     let nuevoPrecio = precioTotal + precioMasPropina;
 
+    localStorage.setItem('propina', nuevoPrecio.toFixed(2));
+
     document.getElementById('precioTotal').innerText = nuevoPrecio.toFixed(2) + '€';
+
+    document.querySelector('input[name="cantidadTotal"]').value = nuevoPrecio.toFixed(2);
 
     success();
 }
@@ -13,3 +17,10 @@ function guardarPropina(){
 function success() {
     notie.alert({ type: 1, text: 'Propina añadida con exito!', time: 2 });
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    let propinaGuardada = localStorage.getItem('propina');
+    if (propinaGuardada) {
+        document.querySelector('input[name="cantidadTotal"]').value = propinaGuardada;
+    }
+});

@@ -41,6 +41,7 @@ function cerrarModal() {
     window.location.href = '/Foodrus/views/carta.php';
 
     limpiarCarrito();
+    localStorage.removeItem('propina');
 }
 
 function limpiarCarrito(){
