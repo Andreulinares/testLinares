@@ -116,6 +116,8 @@ class APIController{
         $puntosNuevos = $puntosActuales - $puntosUsuario;
         ProductoDAO::actualizarPuntos($cliente_id, $puntosNuevos);
 
+        setcookie('UltimosProductos', serialize($_SESSION['selecciones']), time() + 3600);
+
         $pedido_id = $_SESSION['carrito_id'];
         $cantidad = $_POST['cantidadTotal'];
         $estado = 'pendiente';
@@ -130,6 +132,7 @@ class APIController{
             ProductoDAO::associarProductoPedido($pedido_id, $id_producto, $cantidad);
         }
 
+        $_SESSION['carrito_id'] = strtoupper(substr(bin2hex(random_bytes(5)), 0, 10));
         $_SESSION['mostrarModalQR'] = true;
 
         $response = ['mensaje' => 'Operacion realizada correctamente'];

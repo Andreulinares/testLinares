@@ -160,6 +160,11 @@ header svg{
     left: 90px;
 }
 
+#nav-contenedor a:hover{
+    color: orange !important;
+    border-bottom: 4px solid orange;
+}
+
 .numero-carrito {
     background-color: red;
     color: white;

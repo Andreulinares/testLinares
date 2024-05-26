@@ -236,12 +236,14 @@ class productoController{
                     ProductoDAO::associarProductoPedido($pedido_id, $id_producto, $cantidad);
                 }
 
+                $_SESSION['carrito_id'] = strtoupper(substr(bin2hex(random_bytes(5)), 0, 10));
+
                 $_SESSION['mostrarModalQR'] = true;
                 header("Location: ../Foodrus/views/panelCompra.php"); 
-            }
 
-            $puntosObtenidos = floor($_POST['cantidadTotal'] * 100);
-            ProductoDAO::insertarPuntosUsuario($cliente_id, $puntosObtenidos); 
+                $puntosObtenidos = floor($_POST['cantidadTotal'] * 100);
+                ProductoDAO::insertarPuntosUsuario($cliente_id, $puntosObtenidos); 
+            }
         }
     }
 
@@ -252,6 +254,10 @@ class productoController{
             if(isset($_COOKIE['UltimosProductos'])){
                 $productosRecuperados = unserialize($_COOKIE['UltimosProductos']);
                 $_SESSION['selecciones'] = $productosRecuperados;
+
+                if(isset($_COOKIE['UltimoPedido'])){
+                    $_SESSION['carrito_id'] = $_COOKIE['UltimoPedido'];
+                }
 
                 header("Location: ../Foodrus/views/panelCompra.php");
             }

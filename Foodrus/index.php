@@ -55,4 +55,27 @@ if (isset($_GET['controller'])) {
         echo $nombre_controller . ' NO EXISTE';
     }
 }
+
+/*if(!isset($_GET['controller'])) {
+    // Si la url no contiene un controlador se redirigira automaticamente al controlador principal
+    header("Location:".url.'?controller=producto');
+} else {
+    $nombre_controlador = $_GET['controller'].'Controller';
+
+    if(class_exists($nombre_controlador)) {
+        // Comprueba si nos pasa una accion, en caso contrario muestra una accion por defecto.
+        $controlador = new $nombre_controlador();
+
+        if(isset($_GET['accion']) && method_exists($controlador,$_GET['accion'])) {
+            $accion = $_GET['accion'];
+        } else {
+            $accion = action_default;
+        }
+
+        $controlador->$accion();
+
+    } else {
+        header("Location:".url.'?controller=producto');
+    }
+}*/
 ?>
