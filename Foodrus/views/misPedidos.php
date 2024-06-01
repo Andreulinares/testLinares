@@ -98,7 +98,23 @@ if (isset($_SESSION['user_email'])){
                 </div>
             <?php endforeach; ?>
         </table>
-    </section>                            
+    </section>
+    <h3 class="h3-reseña">Deja tu reseña</h3>
+        <form id="form-reseñas" action="">
+            <div class="form-group">
+                <label for="pedido_id">ID del Pedido</label>
+                <input type="text" id="pedido_id" name="pedido_id" class="form-control input-pedido" required>
+            </div>
+            <div class="form-group">
+                <label for="comentario">Comentario</label>
+                <textarea class="form-control label-form" id="comentario" name="comentario" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="puntuacion">Puntuacion</label>
+                <input type="number" id="puntuacion" name="puntuacion" min="1" max="5" required>
+            </div>
+            <button type="submit" class="btn-enviar">Enviar</button>
+        </form>                            
 <footer>
     <div class="container-fluid p-5 text-white bg-custom">
         <div class="row justify-content-center align-items-center">
@@ -118,6 +134,8 @@ if (isset($_SESSION['user_email'])){
         </div>
     </div>
 </footer>
+
+<script src="/Foodrus/assets/js/reseñas.js"></script>
 
 <div id="ventana" class="cont-ventana" style="display: none;">
     <div class="div-ventana">

@@ -34,6 +34,7 @@ class APIController{
 
         $puntuacion = $_POST['puntuacion'];
         $comentario = $_POST['comentario'];
+        $pedido_id = $_POST['pedido_id'];
 
         $reseña = new Reseña(
             null,
@@ -41,14 +42,30 @@ class APIController{
             $puntuacion,
             $comentario,
             date("Y-m-d H:i:s"),
-            $nombre_usuario
+            $nombre_usuario,
+            $pedido_id
         );
+
+        //Verificar que el pedido existe y pertenece al usuario
+        $pedido = ProductoDAO::getPedidoByIdAndUserId($pedido_id, $cliente_id);
+        if (!$pedido) {
+            echo json_encode(['mensaje' => 'Pedido no válido']);
+            return;
+        }
+
+        //Verificar que no existe una reseña previa para este pedido
+        /*$reseñaExistente = ProductoDAO::getReseñaByPedidoId($pedido_id);
+        if ($reseñaExistente) {
+            echo json_encode(['mensaje' => 'Ya existe una reseña para este pedido']);
+            return;
+        }*/
 
         ProductoDAO::insertarReseñas($reseña);
 
         $response = ['mensaje' => 'Reseña añadida correctamente'];
         echo json_encode($response);
     }
+
 //obtenemos los puntos correspondientes del usuario y los almacenamos en una variable
     public function apiPuntos(){
         session_start();

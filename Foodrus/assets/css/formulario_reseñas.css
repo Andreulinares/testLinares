@@ -58,6 +58,10 @@ label {
     margin-left: 460px;
 }
 
+.input-pedido{
+    width: 50%;
+}
+
 /* BOTONES */
 
 .btn-enviar{

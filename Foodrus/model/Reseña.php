@@ -7,8 +7,9 @@ class Reseña{
     private $puntuacion;
     private $comentario;
     private $fecha_creacion;
+    private $pedido_id;
 
-    public function __construct($reseña_id, $id_cliente, $puntuacion, $comentario, $fecha_creacion, $nombre_usuario)
+    public function __construct($reseña_id, $id_cliente, $puntuacion, $comentario, $fecha_creacion, $nombre_usuario, $pedido_id)
     {
         $this->reseña_id = $reseña_id;
         $this->id_cliente = $id_cliente;
@@ -16,6 +17,7 @@ class Reseña{
         $this->comentario = $comentario;
         $this->fecha_creacion = $fecha_creacion;
         $this->nombre_usuario = $nombre_usuario;
+        $this->pedido_id = $pedido_id;
     }
 
     /**
@@ -137,5 +139,25 @@ class Reseña{
 
         return $this;
     }
+
+        /**
+         * Get the value of pedido_id
+         */ 
+        public function getPedido_id()
+        {
+                return $this->pedido_id;
+        }
+
+        /**
+         * Set the value of pedido_id
+         *
+         * @return  self
+         */ 
+        public function setPedido_id($pedido_id)
+        {
+                $this->pedido_id = $pedido_id;
+
+                return $this;
+        }
 }
 ?>

@@ -497,10 +497,10 @@ class ProductoDAO{
         $comentario = $reseña->getComentario();
         $fecha_creacion = $reseña->getFecha_creacion();
         $nombre_usuario = $reseña->getNombre_usuario();
+        $pedido_id = $reseña->getPedido_id();
 
-
-        $stmt = $con->prepare("INSERT INTO reseñas (id_cliente, puntuacion, comentario, fecha_creacion, nombre_usuario) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("iisss", $id_cliente, $puntuacion, $comentario, $fecha_creacion, $nombre_usuario);
+        $stmt = $con->prepare("INSERT INTO reseñas (id_cliente, puntuacion, comentario, fecha_creacion, nombre_usuario, pedido_id) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("iissss", $id_cliente, $puntuacion, $comentario, $fecha_creacion, $nombre_usuario, $pedido_id);
 
         if ($stmt->execute()) {
             return true;
@@ -508,6 +508,34 @@ class ProductoDAO{
             return false;
         }
         
+        $con->close();
+    }
+
+    public static function getPedidoByIdAndUserId($pedido_id, $usuario_id) {
+        $con = database::connect();
+        $stmt = $con->prepare("SELECT * FROM pedidos WHERE pedido_id = ? AND id_cliente = ?");
+        $stmt->bind_param("si", $pedido_id, $usuario_id);
+
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+
+        $con->close();
+    }
+
+    public static function getReseñaByPedidoId($pedido_id) {
+        $con = database::connect();
+        $stmt = $con->prepare("SELECT * FROM reseñas WHERE pedido_id = ?");
+        $stmt->bind_param("s", $pedido_id);  
+
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+
         $con->close();
     }
 
