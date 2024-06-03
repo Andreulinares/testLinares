@@ -120,6 +120,11 @@ img.img-estrella {
     font-weight: 500;
 }
 
+.pedido-id{
+    font-weight: 500;
+    margin-left: 15px;
+}
+
 /* FILTRO */
 
 .filtro-reseñas {

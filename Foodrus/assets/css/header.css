@@ -161,8 +161,8 @@ header svg{
 }
 
 #nav-contenedor a:hover{
-    color: orange !important;
-    border-bottom: 4px solid orange;
+    color: #FF973B !important;
+    border-bottom: 4px solid #FF973B;
 }
 
 .numero-carrito {

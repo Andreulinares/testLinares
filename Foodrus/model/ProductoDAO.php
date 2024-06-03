@@ -471,7 +471,7 @@ class ProductoDAO{
     public static function obtenerReseñas(){
         $con = database::connect();
     
-        $stmt = $con->prepare("SELECT puntuacion, comentario, nombre_usuario FROM reseñas");
+        $stmt = $con->prepare("SELECT puntuacion, comentario, nombre_usuario, pedido_id FROM reseñas");
         $stmt->execute();
     
         $result = $stmt->get_result();

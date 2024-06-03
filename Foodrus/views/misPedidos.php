@@ -20,6 +20,7 @@ if (isset($_SESSION['user_email'])){
 
     <link href="/Foodrus/assets/css/header.css" rel="stylesheet" type="text/css" media="screen">
     <link href="/Foodrus/assets/css/ventana_emergente.css" rel="stylesheet" type="text/css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/Foodrus/notie-master/dist/notie.css">
 
     <script src="/Foodrus/assets/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -135,6 +136,7 @@ if (isset($_SESSION['user_email'])){
     </div>
 </footer>
 
+<script src="../notie-master/dist/notie.js"></script>
 <script src="/Foodrus/assets/js/reseñas.js"></script>
 
 <div id="ventana" class="cont-ventana" style="display: none;">
@@ -147,7 +149,6 @@ if (isset($_SESSION['user_email'])){
 
 <div id="fondoOscuro"></div>
 
-</body>
 <script src="/Foodrus/assets/js/ventana.js" defer></script>
 
 <?php if (empty($_SESSION['selecciones'])): ?>
@@ -173,4 +174,6 @@ if (isset($_SESSION['user_email'])){
             actualizarNumCarrito();
     });
 </script>
+
+</body>
 </html>
