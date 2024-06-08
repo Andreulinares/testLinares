@@ -202,6 +202,9 @@ class productoController{
             setcookie('UltimoPedido', $_POST['cantidadTotal'], time() + 3600);
             setcookie('UltimosProductos', serialize($_SESSION['selecciones']), time() + 3600);
 
+            //Guardar cookie carrito_id
+            setcookie('UltimoPedido_id', $_SESSION['carrito_id'], time() + 3600);
+
             //Te almacena el pedido en la base de datos ProductoDAO que guarda el pedido en BBDD
             $pedido_id = $_SESSION['carrito_id'];
             $cantidad = $_POST['cantidadTotal'];
@@ -255,8 +258,8 @@ class productoController{
                 $productosRecuperados = unserialize($_COOKIE['UltimosProductos']);
                 $_SESSION['selecciones'] = $productosRecuperados;
 
-                if(isset($_COOKIE['UltimoPedido'])){
-                    $_SESSION['carrito_id'] = $_COOKIE['UltimoPedido'];
+                if(isset($_COOKIE['UltimoPedido_id'])){
+                    $_SESSION['carrito_id'] = $_COOKIE['UltimoPedido_id'];
                 }
 
                 header("Location: ../Foodrus/views/panelCompra.php");
