@@ -83,38 +83,6 @@ class APIController{
     }
 //Funcion para actualizar los puntos y insertar pedido en la bd. Obtenemos los `puntos del usuario
 //Y los puntos actuales, y luego los actualizamos. Despues insertamos pedido en la bd 
-    /*public function actualizarPuntos(){
-        session_start();
-        $usuario = ProductoDAO::obtenerUsuario($_SESSION['user_email']);
-        $cliente_id = $usuario->getCliente_id();
-        
-        $puntosUsuario = $_POST['puntosUsuario'];
-        $puntosActuales = ProductoDAO::obtenerPuntos($cliente_id);
-
-        $puntosNuevos = $puntosActuales - $puntosUsuario;
-
-        ProductoDAO::actualizarPuntos($cliente_id, $puntosNuevos);
-
-        $pedido_id = $_SESSION['carrito_id'];
-        $cantidad = $_POST['cantidadTotal'];
-        $estado = 'pendiente';
-        $fecha = date('Y-m-d H:i:s');
-
-        $pedido = new PedidoBD($pedido_id, $cliente_id, $cantidad, $estado, $fecha);
-        ProductoDAO::insertarPedido($pedido);
-
-        foreach ($_SESSION['selecciones'] as $pedido){
-            $id_producto = $pedido->getProducto()->getProducto_id();
-            $cantidad = $pedido->getCantidad();
-
-            ProductoDAO::associarProductoPedido($pedido_id, $id_producto, $cantidad);
-        }
-
-        $_SESSION['mostrarModalQR'] = true;
-
-        $response = ['mensaje' => 'Operacion realizada correctamente'];
-        echo json_encode($response);
-    }*/
 
     public function actualizarPuntos(){
         session_start();
@@ -136,6 +104,13 @@ class APIController{
         setcookie('UltimosProductos', serialize($_SESSION['selecciones']), time() + 3600);
 
         $pedido_id = $_SESSION['carrito_id'];
+
+        if (ProductoDAO::carritoExiste($pedido_id)) {
+            $response = ['mensaje' => 'No se pueden utilizar los puntos en este pedido'];
+            echo json_encode($response);
+            exit;
+        }
+
         $cantidad = $_POST['cantidadTotal'];
         $estado = 'pendiente';
         $fecha = date('Y-m-d H:i:s');
