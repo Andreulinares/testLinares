@@ -255,8 +255,8 @@ if (isset($_SESSION['mostrarModalQR']) && $_SESSION['mostrarModalQR']) {
 <!-- Script del programa de fidelidad, qr y propinas-->
 <script src="../notie-master/dist/notie.js"></script>
 <script src="../assets/js/qr.js"></script>
-<script src="../assets/js/programaFidelidad.js"></script>
 <script src="../assets/js/propinas.js"></script>
+<script src="../assets/js/programaFidelidad.js"></script>
 <!-- VENTANA EMERGENTE CARRITO -->
     <div id="ventana" class="cont-ventana" style="display: none;">
         <div class="div-ventana">

@@ -136,7 +136,7 @@ if (isset($_SESSION['user_email'])){
     </div>
 </footer>
 
-<script src="../notie-master/dist/notie.js"></script>
+<script src="/Foodrus/notie-master/dist/notie.js"></script>
 <script src="/Foodrus/assets/js/reseñas.js"></script>
 
 <div id="ventana" class="cont-ventana" style="display: none;">
