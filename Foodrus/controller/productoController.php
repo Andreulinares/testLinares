@@ -10,6 +10,11 @@ class productoController{
         //require header
         //vista home
         //require footer
+        require_once 'views/Inicio.php'; 
+    }
+
+    public function carta(){
+        require_once 'views/carta.php';
     }
     
     public function listaProductos(){
@@ -140,8 +145,7 @@ class productoController{
                 $_SESSION['selecciones'][] = $pedido;
             }
         }
-    
-        header("Location: ../Foodrus/views/carta.php");
+        header("Location: " . URL_BASE . "?controller=producto&action=carta");
     }
     
 

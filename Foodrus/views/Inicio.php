@@ -15,18 +15,18 @@ session_start();
     <meta name="author" content="Andreu">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../assets/css/full_estil.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/full_estil.css" rel="stylesheet" type="text/css" media="screen">
 
-    <link href="../assets/css/header.css" rel="stylesheet" type="text/css" media="screen">
-    <link href="../assets/css/ventana_emergente.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="assets/css/header.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="assets/css/ventana_emergente.css" rel="stylesheet" type="text/css" media="screen">
 
-    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
 
 </head>
 <body>
 
-  <?php include('../views/header.php'); ?>
+  <?php include('views/header.php'); ?>
 
 <main>
 <section><!-- CARRUSEL -->
@@ -37,10 +37,10 @@ session_start();
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active sliderbg">
-              <img src="../assets/images/cafeteria1.webp" class="d-block w-100" alt="Imagen1"/>
+              <img src="assets/images/cafeteria1.webp" class="d-block w-100" alt="Imagen1"/>
             </div>
             <div class="carousel-item sliderbg">
-                <img src="../assets/images/carrusel2.webp" class="d-block w-100" alt="Imagen2"/>
+                <img src="assets/images/carrusel2.webp" class="d-block w-100" alt="Imagen2"/>
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -88,21 +88,21 @@ session_start();
             <div class="col-4">
                 <div class="button-container text-center">
                     <button type="button" id="btn-tamaño" class="btn btn-primary btn-custom b1">
-                        <img class="img-categoria" src="../assets/images/categoria1.png" alt="Categoría 1" width="120", height="65">
+                        <img class="img-categoria" src="assets/images/categoria1.png" alt="Categoría 1" width="120", height="65">
                     </button>
                 </div>
             </div>
             <div class="col-4">
                 <div class="button-container text-center">
                     <button type="button" id="btn-tamaño" class="btn btn-primary btn-custom b3">
-                        <img class="img-categoria" src="../assets/images/categoria2.png" alt="Categoría 2" width="120", height="65">
+                        <img class="img-categoria" src="assets/images/categoria2.png" alt="Categoría 2" width="120", height="65">
                     </button>
                 </div>
             </div>
             <div class="col-4">
                 <div class="button-container text-center">
                     <button type="button" id="btn-tamaño" class="btn btn-primary btn-custom b2">
-                        <img class="img-categoria" src="../assets/images/categoria3.png" alt="Categoría 3" width="120", height="65">
+                        <img class="img-categoria" src="assets/images/categoria3.png" alt="Categoría 3" width="120", height="65">
                     </button>
                 </div>
             </div>
@@ -117,22 +117,22 @@ session_start();
         <div class=" container-fluid text-center container-sec">
           <div class="row">
             <div class="col-xs-12 col-sm-3">
-              <img src="../assets/images/punto_recogida.png">
+              <img src="assets/images/punto_recogida.png">
               <p class="parraf">Punto de recogida</p>
               <p class="parraf2">Enviamos tu pedido al punto de recogida que elijas</p>
             </div>
             <div class="col-xs-12 col-sm-3">
-              <img src="../assets/images/click_and_collect.png">
+              <img src="assets/images/click_and_collect.png">
               <p class="parraf">Click & Collect</p>
               <p class="parraf2">Compra online y recoge en tu tienda mas cercana</p>
             </div>
             <div class="col-xs-12 col-sm-3">
-              <img src="../assets/images/entregas3horas.png">
+              <img src="assets/images/entregas3horas.png">
               <p class="parraf">Envio en 3 horas</p>
               <p class="parraf2">Creemos que lo unico por lo que tendriamos que tener prisa es por jugar</p>
             </div>
             <div class="col-xs-12 col-sm-3">
-              <img src="../assets/images/devoluciones.png">
+              <img src="assets/images/devoluciones.png">
               <p class="parraf">Devolucion gratis</p>
               <p class="parraf2">¿No te gusto lo que compraste? Sin problema</p>
             </div>
@@ -170,7 +170,7 @@ session_start();
             ?>
               <div class="col-md-3 col-6 mb-4">
                   <div class="card" id="product-<?= $producto->getProducto_id(); ?>">
-                      <img src="../<?= $producto->getImagen(); ?>" class="card-img-top product-image" alt="<?= $producto->getNombre_producto(); ?>">
+                      <img src="<?= $producto->getImagen(); ?>" class="card-img-top product-image" alt="<?= $producto->getNombre_producto(); ?>">
                       <div class="card-body">
                             <h5 class="card-title"><?= $producto->getNombre_producto(); ?></h5>
                             <p class="card-text"><?= number_format($producto->getPrecio(), 2); ?> €</p>
@@ -191,10 +191,10 @@ session_start();
         <div class="row justify-content-center align-items-center">
             <div class="col-md-3">
                 <!-- Iconos de redes sociales -->
-                <a href="#" class="text-white"><img src="../img/red1.png" alt="Imagen 1"></a>
-                <a href="#" class="text-white"><img src="../img/red2.png" alt="Imagen 2"></a>
-                <a href="#" class="text-white"><img src="../img/red3.png" alt="Imagen 3"></a>
-                <a href="#" class="text-white"><img src="../img/red4.png" alt="Imagen 4"></a>
+                <a href="#" class="text-white"><img src="img/red1.png" alt="Imagen 1"></a>
+                <a href="#" class="text-white"><img src="img/red2.png" alt="Imagen 2"></a>
+                <a href="#" class="text-white"><img src="img/red3.png" alt="Imagen 3"></a>
+                <a href="#" class="text-white"><img src="img/red4.png" alt="Imagen 4"></a>
             </div>
         </div>
         <div class="row"> 

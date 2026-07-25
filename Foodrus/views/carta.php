@@ -30,17 +30,17 @@ session_start();
     <meta name="author" content="Autor">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../assets/css/carta.css" rel="stylesheet" type="text/css" media="screen">
-    <link href="../assets/css/header.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="<?= URL_BASE ?>assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= URL_BASE ?>assets/css/carta.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="<?= URL_BASE ?>assets/css/header.css" rel="stylesheet" type="text/css" media="screen">
 
-    <link href="../assets/css/ventana_emergente.css" rel="stylesheet" type="text/css" media="screen">
-    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <link href="<?= URL_BASE ?>assets/css/ventana_emergente.css" rel="stylesheet" type="text/css" media="screen">
+    <script src="<?= URL_BASE ?>assets/js/bootstrap.bundle.min.js"></script>
     
 </head>
 <body>
 
-<?php include('../views/header.php'); ?>
+<?php include('views/header.php'); ?>
 
 <section>
     
@@ -90,7 +90,7 @@ session_start();
 <!-- a las tarjetas impares.-->
             <div class="col-6 col-md-3 card-container <?= $specialClass ?> <?= $producto->getCategoria(); ?>">
                 <div class="card">
-                    <img src="../<?= $producto->getImagen(); ?>" class="card-img-top img-fluid img-product" alt="<?= $producto->getNombre_producto(); ?>">
+                    <img src="<?= URL_BASE ?><?= $producto->getImagen(); ?>" class="card-img-top img-fluid img-product" alt="<?= $producto->getNombre_producto(); ?>">
                     <div class="card-body">
                         <?php if ($esNovedad) : ?>
                             <p class="novedad">Novedad</p>
@@ -98,7 +98,7 @@ session_start();
                         <h5 class="card-title titulo-producto"><?= $producto->getNombre_producto(); ?></h5>
                         <p class="card-text">
                             <span class="precio"><?= $producto->getPrecio(); ?> €</span>
-                            <form action="../index.php?controller=producto&action=sel" method="post">
+                            <form action="<?= URL_BASE ?>index.php?controller=producto&action=sel" method="post">
                                 <input type="hidden" name="id" value="<?= $producto->getProducto_id(); ?>">
                                 <input type="hidden" name="categoria" value="<?= $producto->getCategoria(); ?>">
                                 <button type="submit" name="añadir-carrito" class="carro-btn">
@@ -146,7 +146,7 @@ session_start();
 
             <div class="col-6 col-md-3 card-container <?= $specialClass ?> <?= $producto2->getCategoria(); ?>">
                 <div class="card">
-                    <img src="../<?= $producto2->getImagen(); ?>" class="card-img-top img-fluid img-product" alt="<?= $producto2->getNombre_producto(); ?>">
+                    <img src="<?= URL_BASE ?><?= $producto2->getImagen(); ?>" class="card-img-top img-fluid img-product" alt="<?= $producto2->getNombre_producto(); ?>">
                     <div class="card-body">
                         <?php if ($esNovedad) : ?>
                             <p class="novedad">Novedad</p>
@@ -154,7 +154,7 @@ session_start();
                         <h5 class="card-title titulo-producto"><?= $producto2->getNombre_producto(); ?></h5>
                         <p class="card-text">
                             <span class="precio"><?= $producto2->getPrecio(); ?> €</span>
-                            <form action="../index.php?controller=producto&action=sel" method="post">
+                            <form action="<?= URL_BASE ?>index.php?controller=producto&action=sel" method="post">
                                 <input type="hidden" name="id" value="<?= $producto2->getProducto_id(); ?>">
                                 <input type="hidden" name="categoria" value="<?= $producto2->getCategoria(); ?>">
                                 <button type="submit" name="añadir-carrito" class="carro-btn">
@@ -197,13 +197,13 @@ session_start();
 
                 <div class="col-6 col-md-3 card-container special-card2 <?= $producto3->getCategoria(); ?>">
                     <div class="card">
-                        <img src="../<?= $producto3->getImagen(); ?>" class="card-img-top img-fluid img-product" alt="<?= $producto3->getNombre_producto(); ?>">
+                        <img src="<?= URL_BASE ?><?= $producto3->getImagen(); ?>" class="card-img-top img-fluid img-product" alt="<?= $producto3->getNombre_producto(); ?>">
                         <div class="card-body">
                                 <p class="exclusivo">Exclusivo</p>
                             <h5 class="card-title titulo-producto"><?= $producto3->getNombre_producto(); ?></h5>
                             <p class="card-text">
                                 <span class="precio"><?= $producto3->getPrecio(); ?> €</span>
-                                <form action="../index.php?controller=producto&action=sel" method="post">
+                                <form action="<?= URL_BASE ?>index.php?controller=producto&action=sel" method="post">
                                     <input type="hidden" name="id" value="<?= $producto3->getProducto_id(); ?>">
                                     <input type="hidden" name="categoria" value="<?= $producto3->getCategoria(); ?>">
                                     <button type="submit" name="añadir-carrito" class="carro-btn">
@@ -227,16 +227,16 @@ session_start();
     </div>
 
 </section>
-<script src="../assets/js/filtroProductos.js"></script>
+<script src="<?= URL_BASE ?>assets/js/filtroProductos.js"></script>
 <footer>
     <div class="container-fluid p-5 text-white bg-custom">
         <div class="row justify-content-center align-items-center">
             <div class="col-md-3">
                 <!-- Iconos de redes sociales -->
-                <a href="#" class="text-white"><img src="../img/red1.png" alt="Imagen 1"></a>
-                <a href="#" class="text-white"><img src="../img/red2.png" alt="Imagen 2"></a>
-                <a href="#" class="text-white"><img src="../img/red3.png" alt="Imagen 3"></a>
-                <a href="#" class="text-white"><img src="../img/red4.png" alt="Imagen 4"></a>
+                <a href="#" class="text-white"><img src="img/red1.png" alt="Imagen 1"></a>
+                <a href="#" class="text-white"><img src="img/red2.png" alt="Imagen 2"></a>
+                <a href="#" class="text-white"><img src="img/red3.png" alt="Imagen 3"></a>
+                <a href="#" class="text-white"><img src="img/red4.png" alt="Imagen 4"></a>
             </div>
         </div>
         <div class="row"> 
@@ -258,7 +258,7 @@ session_start();
 
     <div id="fondoOscuro"></div>
 
-    <script src="../assets/js/ventana.js" defer></script>
+    <script src="<?= URL_BASE ?>assets/js/ventana.js" defer></script>
 
     <?php if (empty($_SESSION['selecciones'])): ?>
         <script>

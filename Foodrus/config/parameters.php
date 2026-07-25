@@ -1,4 +1,4 @@
 <?php
-define("url", "http://testlinares.com/foodrus/");
+define('URL_BASE', 'http://localhost/testLinares/Foodrus/');
 define("action_default", "index");
 ?>
