@@ -44,17 +44,17 @@
                         if (isset($_SESSION['user_email'])) : ?>
                         <ul id="desplegable-menu" class="dropdown-menu">
                         <li>
-                            <form action="/Foodrus/index.php?controller=usuario&action=logout" method="post">
+                            <form action="<?= URL_BASE ?>index.php?controller=usuario&action=logout" method="post">
                             <button type="submit" id="salir" class="dropdown-item salir boton-desp" name="cerrar_sesion">Salir</button>
                             </form>
                         </li>
                         <li>
-                            <form action="/Foodrus/index.php?controller=usuario&action=mostrarPedidos" method="post">
+                            <form action="<?= URL_BASE ?>index.php?controller=usuario&action=mostrarPedidos" method="post">
                             <button type="submit" id="mis-pedidos" class="dropdown-item mis-pedidos boton-desp" name="mis-pedidos">Mis pedidos</button>
                             </form>
                         </li>
                         <li>
-                            <form action="/Foodrus/index.php?controller=usuario&action=editarUsuario" method="post">
+                            <form action="<?= URL_BASE ?>index.php?controller=usuario&action=editarUsuario" method="post">
                             <button type="submit" id="mod-usuario" class="dropdown-item mod-usuario" name="mod-usuario">Detalles de la cuenta</button>
                             </form>
                         </li>
@@ -64,13 +64,13 @@
                         if ($rol == 'administrador'){
                             ?>
                             <li>
-                                <a href="/Foodrus/index.php?controller=producto&action=listaProductos" class="dropdown-item admin-productos boton-desp" name="ad-product">Productos</a>
+                                <a href="<?= URL_BASE ?>index.php?controller=producto&action=listaProductos" class="dropdown-item admin-productos boton-desp" name="ad-product">Productos</a>
                             </li>
                             <?php
                         }
                         ?>
                         </ul>
-                        <script src="/Foodrus/assets/js/desplegable.js"></script>
+                        <script src="<?= URL_BASE ?>assets/js/desplegable.js"></script>
                         <?php else : ?>
                         <script>
                             document.addEventListener('DOMContentLoaded', function () {
@@ -78,7 +78,7 @@
 
                             if (dropdownToggle) {
                                 dropdownToggle.addEventListener('click', function () {
-                                window.location.href = 'login.php';
+                                window.location.href = '/testLinares/Foodrus/index.php?controller=usuario&action=login';
                                 });
                             }
                             });

@@ -1,7 +1,7 @@
 <?php
 //Creamos el controlador de pedidos
 require_once __DIR__ . '/../model/ProductoDAO.php';
-require __DIR__ . '/../model/Pedido.php';
+require_once __DIR__ . '/../model/Pedido.php';
 require_once __DIR__ . '/../model/PedidoBD.php';
 
 class productoController{
@@ -15,6 +15,14 @@ class productoController{
 
     public function carta(){
         require_once 'views/carta.php';
+    }
+
+    public function panelCompra() {
+        require_once 'views/panelCompra.php'; 
+    }
+
+    public function reseñas(){
+        require_once 'views/reseñas.php';
     }
     
     public function listaProductos(){
@@ -88,8 +96,8 @@ class productoController{
     
             
             $result = ProductoDAO::updateProduct($id, $nombre, $descripcion, $categoria, $precio, $imagen);
-                
-            header("Location: index.php?action=index");
+
+            header("Location: " . URL_BASE . "?controller=producto&action=index");
         }
     }
 
@@ -170,13 +178,13 @@ class productoController{
 
                 if (empty($_SESSION['selecciones'])) {
                     // Redireccionar a la página de inicio si no quedan productos en el carrito
-                    header("Location: ../Foodrus/views/Inicio.php");
+                    header("Location: " . URL_BASE . "?controller=producto&action=index");
                     exit();
                 }
             }
         }
 
-        header("Location: ../Foodrus/views/panelCompra.php");
+        header("Location: " . URL_BASE . "?controller=producto&action=panelCompra");
     }
 
     public function eliminaCarrito(){
@@ -186,11 +194,11 @@ class productoController{
             
             unset($_SESSION['selecciones'][$pos]);
 
-            header("Location: ../Foodrus/views/panelCompra.php");
+            header("Location: " . URL_BASE . "?controller=producto&action=panelCompra");
 
             if (empty($_SESSION['selecciones'])) {
                 // Redireccionar a la página de inicio si no quedan productos en el carrito
-                header("Location: ../Foodrus/views/Inicio.php");
+                header("Location: " . URL_BASE . "?controller=producto&action=index");
                 exit();
             }
         }
@@ -199,7 +207,7 @@ class productoController{
     public function finalizarCompra(){
         session_start();
         if (!isset($_SESSION['user_email'])){
-            header("Location: ../Foodrus/views/login.php");
+            header("Location: " . URL_BASE . "?controller=usuario&action=login");
             exit();
         }else{
             //Guardar cookie
@@ -231,7 +239,7 @@ class productoController{
                 }
                 
                 $_SESSION['mostrarModalQR'] = true;
-                header("Location: ../Foodrus/views/panelCompra.php");
+                header("Location: " . URL_BASE . "?controller=producto&action=panelCompra");
             } else {//En caso contrario, insertamos pedido en la BD
                 $pedido = new PedidoBD($pedido_id, $cliente_id, $cantidad, $estado, $fecha);
                 ProductoDAO::insertarPedido($pedido);
@@ -246,7 +254,7 @@ class productoController{
                 $_SESSION['carrito_id'] = strtoupper(substr(bin2hex(random_bytes(5)), 0, 10));
 
                 $_SESSION['mostrarModalQR'] = true;
-                header("Location: ../Foodrus/views/panelCompra.php"); 
+                header("Location: " . URL_BASE . "?controller=producto&action=panelCompra");
 
                 $puntosObtenidos = floor($_POST['cantidadTotal'] * 100);
                 ProductoDAO::insertarPuntosUsuario($cliente_id, $puntosObtenidos); 
@@ -266,7 +274,7 @@ class productoController{
                     $_SESSION['carrito_id'] = $_COOKIE['UltimoPedido_id'];
                 }
 
-                header("Location: ../Foodrus/views/panelCompra.php");
+                header("Location: " . URL_BASE . "?controller=producto&action=panelCompra");
             }
         }
     }

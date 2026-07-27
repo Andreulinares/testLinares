@@ -5,7 +5,7 @@
 /** IMPORTANTE**/
 //Cargar Modelos necesarios BBDD
 require_once __DIR__ . '/../model/ProductoDAO.php';
-require __DIR__ . '/../model/Reseña.php';
+require_once __DIR__ . '/../model/Reseña.php';
 require_once __DIR__ . '/../model/PedidoBD.php';
 
 /** IMPORTANTE**/

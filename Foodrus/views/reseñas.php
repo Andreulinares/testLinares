@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/../model/ProductoDAO.php';
-require __DIR__ . '/../controller/APIController.php';
+require_once __DIR__ . '/../controller/APIController.php';
 session_start();
 ?>
 
@@ -10,17 +10,16 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reseñas</title>
-    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../assets/css/formulario_reseñas.css" rel="stylesheet" type="text/css" media="screen">
-
-    <link href="../assets/css/header.css" rel="stylesheet" type="text/css" media="screen">
-    <link href="../assets/css/ventana_emergente.css" rel="stylesheet" type="text/css" media="screen">
-    <link rel="stylesheet" type="text/css" href="../notie-master/dist/notie.css">
-
-    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <link href="<?= URL_BASE ?>assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= URL_BASE ?>assets/css/formulario_reseñas.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="<?= URL_BASE ?>assets/css/header.css" rel="stylesheet" type="text/css" media="screen">
+    <link rel="stylesheet" type="text/css" href="<?= URL_BASE ?>notie-master/dist/notie.css">
+    
+    <link href="<?= URL_BASE ?>assets/css/ventana_emergente.css" rel="stylesheet" type="text/css" media="screen">
+    <script src="<?= URL_BASE ?>assets/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <?php include('../views/header.php'); ?>
+    <?php include('views/header.php'); ?>
 <section>
 
     <h2 class="h2-reseña">Reseñas de los clientes</h2>
@@ -47,8 +46,8 @@ session_start();
     <div id="reseñas-container"></div>
 </section>
 <!-- SCRIPTS RESEÑAS Y NOTIE.JS -->
-<script src="../notie-master/dist/notie.js"></script>
-<script src="../assets/js/reseñas.js"></script>
+<script src="<?= URL_BASE ?>notie-master/dist/notie.js"></script>
+<script src="<?= URL_BASE ?>assets/js/reseñas.js"></script>
 <!-- VENTANA CARRITO -->
 
 <div id="ventana" class="cont-ventana" style="display: none;">
@@ -61,7 +60,7 @@ session_start();
 
 <div id="fondoOscuro"></div>
 
-    <script src="../assets/js/ventana.js" defer></script>
+    <script src="<?= URL_BASE ?>assets/js/ventana.js" defer></script>
 
     <?php if (empty($_SESSION['selecciones'])): ?>
         <script>

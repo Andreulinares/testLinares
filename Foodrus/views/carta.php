@@ -251,8 +251,8 @@ session_start();
     <div id="ventana" class="cont-ventana" style="display: none;">
         <div class="div-ventana">
             <p class="mi-cesta">Mi cesta</p>
-            <button id="btnFinalizarCompra">FINALIZAR COMPRA</button>
-            <button id="btnContinuarComprando">CONTINUAR COMPRANDO</button>
+            <button type="button" id="btnFinalizarCompra">FINALIZAR COMPRA</button>
+            <button type="button" id="btnContinuarComprando">CONTINUAR COMPRANDO</button>
         </div>
     </div>
 

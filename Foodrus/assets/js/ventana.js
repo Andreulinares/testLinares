@@ -4,8 +4,8 @@ function mostrarVentana() {
     ventana.style.display = 'block';
     fondoOscuro.style.display = 'block';
 
-    document.getElementById('btnFinalizarCompra').addEventListener('click', function() {
-        window.location.href = '/Foodrus/views/panelCompra.php';
+    document.getElementById('btnFinalizarCompra').addEventListener('click', function() { 
+        window.location.href = '/testLinares/Foodrus/index.php?controller=producto&action=panelCompra';
     });
 
     document.getElementById('btnContinuarComprando').addEventListener('click', function() {

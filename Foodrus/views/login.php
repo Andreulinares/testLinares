@@ -8,10 +8,10 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../assets/css/login.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="<?= URL_BASE ?>assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= URL_BASE ?>assets/css/login.css" rel="stylesheet" type="text/css" media="screen">
 
-    <link href="../assets/css/header.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="<?= URL_BASE ?>assets/css/header.css" rel="stylesheet" type="text/css" media="screen">
     <title>Login</title>
 </head>
 <body>
@@ -20,8 +20,8 @@ session_start();
 <nav class="navbar navbar-expand-lg navbar-dark nav-principal" style="background-color: #1450A0;">
     <div class="container">
         <!-- Logo foodrus -->
-        <a class="navbar-brand" href="Inicio.php">
-            <img src="../img/Logo-foodrus.png" width="150" height="50">
+        <a class="navbar-brand" href="<?= URL_BASE ?>index.php">
+            <img src="<?= URL_BASE ?>img/Logo-foodrus.png" width="150" height="50">
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,19 +33,19 @@ session_start();
         <!-- Buscador -->
             <form class="d-flex ms-auto" role="search">
                 <input class="form-control me-2 custom-search" type="search" placeholder="Busca aqui algo divertido">
-                <img src="../img/lupa.png" width="20" height="20" class="img-lupa">
+                <img src="<?= URL_BASE ?>img/lupa.png" width="20" height="20" class="img-lupa">
             </form>
 
             <!-- mi cuenta, ubicacion y carta -->
             <ul class="navbar-nav me-2">
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <img src="../img/storeFinder.svg" alt="ubicacion" class="ubicacion">
+                        <img src="<?= URL_BASE ?>img/storeFinder.svg" alt="ubicacion" class="ubicacion">
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.php">
-                        <img src="../img/usuario.svg" alt="mi-cuenta" class="usuario">
+                    <a class="nav-link" href="<?= URL_BASE ?>index.php?controller=usuario&action=login">
+                        <img src="<?= URL_BASE ?>img/usuario.svg" alt="mi-cuenta" class="usuario">
                         <span class="texto-menu">MI CUENTA</span>
                     </a>
                 </li>
@@ -90,7 +90,7 @@ session_start();
         <div class="tab-content">
         <!-- Formularios -->  
             <div class="col-md-6 bg-login tab-pane show active" id="loginForm" role="tabpanel" aria-labelledby="login-tab">
-                <form action="../index.php?controller=usuario&action=iniciarSesion" method="post">
+                <form action="<?= URL_BASE ?>index.php?controller=usuario&action=iniciarSesion" method="post">
                     <div class="form-group">
                         <label for="email">Dirección de correo electrónico</label>
                         <input type="email" class="form-control label-form" id="email" name="email" required>
@@ -104,7 +104,7 @@ session_start();
             </div>
 
             <div class="col-md-6 bg-login tab-pane" id="registroForm" role="tabpanel" aria-labelledby="registro-tab">
-                <form action="../index.php?controller=usuario&action=registrarUsuario" method="post">
+                <form action="<?= URL_BASE ?>index.php?controller=usuario&action=registrarUsuario" method="post">
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
                         <input type="text" class="form-control label-form" id="nombre" name="nombre" required>
@@ -137,10 +137,10 @@ session_start();
         <div class="row justify-content-center align-items-center">
             <div class="col-md-3">
                 <!-- Iconos de redes sociales -->
-                <a href="#" class="text-white"><img src="../img/red1.png" alt="Imagen 1"></a>
-                <a href="#" class="text-white"><img src="../img/red2.png" alt="Imagen 2"></a>
-                <a href="#" class="text-white"><img src="../img/red3.png" alt="Imagen 3"></a>
-                <a href="#" class="text-white"><img src="../img/red4.png" alt="Imagen 4"></a>
+                <a href="#" class="text-white"><img src="img/red1.png" alt="Imagen 1"></a>
+                <a href="#" class="text-white"><img src="img/red2.png" alt="Imagen 2"></a>
+                <a href="#" class="text-white"><img src="img/red3.png" alt="Imagen 3"></a>
+                <a href="#" class="text-white"><img src="img/red4.png" alt="Imagen 4"></a>
             </div>
         </div>
         <div class="row"> 
@@ -187,7 +187,7 @@ session_start();
 </script>
 </body>
 <!-- OTROS SCRIPTS -->
-<script src="../assets/js/ventana.js" defer></script>
+<script src="<?= URL_BASE ?>assets/js/ventana.js" defer></script>
 
 <?php if (empty($_SESSION['selecciones'])): ?>
     <script>
@@ -197,7 +197,7 @@ session_start();
     </script>
 <?php endif; ?>
 
-<script src="../assets/js/bootstrap.bundle.min.js"></script>
+<script src="<?= URL_BASE ?>assets/js/bootstrap.bundle.min.js"></script>
 
 <!-- Bolita roja actualizar cantidad -->
 <script>

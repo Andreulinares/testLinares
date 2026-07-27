@@ -216,7 +216,7 @@ session_start();
 
   <div id="fondoOscuro"></div>
 
-  <script src="../assets/js/ventana.js" defer></script>
+  <script src="assets/js/ventana.js" defer></script>
 
   <?php if (empty($_SESSION['selecciones'])): ?>
       <script>

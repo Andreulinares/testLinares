@@ -3,6 +3,12 @@ require_once __DIR__ . '/../model/ProductoDAO.php';
 
 
 class usuarioController{
+
+public function login() {
+        
+    require_once 'views/login.php'; 
+}
+
 //REGISTRAR USUARIO Y INICIAR SESION
     public function registrarUsuario(){
         if(isset($_POST['registrar'])){
@@ -16,7 +22,7 @@ class usuarioController{
             $usuario = new Usuario(0, $email, $nombre, $apellidos, $passwd, $telefono, $rol);
             ProductoDAO::agregarUsuario($usuario);
 
-            header("Location: ../Foodrus/views/login.php");
+            header("Location: " . URL_BASE . "?controller=usuario&action=login");
         }else{
             echo 'El usuario ya esta registrado en la base de datos';
         }
@@ -31,7 +37,7 @@ class usuarioController{
             if (ProductoDAO::verificarCredenciales($email, $passwd)){
                 $_SESSION['user_email'] = $email;
 
-                header("Location: ../Foodrus/views/Inicio.php");
+                header("Location: " . URL_BASE . "?controller=producto&action=index");
                 exit();
             } else {
                 echo 'El usuario no existe, vuelve a intentarlo';
@@ -46,7 +52,7 @@ class usuarioController{
             session_unset();
             session_destroy();
 
-            header("Location: ../Foodrus/views/Inicio.php");
+            header("Location: " . URL_BASE . "?controller=producto&action=index");
             exit();
         }
     }
@@ -86,12 +92,12 @@ class usuarioController{
 
         ProductoDAO::actualizarUsuario($id, $nombre, $apellidos, $telefono, $email, $contraseña);
 
-        header("Location: ../Foodrus/views/Inicio.php");
+        header("Location: " . URL_BASE . "?controller=producto&action=index");
         exit();
     }
 //SALIR DE LA PAGINA DE EDITAR USUARIO SIN MODIFICAR NADA
     public function cancelar(){
-        header("Location: ../Foodrus/views/Inicio.php");
+        header("Location: " . URL_BASE . "?controller=producto&action=index");
         exit();
     }
 

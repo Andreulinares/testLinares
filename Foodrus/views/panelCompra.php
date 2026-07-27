@@ -1,7 +1,7 @@
 <?php
-require __DIR__ . '/../model/Pedido.php';
-require __DIR__ . '/../utils/CalculadoraPrecios.php';
-require __DIR__ . '/../model/ProductoDAO.php';
+require_once __DIR__ . '/../model/Pedido.php';
+require_once __DIR__ . '/../utils/CalculadoraPrecios.php';
+require_once __DIR__ . '/../model/ProductoDAO.php';
 
 session_start();
 
@@ -29,17 +29,17 @@ if (isset($_SESSION['mostrarModalQR']) && $_SESSION['mostrarModalQR']) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Panel de compra</title>
-    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../assets/css/carrito.css" rel="stylesheet">
-    <link href="../assets/css/header.css" rel="stylesheet">
+    <link href="<?= URL_BASE ?>assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= URL_BASE ?>assets/css/carrito.css" rel="stylesheet">
+    <link href="<?= URL_BASE ?>assets/css/header.css" rel="stylesheet">
 
-    <link href="../assets/css/ventana_emergente.css" rel="stylesheet" type="text/css" media="screen">
-    <link rel="stylesheet" type="text/css" href="../notie-master/dist/notie.css">
+    <link href="<?= URL_BASE ?>assets/css/ventana_emergente.css" rel="stylesheet" type="text/css" media="screen">
+    <link rel="stylesheet" type="text/css" href="<?= URL_BASE ?>notie-master/dist/notie.css">
 
-    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= URL_BASE ?>assets/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <?php include('../views/header.php'); ?>
+    <?php include('views/header.php'); ?>
 
 <section>
     <h1>Mi cesta | ID: <?= $_SESSION['carrito_id']; ?></h1>
@@ -64,7 +64,7 @@ if (isset($_SESSION['mostrarModalQR']) && $_SESSION['mostrarModalQR']) {
     -->
     <div class="producto">
         <div class="img-producto">
-            <img src="../<?= $pedido->getProducto()->getImagen(); ?>" width="100" height="100">
+            <img src="<?= URL_BASE ?><?= $pedido->getProducto()->getImagen(); ?>" width="100" height="100">
         </div>
         <div class="detalles">
             <div class="nombre-producto"><?= $pedido->getProducto()->getNombre_producto(); ?></div>
@@ -74,7 +74,7 @@ if (isset($_SESSION['mostrarModalQR']) && $_SESSION['mostrarModalQR']) {
             </div>
         </div>
 
-        <form action="../index.php?controller=producto&action=compra" method='post' class="botones">
+        <form action="<?= URL_BASE ?>index.php?controller=producto&action=compra" method='post' class="botones">
             <label for="cantidad">Cantidad:</label>
             <button class="b1 bet-button w3-black w3-section" type="submit" name="Add" value=<?=$pos?>> + </button>
             <input class="cantidad" type="number" id="cantidad" name="cantidad" value="<?= $pedido->getCantidad() ?>" readonly>
@@ -84,7 +84,7 @@ if (isset($_SESSION['mostrarModalQR']) && $_SESSION['mostrarModalQR']) {
             <p><?= number_format($precioTotal, 2); ?> €</p>
         </div>
 
-        <form action="../index.php?controller=producto&action=eliminaCarrito" method="post">
+        <form action="<?= URL_BASE ?>index.php?controller=producto&action=eliminaCarrito" method="post">
             <button type="submit" name="eliminar" value=<?=$pos?> class="eliminar-p">ELIMINAR</button>
             <button type="submit" class="favoritos">MOVER A FAVORITOS</button>
         </form>
@@ -131,7 +131,7 @@ if (isset($_SESSION['mostrarModalQR']) && $_SESSION['mostrarModalQR']) {
             <hr class="linea2">
 <!-- FORMULARIO PRINCIPAL PARA REALIZAR PEDIDO -->
             <hr class="linea3">
-            <form action="../index.php?controller=producto&action=finalizarCompra" method="post">
+            <form action="<?= URL_BASE ?>index.php?controller=producto&action=finalizarCompra" method="post">
                 <input type="hidden" name="cantidadTotal" value="<?= $cantidadTotal ?>">
                 <button type="submit" class="btn btn-primary btn-finalizar">FINALIZAR COMPRA</button>
             </form>
@@ -204,7 +204,7 @@ if (isset($_SESSION['mostrarModalQR']) && $_SESSION['mostrarModalQR']) {
         ?>
         <div class="col-md-3 mb-4">
             <div class="card <?= $clase; ?>" style="width: 18rem; height: 250px;">
-                <img src="../<?= $producto->getImagen(); ?>" class="card-img-top product-image" alt="<?= $producto->getNombre_producto(); ?>">
+                <img src="<?= URL_BASE ?>/<?= $producto->getImagen(); ?>" class="card-img-top product-image" alt="<?= $producto->getNombre_producto(); ?>">
                 <div class="card-body">
                     <h5 class="card-title"><?= $producto->getNombre_producto(); ?></h5>
                     <p class="card-text"><?= number_format($producto->getPrecio(), 2); ?> €</p>
@@ -224,7 +224,7 @@ if (isset($_SESSION['mostrarModalQR']) && $_SESSION['mostrarModalQR']) {
     // Para mostrar el último pedido
     if (isset ($_SESSION['user_email']) && isset($_COOKIE['UltimoPedido'])) {
         echo '<p class="pedido-real">Último pedido: ' . $_COOKIE['UltimoPedido'] . '</p>';
-        echo '<form action="../index.php?controller=producto&action=recuperarPedido" method="post">';
+        echo '<form action="<?= URL_BASE ?>index.php?controller=producto&action=recuperarPedido" method="post">';
         echo '<button type="submit" class="btn btn-primary rec-p" name="recuperar_pedido">Recuperar pedido</button>';
         echo '</form>';
     } else {//Si no se ha hecho ningun pedido o si no esta la sesion iniciada:
@@ -238,10 +238,10 @@ if (isset($_SESSION['mostrarModalQR']) && $_SESSION['mostrarModalQR']) {
         <div class="row justify-content-center align-items-center">
             <div class="col-md-3">
                 <!-- Iconos de redes sociales -->
-                <a href="#" class="text-white"><img src="../img/red1.png" alt="Imagen 1"></a>
-                <a href="#" class="text-white"><img src="../img/red2.png" alt="Imagen 2"></a>
-                <a href="#" class="text-white"><img src="../img/red3.png" alt="Imagen 3"></a>
-                <a href="#" class="text-white"><img src="../img/red4.png" alt="Imagen 4"></a>
+                <a href="#" class="text-white"><img src="img/red1.png" alt="Imagen 1"></a>
+                <a href="#" class="text-white"><img src="img/red2.png" alt="Imagen 2"></a>
+                <a href="#" class="text-white"><img src="img/red3.png" alt="Imagen 3"></a>
+                <a href="#" class="text-white"><img src="img/red4.png" alt="Imagen 4"></a>
             </div>
         </div>
         <div class="row"> 
@@ -253,10 +253,10 @@ if (isset($_SESSION['mostrarModalQR']) && $_SESSION['mostrarModalQR']) {
     </div>
 </footer>
 <!-- Script del programa de fidelidad, qr y propinas-->
-<script src="../notie-master/dist/notie.js"></script>
-<script src="../assets/js/qr.js"></script>
-<script src="../assets/js/propinas.js"></script>
-<script src="../assets/js/programaFidelidad.js"></script>
+<script src="<?= URL_BASE ?>notie-master/dist/notie.js"></script>
+<script src="<?= URL_BASE ?>assets/js/qr.js"></script>
+<script src="<?= URL_BASE ?>assets/js/propinas.js"></script>
+<script src="<?= URL_BASE ?>assets/js/programaFidelidad.js"></script>
 <!-- VENTANA EMERGENTE CARRITO -->
     <div id="ventana" class="cont-ventana" style="display: none;">
         <div class="div-ventana">
@@ -268,7 +268,7 @@ if (isset($_SESSION['mostrarModalQR']) && $_SESSION['mostrarModalQR']) {
 
     <div id="fondoOscuro"></div>
 
-    <script src="../assets/js/ventana.js" defer></script>
+    <script src="<?= URL_BASE ?>assets/js/ventana.js" defer></script>
 
     <?php if (empty($_SESSION['selecciones'])): ?>
         <script>

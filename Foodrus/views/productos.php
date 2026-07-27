@@ -15,12 +15,12 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link href="/Foodrus/assets/css/admin_productos.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="<?= URL_BASE ?>/Foodrus/assets/css/admin_productos.css" rel="stylesheet" type="text/css" media="screen">
 
-    <link href="/Foodrus/assets/css/header.css" rel="stylesheet">
-    <link href="/Foodrus/assets/css/ventana_emergente.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="<?= URL_BASE ?>/Foodrus/assets/css/header.css" rel="stylesheet">
+    <link href="<?= URL_BASE ?>/Foodrus/assets/css/ventana_emergente.css" rel="stylesheet" type="text/css" media="screen">
 
-    <script src="/Foodrus/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= URL_BASE ?>/Foodrus/assets/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
     <?php include('header.php'); ?>
@@ -42,17 +42,17 @@ session_start();
                 <td>$<?= $pizza->getPrecio(); ?></td>
                 <td><?= $pizza->getDescripcion(); ?></td>
                 <td><?= $pizza->getCategoria(); ?></td>
-                <td><img src="<?= $pizza->getImagen(); ?>" width="50" height="50"></td>
+                <td><img src="<?= URL_BASE ?>/<?= $pizza->getImagen(); ?>" width="50" height="50"></td>
                 <td>
                     <div class="row">
                         <div class="col">
-                            <form action="index.php?controller=producto&action=eliminar" method="post">
+                            <form action="<?= URL_BASE ?>index.php?controller=producto&action=eliminar" method="post">
                                 <input type="hidden" name="producto_id" value="<?= $pizza->getProducto_id(); ?>">
                                 <button type="submit" class="btn btn-danger">Eliminar</button>
                             </form>
                         </div>
                         <div class="col">
-                            <form action="index.php?controller=producto&action=editar" method="post">
+                            <form action="<?= URL_BASE ?>index.php?controller=producto&action=editar" method="post">
                                 <input type="hidden" name="id" value="<?= $pizza->getProducto_id()?>">
                                 <input type="hidden" name="almacen" value="<?= $pizza->getAlmacen()?>">
                                 <input type="hidden" name="nombre" value="<?= $pizza->getNombre_producto()?>">
@@ -74,17 +74,17 @@ session_start();
                 <td>$<?= $bebida->getPrecio(); ?></td>
                 <td><?= $bebida->getDescripcion(); ?></td>
                 <td><?= $bebida->getCategoria(); ?></td>
-                <td><img src="<?= $bebida->getImagen(); ?>" width="50" height="50"></td>
+                <td><img src="<?= URL_BASE ?>/<?= $bebida->getImagen(); ?>" width="50" height="50"></td>
                 <td>
                     <div class="row">
                         <div class="col">
-                            <form action="index.php?controller=producto&action=eliminar" method="post">
+                            <form action="<?= URL_BASE ?>index.php?controller=producto&action=eliminar" method="post">
                                 <input type="hidden" name="producto_id" value="<?= $bebida->getProducto_id(); ?>">
                                 <button type="submit" class="btn btn-danger">Eliminar</button>
                             </form>
                         </div>
                         <div class="col">
-                            <form action="index.php?controller=producto&action=editar" method="post">
+                            <form action="<?= URL_BASE ?>index.php?controller=producto&action=editar" method="post">
                                 <input type="hidden" name="id" value="<?= $bebida->getProducto_id()?>">
                                 <input type="hidden" name="almacen" value="<?= $bebida->getAlmacen()?>">
                                 <input type="hidden" name="nombre" value="<?= $bebida->getNombre_producto()?>">
@@ -106,17 +106,17 @@ session_start();
                 <td>$<?= $postre->getPrecio(); ?></td>
                 <td><?= $postre->getDescripcion(); ?></td>
                 <td><?= $postre->getCategoria(); ?></td> 
-                <td><img src="<?= $postre->getImagen(); ?>" width="50" height="50"></td>
+                <td><img src="<?= URL_BASE ?>/<?= $postre->getImagen(); ?>" width="50" height="50"></td>
                 <td>
                     <div class="row">
                         <div class="col">
-                            <form action="index.php?controller=producto&action=eliminar" method="post">
+                            <form action="<?= URL_BASE ?>index.php?controller=producto&action=eliminar" method="post">
                                 <input type="hidden" name="producto_id" value="<?= $postre->getProducto_id(); ?>">
                                 <button type="submit" class="btn btn-danger">Eliminar</button>
                             </form>
                         </div>
                         <div class="col">
-                            <form action="index.php?controller=producto&action=editar" method="post">
+                            <form action="<?= URL_BASE ?>index.php?controller=producto&action=editar" method="post">
                                 <input type="hidden" name="id" value="<?= $postre->getProducto_id()?>">
                                 <input type="hidden" name="almacen" value="<?= $postre->getAlmacen()?>">
                                 <input type="hidden" name="nombre" value="<?= $postre->getNombre_producto()?>">
@@ -136,7 +136,7 @@ session_start();
     <button id="mostrarFormulario" class="btn btn-primary">Añadir producto</button>
 
     <div id="formulario" style="display: none;">
-            <form action="index.php?controller=producto&action=añadir" method="POST" enctype="multipart/form-data">
+            <form action="<?= URL_BASE ?>index.php?controller=producto&action=añadir" method="POST" enctype="multipart/form-data">
                 <h3>Añadir producto nuevo</h3>
                 <label for="id">ID:</label>
                 <input type="number" name="id" required><br><br>
@@ -174,10 +174,10 @@ session_start();
         <div class="row justify-content-center align-items-center">
             <div class="col-md-3">
                 <!-- Iconos de redes sociales -->
-                <a href="#" class="text-white"><img src="/Foodrus/img/red1.png" alt="Imagen 1"></a>
-                <a href="#" class="text-white"><img src="/Foodrus/img/red2.png" alt="Imagen 2"></a>
-                <a href="#" class="text-white"><img src="/Foodrus/img/red3.png" alt="Imagen 3"></a>
-                <a href="#" class="text-white"><img src="/Foodrus/img/red4.png" alt="Imagen 4"></a>
+                <a href="#" class="text-white"><img src="img/red1.png" alt="Imagen 1"></a>
+                <a href="#" class="text-white"><img src="img/red2.png" alt="Imagen 2"></a>
+                <a href="#" class="text-white"><img src="img/red3.png" alt="Imagen 3"></a>
+                <a href="#" class="text-white"><img src="img/red4.png" alt="Imagen 4"></a>
             </div>
         </div>
         <div class="row"> 
@@ -199,7 +199,7 @@ session_start();
 
 <div id="fondoOscuro"></div>
 </body>
-<script src="/Foodrus/assets/js/ventana.js" defer></script>
+<script src="<?= URL_BASE ?>/Foodrus/assets/js/ventana.js" defer></script>
 
 <?php if (empty($_SESSION['selecciones'])): ?>
     <script>

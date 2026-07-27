@@ -16,13 +16,13 @@ if (isset($_SESSION['user_email'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis pedidos</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link href="/Foodrus/assets/css/mis_pedidos.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="<?= URL_BASE ?>assets/css/mis_pedidos.css" rel="stylesheet" type="text/css" media="screen">
 
-    <link href="/Foodrus/assets/css/header.css" rel="stylesheet" type="text/css" media="screen">
-    <link href="/Foodrus/assets/css/ventana_emergente.css" rel="stylesheet" type="text/css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/Foodrus/notie-master/dist/notie.css">
+    <link href="<?= URL_BASE ?>assets/css/header.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="<?= URL_BASE ?>assets/css/ventana_emergente.css" rel="stylesheet" type="text/css" media="screen">
+    <link rel="stylesheet" type="text/css" href="<?= URL_BASE ?>assets/css/notie.css">
 
-    <script src="/Foodrus/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= URL_BASE ?>assets/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 
@@ -52,13 +52,13 @@ if (isset($_SESSION['user_email'])){
                     <td><?= $pedido->getFecha_pedido(); ?></td>
                     <td>
                         <?php if ($rol == 'administrador') : ?>
-                            <form action="index.php?controller=usuario&action=finalizarPedido" method="post">
+                            <form action="<?= URL_BASE ?>index.php?controller=usuario&action=finalizarPedido" method="post">
                                 <input type="hidden" name="pedido_id" value="<?= $pedido->getPedido_id(); ?>">
                                 <input type="hidden" name="nuevo_estado" value="entregado">
                                 <button type="submit" class="btn btn-success">Finalizado</button>
                             </form>
                         <?php else: ?>
-                            <form action="index.php?controller=usuario&action=eliminarPedido" method="post">
+                            <form action="<?= URL_BASE ?>index.php?controller=usuario&action=eliminarPedido" method="post">
                                 <input type="hidden" name="pedido_id" value="<?= $pedido->getPedido_id(); ?>">
                                 <button type="submit" class="btn btn-danger">Eliminar</button>
                             </form>
@@ -101,7 +101,7 @@ if (isset($_SESSION['user_email'])){
         </table>
     </section>
     <h3 class="h3-reseña">Deja tu reseña</h3>
-        <form id="form-reseñas" action="">
+        <form id="form-reseñas" action="<?= URL_BASE ?>index.php?controller=usuario&action=enviarReseña" method="post">
             <div class="form-group">
                 <label for="pedido_id">ID del Pedido</label>
                 <input type="text" id="pedido_id" name="pedido_id" class="form-control input-pedido" required>
@@ -121,10 +121,10 @@ if (isset($_SESSION['user_email'])){
         <div class="row justify-content-center align-items-center">
             <div class="col-md-3">
                 <!-- Iconos de redes sociales -->
-                <a href="#" class="text-white"><img src="/Foodrus/img/red1.png" alt="Imagen 1"></a>
-                <a href="#" class="text-white"><img src="/Foodrus/img/red2.png" alt="Imagen 2"></a>
-                <a href="#" class="text-white"><img src="/Foodrus/img/red3.png" alt="Imagen 3"></a>
-                <a href="#" class="text-white"><img src="/Foodrus/img/red4.png" alt="Imagen 4"></a>
+                <a href="#" class="text-white"><img src="img/red1.png" alt="Imagen 1"></a>
+                <a href="#" class="text-white"><img src="img/red2.png" alt="Imagen 2"></a>
+                <a href="#" class="text-white"><img src="img/red3.png" alt="Imagen 3"></a>
+                <a href="#" class="text-white"><img src="img/red4.png" alt="Imagen 4"></a>
             </div>
         </div>
         <div class="row"> 
@@ -136,8 +136,8 @@ if (isset($_SESSION['user_email'])){
     </div>
 </footer>
 
-<script src="/Foodrus/notie-master/dist/notie.js"></script>
-<script src="/Foodrus/assets/js/reseñas.js"></script>
+<script src="<?= URL_BASE ?>notie-master/dist/notie.js"></script>
+<script src="<?= URL_BASE ?>assets/js/reseñas.js"></script>
 
 <div id="ventana" class="cont-ventana" style="display: none;">
     <div class="div-ventana">
@@ -149,7 +149,7 @@ if (isset($_SESSION['user_email'])){
 
 <div id="fondoOscuro"></div>
 
-<script src="/Foodrus/assets/js/ventana.js" defer></script>
+<script src="<?= URL_BASE ?>assets/js/ventana.js" defer></script>
 
 <?php if (empty($_SESSION['selecciones'])): ?>
     <script>

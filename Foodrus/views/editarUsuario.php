@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actualizar datos</title>
-    <link href="/Foodrus/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/Foodrus/assets/css/editarUsuario.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="../Foodrus/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../Foodrus/assets/css/editarUsuario.css" rel="stylesheet" type="text/css" media="screen">
 
-    <link href="/Foodrus/assets/css/header.css" rel="stylesheet">
-    <link href="/Foodrus/assets/css/ventana_emergente.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="../Foodrus/assets/css/header.css" rel="stylesheet">
+    <link href="../Foodrus/assets/css/ventana_emergente.css" rel="stylesheet" type="text/css" media="screen">
 
-    <script src="/Foodrus/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../Foodrus/assets/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
     <?php include('header.php'); ?>
@@ -52,10 +52,10 @@
         <div class="row justify-content-center align-items-center">
             <div class="col-md-3">
                 <!-- Iconos de redes sociales -->
-                <a href="#" class="text-white"><img src="/Foodrus/img/red1.png" alt="Imagen 1"></a>
-                <a href="#" class="text-white"><img src="/Foodrus/img/red2.png" alt="Imagen 2"></a>
-                <a href="#" class="text-white"><img src="/Foodrus/img/red3.png" alt="Imagen 3"></a>
-                <a href="#" class="text-white"><img src="/Foodrus/img/red4.png" alt="Imagen 4"></a>
+                <a href="#" class="text-white"><img src="img/red1.png" alt="Imagen 1"></a>
+                <a href="#" class="text-white"><img src="img/red2.png" alt="Imagen 2"></a>
+                <a href="#" class="text-white"><img src="img/red3.png" alt="Imagen 3"></a>
+                <a href="#" class="text-white"><img src="img/red4.png" alt="Imagen 4"></a>
             </div>
         </div>
         <div class="row"> 
@@ -77,7 +77,7 @@
 
 <div id="fondoOscuro"></div>
 
-<script src="/Foodrus/assets/js/ventana.js" defer></script>
+<script src="../Foodrus/assets/js/ventana.js" defer></script>
 
 <?php if (empty($_SESSION['selecciones'])): ?>
     <script>
