@@ -30,7 +30,7 @@ function mostrarReseña(puntuacion, comentario, nombre_usuario, pedido_id) {
     // Convertir la puntuación a estrellas
     let estrellasHtml = '';
     for (let i = 0; i < puntuacion; i++) {
-        estrellasHtml += '<img src="../img/fullstar.png" class="img-estrella" alt="Estrella">';
+        estrellasHtml += '<img src="img/fullstar.png" class="img-estrella" alt="Estrella">';
     }
 
     puntuacionElement.innerHTML = estrellasHtml;
@@ -54,7 +54,7 @@ function mostrarReseña(puntuacion, comentario, nombre_usuario, pedido_id) {
 
 // Función para mostrar reseñas en la página
 function mostrarReseñasEnPagina() {
-    fetch('//testlinares.com/Foodrus/index.php?controller=API&action=api', {
+    fetch('/testlinares/Foodrus/index.php?controller=API&action=api', {
         method: 'POST',
         body: new URLSearchParams({
             accion: 'mostrar_reseñas'
@@ -94,7 +94,7 @@ function FormularioReseñas() {
         formData.append('puntuacion', puntuacion);
         formData.append('pedido_id', pedido_id);
 
-        fetch('//testlinares.com/Foodrus/index.php?controller=API&action=insertarReseñas', {
+        fetch('/testlinares/Foodrus/index.php?controller=API&action=insertarReseñas', {
             method: 'POST',
             body: formData,
         })
